@@ -1,0 +1,6 @@
+CHANGELOG
+=========
+
+### master
+
+- Initial release
