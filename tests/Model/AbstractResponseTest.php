@@ -34,6 +34,7 @@ class AbstractResponseTest extends AbstractTestCase {
         $this->assertNull($obj->getNextPage());
         $this->assertNull($obj->getPage());
         $this->assertNull($obj->getPerPage());
+        $this->assertNull($obj->getRawResponse());
         $this->assertNull($obj->getTotalResults());
         $this->assertNull($obj->getUrl());
     }
@@ -49,6 +50,19 @@ class AbstractResponseTest extends AbstractTestCase {
 
         $obj->setNextPage("nextPage");
         $this->assertEquals("nextPage", $obj->getNextPage());
+    }
+
+    /**
+     * Tests the setRawResponse() method.
+     *
+     * @return void
+     */
+    public function testSetRawResponse() {
+
+        $obj = new TestResponse();
+
+        $obj->setRawResponse("rawResponse");
+        $this->assertEquals("rawResponse", $obj->getRawResponse());
     }
 
     /**

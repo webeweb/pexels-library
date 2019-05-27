@@ -36,6 +36,13 @@ abstract class AbstractResponse {
     private $nextPage;
 
     /**
+     * Raw response.
+     *
+     * @var string
+     */
+    private $rawResponse;
+
+    /**
      * Total results.
      *
      * @var int
@@ -59,6 +66,15 @@ abstract class AbstractResponse {
     }
 
     /**
+     * Get the raw response.
+     *
+     * @return string Returns the raw response.
+     */
+    public function getRawResponse() {
+        return $this->rawResponse;
+    }
+
+    /**
      * Get the total results.
      *
      * @return int Returns the total results.
@@ -75,6 +91,17 @@ abstract class AbstractResponse {
      */
     public function setNextPage($nextPage) {
         $this->nextPage = $nextPage;
+        return $this;
+    }
+
+    /**
+     * Set the raw response.
+     *
+     * @param string $rawResponse The raw response.
+     * @return AbstractResponse Returns this response.
+     */
+    public function setRawResponse($rawResponse) {
+        $this->rawResponse = $rawResponse;
         return $this;
     }
 
