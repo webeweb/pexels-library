@@ -12,6 +12,7 @@
 namespace WBW\Library\Pexels\Tests\Normalizer;
 
 use WBW\Library\Pexels\Model\Photo;
+use WBW\Library\Pexels\Model\Response\PhotoResponse;
 use WBW\Library\Pexels\Model\Source;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 use WBW\Library\Pexels\Tests\Fixtures\Normalizer\TestResponseNormalizer;
@@ -43,6 +44,25 @@ class ResponseNormalizerTest extends AbstractTestCase {
 
         $this->assertEquals("https://www.pexels.com/photo/12345", $obj->getUrl());
         $this->assertEquals(1000, $obj->getWidth());
+    }
+
+    /**
+     * Tests the denormalizePhotoResponse() method.
+     *
+     * @return void
+     */
+    public function testDenormalizePhotoResponse() {
+
+        $obj = TestResponseNormalizer::denormalizePhotoResponse(TestFixtures::SAMPLE_RESPONSE);
+        $this->assertInstanceOf(PhotoResponse::class, $obj);
+
+        $this->assertEquals("https://api.pexels.com/v1/search/?page=2&per_page=15&query=example+query", $obj->getNextPage());
+        $this->assertEquals(1, $obj->getPage());
+        $this->assertEquals(15, $obj->getPerPage());
+        $this->assertEquals(236, $obj->getTotalResults());
+        $this->assertEquals("https://www.pexels.com/search/example%20query/", $obj->getUrl());
+
+        $this->assertCount(1, $obj->getPhotos());
     }
 
     /**

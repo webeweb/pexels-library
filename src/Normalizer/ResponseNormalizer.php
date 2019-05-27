@@ -13,6 +13,7 @@ namespace WBW\Library\Pexels\Normalizer;
 
 use WBW\Library\Core\Argument\ArrayHelper;
 use WBW\Library\Pexels\Model\Photo;
+use WBW\Library\Pexels\Model\Response\PhotoResponse;
 use WBW\Library\Pexels\Model\Source;
 
 /**
@@ -37,6 +38,36 @@ class ResponseNormalizer {
         $model->setSrc(static::denormalizeSource(ArrayHelper::get($response, "scr", [])));
         $model->setUrl(ArrayHelper::get($response, "url", null));
         $model->setWidth(intval(ArrayHelper::get($response, "width", -1)));
+
+        return $model;
+    }
+
+    /**
+     * Denormalize a photo response.
+     *
+     * @param string $rawResponse The raw response.
+     * @return PhotoResponse Returns the photo response.
+     */
+    public static function denormalizePhotoResponse($rawResponse) {
+
+        $decodedResponse = json_decode(trim($rawResponse), true);
+
+        $model = new PhotoResponse();
+        $model->setRawResponse($rawResponse);
+
+        if (false === $decodedResponse) {
+            return $model;
+        }
+
+        $model->setNextPage(ArrayHelper::get($decodedResponse, "next_page", null));
+        $model->setPage(intval(ArrayHelper::get($decodedResponse, "page", -1)));
+        $model->setPerPage(intval(ArrayHelper::get($decodedResponse, "per_page", -1)));
+        $model->setTotalResults(intval(ArrayHelper::get($decodedResponse, "total_results", -1)));
+        $model->setUrl(ArrayHelper::get($decodedResponse, "url", null));
+
+        foreach (ArrayHelper::get($decodedResponse, "photos", []) as $current) {
+            $model->addPhoto(static::denormalizePhoto($current));
+        }
 
         return $model;
     }
