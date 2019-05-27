@@ -46,17 +46,4 @@ class AbstractRequestTest extends AbstractTestCase {
         $obj->setAuthorization("authorization");
         $this->assertEquals("authorization", $obj->getAuthorization());
     }
-
-    /**
-     * Tests the setQuery() method.
-     *
-     * @retunr void.
-     */
-    public function testSetQuery() {
-
-        $obj = new TestRequest();
-
-        $obj->setQuery("query");
-        $this->assertEquals("query", $obj->getQuery());
-    }
 }

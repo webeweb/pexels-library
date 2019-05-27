@@ -11,9 +11,6 @@
 
 namespace WBW\Library\Pexels\Model;
 
-use WBW\Library\Pexels\Traits\PageTrait;
-use WBW\Library\Pexels\Traits\PerPageTrait;
-
 /**
  * Abstract request.
  *
@@ -23,9 +20,6 @@ use WBW\Library\Pexels\Traits\PerPageTrait;
  */
 abstract class AbstractRequest {
 
-    use PageTrait;
-    use PerPageTrait;
-
     /**
      * Authorization.
      *
@@ -34,18 +28,10 @@ abstract class AbstractRequest {
     private $authorization;
 
     /**
-     * Query.
-     *
-     * @var string
-     */
-    private $query;
-
-    /**
      * Constructor.
      */
     public function __construct() {
-        $this->setPage(1);
-        $this->setPerPage(15);
+        // NOTHING TO DO.
     }
 
     /**
@@ -55,15 +41,6 @@ abstract class AbstractRequest {
      */
     public function getAuthorization() {
         return $this->authorization;
-    }
-
-    /**
-     * Get the query.
-     *
-     * @return string Returns the query.
-     */
-    public function getQuery() {
-        return $this->query;
     }
 
     /**
@@ -81,17 +58,6 @@ abstract class AbstractRequest {
      */
     public function setAuthorization($authorization) {
         $this->authorization = $authorization;
-        return $this;
-    }
-
-    /**
-     * Set the query.
-     *
-     * @param string $query The query.
-     * @return AbstractRequest Returns this request.
-     */
-    public function setQuery($query) {
-        $this->query = $query;
         return $this;
     }
 }
