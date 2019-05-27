@@ -31,12 +31,12 @@
     },
     "autoload": {
         "psr-4": {
-            "WBW\\Library\\SMSMode\\": "src/"
+            "WBW\\Library\\Pexels\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "WBW\\Library\\SMSMode\\Tests\\": "tests/"
+            "WBW\\Library\\Pexels\\Tests\\": "tests/"
         }
     },
     "config": {
