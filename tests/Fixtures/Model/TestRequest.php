@@ -21,4 +21,10 @@ use WBW\Library\Pexels\Model\AbstractRequest;
  */
 class TestRequest extends AbstractRequest {
 
+    /**
+     * {@inheritDoc}
+     */
+    public function getResourcePath() {
+        return null;
+    }
 }

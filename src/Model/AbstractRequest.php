@@ -67,6 +67,13 @@ abstract class AbstractRequest {
     }
 
     /**
+     * Get the resource path.
+     *
+     * @return string Returns the resource path.
+     */
+    abstract public function getResourcePath();
+
+    /**
      * Set the authorization.
      *
      * @param string $authorization The authorization.
