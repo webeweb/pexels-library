@@ -12,6 +12,8 @@
 namespace WBW\Library\Pexels\Model\Request;
 
 use WBW\Library\Pexels\Model\AbstractRequest;
+use WBW\Library\Pexels\Traits\PageTrait;
+use WBW\Library\Pexels\Traits\PerPageTrait;
 
 /**
  * Popular videos request.
@@ -21,12 +23,24 @@ use WBW\Library\Pexels\Model\AbstractRequest;
  */
 class PopularVideosRequest extends AbstractRequest {
 
+    use PageTrait;
+    use PerPageTrait;
+
     /**
      * Popular videos resource path.
      *
      * @var string
      */
     const POPULAR_VIDEOS_RESOURCE_PATH = "/videos/popular";
+
+    /**
+     * Constructor.
+     */
+    public function __construct() {
+        parent::__construct();
+        $this->setPage(1);
+        $this->setPerPage(15);
+    }
 
     /**
      * {@inheritDoc}

@@ -34,5 +34,7 @@ class PopularVideosRequestTest extends AbstractTestCase {
         $obj = new PopularVideosRequest();
 
         $this->assertEquals(PopularVideosRequest::POPULAR_VIDEOS_RESOURCE_PATH, $obj->getResourcePath());
+        $this->assertEquals(1, $obj->getPage());
+        $this->assertEquals(15, $obj->getPerPage());
     }
 }
