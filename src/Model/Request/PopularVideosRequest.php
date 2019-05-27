@@ -12,6 +12,10 @@
 namespace WBW\Library\Pexels\Model\Request;
 
 use WBW\Library\Pexels\Model\AbstractRequest;
+use WBW\Library\Pexels\Traits\MaxDurationTrait;
+use WBW\Library\Pexels\Traits\MaxWidthTrait;
+use WBW\Library\Pexels\Traits\MinDurationTrait;
+use WBW\Library\Pexels\Traits\MinWidthTrait;
 use WBW\Library\Pexels\Traits\PageTrait;
 use WBW\Library\Pexels\Traits\PerPageTrait;
 
@@ -23,6 +27,10 @@ use WBW\Library\Pexels\Traits\PerPageTrait;
  */
 class PopularVideosRequest extends AbstractRequest {
 
+    use MinDurationTrait;
+    use MinWidthTrait;
+    use MaxDurationTrait;
+    use MaxWidthTrait;
     use PageTrait;
     use PerPageTrait;
 
