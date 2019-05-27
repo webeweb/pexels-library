@@ -12,6 +12,8 @@
 namespace WBW\Library\Pexels\Model\Request;
 
 use WBW\Library\Pexels\Model\AbstractRequest;
+use WBW\Library\Pexels\Traits\PageTrait;
+use WBW\Library\Pexels\Traits\PerPageTrait;
 
 /**
  * Curated photos request.
@@ -21,12 +23,24 @@ use WBW\Library\Pexels\Model\AbstractRequest;
  */
 class CuratedPhotosRequest extends AbstractRequest {
 
+    use PageTrait;
+    use PerPageTrait;
+
     /**
      * Curated photo resource path.
      *
      * @var string
      */
     const CURATED_PHOTO_RESOURCE_PATH = "/v1/curated";
+
+    /**
+     * Constructor.
+     */
+    public function __construct() {
+        parent::__construct();
+        $this->setPage(1);
+        $this->setPerPage(15);
+    }
 
     /**
      * {@inheritDoc}

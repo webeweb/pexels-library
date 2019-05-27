@@ -34,5 +34,7 @@ class CuratedPhotosRequestTest extends AbstractTestCase {
         $obj = new CuratedPhotosRequest();
 
         $this->assertEquals(CuratedPhotosRequest::CURATED_PHOTO_RESOURCE_PATH, $obj->getResourcePath());
+        $this->assertEquals(1, $obj->getPage());
+        $this->assertEquals(15, $obj->getPerPage());
     }
 }
