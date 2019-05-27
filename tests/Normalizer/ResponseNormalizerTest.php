@@ -66,6 +66,25 @@ class ResponseNormalizerTest extends AbstractTestCase {
     }
 
     /**
+     * Tests the denormalizePhotoResponse() method.
+     *
+     * @return void
+     */
+    public function testDenormalizePhotoResponseWithBadRawResponse() {
+
+        $obj = TestResponseNormalizer::denormalizePhotoResponse("");
+        $this->assertInstanceOf(PhotoResponse::class, $obj);
+
+        $this->assertNull($obj->getNextPage());
+        $this->assertNull($obj->getPage());
+        $this->assertNull($obj->getPerPage());
+        $this->assertNull($obj->getTotalResults());
+        $this->assertNull($obj->getUrl());
+
+        $this->assertCount(0, $obj->getPhotos());
+    }
+
+    /**
      * Tests the denormalizeSource() method.
      *
      * @return void

@@ -55,7 +55,7 @@ class ResponseNormalizer {
         $model = new PhotoResponse();
         $model->setRawResponse($rawResponse);
 
-        if (false === $decodedResponse) {
+        if (null === $decodedResponse) {
             return $model;
         }
 
