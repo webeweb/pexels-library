@@ -30,7 +30,7 @@ class GetPhotoRequest extends AbstractRequest implements SubstituteRequestInterf
      *
      * @var string
      */
-    const GET_PHOTO_RESOURCE_PATH = "/v1/photo/:id";
+    const GET_PHOTO_RESOURCE_PATH = "/v1/photos/:id";
 
     /**
      * {@inheritDoc}

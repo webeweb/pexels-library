@@ -29,7 +29,7 @@ class GetPhotoRequestTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
-        $this->assertEquals("/v1/photo/:id", GetPhotoRequest::GET_PHOTO_RESOURCE_PATH);
+        $this->assertEquals("/v1/photos/:id", GetPhotoRequest::GET_PHOTO_RESOURCE_PATH);
 
         $obj = new GetPhotoRequest();
 
