@@ -11,7 +11,9 @@
 
 namespace WBW\Library\Pexels\Model\Request;
 
+use WBW\Library\Pexels\API\SubstituteRequestInterface;
 use WBW\Library\Pexels\Model\AbstractRequest;
+use WBW\Library\Pexels\Traits\IdTrait;
 
 /**
  * Get photo request.
@@ -19,7 +21,9 @@ use WBW\Library\Pexels\Model\AbstractRequest;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\Pexels\Model\Request
  */
-class GetPhotoRequest extends AbstractRequest {
+class GetPhotoRequest extends AbstractRequest implements SubstituteRequestInterface {
+
+    use IdTrait;
 
     /**
      * Get photo resource path.
@@ -33,5 +37,19 @@ class GetPhotoRequest extends AbstractRequest {
      */
     public function getResourcePath() {
         return self::GET_PHOTO_RESOURCE_PATH;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getSubstituteName() {
+        return ":id";
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getSubstituteValue() {
+        return $this->getId();
     }
 }

@@ -34,5 +34,20 @@ class GetPhotoRequestTest extends AbstractTestCase {
         $obj = new GetPhotoRequest();
 
         $this->assertEquals(GetPhotoRequest::GET_PHOTO_RESOURCE_PATH, $obj->getResourcePath());
+        $this->assertNull($obj->getId());
+        $this->assertEquals(":id", $obj->getSubstituteName());
+    }
+
+    /**
+     * Tests the getSubstituteValue() method.
+     *
+     * @return void
+     */
+    public function testGetSubstituteValue() {
+
+        $obj = new GetPhotoRequest();
+
+        $obj->setId(1);
+        $this->assertEquals(1, $obj->getSubstituteValue());
     }
 }
