@@ -12,7 +12,7 @@
 namespace WBW\Library\Pexels\Tests\Normalizer;
 
 use WBW\Library\Pexels\Model\Photo;
-use WBW\Library\Pexels\Model\Response\PhotoResponse;
+use WBW\Library\Pexels\Model\Response\PhotosResponse;
 use WBW\Library\Pexels\Model\Source;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 use WBW\Library\Pexels\Tests\Fixtures\Normalizer\TestResponseNormalizer;
@@ -38,23 +38,24 @@ class ResponseNormalizerTest extends AbstractTestCase {
         $obj = TestResponseNormalizer::denormalizePhoto($arg);
         $this->assertInstanceOf(Photo::class, $obj);
 
+        $this->assertNull($obj->getId());
         $this->assertEquals(1000, $obj->getHeight());
         $this->assertEquals("Name", $obj->getPhotographer());
+        $this->assertNull($obj->getPhotographerUrl());
         $this->assertNotNull($obj->getSrc());
-
         $this->assertEquals("https://www.pexels.com/photo/12345", $obj->getUrl());
         $this->assertEquals(1000, $obj->getWidth());
     }
 
     /**
-     * Tests the denormalizePhotoResponse() method.
+     * Tests the denormalizePhotosResponse() method.
      *
      * @return void
      */
-    public function testDenormalizePhotoResponse() {
+    public function testDenormalizePhotosResponse() {
 
-        $obj = TestResponseNormalizer::denormalizePhotoResponse(TestFixtures::SAMPLE_RESPONSE);
-        $this->assertInstanceOf(PhotoResponse::class, $obj);
+        $obj = TestResponseNormalizer::denormalizePhotosResponse(TestFixtures::SAMPLE_RESPONSE);
+        $this->assertInstanceOf(PhotosResponse::class, $obj);
 
         $this->assertEquals("https://api.pexels.com/v1/search/?page=2&per_page=15&query=example+query", $obj->getNextPage());
         $this->assertEquals(1, $obj->getPage());
@@ -66,14 +67,14 @@ class ResponseNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the denormalizePhotoResponse() method.
+     * Tests the denormalizePhotosResponse() method.
      *
      * @return void
      */
-    public function testDenormalizePhotoResponseWithBadRawResponse() {
+    public function testDenormalizePhotosResponseWithBadRawResponse() {
 
         $obj = TestResponseNormalizer::denormalizePhotoResponse("");
-        $this->assertInstanceOf(PhotoResponse::class, $obj);
+        $this->assertInstanceOf(PhotosResponse::class, $obj);
 
         $this->assertNull($obj->getNextPage());
         $this->assertNull($obj->getPage());

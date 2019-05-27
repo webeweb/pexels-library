@@ -13,7 +13,7 @@ namespace WBW\Library\Pexels\Normalizer;
 
 use WBW\Library\Core\Argument\ArrayHelper;
 use WBW\Library\Pexels\Model\Photo;
-use WBW\Library\Pexels\Model\Response\PhotoResponse;
+use WBW\Library\Pexels\Model\Response\PhotosResponse;
 use WBW\Library\Pexels\Model\Source;
 
 /**
@@ -33,8 +33,10 @@ class ResponseNormalizer {
     protected static function denormalizePhoto(array $response) {
 
         $model = new Photo();
+        $model->setId(intval(ArrayHelper::get($response, "id", -1)));
         $model->setHeight(intval(ArrayHelper::get($response, "height", -1)));
         $model->setPhotographer(ArrayHelper::get($response, "photographer", null));
+        $model->setPhotographerUrl(ArrayHelper::get($response, "photographer_url", null));
         $model->setSrc(static::denormalizeSource(ArrayHelper::get($response, "scr", [])));
         $model->setUrl(ArrayHelper::get($response, "url", null));
         $model->setWidth(intval(ArrayHelper::get($response, "width", -1)));
@@ -43,16 +45,16 @@ class ResponseNormalizer {
     }
 
     /**
-     * Denormalize a photo response.
+     * Denormalize a photos response.
      *
      * @param string $rawResponse The raw response.
-     * @return PhotoResponse Returns the photo response.
+     * @return PhotosResponse Returns the photos response.
      */
-    public static function denormalizePhotoResponse($rawResponse) {
+    public static function denormalizePhotosResponse($rawResponse) {
 
         $decodedResponse = json_decode(trim($rawResponse), true);
 
-        $model = new PhotoResponse();
+        $model = new PhotosResponse();
         $model->setRawResponse($rawResponse);
 
         if (null === $decodedResponse) {
