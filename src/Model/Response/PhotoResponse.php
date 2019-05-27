@@ -48,7 +48,7 @@ class PhotoResponse extends AbstractResponse {
     /**
      * Get the photos.
      *
-     * @return Photos[] Returns the photos.
+     * @return Photo[] Returns the photos.
      */
     public function getPhotos() {
         return $this->photos;
