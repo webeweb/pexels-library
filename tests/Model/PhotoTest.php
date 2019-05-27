@@ -26,8 +26,10 @@ class PhotoTest extends AbstractTestCase {
 
         $obj = new Photo();
 
+        $this->assertNull($obj->getId());
         $this->assertNull($obj->getHeight());
         $this->assertNull($obj->getPhotographer());
+        $this->assertNull($obj->getPhotographerUrl());
         $this->assertNull($obj->getHeight());
         $this->assertNull($obj->getSrc());
         $this->assertNull($obj->getUrl());
@@ -57,6 +59,19 @@ class PhotoTest extends AbstractTestCase {
 
         $obj->setPhotographer("photographer");
         $this->assertEquals("photographer", $obj->getPhotographer());
+    }
+
+    /**
+     * Tests the setPhotographerUrl() method.
+     *
+     * @return void
+     */
+    public function testSetPhotographerUrl() {
+
+        $obj = new Photo();
+
+        $obj->setPhotographerUrl("photographerUrl");
+        $this->assertEquals("photographerUrl", $obj->getPhotographerUrl());
     }
 
     /**

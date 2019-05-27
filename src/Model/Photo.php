@@ -11,6 +11,7 @@
 
 namespace WBW\Library\Pexels\Model;
 
+use WBW\Library\Pexels\Traits\IdTrait;
 use WBW\Library\Pexels\Traits\UrlTrait;
 
 /**
@@ -21,6 +22,7 @@ use WBW\Library\Pexels\Traits\UrlTrait;
  */
 class Photo {
 
+    use IdTrait;
     use UrlTrait;
 
     /**
@@ -36,6 +38,13 @@ class Photo {
      * @var string
      */
     private $photographer;
+
+    /**
+     * Photographer URL.
+     *
+     * @var string
+     */
+    private $photographerUrl;
 
     /**
      * Source.
@@ -77,6 +86,15 @@ class Photo {
     }
 
     /**
+     * Get the photographer URL.
+     *
+     * @return string Returns the photographer URL.
+     */
+    public function getPhotographerUrl() {
+        return $this->photographerUrl;
+    }
+
+    /**
      * Get the source.
      *
      * @return Source Returns the source.
@@ -113,6 +131,17 @@ class Photo {
      */
     public function setPhotographer($photographer) {
         $this->photographer = $photographer;
+        return $this;
+    }
+
+    /**
+     * Set the photographer URL.
+     *
+     * @param string $photographerUrl The photographer URL.
+     * @return Photo Returns this photo.
+     */
+    public function setPhotographerUrl($photographerUrl) {
+        $this->photographerUrl = $photographerUrl;
         return $this;
     }
 
