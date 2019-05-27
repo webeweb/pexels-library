@@ -38,7 +38,7 @@ class ResponseNormalizerTest extends AbstractTestCase {
         $obj = TestResponseNormalizer::denormalizePhoto($arg);
         $this->assertInstanceOf(Photo::class, $obj);
 
-        $this->assertNull($obj->getId());
+        $this->assertEquals(-1, $obj->getId());
         $this->assertEquals(1000, $obj->getHeight());
         $this->assertEquals("Name", $obj->getPhotographer());
         $this->assertNull($obj->getPhotographerUrl());
@@ -73,7 +73,7 @@ class ResponseNormalizerTest extends AbstractTestCase {
      */
     public function testDenormalizePhotosResponseWithBadRawResponse() {
 
-        $obj = TestResponseNormalizer::denormalizePhotoResponse("");
+        $obj = TestResponseNormalizer::denormalizePhotosResponse("");
         $this->assertInstanceOf(PhotosResponse::class, $obj);
 
         $this->assertNull($obj->getNextPage());
