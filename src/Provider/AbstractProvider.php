@@ -11,6 +11,13 @@
 
 namespace WBW\Library\Pexels\Provider;
 
+use Exception;
+use GuzzleHttp\Client;
+use InvalidArgumentException;
+use WBW\Library\Pexels\API\SubstituteRequestInterface;
+use WBW\Library\Pexels\Exception\APIException;
+use WBW\Library\Pexels\Model\AbstractRequest;
+
 /**
  * Abstract provider.
  *
@@ -20,4 +27,104 @@ namespace WBW\Library\Pexels\Provider;
  */
 abstract class AbstractProvider {
 
+    /**
+     * Endpoint path.
+     *
+     * @var string
+     */
+    const ENDPOINT_PATH = "https://api.pexels.com";
+
+    /**
+     * Debug.
+     *
+     * @var bool
+     */
+    private $debug;
+
+    /**
+     * Constructor.
+     */
+    public function __construct() {
+        $this->setDebug(false);
+    }
+
+    /**
+     * Build a resource path.
+     *
+     * @param AbstractRequest $request The request.
+     * @return string Returns the resource path.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     */
+    private function buildResourcePath(AbstractRequest $request) {
+
+        if (false === ($request instanceof SubstituteRequestInterface)) {
+            return $request->getResourcePath();
+        }
+
+        if (null === $request->getSubstituteValue()) {
+            throw new InvalidArgumentException(sprintf("The substitute value %s is missing", $request->getSubstituteName()));
+        }
+
+        return str_replace($request->getSubstituteName(), $request->getSubstituteValue(), $request->getResourcePath());
+    }
+
+    /**
+     * Call the API.
+     *
+     * @param AbstractRequest $request The request.
+     * @param array $queryData The query data.
+     * @return string Returns the raw response.
+     * @throws APIException Throws an API exception if an error occurs.
+     */
+    protected function callAPI(AbstractRequest $request, array $queryData) {
+
+        try {
+
+            $client = new Client([
+                "base_uri"    => self::ENDPOINT_PATH . "/",
+                "debug"       => $this->getDebug(),
+                "headers"     => [
+                    "Accept"        => "application/json",
+                    "User-Agent"    => "webeweb/pexels-library",
+                    "Authorization" => $request->getAuthorization(),
+                ],
+                "synchronous" => true,
+            ]);
+
+            $uri     = substr($this->buildResourcePath($request), 1);
+            $options = [
+                "query" => $queryData,
+            ];
+
+            $response = $client->request("GET", $uri, $options);
+
+            return $response->getBody()->getContents();
+        } catch (InvalidArgumentException $ex) {
+
+            throw $ex;
+        } catch (Exception $ex) {
+
+            throw new APIException("Call Pexels API failed", $ex);
+        }
+    }
+
+    /**
+     * Get the debug.
+     *
+     * @return bool Returns the debug.
+     */
+    public function getDebug() {
+        return $this->debug;
+    }
+
+    /**
+     * Set the debug.
+     *
+     * @param bool $debug The debug.
+     * @return AbstractProvider Returns this provider.
+     */
+    public function setDebug($debug) {
+        $this->debug = $debug;
+        return $this;
+    }
 }
