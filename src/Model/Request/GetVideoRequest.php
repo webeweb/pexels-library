@@ -11,6 +11,7 @@
 
 namespace WBW\Library\Pexels\Model\Request;
 
+use WBW\Library\Pexels\API\SubstituteRequestInterface;
 use WBW\Library\Pexels\Model\AbstractRequest;
 use WBW\Library\Pexels\Traits\IdTrait;
 
@@ -20,7 +21,7 @@ use WBW\Library\Pexels\Traits\IdTrait;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\Pexels\Model\Request
  */
-class GetVideoRequest extends AbstractRequest {
+class GetVideoRequest extends AbstractRequest implements SubstituteRequestInterface {
 
     use IdTrait;
 
@@ -37,7 +38,6 @@ class GetVideoRequest extends AbstractRequest {
     public function getResourcePath() {
         return self::GET_VIDEO_RESOURCE_PATH;
     }
-
 
     /**
      * {@inheritdoc}
