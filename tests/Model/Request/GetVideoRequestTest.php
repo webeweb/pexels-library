@@ -11,6 +11,7 @@
 
 namespace WBW\Library\Pexels\Tests\Model\Request;
 
+use WBW\Library\Pexels\Model\Request\GetPhotoRequest;
 use WBW\Library\Pexels\Model\Request\GetVideoRequest;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 
@@ -34,5 +35,20 @@ class GetVideoRequestTest extends AbstractTestCase {
         $obj = new GetVideoRequest();
 
         $this->assertEquals(GetVideoRequest::GET_VIDEO_RESOURCE_PATH, $obj->getResourcePath());
+        $this->assertNull($obj->getId());
+        $this->assertEquals(":id", $obj->getSubstituteName());
+    }
+
+    /**
+     * Tests the getSubstituteValue() method.
+     *
+     * @return void
+     */
+    public function testGetSubstituteValue() {
+
+        $obj = new GetVideoRequest();
+
+        $obj->setId(1);
+        $this->assertEquals(1, $obj->getSubstituteValue());
     }
 }

@@ -12,6 +12,7 @@
 namespace WBW\Library\Pexels\Model\Request;
 
 use WBW\Library\Pexels\Model\AbstractRequest;
+use WBW\Library\Pexels\Traits\IdTrait;
 
 /**
  * Get video request.
@@ -20,6 +21,8 @@ use WBW\Library\Pexels\Model\AbstractRequest;
  * @package WBW\Library\Pexels\Model\Request
  */
 class GetVideoRequest extends AbstractRequest {
+
+    use IdTrait;
 
     /**
      * Get video resource path.
@@ -33,5 +36,20 @@ class GetVideoRequest extends AbstractRequest {
      */
     public function getResourcePath() {
         return self::GET_VIDEO_RESOURCE_PATH;
+    }
+
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getSubstituteName() {
+        return ":id";
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getSubstituteValue() {
+        return $this->getId();
     }
 }
