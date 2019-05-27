@@ -11,10 +11,6 @@
 
 namespace WBW\Library\Pexels\Model;
 
-use WBW\Library\Pexels\Traits\PageTrait;
-use WBW\Library\Pexels\Traits\PerPageTrait;
-use WBW\Library\Pexels\Traits\UrlTrait;
-
 /**
  * Abstract response.
  *
@@ -23,17 +19,6 @@ use WBW\Library\Pexels\Traits\UrlTrait;
  * @abstract
  */
 abstract class AbstractResponse {
-
-    use PageTrait;
-    use PerPageTrait;
-    use UrlTrait;
-
-    /**
-     * Next page.
-     *
-     * @var string
-     */
-    private $nextPage;
 
     /**
      * Rate limit remaining.
@@ -50,26 +35,10 @@ abstract class AbstractResponse {
     private $rawResponse;
 
     /**
-     * Total results.
-     *
-     * @var int
-     */
-    private $totalResults;
-
-    /**
      * Constructor.
      */
     public function __construct() {
         // NOTHING TO DO.
-    }
-
-    /**
-     * Get the next page.
-     *
-     * @return string Returns the next page.
-     */
-    public function getNextPage() {
-        return $this->nextPage;
     }
 
     /**
@@ -91,26 +60,6 @@ abstract class AbstractResponse {
     }
 
     /**
-     * Get the total results.
-     *
-     * @return int Returns the total results.
-     */
-    public function getTotalResults() {
-        return $this->totalResults;
-    }
-
-    /**
-     * Set the next page.
-     *
-     * @param string $nextPage The next page.
-     * @return AbstractResponse Returns this response.
-     */
-    public function setNextPage($nextPage) {
-        $this->nextPage = $nextPage;
-        return $this;
-    }
-
-    /**
      * Set the rate limit remaining.
      *
      * @param int $rateLimitRemaining The rate limit remaining.
@@ -129,17 +78,6 @@ abstract class AbstractResponse {
      */
     public function setRawResponse($rawResponse) {
         $this->rawResponse = $rawResponse;
-        return $this;
-    }
-
-    /**
-     * Set the total results.
-     *
-     * @param int $totalResults The total result.
-     * @return AbstractResponse Returns this response.
-     */
-    public function setTotalResults($totalResults) {
-        $this->totalResults = $totalResults;
         return $this;
     }
 }

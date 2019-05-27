@@ -31,25 +31,8 @@ class AbstractResponseTest extends AbstractTestCase {
 
         $obj = new TestResponse();
 
-        $this->assertNull($obj->getNextPage());
-        $this->assertNull($obj->getPage());
-        $this->assertNull($obj->getPerPage());
         $this->assertNull($obj->getRawResponse());
-        $this->assertNull($obj->getTotalResults());
-        $this->assertNull($obj->getUrl());
-    }
-
-    /**
-     * Tests the setNextPage() method.
-     *
-     * @return void
-     */
-    public function testSetNextPage() {
-
-        $obj = new TestResponse();
-
-        $obj->setNextPage("nextPage");
-        $this->assertEquals("nextPage", $obj->getNextPage());
+        $this->assertNull($obj->getRateLimitRemaining());
     }
 
     /**
@@ -76,18 +59,5 @@ class AbstractResponseTest extends AbstractTestCase {
 
         $obj->setRawResponse("rawResponse");
         $this->assertEquals("rawResponse", $obj->getRawResponse());
-    }
-
-    /**
-     * Tests the setTotalResults() method.
-     *
-     * @return void
-     */
-    public function testSetTotalResults() {
-
-        $obj = new TestResponse();
-
-        $obj->setTotalResults(236);
-        $this->assertEquals(236, $obj->getTotalResults());
     }
 }
