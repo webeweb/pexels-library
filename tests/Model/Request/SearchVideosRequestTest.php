@@ -34,5 +34,8 @@ class SearchVideosRequestTest extends AbstractTestCase {
         $obj = new SearchVideosRequest();
 
         $this->assertEquals(SearchVideosRequest::SEARCH_VIDEOS_RESOURCE_PATH, $obj->getResourcePath());
+        $this->assertEquals(1, $obj->getPage());
+        $this->assertEquals(15, $obj->getPerPage());
+        $this->assertNull($obj->getQuery());
     }
 }
