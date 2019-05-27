@@ -36,6 +36,13 @@ abstract class AbstractResponse {
     private $nextPage;
 
     /**
+     * Rate limit remaining.
+     *
+     * @var int
+     */
+    private $rateLimitRemaining;
+
+    /**
      * Raw response.
      *
      * @var string
@@ -66,6 +73,15 @@ abstract class AbstractResponse {
     }
 
     /**
+     * Get the rate limit remaining.
+     *
+     * @return int Returns the rate limit remaining.
+     */
+    public function getRateLimitRemaining() {
+        return $this->rateLimitRemaining;
+    }
+
+    /**
      * Get the raw response.
      *
      * @return string Returns the raw response.
@@ -91,6 +107,17 @@ abstract class AbstractResponse {
      */
     public function setNextPage($nextPage) {
         $this->nextPage = $nextPage;
+        return $this;
+    }
+
+    /**
+     * Set the rate limit remaining.
+     *
+     * @param int $rateLimitRemaining The rate limit remaining.
+     * @return AbstractResponse Returns this response.
+     */
+    public function setRateLimitRemaining($rateLimitRemaining) {
+        $this->rateLimitRemaining = $rateLimitRemaining;
         return $this;
     }
 

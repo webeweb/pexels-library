@@ -53,6 +53,19 @@ class AbstractResponseTest extends AbstractTestCase {
     }
 
     /**
+     * Tests the setRateLimitRemaining() method.
+     *
+     * @return void
+     */
+    public function testSetRateLimitRemaining() {
+
+        $obj = new TestResponse();
+
+        $obj->setRateLimitRemaining(199);
+        $this->assertEquals(199, $obj->getRateLimitRemaining());
+    }
+
+    /**
      * Tests the setRawResponse() method.
      *
      * @return void
