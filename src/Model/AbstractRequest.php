@@ -21,26 +21,10 @@ namespace WBW\Library\Pexels\Model;
 abstract class AbstractRequest {
 
     /**
-     * Authorization.
-     *
-     * @var string
-     */
-    private $authorization;
-
-    /**
      * Constructor.
      */
     public function __construct() {
         // NOTHING TO DO.
-    }
-
-    /**
-     * Get the authorization.
-     *
-     * @return string Returns the uathorization.
-     */
-    public function getAuthorization() {
-        return $this->authorization;
     }
 
     /**
@@ -49,15 +33,4 @@ abstract class AbstractRequest {
      * @return string Returns the resource path.
      */
     abstract public function getResourcePath();
-
-    /**
-     * Set the authorization.
-     *
-     * @param string $authorization The authorization.
-     * @return AbstractRequest Returns this request.
-     */
-    public function setAuthorization($authorization) {
-        $this->authorization = $authorization;
-        return $this;
-    }
 }
