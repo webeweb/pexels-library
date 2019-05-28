@@ -1,0 +1,54 @@
+<?php
+
+/*
+ * This file is part of the pexels-library package.
+ *
+ * (c) 2019 WEBEWEB
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace WBW\Library\Pexels\Tests\Model\Response;
+
+use WBW\Library\Pexels\Model\Video;
+use WBW\Library\Pexels\Model\Response\VideoResponse;
+use WBW\Library\Pexels\Tests\AbstractTestCase;
+
+/**
+ * Video response test.
+ *
+ * @author webeweb <https://github.com/webeweb/>
+ * @package WBW\Library\Pexels\Tests\Model\Response
+ */
+class VideoResponseTest extends AbstractTestCase {
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function testConstruct() {
+
+        $obj = new VideoResponse();
+
+        $this->assertNull($obj->getVideo());
+    }
+
+    /**
+     * Tests the setVideo() method.
+     *
+     * @return void
+     */
+    public function testSetVideo() {
+
+        // Set a Video mock.
+        $video = new Video();
+
+        $obj = new VideoResponse();
+
+        $obj->setVideo($video);
+        $this->assertSame($video, $obj->getVideo());
+    }
+
+}
