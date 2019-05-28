@@ -1,5 +1,5 @@
 pexels-library
-===============
+==============
 
 [![Build Status](https://img.shields.io/travis/com/webeweb/pexels-library/master.svg?style=flat-square)](https://travis-ci.com/webeweb/pexels-library)
 [![Coverage Status](https://img.shields.io/coveralls/webeweb/pexels-library/master.svg?style=flat-square)](https://coveralls.io/github/webeweb/pexels-library?branch=master)
@@ -10,6 +10,10 @@ pexels-library
 [![composer.lock](https://img.shields.io/badge/.lock-uncommited-important.svg?style=flat-square)](https://packagist.org/packages/webeweb/pexels-library)
 
 Integrate Pexels API with your projects.
+
+> IMPORTANT NOTICE: This package is still under development. Any changes will be
+> done without prior notice to consumers of this package. Of course this code
+> will become stable at a certain point, but for now, use at your own risk.
 
 ---
 
@@ -25,7 +29,7 @@ Open a command console, enter your project directory and execute the following
 command to download the latest stable version of this package:
 
 ```bash
-$ composer require webeweb/pexels-library "^2.0"
+$ composer require webeweb/pexels-library "^1.0"
 ```
 
 This command requires you to have Composer installed globally, as explained in
@@ -64,3 +68,6 @@ $ vendor/bin/phpunit
 
 `pexels-library` is released under the LGPL License. See the bundled [LICENSE](LICENSE)
 file for details.
+
+Please note that the Pexels API is not free for use, see their
+[API page](https://www.pexels.com/api/documentation/) for details on usage.
