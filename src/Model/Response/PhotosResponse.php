@@ -13,8 +13,11 @@ namespace WBW\Library\Pexels\Model\Response;
 
 use WBW\Library\Pexels\Model\AbstractResponse;
 use WBW\Library\Pexels\Model\Photo;
+use WBW\Library\Pexels\Traits\NextPageTrait;
 use WBW\Library\Pexels\Traits\PageTrait;
 use WBW\Library\Pexels\Traits\PerPageTrait;
+use WBW\Library\Pexels\Traits\PrevPageTrait;
+use WBW\Library\Pexels\Traits\TotalResultsTrait;
 use WBW\Library\Pexels\Traits\UrlTrait;
 
 /**
@@ -25,34 +28,18 @@ use WBW\Library\Pexels\Traits\UrlTrait;
  */
 class PhotosResponse extends AbstractResponse {
 
+    use NextPageTrait;
     use PageTrait;
     use PerPageTrait;
+    use PrevPageTrait;
+    use TotalResultsTrait;
     use UrlTrait;
 
     /**
-     * Next page.
-     *
-     * @var string
+     * Constructor.
      */
-    private $nextPage;
-
-    /**
-     * Photos.
-     *
-     * @var Photo[]
-     */
-    private $photos;
-
-    /**
-     * Total results.
-     *
-     * @var int
-     */
-    private $totalResults;
-
     public function __construct() {
         parent::__construct();
-        $this->setPhotos([]);
     }
 
     /**
@@ -62,17 +49,7 @@ class PhotosResponse extends AbstractResponse {
      * @return PhotosResponse Returns this photo response.
      */
     public function addPhoto(Photo $photo) {
-        $this->photos[] = $photo;
-        return $this;
-    }
-
-    /**
-     * Get the next page.
-     *
-     * @return string Returns the next page.
-     */
-    public function getNextPage() {
-        return $this->nextPage;
+        return $this->addMedia($photo);
     }
 
     /**
@@ -81,48 +58,6 @@ class PhotosResponse extends AbstractResponse {
      * @return Photo[] Returns the photos.
      */
     public function getPhotos() {
-        return $this->photos;
-    }
-
-    /**
-     * Get the total results.
-     *
-     * @return int Returns the total results.
-     */
-    public function getTotalResults() {
-        return $this->totalResults;
-    }
-
-    /**
-     * Set the next page.
-     *
-     * @param string $nextPage The next page.
-     * @return AbstractResponse Returns this response.
-     */
-    public function setNextPage($nextPage) {
-        $this->nextPage = $nextPage;
-        return $this;
-    }
-
-    /**
-     * Set the photos.
-     *
-     * @param Photo[] $photos The photo.
-     * @return PhotosResponse Returns this photo response.
-     */
-    protected function setPhotos(array $photos) {
-        $this->photos = $photos;
-        return $this;
-    }
-
-    /**
-     * Set the total results.
-     *
-     * @param int $totalResults The total result.
-     * @return AbstractResponse Returns this response.
-     */
-    public function setTotalResults($totalResults) {
-        $this->totalResults = $totalResults;
-        return $this;
+        return $this->getMedias();
     }
 }
