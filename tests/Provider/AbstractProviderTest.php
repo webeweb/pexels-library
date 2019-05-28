@@ -33,7 +33,24 @@ class AbstractProviderTest extends AbstractTestCase {
 
         $obj = new TestProvider();
 
+        $this->assertNull($obj->getAuthorization());
         $this->assertFalse($obj->getDebug());
+        $this->assertNull($obj->getLimit());
+        $this->assertNull($obj->getRemaining());
+        $this->assertNull($obj->getReset());
+    }
+
+    /**
+     * Tests the setAuthorization() method.
+     *
+     * @retunr void.
+     */
+    public function testSetAuthorization() {
+
+        $obj = new TestProvider();
+
+        $obj->setAuthorization("authorization");
+        $this->assertEquals("authorization", $obj->getAuthorization());
     }
 
     /**

@@ -11,12 +11,14 @@
 
 namespace WBW\Library\Pexels\Provider;
 
+use DateTime;
 use Exception;
 use GuzzleHttp\Client;
 use InvalidArgumentException;
 use WBW\Library\Pexels\API\SubstituteRequestInterface;
 use WBW\Library\Pexels\Exception\APIException;
 use WBW\Library\Pexels\Model\AbstractRequest;
+use WBW\Library\Pexels\Traits\RateLimitTrait;
 
 /**
  * Abstract provider.
@@ -27,12 +29,21 @@ use WBW\Library\Pexels\Model\AbstractRequest;
  */
 abstract class AbstractProvider {
 
+    use RateLimitTrait;
+
     /**
      * Endpoint path.
      *
      * @var string
      */
     const ENDPOINT_PATH = "https://api.pexels.com";
+
+    /**
+     * Authorization.
+     *
+     * @var string
+     */
+    private $authorization;
 
     /**
      * Debug.
@@ -86,7 +97,7 @@ abstract class AbstractProvider {
                 "headers"     => [
                     "Accept"        => "application/json",
                     "User-Agent"    => "webeweb/pexels-library",
-                    "Authorization" => $request->getAuthorization(),
+                    "Authorization" => $this->getAuthorization(),
                 ],
                 "synchronous" => true,
             ]);
@@ -97,6 +108,10 @@ abstract class AbstractProvider {
             ];
 
             $response = $client->request("GET", $uri, $options);
+
+            $this->setLimit(intval($response->getHeaderLine("X-Ratelimit-Limit")));
+            $this->setRemaining(intval($response->getHeaderLine("X-Ratelimit-Remaining")));
+            $this->setReset(new DateTime("@" . $response->getHeaderLine("X-Ratelimit-Reset")));
 
             return $response->getBody()->getContents();
         } catch (InvalidArgumentException $ex) {
@@ -109,12 +124,32 @@ abstract class AbstractProvider {
     }
 
     /**
+     * Get the authorization.
+     *
+     * @return string Returns the authorization.
+     */
+    public function getAuthorization() {
+        return $this->authorization;
+    }
+
+    /**
      * Get the debug.
      *
      * @return bool Returns the debug.
      */
     public function getDebug() {
         return $this->debug;
+    }
+
+    /**
+     * Set the authorization.
+     *
+     * @param string $authorization The authorization.
+     * @return AbstractProvider Returns this provider.
+     */
+    public function setAuthorization($authorization) {
+        $this->authorization = $authorization;
+        return $this;
     }
 
     /**
