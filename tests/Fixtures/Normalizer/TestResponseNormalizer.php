@@ -24,13 +24,35 @@ class TestResponseNormalizer extends ResponseNormalizer {
     /**
      * {@inheritDoc}
      */
-    public static function denormalizeSource(array $response) {
-        return parent::denormalizeSource($response);
+    public static function denormalizePhoto(array $response) {
+        return parent::denormalizePhoto($response);
     }
+
     /**
      * {@inheritDoc}
      */
-    public static function denormalizePhoto(array $response) {
-        return parent::denormalizePhoto($response);
+    public static function denormalizeSource(array $response) {
+        return parent::denormalizeSource($response);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public static function denormalizeVideo(array $response) {
+        return parent::denormalizeVideo($response);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public static function denormalizeVideoFile(array $response) {
+        return parent::denormalizeVideoFile($response);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public static function denormalizeVideoPicture(array $response) {
+        return parent::denormalizeVideoPicture($response);
     }
 }
