@@ -11,26 +11,13 @@
 
 namespace WBW\Library\Pexels\Model;
 
-use WBW\Library\Pexels\Traits\IdTrait;
-use WBW\Library\Pexels\Traits\UrlTrait;
-
 /**
  * Photo.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\Pexels\Model
  */
-class Photo {
-
-    use IdTrait;
-    use UrlTrait;
-
-    /**
-     * Height.
-     *
-     * @var int
-     */
-    private $height;
+class Photo extends AbstractMedia {
 
     /**
      * Photographer.
@@ -52,29 +39,6 @@ class Photo {
      * @var Source
      */
     private $src;
-
-    /**
-     * Width.
-     *
-     * @var int
-     */
-    private $width;
-
-    /**
-     * Constructor.
-     */
-    public function __construct() {
-        // NOTHING TO DO.
-    }
-
-    /**
-     * Get the height.
-     *
-     * @return int Returns the height.
-     */
-    public function getHeight() {
-        return $this->height;
-    }
 
     /**
      * Get the photographer.
@@ -101,26 +65,6 @@ class Photo {
      */
     public function getSrc() {
         return $this->src;
-    }
-
-    /**
-     * Get the width.
-     *
-     * @return int Returns the width.
-     */
-    public function getWidth() {
-        return $this->width;
-    }
-
-    /**
-     * Set the height.
-     *
-     * @param int $height The height.
-     * @return Photo Returns this photo.
-     */
-    public function setHeight($height) {
-        $this->height = $height;
-        return $this;
     }
 
     /**
@@ -156,14 +100,4 @@ class Photo {
         return $this;
     }
 
-    /**
-     * Set the width.
-     *
-     * @param int $width The width.
-     * @return Photo Returns this photo.
-     */
-    public function setWidth($width) {
-        $this->width = $width;
-        return $this;
-    }
 }
