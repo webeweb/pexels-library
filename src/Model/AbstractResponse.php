@@ -11,6 +11,8 @@
 
 namespace WBW\Library\Pexels\Model;
 
+use WBW\Library\Pexels\Traits\RateLimitTrait;
+
 /**
  * Abstract response.
  *
@@ -20,12 +22,14 @@ namespace WBW\Library\Pexels\Model;
  */
 abstract class AbstractResponse {
 
+    use RateLimitTrait;
+
     /**
-     * Rate limit remaining.
+     * Medias.
      *
-     * @var int
+     * @var AbstractMedia[]
      */
-    private $rateLimitRemaining;
+    private $medias;
 
     /**
      * Raw response.
@@ -38,16 +42,27 @@ abstract class AbstractResponse {
      * Constructor.
      */
     public function __construct() {
-        // NOTHING TO DO.
+        $this->setMedias([]);
     }
 
     /**
-     * Get the rate limit remaining.
+     * Add a media.
      *
-     * @return int Returns the rate limit remaining.
+     * @param AbstractMedia $media The media.
+     * @return AbstractResponse Returns this response.
      */
-    public function getRateLimitRemaining() {
-        return $this->rateLimitRemaining;
+    protected function addMedia(AbstractMedia $media) {
+        $this->medias[] = $media;
+        return $this;
+    }
+
+    /**
+     * Get the medias.
+     *
+     * @return AbstractMedia[] Returns the medias.
+     */
+    protected function getMedias() {
+        return $this->medias;
     }
 
     /**
@@ -60,13 +75,13 @@ abstract class AbstractResponse {
     }
 
     /**
-     * Set the rate limit remaining.
+     * Set the medias.
      *
-     * @param int $rateLimitRemaining The rate limit remaining.
+     * @param AbstractMedia[] $medias The medias.
      * @return AbstractResponse Returns this response.
      */
-    public function setRateLimitRemaining($rateLimitRemaining) {
-        $this->rateLimitRemaining = $rateLimitRemaining;
+    protected function setMedias(array $medias) {
+        $this->medias = $medias;
         return $this;
     }
 
