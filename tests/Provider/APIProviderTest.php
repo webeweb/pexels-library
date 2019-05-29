@@ -12,6 +12,7 @@
 namespace WBW\Library\Pexels\Tests\Provider;
 
 use Exception;
+use InvalidArgumentException;
 use WBW\Library\Pexels\Exception\APIException;
 use WBW\Library\Pexels\Model\Request\CuratedPhotosRequest;
 use WBW\Library\Pexels\Model\Request\GetPhotoRequest;
@@ -25,6 +26,7 @@ use WBW\Library\Pexels\Model\Response\VideoResponse;
 use WBW\Library\Pexels\Model\Response\VideosResponse;
 use WBW\Library\Pexels\Provider\APIProvider;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
+use WBW\Library\Pexels\Tests\Fixtures\Provider\TestAPIProvider;
 
 /**
  * API provider test.
@@ -49,6 +51,24 @@ class APIProviderTest extends AbstractTestCase {
 
         // Set an Authorization mock.
         $this->authorization = "// Your API Key //";
+    }
+
+    /**
+     * Tests the beforeReturnResponse() method.
+     *
+     * @return void
+     */
+    public function testBeforeReturnResponse() {
+
+        // Set a Photos response mock.
+        $photosResponse = new PhotosResponse();
+
+        $obj = new TestAPIProvider();
+
+        $obj->beforeReturnResponse($photosResponse);
+        $this->assertSame($obj->getLimit(), $photosResponse->getLimit());
+        $this->assertSame($obj->getRemaining(), $photosResponse->getRemaining());
+        $this->assertSame($obj->getReset(), $photosResponse->getReset());
     }
 
     /**
@@ -99,6 +119,30 @@ class APIProviderTest extends AbstractTestCase {
 
             $this->assertInstanceOf(APIException::class, $ex);
             $this->assertEquals(403, $ex->getPrevious()->getCode());
+        }
+    }
+
+    /**
+     * Tests the getPhoto() method.
+     *
+     * @throws Exception Throws an exception if an error occurs.
+     */
+    public function testGetPhotoWithInvalidArgumentException() {
+
+        // Set a Get photos request mock.
+        $getPhotoRequest = new GetPhotoRequest();
+        // $getPhotoRequest->setId(1181292);
+
+        $obj = new APIProvider();
+        $obj->setAuthorization($this->authorization);
+
+        try {
+
+            $obj->getPhoto($getPhotoRequest);
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
+            $this->assertEquals("The substitute value :id is missing", $ex->getMessage());
         }
     }
 
