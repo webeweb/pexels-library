@@ -20,6 +20,7 @@ use WBW\Library\Pexels\Model\Source;
 use WBW\Library\Pexels\Model\Video;
 use WBW\Library\Pexels\Model\VideoFile;
 use WBW\Library\Pexels\Model\VideoPicture;
+use WBW\Library\Pexels\Normalizer\ResponseNormalizer;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 use WBW\Library\Pexels\Tests\Fixtures\Normalizer\TestResponseNormalizer;
 use WBW\Library\Pexels\Tests\Fixtures\TestFixtures;
@@ -62,7 +63,7 @@ class ResponseNormalizerTest extends AbstractTestCase {
 
         $arg = json_decode(TestFixtures::SAMPLE_PHOTOS_RESPONSE, true)["photos"][0];
 
-        $obj = TestResponseNormalizer::denormalizePhotoResponse(json_encode($arg));
+        $obj = ResponseNormalizer::denormalizePhotoResponse(json_encode($arg));
         $this->assertInstanceOf(PhotoResponse::class, $obj);
 
         $this->assertEquals(1181292, $obj->getPhoto()->getId());
@@ -81,7 +82,7 @@ class ResponseNormalizerTest extends AbstractTestCase {
      */
     public function testDenormalizePhotoResponseWithBadRawResponse() {
 
-        $obj = TestResponseNormalizer::denormalizePhotoResponse("");
+        $obj = ResponseNormalizer::denormalizePhotoResponse("");
         $this->assertInstanceOf(PhotoResponse::class, $obj);
 
         $this->assertNull($obj->getPhoto());
@@ -94,7 +95,7 @@ class ResponseNormalizerTest extends AbstractTestCase {
      */
     public function testDenormalizePhotosResponse() {
 
-        $obj = TestResponseNormalizer::denormalizePhotosResponse(TestFixtures::SAMPLE_PHOTOS_RESPONSE);
+        $obj = ResponseNormalizer::denormalizePhotosResponse(TestFixtures::SAMPLE_PHOTOS_RESPONSE);
         $this->assertInstanceOf(PhotosResponse::class, $obj);
 
         $this->assertNull($obj->getNextPage());
@@ -113,7 +114,7 @@ class ResponseNormalizerTest extends AbstractTestCase {
      */
     public function testDenormalizePhotosResponseWithBadRawResponse() {
 
-        $obj = TestResponseNormalizer::denormalizePhotosResponse("");
+        $obj = ResponseNormalizer::denormalizePhotosResponse("");
         $this->assertInstanceOf(PhotosResponse::class, $obj);
 
         $this->assertNull($obj->getNextPage());
@@ -216,7 +217,7 @@ class ResponseNormalizerTest extends AbstractTestCase {
 
         $arg = json_decode(TestFixtures::SAMPLE_VIDEOS_RESPONSE, true)["videos"][0];
 
-        $obj = TestResponseNormalizer::denormalizeVideoResponse(json_encode($arg));
+        $obj = ResponseNormalizer::denormalizeVideoResponse(json_encode($arg));
         $this->assertInstanceOf(VideoResponse::class, $obj);
 
         $this->assertEquals(1972034, $obj->getVideo()->getId());
@@ -237,7 +238,7 @@ class ResponseNormalizerTest extends AbstractTestCase {
      */
     public function testDenormalizeVideoResponseWithBadRewResponse() {
 
-        $obj = TestResponseNormalizer::denormalizeVideoResponse("");
+        $obj = ResponseNormalizer::denormalizeVideoResponse("");
         $this->assertInstanceOf(VideoResponse::class, $obj);
 
         $this->assertNull($obj->getVideo());
@@ -250,7 +251,7 @@ class ResponseNormalizerTest extends AbstractTestCase {
      */
     public function testDenormalizeVideosResponse() {
 
-        $obj = TestResponseNormalizer::denormalizeVideosResponse(TestFixtures::SAMPLE_VIDEOS_RESPONSE);
+        $obj = ResponseNormalizer::denormalizeVideosResponse(TestFixtures::SAMPLE_VIDEOS_RESPONSE);
         $this->assertInstanceOf(VideosResponse::class, $obj);
 
         $this->assertNull($obj->getNextPage());
@@ -269,7 +270,7 @@ class ResponseNormalizerTest extends AbstractTestCase {
      */
     public function testDenormalizeVideosResponseWithBadRawResponse() {
 
-        $obj = TestResponseNormalizer::denormalizeVideosResponse("");
+        $obj = ResponseNormalizer::denormalizeVideosResponse("");
         $this->assertInstanceOf(VideosResponse::class, $obj);
 
         $this->assertNull($obj->getNextPage());
