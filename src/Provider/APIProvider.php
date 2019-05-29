@@ -63,9 +63,7 @@ class APIProvider extends AbstractProvider {
 
         $rawResponse = $this->callAPI($curatedPhotosRequest, $queryData);
 
-        $response = ResponseNormalizer::denormalizePhotosResponse($rawResponse);
-
-        return $this->beforeReturnResponse($response);
+        return $this->beforeReturnResponse(ResponseNormalizer::denormalizePhotosResponse($rawResponse));
     }
 
     /**
@@ -79,9 +77,7 @@ class APIProvider extends AbstractProvider {
 
         $rawResponse = $this->callAPI($getPhotoRequest, []);
 
-        $response = ResponseNormalizer::denormalizePhotoResponse($rawResponse);
-
-        return $this->beforeReturnResponse($response);
+        return $this->beforeReturnResponse(ResponseNormalizer::denormalizePhotoResponse($rawResponse));
     }
 
     /**
@@ -95,9 +91,7 @@ class APIProvider extends AbstractProvider {
 
         $rawResponse = $this->callAPI($getVideoRequest, []);
 
-        $response = ResponseNormalizer::denormalizeVideoResponse($rawResponse);
-
-        return $this->beforeReturnResponse($response);
+        return $this->beforeReturnResponse(ResponseNormalizer::denormalizeVideoResponse($rawResponse));
     }
 
     /**
@@ -113,9 +107,7 @@ class APIProvider extends AbstractProvider {
 
         $rawResponse = $this->callAPI($popularVideosRequest, $queryData);
 
-        $response = ResponseNormalizer::denormalizeVideosResponse($rawResponse);
-
-        return $this->beforeReturnResponse($response);
+        return $this->beforeReturnResponse(ResponseNormalizer::denormalizeVideosResponse($rawResponse));
     }
 
     /**
@@ -132,9 +124,7 @@ class APIProvider extends AbstractProvider {
 
         $rawResponse = $this->callAPI($searchPhotosRequest, $queryData);
 
-        $response = ResponseNormalizer::denormalizePhotosResponse($rawResponse);
-
-        return $this->beforeReturnResponse($response);
+        return $this->beforeReturnResponse(ResponseNormalizer::denormalizePhotosResponse($rawResponse));
     }
 
     /**
@@ -151,8 +141,6 @@ class APIProvider extends AbstractProvider {
 
         $rawResponse = $this->callAPI($searchVideosRequest, $queryData);
 
-        $response = ResponseNormalizer::denormalizeVideosResponse($rawResponse);
-
-        return $this->beforeReturnResponse($response);
+        return $this->beforeReturnResponse(ResponseNormalizer::denormalizeVideosResponse($rawResponse));
     }
 }
