@@ -47,7 +47,7 @@ class PopularVideosRequest extends AbstractRequest {
     public function __construct() {
         parent::__construct();
         $this->setPage(1);
-        $this->setPerPage(15);
+        $this->setPerPage(self::PER_PAGE_DEFAULT);
     }
 
     /**

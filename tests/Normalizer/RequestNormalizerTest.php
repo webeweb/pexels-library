@@ -37,10 +37,12 @@ class RequestNormalizerTest extends AbstractTestCase {
 
         // Set a Curated photos request mock.
         $curatedPhotosRequest = new CuratedPhotosRequest();
+        $curatedPhotosRequest->setPerPage(80);
+        $curatedPhotosRequest->setPage(2);
 
         $res = RequestNormalizer::normalizeCuratedPhotosRequest($curatedPhotosRequest);
-        $this->assertEquals(15, $res["per_page"]);
-        $this->assertEquals(1, $res["page"]);
+        $this->assertEquals(80, $res["per_page"]);
+        $this->assertEquals(2, $res["page"]);
     }
 
     /**
@@ -52,14 +54,16 @@ class RequestNormalizerTest extends AbstractTestCase {
 
         // Set a Popular videos request mock.
         $popularVideosRequest = new PopularVideosRequest();
+        $popularVideosRequest->setPerPage(80);
+        $popularVideosRequest->setPage(2);
         $popularVideosRequest->setMinWidth(1280);
         $popularVideosRequest->setMaxWidth(1920);
         $popularVideosRequest->setMinDuration(1);
         $popularVideosRequest->setMaxDuration(60);
 
         $res = RequestNormalizer::normalizePopularVideosRequest($popularVideosRequest);
-        $this->assertEquals(15, $res["per_page"]);
-        $this->assertEquals(1, $res["page"]);
+        $this->assertEquals(80, $res["per_page"]);
+        $this->assertEquals(2, $res["page"]);
         $this->assertEquals(1280, $res["min_width"]);
         $this->assertEquals(1920, $res["max_width"]);
         $this->assertEquals(1, $res["min_duration"]);
@@ -76,11 +80,13 @@ class RequestNormalizerTest extends AbstractTestCase {
         // Set a Search photos request mock.
         $searchPhotosRequest = new SearchPhotosRequest();
         $searchPhotosRequest->setQuery("github");
+        $searchPhotosRequest->setPerPage(80);
+        $searchPhotosRequest->setPage(2);
 
         $res = RequestNormalizer::normalizeSearchPhotosRequest($searchPhotosRequest);
         $this->assertEquals("github", $res["query"]);
-        $this->assertEquals(15, $res["per_page"]);
-        $this->assertEquals(1, $res["page"]);
+        $this->assertEquals(80, $res["per_page"]);
+        $this->assertEquals(2, $res["page"]);
     }
 
     /**
@@ -113,6 +119,8 @@ class RequestNormalizerTest extends AbstractTestCase {
         // Set a Search videos request mock.
         $searchVideosRequest = new SearchVideosRequest();
         $searchVideosRequest->setQuery("github");
+        $searchVideosRequest->setPerPage(80);
+        $searchVideosRequest->setPage(2);
         $searchVideosRequest->setMinWidth(1280);
         $searchVideosRequest->setMaxWidth(1920);
         $searchVideosRequest->setMinDuration(1);
@@ -120,8 +128,8 @@ class RequestNormalizerTest extends AbstractTestCase {
 
         $res = RequestNormalizer::normalizeSearchVideosRequest($searchVideosRequest);
         $this->assertEquals("github", $res["query"]);
-        $this->assertEquals(15, $res["per_page"]);
-        $this->assertEquals(1, $res["page"]);
+        $this->assertEquals(80, $res["per_page"]);
+        $this->assertEquals(2, $res["page"]);
         $this->assertEquals(1280, $res["min_width"]);
         $this->assertEquals(1920, $res["max_width"]);
         $this->assertEquals(1, $res["min_duration"]);

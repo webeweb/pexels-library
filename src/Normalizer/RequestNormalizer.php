@@ -36,8 +36,8 @@ class RequestNormalizer {
 
         $parameters = [];
 
-        ArrayHelper::set($parameters, "per_page", $request->getPerPage(), [null]);
-        ArrayHelper::set($parameters, "page", $request->getPage(), [null]);
+        ArrayHelper::set($parameters, "per_page", $request->getPerPage(), [null, CuratedPhotosRequest::PER_PAGE_DEFAULT]);
+        ArrayHelper::set($parameters, "page", $request->getPage(), [null, 1]);
 
         return $parameters;
     }
@@ -52,8 +52,8 @@ class RequestNormalizer {
 
         $parameters = [];
 
-        ArrayHelper::set($parameters, "per_page", $request->getPerPage(), [null]);
-        ArrayHelper::set($parameters, "page", $request->getPage(), [null]);
+        ArrayHelper::set($parameters, "per_page", $request->getPerPage(), [null, PopularVideosRequest::PER_PAGE_DEFAULT]);
+        ArrayHelper::set($parameters, "page", $request->getPage(), [null, 1]);
         ArrayHelper::set($parameters, "min_width", $request->getMinWidth(), [null]);
         ArrayHelper::set($parameters, "max_width", $request->getMaxWidth(), [null]);
         ArrayHelper::set($parameters, "min_duration", $request->getMinDuration(), [null]);
@@ -78,8 +78,8 @@ class RequestNormalizer {
         }
 
         ArrayHelper::set($parameters, "query", $request->getQuery());
-        ArrayHelper::set($parameters, "per_page", $request->getPerPage(), [null]);
-        ArrayHelper::set($parameters, "page", $request->getPage(), [null]);
+        ArrayHelper::set($parameters, "per_page", $request->getPerPage(), [null, SearchPhotosRequest::PER_PAGE_DEFAULT]);
+        ArrayHelper::set($parameters, "page", $request->getPage(), [null], 1);
 
         return $parameters;
     }
@@ -100,8 +100,8 @@ class RequestNormalizer {
         }
 
         ArrayHelper::set($parameters, "query", $request->getQuery());
-        ArrayHelper::set($parameters, "per_page", $request->getPerPage(), [null]);
-        ArrayHelper::set($parameters, "page", $request->getPage(), [null]);
+        ArrayHelper::set($parameters, "per_page", $request->getPerPage(), [null, SearchVideosRequest::PER_PAGE_DEFAULT]);
+        ArrayHelper::set($parameters, "page", $request->getPage(), [null, 1]);
         ArrayHelper::set($parameters, "min_width", $request->getMinWidth(), [null]);
         ArrayHelper::set($parameters, "max_width", $request->getMaxWidth(), [null]);
         ArrayHelper::set($parameters, "min_duration", $request->getMinDuration(), [null]);

@@ -11,6 +11,8 @@
 
 namespace WBW\Library\Pexels\Model;
 
+use WBW\Library\Pexels\API\RequestInterface;
+
 /**
  * Abstract request.
  *
@@ -18,7 +20,7 @@ namespace WBW\Library\Pexels\Model;
  * @package WBW\Library\Pexels\Model
  * @abstract
  */
-abstract class AbstractRequest {
+abstract class AbstractRequest implements RequestInterface {
 
     /**
      * Constructor.
