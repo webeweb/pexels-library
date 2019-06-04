@@ -11,6 +11,7 @@
 
 namespace WBW\Library\Pexels\Model\Response;
 
+use WBW\Library\Pexels\API\PaginateResponseInterface;
 use WBW\Library\Pexels\Model\AbstractResponse;
 use WBW\Library\Pexels\Model\Photo;
 use WBW\Library\Pexels\Traits\NextPageTrait;
@@ -26,7 +27,7 @@ use WBW\Library\Pexels\Traits\UrlTrait;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\Pexels\Model\Response
  */
-class PhotosResponse extends AbstractResponse {
+class PhotosResponse extends AbstractResponse implements PaginateResponseInterface {
 
     use NextPageTrait;
     use PageTrait;
