@@ -110,7 +110,7 @@ class APIProviderTest extends AbstractTestCase {
 
         try {
 
-            $res = $obj->curatedPhotos($curatedPhotosRequest);
+            $obj->curatedPhotos($curatedPhotosRequest);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
