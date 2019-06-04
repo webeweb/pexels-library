@@ -49,8 +49,8 @@ class APIProviderTest extends AbstractTestCase {
     protected function setUp() {
         parent::setUp();
 
-        // Set an Authorization mock.
-        $this->authorization = "// Your API Key //";
+        // Set an authorization mock.
+        $this->authorization = "YOUR_API_KEY";
     }
 
     /**
@@ -173,6 +173,58 @@ class APIProviderTest extends AbstractTestCase {
     }
 
     /**
+     * Tests the nextPage() method.
+     *
+     * @return void.
+     */
+    public function testNextPageWithPhotosResponse() {
+
+        // Set a Search photos request mock.
+        $searchPhotosRequest = new SearchPhotosRequest();
+        $searchPhotosRequest->setQuery("landscape");
+
+        $obj = new APIProvider();
+        $obj->setAuthorization($this->authorization);
+
+        try {
+
+            $res = $obj->nextPage($obj->searchPhotos($searchPhotosRequest));
+
+            $this->assertInstanceOf(PhotosResponse::class, $res);
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(APIException::class, $ex);
+            $this->assertEquals(403, $ex->getPrevious()->getCode());
+        }
+    }
+
+    /**
+     * Tests the nextPage() method.
+     *
+     * @return void.
+     */
+    public function testNextPageWithVideosResponse() {
+
+        // Set a Search videos request mock.
+        $searchVideosRequest = new SearchVideosRequest();
+        $searchVideosRequest->setQuery("landscape");
+
+        $obj = new APIProvider();
+        $obj->setAuthorization($this->authorization);
+
+        try {
+
+            $res = $obj->nextPage($obj->searchVideos($searchVideosRequest));
+
+            $this->assertInstanceOf(VideosResponse::class, $res);
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(APIException::class, $ex);
+            $this->assertEquals(403, $ex->getPrevious()->getCode());
+        }
+    }
+
+    /**
      * Tests the popularVideos() method.
      *
      * @throws Exception Throws an exception if an error occurs.
@@ -188,6 +240,60 @@ class APIProviderTest extends AbstractTestCase {
         try {
 
             $res = $obj->popularVideos($popularVideosRequest);
+
+            $this->assertInstanceOf(VideosResponse::class, $res);
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(APIException::class, $ex);
+            $this->assertEquals(403, $ex->getPrevious()->getCode());
+        }
+    }
+
+    /**
+     * Tests the prevPage() method.
+     *
+     * @return void.
+     */
+    public function testPrevPageWithPhotosResponse() {
+
+        // Set a Search photos request mock.
+        $searchPhotosRequest = new SearchPhotosRequest();
+        $searchPhotosRequest->setQuery("landscape");
+        $searchPhotosRequest->setPage(2);
+
+        $obj = new APIProvider();
+        $obj->setAuthorization($this->authorization);
+
+        try {
+
+            $res = $obj->prevPage($obj->searchPhotos($searchPhotosRequest));
+
+            $this->assertInstanceOf(PhotosResponse::class, $res);
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(APIException::class, $ex);
+            $this->assertEquals(403, $ex->getPrevious()->getCode());
+        }
+    }
+
+    /**
+     * Tests the prevPage() method.
+     *
+     * @return void.
+     */
+    public function testPrevPageWithVideosResponse() {
+
+        // Set a Search videos request mock.
+        $searchVideosRequest = new SearchVideosRequest();
+        $searchVideosRequest->setQuery("landscape");
+        $searchVideosRequest->setPage(2);
+
+        $obj = new APIProvider();
+        $obj->setAuthorization($this->authorization);
+
+        try {
+
+            $res = $obj->prevPage($obj->searchVideos($searchVideosRequest));
 
             $this->assertInstanceOf(VideosResponse::class, $res);
         } catch (Exception $ex) {

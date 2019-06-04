@@ -15,6 +15,7 @@ use DateTime;
 use Exception;
 use GuzzleHttp\Client;
 use InvalidArgumentException;
+use WBW\Library\Pexels\API\PaginateResponseInterface;
 use WBW\Library\Pexels\API\SubstituteRequestInterface;
 use WBW\Library\Pexels\Exception\APIException;
 use WBW\Library\Pexels\Model\AbstractRequest;
@@ -82,17 +83,21 @@ abstract class AbstractProvider {
     /**
      * Call the API.
      *
-     * @param AbstractRequest $request The request.
+     * @param string $uri The URI.
      * @param array $queryData The query data.
      * @return string Returns the raw response.
      * @throws APIException Throws an API exception if an error occurs.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    protected function callAPI(AbstractRequest $request, array $queryData) {
+    private function callAPI($uri, array $queryData) {
+
+        if (null === $this->getAuthorization()) {
+            throw new InvalidArgumentException("The mandatory parameter \"authorization\" is missing");
+        }
 
         try {
 
             $client = new Client([
-                "base_uri"    => self::ENDPOINT_PATH . "/",
                 "debug"       => $this->getDebug(),
                 "headers"     => [
                     "Accept"        => "application/json",
@@ -102,10 +107,7 @@ abstract class AbstractProvider {
                 "synchronous" => true,
             ]);
 
-            $uri     = substr($this->buildResourcePath($request), 1);
-            $options = [
-                "query" => $queryData,
-            ];
+            $options = 0 < count($queryData) ? ["query" => $queryData] : [];
 
             $response = $client->request("GET", $uri, $options);
 
@@ -114,12 +116,56 @@ abstract class AbstractProvider {
             $this->setReset(new DateTime("@" . $response->getHeaderLine("X-Ratelimit-Reset")));
 
             return $response->getBody()->getContents();
-        } catch (InvalidArgumentException $ex) {
-
-            throw $ex;
         } catch (Exception $ex) {
 
             throw new APIException("Call Pexels API failed", $ex);
+        }
+    }
+
+    /**
+     * Call the API.
+     *
+     * @param AbstractRequest $request The request.
+     * @param array $queryData The query data.
+     * @return string Returns the raw response.
+     * @throws APIException Throws an API exception if an error occurs.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     */
+    protected function callAPIWithRequest(AbstractRequest $request, array $queryData) {
+
+        try {
+
+            $uri = self::ENDPOINT_PATH . $this->buildResourcePath($request);
+
+            return $this->callAPI($uri, $queryData);
+        } catch (InvalidArgumentException $ex) {
+
+            throw $ex;
+        }
+    }
+
+    /**
+     * Call the API.
+     *
+     * @param PaginateResponseInterface $response The request.
+     * @param bool $nextPage Next page ?.
+     * @return string Returns the raw response.
+     * @throws APIException Throws an API exception if an error occurs.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     */
+    protected function callAPIWithResponse(PaginateResponseInterface $response, $nextPage) {
+
+        try {
+
+            $uri = false === $nextPage ? $response->getPrevPage() : $response->getNextPage();
+            if (null === $uri) {
+                return "";
+            }
+
+            return $this->callAPI($uri, []);
+        } catch (InvalidArgumentException $ex) {
+
+            throw $ex;
         }
     }
 
