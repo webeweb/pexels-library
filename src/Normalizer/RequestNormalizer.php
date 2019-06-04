@@ -79,7 +79,7 @@ class RequestNormalizer {
 
         ArrayHelper::set($parameters, "query", $request->getQuery());
         ArrayHelper::set($parameters, "per_page", $request->getPerPage(), [null, SearchPhotosRequest::PER_PAGE_DEFAULT]);
-        ArrayHelper::set($parameters, "page", $request->getPage(), [null], 1);
+        ArrayHelper::set($parameters, "page", $request->getPage(), [null, 1]);
 
         return $parameters;
     }
