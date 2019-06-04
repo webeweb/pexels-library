@@ -97,6 +97,28 @@ class APIProviderTest extends AbstractTestCase {
     }
 
     /**
+     * Tests the curatedPhotos() method.
+     *
+     * @throws Exception Throws an exception if an error occurs.
+     */
+    public function testCuratedPhotosWithInvalidArgumentException() {
+
+        // Set a Curated photos request mock.
+        $curatedPhotosRequest = new CuratedPhotosRequest();
+
+        $obj = new APIProvider();
+
+        try {
+
+            $res = $obj->curatedPhotos($curatedPhotosRequest);
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
+            $this->assertEquals("The mandatory parameter \"authorization\" is missing", $ex->getMessage());
+        }
+    }
+
+    /**
      * Tests the getPhoto() method.
      *
      * @throws Exception Throws an exception if an error occurs.
