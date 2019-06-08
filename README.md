@@ -66,7 +66,7 @@ $ vendor/bin/phpunit
 
 ## License
 
-`pexels-library` is released under the LGPL License. See the bundled [LICENSE](LICENSE)
+`pexels-library` is released under the MIT License. See the bundled [LICENSE](LICENSE)
 file for details.
 
 Please note that the Pexels API is not free for use, see their
