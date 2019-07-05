@@ -31,11 +31,11 @@ class APIExceptionTest extends AbstractTestCase {
     public function testConstruct() {
 
         // Set an Exception mock.
-        $arg = new Exception;
+        $throwable = new Exception;
 
-        $obj = new APIException("message", $arg);
+        $obj = new APIException("message", $throwable);
 
         $this->assertEquals("message", $obj->getMessage());
-        $this->assertSame($arg, $obj->getPrevious());
+        $this->assertSame($throwable, $obj->getPrevious());
     }
 }
