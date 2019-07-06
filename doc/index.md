@@ -68,7 +68,7 @@ $request = new CuratedPhotosRequest();
 // Call the API and get the response.
 $response = $provider->curatedPhotos($request);
 
-// Handle the response (same as s//earch photos).
+// Handle the response (same as search photos).
 // ...
 ```
 
