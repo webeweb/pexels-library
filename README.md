@@ -11,10 +11,6 @@ pexels-library
 
 Integrate Pexels API with your projects.
 
-> IMPORTANT NOTICE: This package is still under development. Any changes will be
-> done without prior notice to consumers of this package. Of course this code
-> will become stable at a certain point, but for now, use at your own risk.
-
 ---
 
 ## Compatibility
