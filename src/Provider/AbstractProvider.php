@@ -61,6 +61,23 @@ abstract class AbstractProvider {
     }
 
     /**
+     * Build the configuration.
+     *
+     * @return array Returns the configuration.
+     */
+    private function buildConfiguration() {
+        return [
+            "debug"       => $this->getDebug(),
+            "headers"     => [
+                "Accept"        => "application/json",
+                "User-Agent"    => "webeweb/pexels-library",
+                "Authorization" => $this->getAuthorization(),
+            ],
+            "synchronous" => true,
+        ];
+    }
+
+    /**
      * Build a resource path.
      *
      * @param AbstractRequest $request The request.
@@ -97,15 +114,7 @@ abstract class AbstractProvider {
 
         try {
 
-            $client = new Client([
-                "debug"       => $this->getDebug(),
-                "headers"     => [
-                    "Accept"        => "application/json",
-                    "User-Agent"    => "webeweb/pexels-library",
-                    "Authorization" => $this->getAuthorization(),
-                ],
-                "synchronous" => true,
-            ]);
+            $client = new Client($this->buildConfiguration());
 
             $options = 0 < count($queryData) ? ["query" => $queryData] : [];
 
