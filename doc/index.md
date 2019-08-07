@@ -6,8 +6,7 @@ Search photos
 
 ```php
 // Create the API provider.
-$provider = new APIProvider();
-$provider->setAuthorization("YOUR API KEY");
+$provider = new APIProvider("YOUR API KEY");
 
 // Create a Search photos model.
 $request = new SearchPhotosRequest();
@@ -59,8 +58,7 @@ Curated photos
 
 ```php
 // Create the API provider.
-$provider = new APIProvider();
-$provider->setAuthorization("YOUR API KEY");
+$provider = new APIProvider("YOUR API KEY");
 
 // Create a Curated photo model.
 $request = new CuratedPhotosRequest();
@@ -77,8 +75,7 @@ Get a photo
 
 ```php
 // Create the API provider.
-$provider = new APIProvider();
-$provider->setAuthorization("YOUR API KEY");
+$provider = new APIProvider("YOUR API KEY");
 
 // Create a Get photo model.
 $request = new GetPhotoRequest();
@@ -101,8 +98,7 @@ Search videos
 
 ```php
 // Create the API provider.
-$provider = new APIProvider();
-$provider->setAuthorization("YOUR API KEY");
+$provider = new APIProvider("YOUR API KEY");
 
 // Create a Search videos model.
 $request = new SearchVideosRequest();
@@ -165,8 +161,7 @@ Popular videos
 
 ```php
 // Create the API provider.
-$provider = new APIProvider();
-$provider->setAuthorization("YOUR API KEY");
+$provider = new APIProvider("YOUR API KEY");
 
 // Create a Popular videos model.
 $request = new PopularVideosRequest();
@@ -183,8 +178,7 @@ Get a video
 
 ```php
 // Create the API provider.
-$provider = new APIProvider();
-$provider->setAuthorization("YOUR API KEY");
+$provider = new APIProvider("YOUR API KEY");
 
 // Create a Get video model.
 $request = new GetVideoRequest();

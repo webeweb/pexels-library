@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [1.1.0](https://github.com/webeweb/pexels-library/tree/v1.1.0) (2019-08-07)
+
+- Add Logger interface into API provider
+
 ### [1.0.2](https://github.com/webeweb/pexels-library/tree/v1.0.2) (2019-08-02)
 
 - Add buildConfiguration()

@@ -13,6 +13,7 @@ namespace WBW\Library\Pexels\Tests\Provider;
 
 use Exception;
 use InvalidArgumentException;
+use Psr\Log\LoggerInterface;
 use WBW\Library\Pexels\Exception\APIException;
 use WBW\Library\Pexels\Model\Request\CuratedPhotosRequest;
 use WBW\Library\Pexels\Model\Request\GetPhotoRequest;
@@ -78,11 +79,13 @@ class APIProviderTest extends AbstractTestCase {
      */
     public function testCuratedPhotos() {
 
+        // Set a Logger mock.
+        $logger = $this->getMockBuilder(LoggerInterface::class)->getMock();
+
         // Set a Curated photos request mock.
         $curatedPhotosRequest = new CuratedPhotosRequest();
 
-        $obj = new APIProvider();
-        $obj->setAuthorization($this->authorization);
+        $obj = new APIProvider($this->authorization, $logger);
 
         try {
 
@@ -129,8 +132,7 @@ class APIProviderTest extends AbstractTestCase {
         $getPhotoRequest = new GetPhotoRequest();
         $getPhotoRequest->setId(1181292);
 
-        $obj = new APIProvider();
-        $obj->setAuthorization($this->authorization);
+        $obj = new APIProvider($this->authorization);
 
         try {
 
@@ -155,8 +157,7 @@ class APIProviderTest extends AbstractTestCase {
         $getPhotoRequest = new GetPhotoRequest();
         // $getPhotoRequest->setId(1181292);
 
-        $obj = new APIProvider();
-        $obj->setAuthorization($this->authorization);
+        $obj = new APIProvider($this->authorization);
 
         try {
 
@@ -179,8 +180,7 @@ class APIProviderTest extends AbstractTestCase {
         $getVideoRequest = new GetVideoRequest();
         $getVideoRequest->setId(1972034);
 
-        $obj = new APIProvider();
-        $obj->setAuthorization($this->authorization);
+        $obj = new APIProvider($this->authorization);
 
         try {
 
@@ -205,8 +205,7 @@ class APIProviderTest extends AbstractTestCase {
         $searchPhotosRequest = new SearchPhotosRequest();
         $searchPhotosRequest->setQuery("landscape");
 
-        $obj = new APIProvider();
-        $obj->setAuthorization($this->authorization);
+        $obj = new APIProvider($this->authorization);
 
         try {
 
@@ -231,8 +230,7 @@ class APIProviderTest extends AbstractTestCase {
         $searchVideosRequest = new SearchVideosRequest();
         $searchVideosRequest->setQuery("landscape");
 
-        $obj = new APIProvider();
-        $obj->setAuthorization($this->authorization);
+        $obj = new APIProvider($this->authorization);
 
         try {
 
@@ -256,8 +254,7 @@ class APIProviderTest extends AbstractTestCase {
         // Set a Popular videos request mock.
         $popularVideosRequest = new PopularVideosRequest();
 
-        $obj = new APIProvider();
-        $obj->setAuthorization($this->authorization);
+        $obj = new APIProvider($this->authorization);
 
         try {
 
@@ -283,8 +280,7 @@ class APIProviderTest extends AbstractTestCase {
         $searchPhotosRequest->setQuery("landscape");
         $searchPhotosRequest->setPage(2);
 
-        $obj = new APIProvider();
-        $obj->setAuthorization($this->authorization);
+        $obj = new APIProvider($this->authorization);
 
         try {
 
@@ -310,8 +306,7 @@ class APIProviderTest extends AbstractTestCase {
         $searchVideosRequest->setQuery("landscape");
         $searchVideosRequest->setPage(2);
 
-        $obj = new APIProvider();
-        $obj->setAuthorization($this->authorization);
+        $obj = new APIProvider($this->authorization);
 
         try {
 
@@ -337,8 +332,7 @@ class APIProviderTest extends AbstractTestCase {
         $searchPhotoRequest = new SearchPhotosRequest();
         $searchPhotoRequest->setQuery("github");
 
-        $obj = new APIProvider();
-        $obj->setAuthorization($this->authorization);
+        $obj = new APIProvider($this->authorization);
 
         try {
 
@@ -363,8 +357,7 @@ class APIProviderTest extends AbstractTestCase {
         $searchVideosRequest = new SearchVideosRequest();
         $searchVideosRequest->setQuery("github");
 
-        $obj = new APIProvider();
-        $obj->setAuthorization($this->authorization);
+        $obj = new APIProvider($this->authorization);
 
         try {
 

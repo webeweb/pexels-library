@@ -15,6 +15,7 @@ use DateTime;
 use Exception;
 use GuzzleHttp\Client;
 use InvalidArgumentException;
+use Psr\Log\LoggerInterface;
 use WBW\Library\Pexels\API\PaginateResponseInterface;
 use WBW\Library\Pexels\API\SubstituteRequestInterface;
 use WBW\Library\Pexels\Exception\APIException;
@@ -54,10 +55,22 @@ abstract class AbstractProvider {
     private $debug;
 
     /**
-     * Constructor.
+     * Logger.
+     *
+     * @var LoggerInterface
      */
-    public function __construct() {
+    private $logger;
+
+    /**
+     * Constructor.
+     *
+     * @param string $authorization The authorization.
+     * @param LoggerInterface|null $logger The logger.
+     */
+    public function __construct($authorization = null, LoggerInterface $logger = null) {
+        $this->setAuthorization($authorization);
         $this->setDebug(false);
+        $this->setLogger($logger);
     }
 
     /**
@@ -114,11 +127,16 @@ abstract class AbstractProvider {
 
         try {
 
-            $client = new Client($this->buildConfiguration());
+            $config = $this->buildConfiguration();
 
+            $client = new Client($config);
+
+            $method  = "GET";
             $options = 0 < count($queryData) ? ["query" => $queryData] : [];
 
-            $response = $client->request("GET", $uri, $options);
+            $this->log(sprintf("Call Pexels API %s %s", $method, $uri), ["config" => $config, "options" => $options]);
+
+            $response = $client->request($method, $uri, $options);
 
             $this->setLimit(intval($response->getHeaderLine("X-Ratelimit-Limit")));
             $this->setRemaining(intval($response->getHeaderLine("X-Ratelimit-Remaining")));
@@ -197,6 +215,29 @@ abstract class AbstractProvider {
     }
 
     /**
+     * Get the logger.
+     *
+     * @return LoggerInterface Returns the logger.
+     */
+    public function getLogger() {
+        return $this->logger;
+    }
+
+    /**
+     * Log.
+     *
+     * @param string $message The message.
+     * @param array $context The context.
+     * @return AbstractProvider Returns this provider.
+     */
+    protected function log($message, array $context) {
+        if (null !== $this->getLogger()) {
+            $this->getLogger()->info($message, $context);
+        }
+        return $this;
+    }
+
+    /**
      * Set the authorization.
      *
      * @param string $authorization The authorization.
@@ -215,6 +256,17 @@ abstract class AbstractProvider {
      */
     public function setDebug($debug) {
         $this->debug = $debug;
+        return $this;
+    }
+
+    /**
+     * Set the logger.
+     *
+     * @param LoggerInterface|null $logger The logger
+     * @return AbstractProvider Returns this provider
+     */
+    protected function setLogger(LoggerInterface $logger = null) {
+        $this->logger = $logger;
         return $this;
     }
 }
