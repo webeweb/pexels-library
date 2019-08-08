@@ -134,7 +134,7 @@ abstract class AbstractProvider {
             $method  = "GET";
             $options = 0 < count($queryData) ? ["query" => $queryData] : [];
 
-            $this->log(sprintf("Call Pexels API %s %s", $method, $uri), ["config" => $config, "options" => $options]);
+            $this->logInfo(sprintf("Call Pexels API %s %s", $method, $uri), ["config" => $config, "options" => $options]);
 
             $response = $client->request($method, $uri, $options);
 
@@ -224,13 +224,13 @@ abstract class AbstractProvider {
     }
 
     /**
-     * Log.
+     * Log an info.
      *
      * @param string $message The message.
      * @param array $context The context.
      * @return AbstractProvider Returns this provider.
      */
-    protected function log($message, array $context) {
+    protected function logInfo($message, array $context) {
         if (null !== $this->getLogger()) {
             $this->getLogger()->info($message, $context);
         }
