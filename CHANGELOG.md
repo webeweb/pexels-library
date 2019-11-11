@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Update dependencies
+
 ### [1.1.1](https://github.com/webeweb/pexels-library/tree/v1.1.1) (2019-08-08)
 
 - Fix log level

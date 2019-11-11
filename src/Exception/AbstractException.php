@@ -12,7 +12,7 @@
 namespace WBW\Library\Pexels\Exception;
 
 use Exception;
-use WBW\Library\Core\Exception\AbstractCoreException as BaseException;
+use WBW\Library\Core\Exception\AbstractException as BaseException;
 
 /**
  * Abstract exception.

@@ -12,7 +12,7 @@
 namespace WBW\Library\Pexels\Normalizer;
 
 use InvalidArgumentException;
-use WBW\Library\Core\Argument\ArrayHelper;
+use WBW\Library\Core\Argument\Helper\ArrayHelper;
 use WBW\Library\Pexels\Model\Request\CuratedPhotosRequest;
 use WBW\Library\Pexels\Model\Request\PopularVideosRequest;
 use WBW\Library\Pexels\Model\Request\SearchPhotosRequest;

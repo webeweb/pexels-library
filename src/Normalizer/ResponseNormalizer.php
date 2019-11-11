@@ -11,7 +11,7 @@
 
 namespace WBW\Library\Pexels\Normalizer;
 
-use WBW\Library\Core\Argument\ArrayHelper;
+use WBW\Library\Core\Argument\Helper\ArrayHelper;
 use WBW\Library\Pexels\Model\Photo;
 use WBW\Library\Pexels\Model\Response\PhotoResponse;
 use WBW\Library\Pexels\Model\Response\PhotosResponse;
