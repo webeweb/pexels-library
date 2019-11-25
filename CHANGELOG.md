@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-### master
+### [1.2.0](https://github.com/webeweb/pexels-library/tree/v1.2.0) (2019-11-25)
 
 - Update dependencies
 
