@@ -38,7 +38,7 @@ trait IdTrait {
     /**
      * Set the id.
      *
-     * @param $id The id.
+     * @param int $id The id.
      */
     public function setId($id) {
         $this->id = $id;
