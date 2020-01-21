@@ -58,6 +58,8 @@ class Video extends AbstractMedia {
      * Constructor.
      */
     public function __construct() {
+        parent::__construct();
+
         $this->setVideoFiles([]);
         $this->setVideoPictures([]);
     }
