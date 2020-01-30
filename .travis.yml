@@ -15,7 +15,6 @@ matrix:
         -   php: "nightly"
 
 before_install:
-    - echo "memory_limit=4096M" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
 
 install:
     - composer update
