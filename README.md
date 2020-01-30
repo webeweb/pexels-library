@@ -11,13 +11,12 @@ pexels-library
 
 Integrate Pexels API with your projects.
 
----
+If you like this package, pay me a beer (or a coffee)
+[![paypal.me](https://img.shields.io/badge/paypal.me-webeweb-0070ba.svg?style=flat-square&logo=paypal)](https://www.paypal.me/webeweb)
 
 ## Compatibility
 
 [![PHP](https://img.shields.io/packagist/php-v/webeweb/pexels-library.svg?style=flat-square)](http://php.net)
-
----
 
 ## Installation
 
@@ -32,13 +31,9 @@ This command requires you to have Composer installed globally, as explained in
 the [installation chapter](https://getcomposer.org/doc/00-intro.md) of the
 Composer documentation.
 
----
-
 ## Usage
 
 Read the [documentation](doc/index.md).
-
----
 
 ## Testing
 
@@ -61,8 +56,6 @@ $ vendor/bin/phpunit
 > IMPORTANT NOTICE: To test the package with your API key, edit the
 > `tests/Provider/APIProviderTest.php` file to find and replace "YOUR_API_KEY".
 
----
-
 ## License
 
 `pexels-library` is released under the MIT License. See the bundled [LICENSE](LICENSE)
@@ -70,3 +63,8 @@ file for details.
 
 Please note that the Pexels API is not free for use, see their
 [API page](https://www.pexels.com/api/documentation/) for details on usage.
+
+## Donate
+
+If you like this work, please consider donating at
+[![paypal.me](https://img.shields.io/badge/paypal.me-webeweb-0070ba.svg?style=flat-square&logo=paypal)](https://www.paypal.me/webeweb)
