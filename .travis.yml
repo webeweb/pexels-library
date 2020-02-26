@@ -10,9 +10,11 @@ php:
     - "7.4"
     - "nightly"
 
-matrix:
+jobs:
     allow_failures:
         -   php: "nightly"
+
+os: linux
 
 before_install:
     #- echo "memory_limit=4096M" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
