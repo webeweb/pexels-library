@@ -25,8 +25,8 @@ use WBW\Library\Pexels\Model\Response\PhotoResponse;
 use WBW\Library\Pexels\Model\Response\PhotosResponse;
 use WBW\Library\Pexels\Model\Response\VideoResponse;
 use WBW\Library\Pexels\Model\Response\VideosResponse;
-use WBW\Library\Pexels\Normalizer\RequestNormalizer;
-use WBW\Library\Pexels\Normalizer\ResponseNormalizer;
+use WBW\Library\Pexels\Serializer\RequestSerializer;
+use WBW\Library\Pexels\Serializer\ResponseSerializer;
 
 /**
  * API provider.
@@ -61,11 +61,11 @@ class APIProvider extends AbstractProvider {
      */
     public function curatedPhotos(CuratedPhotosRequest $curatedPhotosRequest) {
 
-        $queryData = RequestNormalizer::normalizeCuratedPhotosRequest($curatedPhotosRequest);
+        $queryData = RequestSerializer::serializeCuratedPhotosRequest($curatedPhotosRequest);
 
         $rawResponse = $this->callAPIWithRequest($curatedPhotosRequest, $queryData);
 
-        return $this->beforeReturnResponse(ResponseNormalizer::denormalizePhotosResponse($rawResponse));
+        return $this->beforeReturnResponse(ResponseSerializer::deserializePhotosResponse($rawResponse));
     }
 
     /**
@@ -80,7 +80,7 @@ class APIProvider extends AbstractProvider {
 
         $rawResponse = $this->callAPIWithRequest($getPhotoRequest, []);
 
-        return $this->beforeReturnResponse(ResponseNormalizer::denormalizePhotoResponse($rawResponse));
+        return $this->beforeReturnResponse(ResponseSerializer::deserializePhotoResponse($rawResponse));
     }
 
     /**
@@ -95,7 +95,7 @@ class APIProvider extends AbstractProvider {
 
         $rawResponse = $this->callAPIWithRequest($getVideoRequest, []);
 
-        return $this->beforeReturnResponse(ResponseNormalizer::denormalizeVideoResponse($rawResponse));
+        return $this->beforeReturnResponse(ResponseSerializer::deserializeVideoResponse($rawResponse));
     }
 
     /**
@@ -111,10 +111,10 @@ class APIProvider extends AbstractProvider {
         $rawResponse = $this->callAPIWithResponse($paginateResponse, true);
 
         if (true === ($paginateResponse instanceof PhotosResponse)) {
-            return $this->beforeReturnResponse(ResponseNormalizer::denormalizePhotosResponse($rawResponse));
+            return $this->beforeReturnResponse(ResponseSerializer::deserializePhotosResponse($rawResponse));
         }
 
-        return $this->beforeReturnResponse(ResponseNormalizer::denormalizeVideosResponse($rawResponse));
+        return $this->beforeReturnResponse(ResponseSerializer::deserializeVideosResponse($rawResponse));
     }
 
     /**
@@ -127,11 +127,11 @@ class APIProvider extends AbstractProvider {
      */
     public function popularVideos(PopularVideosRequest $popularVideosRequest) {
 
-        $queryData = RequestNormalizer::normalizePopularVideosRequest($popularVideosRequest);
+        $queryData = RequestSerializer::serializePopularVideosRequest($popularVideosRequest);
 
         $rawResponse = $this->callAPIWithRequest($popularVideosRequest, $queryData);
 
-        return $this->beforeReturnResponse(ResponseNormalizer::denormalizeVideosResponse($rawResponse));
+        return $this->beforeReturnResponse(ResponseSerializer::deserializeVideosResponse($rawResponse));
     }
 
     /**
@@ -147,10 +147,10 @@ class APIProvider extends AbstractProvider {
         $rawResponse = $this->callAPIWithResponse($paginateResponse, false);
 
         if (true === ($paginateResponse instanceof PhotosResponse)) {
-            return $this->beforeReturnResponse(ResponseNormalizer::denormalizePhotosResponse($rawResponse));
+            return $this->beforeReturnResponse(ResponseSerializer::deserializePhotosResponse($rawResponse));
         }
 
-        return $this->beforeReturnResponse(ResponseNormalizer::denormalizeVideosResponse($rawResponse));
+        return $this->beforeReturnResponse(ResponseSerializer::deserializeVideosResponse($rawResponse));
     }
 
     /**
@@ -163,11 +163,11 @@ class APIProvider extends AbstractProvider {
      */
     public function searchPhotos(SearchPhotosRequest $searchPhotosRequest) {
 
-        $queryData = RequestNormalizer::normalizeSearchPhotosRequest($searchPhotosRequest);
+        $queryData = RequestSerializer::serializeSearchPhotosRequest($searchPhotosRequest);
 
         $rawResponse = $this->callAPIWithRequest($searchPhotosRequest, $queryData);
 
-        return $this->beforeReturnResponse(ResponseNormalizer::denormalizePhotosResponse($rawResponse));
+        return $this->beforeReturnResponse(ResponseSerializer::deserializePhotosResponse($rawResponse));
     }
 
     /**
@@ -180,10 +180,10 @@ class APIProvider extends AbstractProvider {
      */
     public function searchVideos(SearchVideosRequest $searchVideosRequest) {
 
-        $queryData = RequestNormalizer::normalizeSearchVideosRequest($searchVideosRequest);
+        $queryData = RequestSerializer::serializeSearchVideosRequest($searchVideosRequest);
 
         $rawResponse = $this->callAPIWithRequest($searchVideosRequest, $queryData);
 
-        return $this->beforeReturnResponse(ResponseNormalizer::denormalizeVideosResponse($rawResponse));
+        return $this->beforeReturnResponse(ResponseSerializer::deserializeVideosResponse($rawResponse));
     }
 }

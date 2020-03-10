@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pexels\Tests\Normalizer;
+namespace WBW\Library\Pexels\Tests\Serializer;
 
 use Exception;
 use InvalidArgumentException;
@@ -17,40 +17,40 @@ use WBW\Library\Pexels\Model\Request\CuratedPhotosRequest;
 use WBW\Library\Pexels\Model\Request\PopularVideosRequest;
 use WBW\Library\Pexels\Model\Request\SearchPhotosRequest;
 use WBW\Library\Pexels\Model\Request\SearchVideosRequest;
-use WBW\Library\Pexels\Normalizer\RequestNormalizer;
+use WBW\Library\Pexels\Serializer\RequestSerializer;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 
 /**
- * Request normalizer test.
+ * Request serializer test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pexels\Tests\Normalizer
+ * @package WBW\Library\Pexels\Tests\Serializer
  */
-class RequestNormalizerTest extends AbstractTestCase {
+class RequestSerializerTest extends AbstractTestCase {
 
     /**
-     * Tests the normalizeCuratedPhotosRequest() method.
+     * Tests the serializeCuratedPhotosRequest() method.
      *
      * @return void
      */
-    public function testNormalizeCuratedPhotosRequest() {
+    public function testSerializeCuratedPhotosRequest() {
 
         // Set a Curated photos request mock.
         $curatedPhotosRequest = new CuratedPhotosRequest();
         $curatedPhotosRequest->setPerPage(80);
         $curatedPhotosRequest->setPage(2);
 
-        $res = RequestNormalizer::normalizeCuratedPhotosRequest($curatedPhotosRequest);
+        $res = RequestSerializer::serializeCuratedPhotosRequest($curatedPhotosRequest);
         $this->assertEquals(80, $res["per_page"]);
         $this->assertEquals(2, $res["page"]);
     }
 
     /**
-     * Tests the normalizePopularVideosRequest() method.
+     * Tests the serializePopularVideosRequest() method.
      *
      * @return void
      */
-    public function testNormalizePopularVideosRequest() {
+    public function testSerializePopularVideosRequest() {
 
         // Set a Popular videos request mock.
         $popularVideosRequest = new PopularVideosRequest();
@@ -61,7 +61,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         $popularVideosRequest->setMinDuration(1);
         $popularVideosRequest->setMaxDuration(60);
 
-        $res = RequestNormalizer::normalizePopularVideosRequest($popularVideosRequest);
+        $res = RequestSerializer::serializePopularVideosRequest($popularVideosRequest);
         $this->assertEquals(80, $res["per_page"]);
         $this->assertEquals(2, $res["page"]);
         $this->assertEquals(1280, $res["min_width"]);
@@ -71,11 +71,11 @@ class RequestNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the normalizeSearchPhotosRequest() method.
+     * Tests the serializeSearchPhotosRequest() method.
      *
      * @return void
      */
-    public function testNormalizeSearchPhotosRequest() {
+    public function testSerializeSearchPhotosRequest() {
 
         // Set a Search photos request mock.
         $searchPhotosRequest = new SearchPhotosRequest();
@@ -83,25 +83,25 @@ class RequestNormalizerTest extends AbstractTestCase {
         $searchPhotosRequest->setPerPage(80);
         $searchPhotosRequest->setPage(2);
 
-        $res = RequestNormalizer::normalizeSearchPhotosRequest($searchPhotosRequest);
+        $res = RequestSerializer::serializeSearchPhotosRequest($searchPhotosRequest);
         $this->assertEquals("github", $res["query"]);
         $this->assertEquals(80, $res["per_page"]);
         $this->assertEquals(2, $res["page"]);
     }
 
     /**
-     * Tests the normalizeSearchPhotosRequest() method.
+     * Tests the serializeSearchPhotosRequest() method.
      *
      * @return void
      */
-    public function testNormalizeSearchPhotosRequestWithInvalidArgumentException() {
+    public function testSerializeSearchPhotosRequestWithInvalidArgumentException() {
 
         // Set a Search photos request mock.
         $searchPhotosRequest = new SearchPhotosRequest();
 
         try {
 
-            RequestNormalizer::normalizeSearchPhotosRequest($searchPhotosRequest);
+            RequestSerializer::serializeSearchPhotosRequest($searchPhotosRequest);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
@@ -110,11 +110,11 @@ class RequestNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the normalizeSearchVideosRequest() method.
+     * Tests the serializeSearchVideosRequest() method.
      *
      * @return void
      */
-    public function testNormalizeSearchVideosRequest() {
+    public function testSerializeSearchVideosRequest() {
 
         // Set a Search videos request mock.
         $searchVideosRequest = new SearchVideosRequest();
@@ -126,7 +126,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         $searchVideosRequest->setMinDuration(1);
         $searchVideosRequest->setMaxDuration(60);
 
-        $res = RequestNormalizer::normalizeSearchVideosRequest($searchVideosRequest);
+        $res = RequestSerializer::serializeSearchVideosRequest($searchVideosRequest);
         $this->assertEquals("github", $res["query"]);
         $this->assertEquals(80, $res["per_page"]);
         $this->assertEquals(2, $res["page"]);
@@ -137,18 +137,18 @@ class RequestNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the normalizeSearchVideosRequest() method.
+     * Tests the serializeSearchVideosRequest() method.
      *
      * @return void
      */
-    public function testNormalizeSearchVideosRequestWithInvalidArgumentException() {
+    public function testSerializeSearchVideosRequestWithInvalidArgumentException() {
 
         // Set a Search videos request mock.
         $searchPhotosRequest = new SearchVideosRequest();
 
         try {
 
-            RequestNormalizer::normalizeSearchVideosRequest($searchPhotosRequest);
+            RequestSerializer::serializeSearchVideosRequest($searchPhotosRequest);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);

@@ -11,8 +11,8 @@
 
 namespace WBW\Library\Pexels\Tests\Model\Response;
 
-use WBW\Library\Pexels\Model\Video;
 use WBW\Library\Pexels\Model\Response\VideoResponse;
+use WBW\Library\Pexels\Model\Video;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 
 /**

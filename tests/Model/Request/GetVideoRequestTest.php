@@ -11,7 +11,6 @@
 
 namespace WBW\Library\Pexels\Tests\Model\Request;
 
-use WBW\Library\Pexels\Model\Request\GetPhotoRequest;
 use WBW\Library\Pexels\Model\Request\GetVideoRequest;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 
