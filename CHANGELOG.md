@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [1.3.0](https://github.com/webeweb/pexels-library/tree/v1.3.0) (2020-03-10)
+
+- Rename Serializer package
+
 ### [1.2.0](https://github.com/webeweb/pexels-library/tree/v1.2.0) (2019-11-25)
 
 - Update dependencies
