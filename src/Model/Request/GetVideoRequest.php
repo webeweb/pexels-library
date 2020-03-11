@@ -11,9 +11,9 @@
 
 namespace WBW\Library\Pexels\Model\Request;
 
+use WBW\Library\Core\Model\Attribute\IntegerIdTrait;
 use WBW\Library\Pexels\API\SubstituteRequestInterface;
 use WBW\Library\Pexels\Model\AbstractRequest;
-use WBW\Library\Pexels\Traits\IdTrait;
 
 /**
  * Get video request.
@@ -23,7 +23,9 @@ use WBW\Library\Pexels\Traits\IdTrait;
  */
 class GetVideoRequest extends AbstractRequest implements SubstituteRequestInterface {
 
-    use IdTrait;
+    use IntegerIdTrait {
+        setId as public;
+    }
 
     /**
      * Get video resource path.

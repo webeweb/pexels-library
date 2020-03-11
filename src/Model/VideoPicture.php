@@ -11,7 +11,7 @@
 
 namespace WBW\Library\Pexels\Model;
 
-use WBW\Library\Pexels\Traits\IdTrait;
+use WBW\Library\Core\Model\Attribute\IntegerIdTrait;
 
 /**
  * Video picture.
@@ -21,7 +21,9 @@ use WBW\Library\Pexels\Traits\IdTrait;
  */
 class VideoPicture {
 
-    use IdTrait;
+    use IntegerIdTrait {
+        setId as public;
+    }
 
     /**
      * Number.

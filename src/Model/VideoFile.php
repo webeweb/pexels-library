@@ -11,10 +11,10 @@
 
 namespace WBW\Library\Pexels\Model;
 
-use WBW\Library\Pexels\Traits\HeightTrait;
-use WBW\Library\Pexels\Traits\IdTrait;
-use WBW\Library\Pexels\Traits\LinkTrait;
-use WBW\Library\Pexels\Traits\WidthTrait;
+use WBW\Library\Core\Model\Attribute\IntegerHeightTrait;
+use WBW\Library\Core\Model\Attribute\IntegerIdTrait;
+use WBW\Library\Core\Model\Attribute\IntegerWidthTrait;
+use WBW\Library\Core\Model\Attribute\StringLinkTrait;
 
 /**
  * Video file.
@@ -24,10 +24,12 @@ use WBW\Library\Pexels\Traits\WidthTrait;
  */
 class VideoFile {
 
-    use HeightTrait;
-    use IdTrait;
-    use LinkTrait;
-    use WidthTrait;
+    use IntegerHeightTrait;
+    use IntegerIdTrait {
+        setId as public;
+    }
+    use IntegerWidthTrait;
+    use StringLinkTrait;
 
     /**
      * File type.

@@ -11,10 +11,10 @@
 
 namespace WBW\Library\Pexels\Model;
 
-use WBW\Library\Pexels\Traits\HeightTrait;
-use WBW\Library\Pexels\Traits\IdTrait;
-use WBW\Library\Pexels\Traits\UrlTrait;
-use WBW\Library\Pexels\Traits\WidthTrait;
+use WBW\Library\Core\Model\Attribute\IntegerHeightTrait;
+use WBW\Library\Core\Model\Attribute\IntegerIdTrait;
+use WBW\Library\Core\Model\Attribute\IntegerWidthTrait;
+use WBW\Library\Core\Model\Attribute\StringUrlTrait;
 
 /**
  * Abstract media.
@@ -25,10 +25,12 @@ use WBW\Library\Pexels\Traits\WidthTrait;
  */
 abstract class AbstractMedia {
 
-    use HeightTrait;
-    use IdTrait;
-    use UrlTrait;
-    use WidthTrait;
+    use IntegerHeightTrait;
+    use IntegerIdTrait {
+        setId as public;
+    }
+    use IntegerWidthTrait;
+    use StringUrlTrait;
 
     /**
      * Constructor.

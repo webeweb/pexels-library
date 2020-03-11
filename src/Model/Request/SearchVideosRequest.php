@@ -11,6 +11,7 @@
 
 namespace WBW\Library\Pexels\Model\Request;
 
+use WBW\Library\Core\Model\Attribute\StringQueryTrait;
 use WBW\Library\Pexels\Model\AbstractRequest;
 use WBW\Library\Pexels\Traits\MaxDurationTrait;
 use WBW\Library\Pexels\Traits\MaxWidthTrait;
@@ -18,7 +19,6 @@ use WBW\Library\Pexels\Traits\MinDurationTrait;
 use WBW\Library\Pexels\Traits\MinWidthTrait;
 use WBW\Library\Pexels\Traits\PageTrait;
 use WBW\Library\Pexels\Traits\PerPageTrait;
-use WBW\Library\Pexels\Traits\QueryTrait;
 
 /**
  * Search videos request.
@@ -34,7 +34,7 @@ class SearchVideosRequest extends AbstractRequest {
     use MaxWidthTrait;
     use PageTrait;
     use PerPageTrait;
-    use QueryTrait;
+    use StringQueryTrait;
 
     /**
      * Search videos resource path.

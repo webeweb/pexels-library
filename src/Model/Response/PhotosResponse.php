@@ -11,6 +11,7 @@
 
 namespace WBW\Library\Pexels\Model\Response;
 
+use WBW\Library\Core\Model\Attribute\StringUrlTrait;
 use WBW\Library\Pexels\API\PaginateResponseInterface;
 use WBW\Library\Pexels\Model\AbstractResponse;
 use WBW\Library\Pexels\Model\Photo;
@@ -19,7 +20,6 @@ use WBW\Library\Pexels\Traits\PageTrait;
 use WBW\Library\Pexels\Traits\PerPageTrait;
 use WBW\Library\Pexels\Traits\PrevPageTrait;
 use WBW\Library\Pexels\Traits\TotalResultsTrait;
-use WBW\Library\Pexels\Traits\UrlTrait;
 
 /**
  * Photos response.
@@ -34,7 +34,7 @@ class PhotosResponse extends AbstractResponse implements PaginateResponseInterfa
     use PerPageTrait;
     use PrevPageTrait;
     use TotalResultsTrait;
-    use UrlTrait;
+    use StringUrlTrait;
 
     /**
      * Constructor.

@@ -11,10 +11,10 @@
 
 namespace WBW\Library\Pexels\Model\Request;
 
+use WBW\Library\Core\Model\Attribute\StringQueryTrait;
 use WBW\Library\Pexels\Model\AbstractRequest;
 use WBW\Library\Pexels\Traits\PageTrait;
 use WBW\Library\Pexels\Traits\PerPageTrait;
-use WBW\Library\Pexels\Traits\QueryTrait;
 
 /**
  * Search photos request.
@@ -26,7 +26,7 @@ class SearchPhotosRequest extends AbstractRequest {
 
     use PageTrait;
     use PerPageTrait;
-    use QueryTrait;
+    use StringQueryTrait;
 
     /**
      * Search photos resource path.
