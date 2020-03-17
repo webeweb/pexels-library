@@ -14,12 +14,12 @@ namespace WBW\Library\Pexels\Model\Response;
 use WBW\Library\Core\Model\Attribute\StringUrlTrait;
 use WBW\Library\Pexels\API\PaginateResponseInterface;
 use WBW\Library\Pexels\Model\AbstractResponse;
+use WBW\Library\Pexels\Model\Attribute\IntegerPageTrait;
+use WBW\Library\Pexels\Model\Attribute\IntegerPerPageTrait;
+use WBW\Library\Pexels\Model\Attribute\IntegerTotalResultsTrait;
+use WBW\Library\Pexels\Model\Attribute\StringNextPageTrait;
+use WBW\Library\Pexels\Model\Attribute\StringPrevPageTrait;
 use WBW\Library\Pexels\Model\Photo;
-use WBW\Library\Pexels\Traits\NextPageTrait;
-use WBW\Library\Pexels\Traits\PageTrait;
-use WBW\Library\Pexels\Traits\PerPageTrait;
-use WBW\Library\Pexels\Traits\PrevPageTrait;
-use WBW\Library\Pexels\Traits\TotalResultsTrait;
 
 /**
  * Photos response.
@@ -29,11 +29,11 @@ use WBW\Library\Pexels\Traits\TotalResultsTrait;
  */
 class PhotosResponse extends AbstractResponse implements PaginateResponseInterface {
 
-    use NextPageTrait;
-    use PageTrait;
-    use PerPageTrait;
-    use PrevPageTrait;
-    use TotalResultsTrait;
+    use IntegerPageTrait;
+    use IntegerPerPageTrait;
+    use IntegerTotalResultsTrait;
+    use StringNextPageTrait;
+    use StringPrevPageTrait;
     use StringUrlTrait;
 
     /**

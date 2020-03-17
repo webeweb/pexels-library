@@ -12,8 +12,8 @@
 namespace WBW\Library\Pexels\Model\Request;
 
 use WBW\Library\Pexels\Model\AbstractRequest;
-use WBW\Library\Pexels\Traits\PageTrait;
-use WBW\Library\Pexels\Traits\PerPageTrait;
+use WBW\Library\Pexels\Model\Attribute\IntegerPageTrait;
+use WBW\Library\Pexels\Model\Attribute\IntegerPerPageTrait;
 
 /**
  * Curated photos request.
@@ -23,8 +23,8 @@ use WBW\Library\Pexels\Traits\PerPageTrait;
  */
 class CuratedPhotosRequest extends AbstractRequest {
 
-    use PageTrait;
-    use PerPageTrait;
+    use IntegerPageTrait;
+    use IntegerPerPageTrait;
 
     /**
      * Curated photo resource path.

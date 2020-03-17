@@ -11,8 +11,6 @@
 
 namespace WBW\Library\Pexels\Model;
 
-use WBW\Library\Pexels\Traits\RateLimitTrait;
-
 /**
  * Abstract response.
  *
