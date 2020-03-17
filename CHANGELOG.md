@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-### master
+### [1.4.0](https://github.com/webeweb/pexels-library/tree/v1.4.0) (2020-03-17)
 
 - Reorganize traits
 - Update dependencies
