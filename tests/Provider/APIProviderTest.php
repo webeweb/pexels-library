@@ -190,7 +190,7 @@ class APIProviderTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(APIException::class, $ex);
-            $this->assertEquals(403, $ex->getPrevious()->getCode());
+            $this->assertEquals(404, $ex->getPrevious()->getCode());
         }
     }
 
