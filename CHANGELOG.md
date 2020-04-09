@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [1.4.1](https://github.com/webeweb/pexels-library/tree/v1.4.1) (2020-04-09)
+
+- Fix X-Ratelimit-reset
+
 ### [1.4.0](https://github.com/webeweb/pexels-library/tree/v1.4.0) (2020-03-17)
 
 - Reorganize traits
