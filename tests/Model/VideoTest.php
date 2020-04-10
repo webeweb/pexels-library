@@ -57,26 +57,6 @@ class VideoTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new Video();
-
-        $this->assertNull($obj->getId());
-        $this->assertNull($obj->getDuration());
-        $this->assertNull($obj->getFullRes());
-        $this->assertNull($obj->getHeight());
-        $this->assertNull($obj->getImage());
-        $this->assertNull($obj->getUrl());
-        $this->assertCount(0, $obj->getVideoFiles());
-        $this->assertCount(0, $obj->getVideoPictures());
-        $this->assertNull($obj->getWidth());
-    }
-
-    /**
      * Tests the setDuration() method.
      *
      * @return void
@@ -113,5 +93,25 @@ class VideoTest extends AbstractTestCase {
 
         $obj->setImage("image");
         $this->assertEquals("image", $obj->getImage());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new Video();
+
+        $this->assertNull($obj->getId());
+        $this->assertNull($obj->getDuration());
+        $this->assertNull($obj->getFullRes());
+        $this->assertNull($obj->getHeight());
+        $this->assertNull($obj->getImage());
+        $this->assertNull($obj->getUrl());
+        $this->assertCount(0, $obj->getVideoFiles());
+        $this->assertCount(0, $obj->getVideoPictures());
+        $this->assertNull($obj->getWidth());
     }
 }

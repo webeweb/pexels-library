@@ -27,7 +27,7 @@ class CuratedPhotosRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals("/v1/curated", CuratedPhotosRequest::CURATED_PHOTO_RESOURCE_PATH);
 

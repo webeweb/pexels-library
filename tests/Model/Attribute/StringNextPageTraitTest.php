@@ -23,18 +23,6 @@ use WBW\Library\Pexels\Tests\Fixtures\Model\Attribute\TestStringNextPageTrait;
 class StringNextPageTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestStringNextPageTrait();
-
-        $this->assertNull($obj->getNextPage());
-    }
-
-    /**
      * Tests the setNextPage() method.
      *
      * @return void
@@ -45,5 +33,17 @@ class StringNextPageTraitTest extends AbstractTestCase {
 
         $obj->setNextPage("nextPage");
         $this->assertEquals("nextPage", $obj->getNextPage());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestStringNextPageTrait();
+
+        $this->assertNull($obj->getNextPage());
     }
 }

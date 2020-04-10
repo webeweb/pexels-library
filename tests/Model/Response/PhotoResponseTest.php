@@ -24,18 +24,6 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class PhotoResponseTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new PhotoResponse();
-
-        $this->assertNull($obj->getPhoto());
-    }
-
-    /**
      * Tests the setPhoto() method.
      *
      * @return void
@@ -49,6 +37,18 @@ class PhotoResponseTest extends AbstractTestCase {
 
         $obj->setPhoto($photo);
         $this->assertSame($photo, $obj->getPhoto());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new PhotoResponse();
+
+        $this->assertNull($obj->getPhoto());
     }
 
 }

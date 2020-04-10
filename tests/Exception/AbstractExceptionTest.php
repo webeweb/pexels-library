@@ -28,7 +28,7 @@ class AbstractExceptionTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         // Set an Exception mock.
         $throwable = new Exception("throwable");

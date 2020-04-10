@@ -23,25 +23,6 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class SourceTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new Source();
-
-        $this->assertNull($obj->getLandscape());
-        $this->assertNull($obj->getLarge());
-        $this->assertNull($obj->getLarge2x());
-        $this->assertNull($obj->getMedium());
-        $this->assertNull($obj->getOriginal());
-        $this->assertNull($obj->getPortrait());
-        $this->assertNull($obj->getSmall());
-        $this->assertNull($obj->getTiny());
-    }
-
-    /**
      * Tests the setLandscape() method.
      *
      * @return void
@@ -143,5 +124,24 @@ class SourceTest extends AbstractTestCase {
 
         $obj->setTiny("tiny");
         $this->assertEquals("tiny", $obj->getTiny());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new Source();
+
+        $this->assertNull($obj->getLandscape());
+        $this->assertNull($obj->getLarge());
+        $this->assertNull($obj->getLarge2x());
+        $this->assertNull($obj->getMedium());
+        $this->assertNull($obj->getOriginal());
+        $this->assertNull($obj->getPortrait());
+        $this->assertNull($obj->getSmall());
+        $this->assertNull($obj->getTiny());
     }
 }

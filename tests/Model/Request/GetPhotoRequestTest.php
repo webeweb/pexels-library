@@ -23,22 +23,6 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class GetPhotoRequestTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $this->assertEquals("/v1/photos/:id", GetPhotoRequest::GET_PHOTO_RESOURCE_PATH);
-
-        $obj = new GetPhotoRequest();
-
-        $this->assertEquals(GetPhotoRequest::GET_PHOTO_RESOURCE_PATH, $obj->getResourcePath());
-        $this->assertNull($obj->getId());
-        $this->assertEquals(":id", $obj->getSubstituteName());
-    }
-
-    /**
      * Tests the getSubstituteValue() method.
      *
      * @return void
@@ -49,5 +33,21 @@ class GetPhotoRequestTest extends AbstractTestCase {
 
         $obj->setId(1);
         $this->assertEquals(1, $obj->getSubstituteValue());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $this->assertEquals("/v1/photos/:id", GetPhotoRequest::GET_PHOTO_RESOURCE_PATH);
+
+        $obj = new GetPhotoRequest();
+
+        $this->assertEquals(GetPhotoRequest::GET_PHOTO_RESOURCE_PATH, $obj->getResourcePath());
+        $this->assertNull($obj->getId());
+        $this->assertEquals(":id", $obj->getSubstituteName());
     }
 }

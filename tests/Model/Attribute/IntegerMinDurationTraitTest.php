@@ -23,18 +23,6 @@ use WBW\Library\Pexels\Tests\Fixtures\Model\Attribute\TestIntegerMinDurationTrai
 class IntegerMinDurationTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestIntegerMinDurationTrait();
-
-        $this->assertNull($obj->getMinDuration());
-    }
-
-    /**
      * Tests the setMinDuration() method.
      *
      * @return void
@@ -45,5 +33,17 @@ class IntegerMinDurationTraitTest extends AbstractTestCase {
 
         $obj->setMinDuration(1);
         $this->assertEquals(1, $obj->getMinDuration());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestIntegerMinDurationTrait();
+
+        $this->assertNull($obj->getMinDuration());
     }
 }

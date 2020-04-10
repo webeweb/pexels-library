@@ -23,18 +23,6 @@ use WBW\Library\Pexels\Tests\Fixtures\Model\Attribute\TestIntegerMaxDurationTrai
 class IntegerMaxDurationTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestIntegerMaxDurationTrait();
-
-        $this->assertNull($obj->getMaxDuration());
-    }
-
-    /**
      * Tests the setMaxDuration() method.
      *
      * @return void
@@ -45,5 +33,17 @@ class IntegerMaxDurationTraitTest extends AbstractTestCase {
 
         $obj->setMaxDuration(60);
         $this->assertEquals(60, $obj->getMaxDuration());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestIntegerMaxDurationTrait();
+
+        $this->assertNull($obj->getMaxDuration());
     }
 }

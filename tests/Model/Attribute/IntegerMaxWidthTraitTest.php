@@ -23,18 +23,6 @@ use WBW\Library\Pexels\Tests\Fixtures\Model\Attribute\TestIntegerMaxWidthTrait;
 class IntegerMaxWidthTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestIntegerMaxWidthTrait();
-
-        $this->assertNull($obj->getMaxWidth());
-    }
-
-    /**
      * Tests the setMaxWidth() method.
      *
      * @return void
@@ -45,5 +33,17 @@ class IntegerMaxWidthTraitTest extends AbstractTestCase {
 
         $obj->setMaxWidth(1920);
         $this->assertEquals(1920, $obj->getMaxWidth());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestIntegerMaxWidthTrait();
+
+        $this->assertNull($obj->getMaxWidth());
     }
 }

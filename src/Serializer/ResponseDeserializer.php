@@ -40,12 +40,12 @@ class ResponseDeserializer {
 
         $model = new Photo();
         $model->setId(intval(ArrayHelper::get($response, "id", -1)));
+        $model->setWidth(intval(ArrayHelper::get($response, "width", -1)));
         $model->setHeight(intval(ArrayHelper::get($response, "height", -1)));
+        $model->setUrl(ArrayHelper::get($response, "url", null));
         $model->setPhotographer(ArrayHelper::get($response, "photographer", null));
         $model->setPhotographerUrl(ArrayHelper::get($response, "photographer_url", null));
         $model->setSrc(static::deserializeSource(ArrayHelper::get($response, "src", [])));
-        $model->setUrl(ArrayHelper::get($response, "url", null));
-        $model->setWidth(intval(ArrayHelper::get($response, "width", -1)));
 
         return $model;
     }
@@ -89,12 +89,12 @@ class ResponseDeserializer {
             return $model;
         }
 
-        $model->setNextPage(ArrayHelper::get($decodedResponse, "next_page", null));
+        $model->setTotalResults(intval(ArrayHelper::get($decodedResponse, "total_results", -1)));
         $model->setPage(intval(ArrayHelper::get($decodedResponse, "page", -1)));
         $model->setPerPage(intval(ArrayHelper::get($decodedResponse, "per_page", -1)));
-        $model->setPrevPage(ArrayHelper::get($decodedResponse, "prev_page", null));
-        $model->setTotalResults(intval(ArrayHelper::get($decodedResponse, "total_results", -1)));
         $model->setUrl(ArrayHelper::get($decodedResponse, "url", null));
+        $model->setPrevPage(ArrayHelper::get($decodedResponse, "prev_page", null));
+        $model->setNextPage(ArrayHelper::get($decodedResponse, "next_page", null));
 
         foreach (ArrayHelper::get($decodedResponse, "photos", []) as $current) {
             $model->addPhoto(static::deserializePhoto($current));
@@ -112,13 +112,13 @@ class ResponseDeserializer {
     protected static function deserializeSource(array $response) {
 
         $model = new Source();
-        $model->setLandscape(ArrayHelper::get($response, "landscape", null));
+        $model->setOriginal(ArrayHelper::get($response, "original", null));
         $model->setLarge(ArrayHelper::get($response, "large", null));
         $model->setLarge2x(ArrayHelper::get($response, "large2x", null));
         $model->setMedium(ArrayHelper::get($response, "medium", null));
-        $model->setOriginal(ArrayHelper::get($response, "original", null));
-        $model->setPortrait(ArrayHelper::get($response, "portrait", null));
         $model->setSmall(ArrayHelper::get($response, "small", null));
+        $model->setPortrait(ArrayHelper::get($response, "portrait", null));
+        $model->setLandscape(ArrayHelper::get($response, "landscape", null));
         $model->setTiny(ArrayHelper::get($response, "tiny", null));
 
         return $model;
@@ -134,12 +134,12 @@ class ResponseDeserializer {
 
         $model = new Video();
         $model->setId(intval(ArrayHelper::get($response, "id", -1)));
-        $model->setDuration(intval(ArrayHelper::get($response, "duration", -1)));
-        $model->setFullRes(ArrayHelper::get($response, "full_res", null));
-        $model->setHeight(intval(ArrayHelper::get($response, "height", -1)));
-        $model->setImage(ArrayHelper::get($response, "image", null));
-        $model->setUrl(ArrayHelper::get($response, "url", null));
         $model->setWidth(intval(ArrayHelper::get($response, "width", -1)));
+        $model->setHeight(intval(ArrayHelper::get($response, "height", -1)));
+        $model->setUrl(ArrayHelper::get($response, "url", null));
+        $model->setImage(ArrayHelper::get($response, "image", null));
+        $model->setFullRes(ArrayHelper::get($response, "full_res", null));
+        $model->setDuration(intval(ArrayHelper::get($response, "duration", -1)));
 
         foreach (ArrayHelper::get($response, "video_files", []) as $current) {
             $model->addVideoFile(static::deserializeVideoFile($current));
@@ -162,11 +162,11 @@ class ResponseDeserializer {
 
         $model = new VideoFile();
         $model->setId(intval(ArrayHelper::get($response, "id", -1)));
+        $model->setQuality(ArrayHelper::get($response, "quality", null));
         $model->setFileType(ArrayHelper::get($response, "file_type", null));
+        $model->setWidth(intval(ArrayHelper::get($response, "width", -1)));
         $model->setHeight(intval(ArrayHelper::get($response, "height", -1)));
         $model->setLink(ArrayHelper::get($response, "link", null));
-        $model->setQuality(ArrayHelper::get($response, "quality", null));
-        $model->setWidth(intval(ArrayHelper::get($response, "width", -1)));
 
         return $model;
     }
@@ -181,8 +181,8 @@ class ResponseDeserializer {
 
         $model = new VideoPicture();
         $model->setId(intval(ArrayHelper::get($response, "id", -1)));
-        $model->setNr(intval(ArrayHelper::get($response, "nr", -1)));
         $model->setPicture(ArrayHelper::get($response, "picture", null));
+        $model->setNr(intval(ArrayHelper::get($response, "nr", -1)));
 
         return $model;
     }
@@ -226,12 +226,12 @@ class ResponseDeserializer {
             return $model;
         }
 
-        $model->setNextPage(ArrayHelper::get($decodedResponse, "next_page", null));
+        $model->setTotalResults(intval(ArrayHelper::get($decodedResponse, "total_results", -1)));
         $model->setPage(intval(ArrayHelper::get($decodedResponse, "page", -1)));
         $model->setPerPage(intval(ArrayHelper::get($decodedResponse, "per_page", -1)));
-        $model->setPrevPage(ArrayHelper::get($decodedResponse, "prev_page", null));
-        $model->setTotalResults(intval(ArrayHelper::get($decodedResponse, "total_results", -1)));
         $model->setUrl(ArrayHelper::get($decodedResponse, "url", null));
+        $model->setPrevPage(ArrayHelper::get($decodedResponse, "prev_page", null));
+        $model->setNextPage(ArrayHelper::get($decodedResponse, "next_page", null));
 
         foreach (ArrayHelper::get($decodedResponse, "videos", []) as $current) {
             $model->addVideo(static::deserializeVideo($current));

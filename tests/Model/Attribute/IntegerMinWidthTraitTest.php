@@ -23,18 +23,6 @@ use WBW\Library\Pexels\Tests\Fixtures\Model\Attribute\TestIntegerMinWidthTrait;
 class IntegerMinWidthTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestIntegerMinWidthTrait();
-
-        $this->assertNull($obj->getMinWidth());
-    }
-
-    /**
      * Tests the setMinWidth() method.
      *
      * @return void
@@ -45,5 +33,17 @@ class IntegerMinWidthTraitTest extends AbstractTestCase {
 
         $obj->setMinWidth(1280);
         $this->assertEquals(1280, $obj->getMinWidth());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestIntegerMinWidthTrait();
+
+        $this->assertNull($obj->getMinWidth());
     }
 }

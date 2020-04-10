@@ -27,7 +27,7 @@ class RequestInterfaceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals(15, RequestInterface::PER_PAGE_DEFAULT);
         $this->assertEquals(80, RequestInterface::PER_PAGE_MAX);

@@ -23,20 +23,6 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class VideoPictureTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new VideoPicture();
-
-        $this->assertNull($obj->getId());
-        $this->assertNull($obj->getNr());
-        $this->assertNull($obj->getPicture());
-    }
-
-    /**
      * Tests the setNr() method.
      *
      * @return void
@@ -60,5 +46,19 @@ class VideoPictureTest extends AbstractTestCase {
 
         $obj->setPicture("picture");
         $this->assertEquals("picture", $obj->getPicture());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new VideoPicture();
+
+        $this->assertNull($obj->getId());
+        $this->assertNull($obj->getNr());
+        $this->assertNull($obj->getPicture());
     }
 }

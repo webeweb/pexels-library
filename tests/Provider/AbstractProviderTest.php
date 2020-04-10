@@ -23,24 +23,6 @@ use WBW\Library\Pexels\Tests\Fixtures\Provider\TestProvider;
 class AbstractProviderTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $this->assertEquals("https://api.pexels.com", TestProvider::ENDPOINT_PATH);
-
-        $obj = new TestProvider();
-
-        $this->assertNull($obj->getAuthorization());
-        $this->assertFalse($obj->getDebug());
-        $this->assertNull($obj->getLimit());
-        $this->assertNull($obj->getRemaining());
-        $this->assertNull($obj->getReset());
-    }
-
-    /**
      * Tests the setAuthorization() method.
      *
      * @retunr void.
@@ -64,5 +46,23 @@ class AbstractProviderTest extends AbstractTestCase {
 
         $obj->setDebug(true);
         $this->assertTrue($obj->getDebug());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $this->assertEquals("https://api.pexels.com", TestProvider::ENDPOINT_PATH);
+
+        $obj = new TestProvider();
+
+        $this->assertNull($obj->getAuthorization());
+        $this->assertFalse($obj->getDebug());
+        $this->assertNull($obj->getLimit());
+        $this->assertNull($obj->getRemaining());
+        $this->assertNull($obj->getReset());
     }
 }

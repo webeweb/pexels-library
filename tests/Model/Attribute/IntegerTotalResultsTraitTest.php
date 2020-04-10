@@ -23,18 +23,6 @@ use WBW\Library\Pexels\Tests\Fixtures\Model\Attribute\TestIntegerTotalResultsTra
 class IntegerTotalResultsTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestIntegerTotalResultsTrait();
-
-        $this->assertNull($obj->getTotalResults());
-    }
-
-    /**
      * Tests the setTotalResults() method.
      *
      * @return void
@@ -45,5 +33,17 @@ class IntegerTotalResultsTraitTest extends AbstractTestCase {
 
         $obj->setTotalResults(1);
         $this->assertEquals(1, $obj->getTotalResults());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestIntegerTotalResultsTrait();
+
+        $this->assertNull($obj->getTotalResults());
     }
 }

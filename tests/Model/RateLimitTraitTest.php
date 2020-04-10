@@ -25,20 +25,6 @@ use WBW\Library\Pexels\Tests\Fixtures\Model\TestRateLimitTrait;
 class RateLimitTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestRateLimitTrait();
-
-        $this->assertNull($obj->getLimit());
-        $this->assertNull($obj->getRemaining());
-        $this->assertNull($obj->getReset());
-    }
-
-    /**
      * Tests the setLimit() method.
      *
      * @return void
@@ -79,5 +65,19 @@ class RateLimitTraitTest extends AbstractTestCase {
 
         $obj->setReset($reset);
         $this->assertSame($reset, $obj->getReset());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestRateLimitTrait();
+
+        $this->assertNull($obj->getLimit());
+        $this->assertNull($obj->getRemaining());
+        $this->assertNull($obj->getReset());
     }
 }

@@ -23,21 +23,6 @@ use WBW\Library\Pexels\Tests\Fixtures\Model\TestResponse;
 class AbstractResponseTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestResponse();
-
-        $this->assertNull($obj->getLimit());
-        $this->assertNull($obj->getRemaining());
-        $this->assertNull($obj->getReset());
-        $this->assertNull($obj->getRawResponse());
-    }
-
-    /**
      * Tests the setRawResponse() method.
      *
      * @return void
@@ -48,5 +33,20 @@ class AbstractResponseTest extends AbstractTestCase {
 
         $obj->setRawResponse("rawResponse");
         $this->assertEquals("rawResponse", $obj->getRawResponse());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestResponse();
+
+        $this->assertNull($obj->getLimit());
+        $this->assertNull($obj->getRemaining());
+        $this->assertNull($obj->getReset());
+        $this->assertNull($obj->getRawResponse());
     }
 }

@@ -23,23 +23,6 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class VideoFileTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new VideoFile();
-
-        $this->assertNull($obj->getId());
-        $this->assertNull($obj->getFileType());
-        $this->assertNull($obj->getHeight());
-        $this->assertNull($obj->getLink());
-        $this->assertNull($obj->getQuality());
-        $this->assertNull($obj->getWidth());
-    }
-
-    /**
      * Tests the setFileType() method.
      *
      * @return void
@@ -63,5 +46,22 @@ class VideoFileTest extends AbstractTestCase {
 
         $obj->setQuality("quality");
         $this->assertEquals("quality", $obj->getQuality());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new VideoFile();
+
+        $this->assertNull($obj->getId());
+        $this->assertNull($obj->getFileType());
+        $this->assertNull($obj->getHeight());
+        $this->assertNull($obj->getLink());
+        $this->assertNull($obj->getQuality());
+        $this->assertNull($obj->getWidth());
     }
 }

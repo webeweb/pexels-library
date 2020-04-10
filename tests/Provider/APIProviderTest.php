@@ -130,7 +130,7 @@ class APIProviderTest extends AbstractTestCase {
 
         // Set a Get photos request mock.
         $getPhotoRequest = new GetPhotoRequest();
-        $getPhotoRequest->setId(1181292);
+        $getPhotoRequest->setId(-1);
 
         $obj = new APIProvider($this->authorization);
 
@@ -178,7 +178,7 @@ class APIProviderTest extends AbstractTestCase {
 
         // Set a Get video request mock.
         $getVideoRequest = new GetVideoRequest();
-        $getVideoRequest->setId(1972034);
+        $getVideoRequest->setId(-1);
 
         $obj = new APIProvider($this->authorization);
 
@@ -190,7 +190,7 @@ class APIProviderTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(APIException::class, $ex);
-            $this->assertEquals(404, $ex->getPrevious()->getCode());
+            $this->assertEquals(403, $ex->getPrevious()->getCode());
         }
     }
 

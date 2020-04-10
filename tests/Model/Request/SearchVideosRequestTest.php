@@ -27,7 +27,7 @@ class SearchVideosRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals("/videos/search", SearchVideosRequest::SEARCH_VIDEOS_RESOURCE_PATH);
 

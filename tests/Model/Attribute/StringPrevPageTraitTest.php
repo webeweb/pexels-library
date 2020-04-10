@@ -23,18 +23,6 @@ use WBW\Library\Pexels\Tests\Fixtures\Model\Attribute\TestStringPrevPageTrait;
 class StringPrevPageTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestStringPrevPageTrait();
-
-        $this->assertNull($obj->getPrevPage());
-    }
-
-    /**
      * Tests the setPrevPage() method.
      *
      * @return void
@@ -45,5 +33,17 @@ class StringPrevPageTraitTest extends AbstractTestCase {
 
         $obj->setPrevPage("prevPage");
         $this->assertEquals("prevPage", $obj->getPrevPage());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestStringPrevPageTrait();
+
+        $this->assertNull($obj->getPrevPage());
     }
 }

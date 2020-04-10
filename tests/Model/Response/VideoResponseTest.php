@@ -24,18 +24,6 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class VideoResponseTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new VideoResponse();
-
-        $this->assertNull($obj->getVideo());
-    }
-
-    /**
      * Tests the setVideo() method.
      *
      * @return void
@@ -49,6 +37,18 @@ class VideoResponseTest extends AbstractTestCase {
 
         $obj->setVideo($video);
         $this->assertSame($video, $obj->getVideo());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new VideoResponse();
+
+        $this->assertNull($obj->getVideo());
     }
 
 }
