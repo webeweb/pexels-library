@@ -1,9 +1,10 @@
 CHANGELOG
 =========
 
-### master
+### [1.5.0](https://github.com/webeweb/pexels-library/tree/v1.5.0) (2020-05-28)
 
 - Improve unit tests
+- Update dependencies
 
 ### [1.4.1](https://github.com/webeweb/pexels-library/tree/v1.4.1) (2020-04-09)
 
