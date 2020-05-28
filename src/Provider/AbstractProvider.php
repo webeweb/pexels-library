@@ -11,14 +11,14 @@
 
 namespace WBW\Library\Pexels\Provider;
 
-use DateTime;
 use Exception;
 use GuzzleHttp\Client;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
+use WBW\Library\Core\Exception\ApiException;
+use WBW\Library\Core\Provider\AbstractProvider as BaseProvider;
 use WBW\Library\Pexels\API\PaginateResponseInterface;
 use WBW\Library\Pexels\API\SubstituteRequestInterface;
-use WBW\Library\Pexels\Exception\APIException;
 use WBW\Library\Pexels\Model\AbstractRequest;
 use WBW\Library\Pexels\Model\RateLimitTrait;
 
@@ -29,7 +29,7 @@ use WBW\Library\Pexels\Model\RateLimitTrait;
  * @package WBW\Library\Pexels\Provider
  * @abstract
  */
-abstract class AbstractProvider {
+abstract class AbstractProvider extends BaseProvider {
 
     use RateLimitTrait;
 
@@ -48,26 +48,13 @@ abstract class AbstractProvider {
     private $authorization;
 
     /**
-     * Debug.
-     *
-     * @var bool
-     */
-    private $debug;
-
-    /**
-     * Logger.
-     *
-     * @var LoggerInterface
-     */
-    private $logger;
-
-    /**
      * Constructor.
      *
      * @param string $authorization The authorization.
      * @param LoggerInterface|null $logger The logger.
      */
     public function __construct($authorization = null, LoggerInterface $logger = null) {
+        parent::__construct($logger);
         $this->setAuthorization($authorization);
         $this->setDebug(false);
         $this->setLogger($logger);
@@ -116,10 +103,10 @@ abstract class AbstractProvider {
      * @param string $uri The URI.
      * @param array $queryData The query data.
      * @return string Returns the raw response.
-     * @throws APIException Throws an API exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    private function callAPI($uri, array $queryData) {
+    private function callApi($uri, array $queryData) {
 
         if (null === $this->getAuthorization()) {
             throw new InvalidArgumentException("The mandatory parameter \"authorization\" is missing");
@@ -144,7 +131,7 @@ abstract class AbstractProvider {
             return $response->getBody()->getContents();
         } catch (Exception $ex) {
 
-            throw new APIException("Call Pexels API failed", $ex);
+            throw new ApiException("Call Pexels API failed", 500, $ex);
         }
     }
 
@@ -154,16 +141,16 @@ abstract class AbstractProvider {
      * @param AbstractRequest $request The request.
      * @param array $queryData The query data.
      * @return string Returns the raw response.
-     * @throws APIException Throws an API exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    protected function callAPIWithRequest(AbstractRequest $request, array $queryData) {
+    protected function callApiWithRequest(AbstractRequest $request, array $queryData) {
 
         try {
 
             $uri = self::ENDPOINT_PATH . $this->buildResourcePath($request);
 
-            return $this->callAPI($uri, $queryData);
+            return $this->callApi($uri, $queryData);
         } catch (InvalidArgumentException $ex) {
 
             throw $ex;
@@ -179,7 +166,7 @@ abstract class AbstractProvider {
      * @throws APIException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    protected function callAPIWithResponse(PaginateResponseInterface $response, $nextPage) {
+    protected function callApiWithResponse(PaginateResponseInterface $response, $nextPage) {
 
         try {
 
@@ -188,7 +175,7 @@ abstract class AbstractProvider {
                 return "";
             }
 
-            return $this->callAPI($uri, []);
+            return $this->callApi($uri, []);
         } catch (InvalidArgumentException $ex) {
 
             throw $ex;
@@ -202,24 +189,6 @@ abstract class AbstractProvider {
      */
     public function getAuthorization() {
         return $this->authorization;
-    }
-
-    /**
-     * Get the debug.
-     *
-     * @return bool Returns the debug.
-     */
-    public function getDebug() {
-        return $this->debug;
-    }
-
-    /**
-     * Get the logger.
-     *
-     * @return LoggerInterface Returns the logger.
-     */
-    public function getLogger() {
-        return $this->logger;
     }
 
     /**
@@ -244,28 +213,6 @@ abstract class AbstractProvider {
      */
     public function setAuthorization($authorization) {
         $this->authorization = $authorization;
-        return $this;
-    }
-
-    /**
-     * Set the debug.
-     *
-     * @param bool $debug The debug.
-     * @return AbstractProvider Returns this provider.
-     */
-    public function setDebug($debug) {
-        $this->debug = $debug;
-        return $this;
-    }
-
-    /**
-     * Set the logger.
-     *
-     * @param LoggerInterface|null $logger The logger
-     * @return AbstractProvider Returns this provider
-     */
-    protected function setLogger(LoggerInterface $logger = null) {
-        $this->logger = $logger;
         return $this;
     }
 }

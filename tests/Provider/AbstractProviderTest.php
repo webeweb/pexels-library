@@ -15,7 +15,7 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 use WBW\Library\Pexels\Tests\Fixtures\Provider\TestProvider;
 
 /**
- * Abstract API provider test.
+ * Abstract provider test.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\Pexels\Tests\Provider

@@ -12,7 +12,7 @@
 namespace WBW\Library\Pexels\Tests\Fixtures\Provider;
 
 use WBW\Library\Pexels\Model\AbstractResponse;
-use WBW\Library\Pexels\Provider\APIProvider;
+use WBW\Library\Pexels\Provider\ApiProvider;
 
 /**
  * Test API provider.
@@ -20,7 +20,7 @@ use WBW\Library\Pexels\Provider\APIProvider;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\Pexels\Tests\Fixtures\Provider
  */
-class TestAPIProvider extends APIProvider {
+class TestApiProvider extends ApiProvider {
 
     /**
      * {@inheritDoc}
