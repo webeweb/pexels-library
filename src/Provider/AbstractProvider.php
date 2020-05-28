@@ -57,7 +57,6 @@ abstract class AbstractProvider extends BaseProvider {
         parent::__construct($logger);
         $this->setAuthorization($authorization);
         $this->setDebug(false);
-        $this->setLogger($logger);
     }
 
     /**
