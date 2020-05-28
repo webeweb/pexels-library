@@ -191,20 +191,6 @@ abstract class AbstractProvider extends BaseProvider {
     }
 
     /**
-     * Log an info.
-     *
-     * @param string $message The message.
-     * @param array $context The context.
-     * @return AbstractProvider Returns this provider.
-     */
-    protected function logInfo($message, array $context) {
-        if (null !== $this->getLogger()) {
-            $this->getLogger()->info($message, $context);
-        }
-        return $this;
-    }
-
-    /**
      * Set the authorization.
      *
      * @param string $authorization The authorization.
