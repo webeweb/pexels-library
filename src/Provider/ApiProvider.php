@@ -54,16 +54,16 @@ class ApiProvider extends AbstractProvider {
     /**
      * Curated photos.
      *
-     * @param CuratedPhotosRequest $curatedPhotosRequest The curated photos request.
+     * @param CuratedPhotosRequest $request The curated photos request.
      * @return PhotosResponse Returns the photos response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function curatedPhotos(CuratedPhotosRequest $curatedPhotosRequest) {
+    public function curatedPhotos(CuratedPhotosRequest $request) {
 
-        $queryData = RequestSerializer::serializeCuratedPhotosRequest($curatedPhotosRequest);
+        $queryData = RequestSerializer::serializeCuratedPhotosRequest($request);
 
-        $rawResponse = $this->callApiWithRequest($curatedPhotosRequest, $queryData);
+        $rawResponse = $this->callApiWithRequest($request, $queryData);
 
         return $this->beforeReturnResponse(ResponseDeserializer::deserializePhotosResponse($rawResponse));
     }
@@ -71,14 +71,14 @@ class ApiProvider extends AbstractProvider {
     /**
      * Get a photo.
      *
-     * @param GetPhotoRequest $getPhotoRequest The get photo request.
+     * @param GetPhotoRequest $request The get photo request.
      * @return PhotoResponse Returns the photo response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function getPhoto(GetPhotoRequest $getPhotoRequest) {
+    public function getPhoto(GetPhotoRequest $request) {
 
-        $rawResponse = $this->callApiWithRequest($getPhotoRequest, []);
+        $rawResponse = $this->callApiWithRequest($request, []);
 
         return $this->beforeReturnResponse(ResponseDeserializer::deserializePhotoResponse($rawResponse));
     }
@@ -86,14 +86,14 @@ class ApiProvider extends AbstractProvider {
     /**
      * Get a video.
      *
-     * @param GetVideoRequest $getVideoRequest The get video request.
+     * @param GetVideoRequest $request The get video request.
      * @return VideoResponse Returns the video response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function getVideo(GetVideoRequest $getVideoRequest) {
+    public function getVideo(GetVideoRequest $request) {
 
-        $rawResponse = $this->callApiWithRequest($getVideoRequest, []);
+        $rawResponse = $this->callApiWithRequest($request, []);
 
         return $this->beforeReturnResponse(ResponseDeserializer::deserializeVideoResponse($rawResponse));
     }
@@ -101,16 +101,16 @@ class ApiProvider extends AbstractProvider {
     /**
      * Next page.
      *
-     * @param PaginateResponseInterface $paginateResponse The response.
+     * @param PaginateResponseInterface $response The response.
      * @return ImagesResponse|VideosResponse Returns the response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function nextPage(PaginateResponseInterface $paginateResponse) {
+    public function nextPage(PaginateResponseInterface $response) {
 
-        $rawResponse = $this->callApiWithResponse($paginateResponse, true);
+        $rawResponse = $this->callApiWithResponse($response, true);
 
-        if (true === ($paginateResponse instanceof PhotosResponse)) {
+        if (true === ($response instanceof PhotosResponse)) {
             return $this->beforeReturnResponse(ResponseDeserializer::deserializePhotosResponse($rawResponse));
         }
 
@@ -120,16 +120,16 @@ class ApiProvider extends AbstractProvider {
     /**
      * Popular videos.
      *
-     * @param PopularVideosRequest $popularVideosRequest The popular videos request.
+     * @param PopularVideosRequest $response The popular videos request.
      * @return VideosResponse Returns the videos response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function popularVideos(PopularVideosRequest $popularVideosRequest) {
+    public function popularVideos(PopularVideosRequest $response) {
 
-        $queryData = RequestSerializer::serializePopularVideosRequest($popularVideosRequest);
+        $queryData = RequestSerializer::serializePopularVideosRequest($response);
 
-        $rawResponse = $this->callApiWithRequest($popularVideosRequest, $queryData);
+        $rawResponse = $this->callApiWithRequest($response, $queryData);
 
         return $this->beforeReturnResponse(ResponseDeserializer::deserializeVideosResponse($rawResponse));
     }
@@ -137,16 +137,16 @@ class ApiProvider extends AbstractProvider {
     /**
      * Prev page.
      *
-     * @param PaginateResponseInterface $paginateResponse The response.
+     * @param PaginateResponseInterface $response The response.
      * @return ImagesResponse|VideosResponse Returns the response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function prevPage(PaginateResponseInterface $paginateResponse) {
+    public function prevPage(PaginateResponseInterface $response) {
 
-        $rawResponse = $this->callApiWithResponse($paginateResponse, false);
+        $rawResponse = $this->callApiWithResponse($response, false);
 
-        if (true === ($paginateResponse instanceof PhotosResponse)) {
+        if (true === ($response instanceof PhotosResponse)) {
             return $this->beforeReturnResponse(ResponseDeserializer::deserializePhotosResponse($rawResponse));
         }
 
@@ -156,16 +156,16 @@ class ApiProvider extends AbstractProvider {
     /**
      * Search photos.
      *
-     * @param SearchPhotosRequest $searchPhotosRequest The search photos request.
+     * @param SearchPhotosRequest $request The search photos request.
      * @return PhotosResponse Returns the photo response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a mandatory parameter is missing.
      */
-    public function searchPhotos(SearchPhotosRequest $searchPhotosRequest) {
+    public function searchPhotos(SearchPhotosRequest $request) {
 
-        $queryData = RequestSerializer::serializeSearchPhotosRequest($searchPhotosRequest);
+        $queryData = RequestSerializer::serializeSearchPhotosRequest($request);
 
-        $rawResponse = $this->callApiWithRequest($searchPhotosRequest, $queryData);
+        $rawResponse = $this->callApiWithRequest($request, $queryData);
 
         return $this->beforeReturnResponse(ResponseDeserializer::deserializePhotosResponse($rawResponse));
     }
@@ -173,16 +173,16 @@ class ApiProvider extends AbstractProvider {
     /**
      * Search videos.
      *
-     * @param SearchVideosRequest $searchVideosRequest The search videos request.
+     * @param SearchVideosRequest $request The search videos request.
      * @return VideosResponse Returns the videos response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a mandatory parameter is missing.
      */
-    public function searchVideos(SearchVideosRequest $searchVideosRequest) {
+    public function searchVideos(SearchVideosRequest $request) {
 
-        $queryData = RequestSerializer::serializeSearchVideosRequest($searchVideosRequest);
+        $queryData = RequestSerializer::serializeSearchVideosRequest($request);
 
-        $rawResponse = $this->callApiWithRequest($searchVideosRequest, $queryData);
+        $rawResponse = $this->callApiWithRequest($request, $queryData);
 
         return $this->beforeReturnResponse(ResponseDeserializer::deserializeVideosResponse($rawResponse));
     }

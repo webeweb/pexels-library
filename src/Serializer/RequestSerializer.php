@@ -30,83 +30,83 @@ class RequestSerializer {
      * Serialize a curated photos request.
      *
      * @param CuratedPhotosRequest $request The curated photos request.
-     * @return array Returns the parameters.
+     * @return array Returns the serialized curated photos request.
      */
     public static function serializeCuratedPhotosRequest(CuratedPhotosRequest $request) {
 
-        $parameters = [];
+        $result = [];
 
-        ArrayHelper::set($parameters, "per_page", $request->getPerPage(), [null, CuratedPhotosRequest::PER_PAGE_DEFAULT]);
-        ArrayHelper::set($parameters, "page", $request->getPage(), [null, 1]);
+        ArrayHelper::set($result, "per_page", $request->getPerPage(), [null, CuratedPhotosRequest::PER_PAGE_DEFAULT]);
+        ArrayHelper::set($result, "page", $request->getPage(), [null, 1]);
 
-        return $parameters;
+        return $result;
     }
 
     /**
      * Serialize a popular videos request.
      *
      * @param PopularVideosRequest $request The popular photos request.
-     * @return array Returns the parameters.
+     * @return array Returns the serialized popular videos request.
      */
     public static function serializePopularVideosRequest(PopularVideosRequest $request) {
 
-        $parameters = [];
+        $result = [];
 
-        ArrayHelper::set($parameters, "per_page", $request->getPerPage(), [null, PopularVideosRequest::PER_PAGE_DEFAULT]);
-        ArrayHelper::set($parameters, "page", $request->getPage(), [null, 1]);
-        ArrayHelper::set($parameters, "min_width", $request->getMinWidth(), [null]);
-        ArrayHelper::set($parameters, "max_width", $request->getMaxWidth(), [null]);
-        ArrayHelper::set($parameters, "min_duration", $request->getMinDuration(), [null]);
-        ArrayHelper::set($parameters, "max_duration", $request->getMaxDuration(), [null]);
+        ArrayHelper::set($result, "per_page", $request->getPerPage(), [null, PopularVideosRequest::PER_PAGE_DEFAULT]);
+        ArrayHelper::set($result, "page", $request->getPage(), [null, 1]);
+        ArrayHelper::set($result, "min_width", $request->getMinWidth(), [null]);
+        ArrayHelper::set($result, "max_width", $request->getMaxWidth(), [null]);
+        ArrayHelper::set($result, "min_duration", $request->getMinDuration(), [null]);
+        ArrayHelper::set($result, "max_duration", $request->getMaxDuration(), [null]);
 
-        return $parameters;
+        return $result;
     }
 
     /**
      * Serialize a search photos request.
      *
      * @param SearchPhotosRequest $request The search photos request.
-     * @return array Returns the parameters.
+     * @return array Returns the serialized search photos request.
      * @throws InvalidArgumentException Throws an invalid argument exception if a mandatory parameter is missing.
      */
     public static function serializeSearchPhotosRequest(SearchPhotosRequest $request) {
 
-        $parameters = [];
+        $result = [];
 
         if (null === $request->getQuery()) {
             throw new InvalidArgumentException("The mandatory parameter \"query\" is missing");
         }
 
-        ArrayHelper::set($parameters, "query", $request->getQuery());
-        ArrayHelper::set($parameters, "per_page", $request->getPerPage(), [null, SearchPhotosRequest::PER_PAGE_DEFAULT]);
-        ArrayHelper::set($parameters, "page", $request->getPage(), [null, 1]);
+        ArrayHelper::set($result, "query", $request->getQuery());
+        ArrayHelper::set($result, "per_page", $request->getPerPage(), [null, SearchPhotosRequest::PER_PAGE_DEFAULT]);
+        ArrayHelper::set($result, "page", $request->getPage(), [null, 1]);
 
-        return $parameters;
+        return $result;
     }
 
     /**
      * Serialize a search videos request.
      *
      * @param SearchVideosRequest $request The search photos request.
-     * @return array Returns the parameters.
+     * @return array Returns the serialized search videos request.
      * @throws InvalidArgumentException Throws an invalid argument exception if a mandatory parameter is missing.
      */
     public static function serializeSearchVideosRequest(SearchVideosRequest $request) {
 
-        $parameters = [];
+        $result = [];
 
         if (null === $request->getQuery()) {
             throw new InvalidArgumentException("The mandatory parameter \"query\" is missing");
         }
 
-        ArrayHelper::set($parameters, "query", $request->getQuery());
-        ArrayHelper::set($parameters, "per_page", $request->getPerPage(), [null, SearchVideosRequest::PER_PAGE_DEFAULT]);
-        ArrayHelper::set($parameters, "page", $request->getPage(), [null, 1]);
-        ArrayHelper::set($parameters, "min_width", $request->getMinWidth(), [null]);
-        ArrayHelper::set($parameters, "max_width", $request->getMaxWidth(), [null]);
-        ArrayHelper::set($parameters, "min_duration", $request->getMinDuration(), [null]);
-        ArrayHelper::set($parameters, "max_duration", $request->getMaxDuration(), [null]);
+        ArrayHelper::set($result, "query", $request->getQuery());
+        ArrayHelper::set($result, "per_page", $request->getPerPage(), [null, SearchVideosRequest::PER_PAGE_DEFAULT]);
+        ArrayHelper::set($result, "page", $request->getPage(), [null, 1]);
+        ArrayHelper::set($result, "min_width", $request->getMinWidth(), [null]);
+        ArrayHelper::set($result, "max_width", $request->getMaxWidth(), [null]);
+        ArrayHelper::set($result, "min_duration", $request->getMinDuration(), [null]);
+        ArrayHelper::set($result, "max_duration", $request->getMaxDuration(), [null]);
 
-        return $parameters;
+        return $result;
     }
 }
