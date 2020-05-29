@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [1.5.1](https://github.com/webeweb/pexels-library/tree/v1.5.1) (2020-05-29)
+
+- Code checkstyle
+
 ### [1.5.0](https://github.com/webeweb/pexels-library/tree/v1.5.0) (2020-05-28)
 
 - Improve unit tests
