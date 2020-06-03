@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [1.5.2](https://github.com/webeweb/pexels-library/tree/v1.5.2) (2020-06-03)
+
+- Update documentation
+
 ### [1.5.1](https://github.com/webeweb/pexels-library/tree/v1.5.1) (2020-05-29)
 
 - Code checkstyle
