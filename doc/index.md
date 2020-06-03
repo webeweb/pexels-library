@@ -2,7 +2,6 @@ DOCUMENTATION
 =============
 
 Search photos
----
 
 ```php
 // Create the API provider.
@@ -54,7 +53,6 @@ foreach($response->getPhotos() as $current) {
 ```
 
 Curated photos
----
 
 ```php
 // Create the API provider.
@@ -71,7 +69,6 @@ $response = $provider->curatedPhotos($request);
 ```
 
 Get a photo
----
 
 ```php
 // Create the API provider.
@@ -94,7 +91,6 @@ $photo = $response->getPhoto();
 ```
 
 Search videos
----
 
 ```php
 // Create the API provider.
@@ -157,7 +153,6 @@ foreach($response->getVideos() as $current) {
 ```
 
 Popular videos
----
 
 ```php
 // Create the API provider.
@@ -174,7 +169,6 @@ $response = $provider->popularVideos($request);
 ```
 
 Get a video
----
 
 ```php
 // Create the API provider.
