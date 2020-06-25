@@ -108,7 +108,7 @@ abstract class AbstractProvider extends BaseProvider {
     private function callApi($uri, array $queryData) {
 
         if (null === $this->getAuthorization()) {
-            throw new InvalidArgumentException("The mandatory parameter \"authorization\" is missing");
+            throw new InvalidArgumentException('The mandatory parameter "authorization" is missing');
         }
 
         try {

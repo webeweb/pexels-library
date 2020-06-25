@@ -117,7 +117,7 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The mandatory parameter \"authorization\" is missing", $ex->getMessage());
+            $this->assertEquals('The mandatory parameter "authorization" is missing', $ex->getMessage());
         }
     }
 

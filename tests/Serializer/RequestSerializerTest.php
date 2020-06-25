@@ -105,7 +105,7 @@ class RequestSerializerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The mandatory parameter \"query\" is missing", $ex->getMessage());
+            $this->assertEquals('The mandatory parameter "query" is missing', $ex->getMessage());
         }
     }
 
@@ -152,7 +152,7 @@ class RequestSerializerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The mandatory parameter \"query\" is missing", $ex->getMessage());
+            $this->assertEquals('The mandatory parameter "query" is missing', $ex->getMessage());
         }
     }
 }

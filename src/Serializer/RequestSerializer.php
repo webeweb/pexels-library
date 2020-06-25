@@ -74,7 +74,7 @@ class RequestSerializer {
         $result = [];
 
         if (null === $request->getQuery()) {
-            throw new InvalidArgumentException("The mandatory parameter \"query\" is missing");
+            throw new InvalidArgumentException('The mandatory parameter "query" is missing');
         }
 
         ArrayHelper::set($result, "query", $request->getQuery());
@@ -96,7 +96,7 @@ class RequestSerializer {
         $result = [];
 
         if (null === $request->getQuery()) {
-            throw new InvalidArgumentException("The mandatory parameter \"query\" is missing");
+            throw new InvalidArgumentException('The mandatory parameter "query" is missing');
         }
 
         ArrayHelper::set($result, "query", $request->getQuery());
