@@ -27,6 +27,13 @@ class Photo extends AbstractMedia {
     private $photographer;
 
     /**
+     * Photographer id.
+     *
+     * @var string
+     */
+    private $photographerId;
+
+    /**
      * Photographer URL.
      *
      * @var string
@@ -47,6 +54,15 @@ class Photo extends AbstractMedia {
      */
     public function getPhotographer() {
         return $this->photographer;
+    }
+
+    /**
+     * Get the photographer id.
+     *
+     * @return string Returns the photographer id.
+     */
+    public function getPhotographerId() {
+        return $this->photographerId;
     }
 
     /**
@@ -75,6 +91,17 @@ class Photo extends AbstractMedia {
      */
     public function setPhotographer($photographer) {
         $this->photographer = $photographer;
+        return $this;
+    }
+
+    /**
+     * Set the photographer id.
+     *
+     * @param string $photographerId The photographer id.
+     * @return Photo Returns this photo.
+     */
+    public function setPhotographerId($photographerId) {
+        $this->photographerId = $photographerId;
         return $this;
     }
 

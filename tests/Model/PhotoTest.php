@@ -37,6 +37,19 @@ class PhotoTest extends AbstractTestCase {
     }
 
     /**
+     * Tests the setPhotographerId() method.
+     *
+     * @return void
+     */
+    public function testSetPhotographerId() {
+
+        $obj = new Photo();
+
+        $obj->setPhotographerId("photographerId");
+        $this->assertEquals("photographerId", $obj->getPhotographerId());
+    }
+
+    /**
      * Tests the setPhotographerUrl() method.
      *
      * @return void

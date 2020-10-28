@@ -37,6 +37,7 @@ class TestFixtures {
             "url": "https://www.pexels.com/photo/photography-of-a-woman-using-laptop-1181292/",
             "photographer": "Christina Morillo",
             "photographer_url": "https://www.pexels.com/@divinetechygirl",
+            "photographer_id": 680589,
             "src": {
                 "original": "https://images.pexels.com/photos/1181292/pexels-photo-1181292.jpeg",
                 "large2x": "https://images.pexels.com/photos/1181292/pexels-photo-1181292.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",

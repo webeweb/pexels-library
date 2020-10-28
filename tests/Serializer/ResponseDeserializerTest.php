@@ -51,6 +51,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
         $this->assertEquals("https://www.pexels.com/photo/photography-of-a-woman-using-laptop-1181292/", $obj->getUrl());
         $this->assertEquals("Christina Morillo", $obj->getPhotographer());
         $this->assertEquals("https://www.pexels.com/@divinetechygirl", $obj->getPhotographerUrl());
+        $this->assertEquals(680589, $obj->getPhotographerId());
         $this->assertNotNull($obj->getSrc());
     }
 
