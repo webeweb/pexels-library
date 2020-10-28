@@ -17,6 +17,7 @@ use WBW\Library\Pexels\Model\Response\PhotosResponse;
 use WBW\Library\Pexels\Model\Response\VideoResponse;
 use WBW\Library\Pexels\Model\Response\VideosResponse;
 use WBW\Library\Pexels\Model\Source;
+use WBW\Library\Pexels\Model\User;
 use WBW\Library\Pexels\Model\Video;
 use WBW\Library\Pexels\Model\VideoFile;
 use WBW\Library\Pexels\Model\VideoPicture;
@@ -148,6 +149,23 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
+     * Tests the deserializeUser() method.
+     *
+     * @return void
+     */
+    public function testDeserializeUser() {
+
+        $arg = json_decode(TestFixtures::SAMPLE_VIDEOS_RESPONSE, true)["videos"][0]["user"];
+
+        $obj = TestResponseDeserializer::deserializeUser($arg);
+        $this->assertInstanceOf(User::class, $obj);
+
+        $this->assertEquals(680589, $obj->getId());
+        $this->assertEquals("Joey Farina", $obj->getName());
+        $this->assertEquals("https://www.pexels.com/@joey", $obj->getUrl());
+    }
+
+    /**
      * Tests the deserializeVideo() method.
      *
      * @return void
@@ -166,6 +184,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
         $this->assertEquals("https://images.pexels.com/videos/1972034/free-video-1972034.jpg?fit=crop&w=1200&h=630&auto=compress&cs=tinysrgb", $obj->getImage());
         $this->assertNull($obj->getFullRes());
         $this->assertEquals(129, $obj->getDuration());
+        $this->assertNotNull($obj->getUser());
         $this->assertCount(3, $obj->getVideoFiles());
         $this->assertCount(15, $obj->getVideoPictures());
     }

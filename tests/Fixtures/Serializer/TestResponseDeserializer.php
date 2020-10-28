@@ -38,6 +38,13 @@ class TestResponseDeserializer extends ResponseDeserializer {
     /**
      * {@inheritDoc}
      */
+    public static function deserializeUser(array $response) {
+        return parent::deserializeUser($response);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public static function deserializeVideo(array $response) {
         return parent::deserializeVideo($response);
     }

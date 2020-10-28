@@ -73,6 +73,11 @@ EOT;
             "image": "https://images.pexels.com/videos/1972034/free-video-1972034.jpg?fit=crop&w=1200&h=630&auto=compress&cs=tinysrgb",
             "full_res": null,
             "duration": 129,
+            "user": {
+                "id": 680589,
+                "name": "Joey Farina",
+                "url": "https://www.pexels.com/@joey"
+            },
             "video_files": [
                 {
                     "id": 81787,

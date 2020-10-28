@@ -41,6 +41,13 @@ class Video extends AbstractMedia {
     private $image;
 
     /**
+     * User.
+     *
+     * @var User
+     */
+    private $user;
+
+    /**
      * Video files.
      *
      * @var VideoFile[]
@@ -114,6 +121,15 @@ class Video extends AbstractMedia {
     }
 
     /**
+     * Get the user.
+     *
+     * @return User Returns the user.
+     */
+    public function getUser() {
+        return $this->user;
+    }
+
+    /**
      * Get the video files.
      *
      * @return VideoFile[] Returns teh video files.
@@ -161,6 +177,17 @@ class Video extends AbstractMedia {
      */
     public function setImage($image) {
         $this->image = $image;
+        return $this;
+    }
+
+    /**
+     * Set the user.
+     *
+     * @param User|null $user The user.
+     * @return Video Returns this video.
+     */
+    public function setUser(User $user = null) {
+        $this->user = $user;
         return $this;
     }
 

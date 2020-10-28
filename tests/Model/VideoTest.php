@@ -11,6 +11,7 @@
 
 namespace WBW\Library\Pexels\Tests\Model;
 
+use WBW\Library\Pexels\Model\User;
 use WBW\Library\Pexels\Model\Video;
 use WBW\Library\Pexels\Model\VideoFile;
 use WBW\Library\Pexels\Model\VideoPicture;
@@ -96,6 +97,22 @@ class VideoTest extends AbstractTestCase {
     }
 
     /**
+     * Tests the setUser() method.
+     *
+     * @return void
+     */
+    public function testSetUser() {
+
+        // Set an User mock.
+        $user = new User();
+
+        $obj = new Video();
+
+        $obj->setUser($user);
+        $this->assertSame($user, $obj->getUser());
+    }
+
+    /**
      * Tests the __construct() method.
      *
      * @return void
@@ -110,6 +127,7 @@ class VideoTest extends AbstractTestCase {
         $this->assertNull($obj->getHeight());
         $this->assertNull($obj->getImage());
         $this->assertNull($obj->getUrl());
+        $this->assertNull($obj->getUser());
         $this->assertCount(0, $obj->getVideoFiles());
         $this->assertCount(0, $obj->getVideoPictures());
         $this->assertNull($obj->getWidth());

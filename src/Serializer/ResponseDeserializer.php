@@ -18,6 +18,7 @@ use WBW\Library\Pexels\Model\Response\PhotosResponse;
 use WBW\Library\Pexels\Model\Response\VideoResponse;
 use WBW\Library\Pexels\Model\Response\VideosResponse;
 use WBW\Library\Pexels\Model\Source;
+use WBW\Library\Pexels\Model\User;
 use WBW\Library\Pexels\Model\Video;
 use WBW\Library\Pexels\Model\VideoFile;
 use WBW\Library\Pexels\Model\VideoPicture;
@@ -126,6 +127,22 @@ class ResponseDeserializer {
     }
 
     /**
+     * Deserialize an user.
+     *
+     * @param array $response The response.
+     * @return User Returns an user.
+     */
+    protected static function deserializeUser(array $response) {
+
+        $model = new User();
+        $model->setId(intval(ArrayHelper::get($response, "id", -1)));
+        $model->setName(ArrayHelper::get($response, "name", null));
+        $model->setUrl(ArrayHelper::get($response, "url", null));
+
+        return $model;
+    }
+
+    /**
      * Deserialize a video.
      *
      * @param array $response The response.
@@ -141,6 +158,7 @@ class ResponseDeserializer {
         $model->setImage(ArrayHelper::get($response, "image", null));
         $model->setFullRes(ArrayHelper::get($response, "full_res", null));
         $model->setDuration(intval(ArrayHelper::get($response, "duration", -1)));
+        $model->setUser(static::deserializeUser(ArrayHelper::get($response, "user", [])));
 
         foreach (ArrayHelper::get($response, "video_files", []) as $current) {
             $model->addVideoFile(static::deserializeVideoFile($current));
