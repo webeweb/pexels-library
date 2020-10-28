@@ -78,6 +78,7 @@ class RequestSerializer {
         }
 
         ArrayHelper::set($result, "query", $request->getQuery());
+        ArrayHelper::set($result, "locale", $request->getLocale());
         ArrayHelper::set($result, "per_page", $request->getPerPage(), [null, SearchPhotosRequest::PER_PAGE_DEFAULT]);
         ArrayHelper::set($result, "page", $request->getPage(), [null, 1]);
 

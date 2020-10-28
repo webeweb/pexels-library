@@ -36,6 +36,33 @@ class SearchPhotosRequest extends AbstractRequest {
     const SEARCH_PHOTOS_RESOURCE_PATH = "/v1/search";
 
     /**
+     * Locale.
+     *
+     * @var string
+     */
+    private $locale;
+
+    /**
+     * Get the locale.
+     *
+     * @return string Returns the locale.
+     */
+    public function getLocale() {
+        return $this->locale;
+    }
+
+    /**
+     * Set the locale.
+     *
+     * @param string $locale The locale.
+     * @return SearchPhotosRequest Returns this search photos request.
+     */
+    public function setLocale($locale) {
+        $this->locale = $locale;
+        return $this;
+    }
+
+    /**
      * Constructor.
      */
     public function __construct() {

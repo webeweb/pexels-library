@@ -80,11 +80,13 @@ class RequestSerializerTest extends AbstractTestCase {
         // Set a Search photos request mock.
         $searchPhotosRequest = new SearchPhotosRequest();
         $searchPhotosRequest->setQuery("github");
+        $searchPhotosRequest->setLocale("en-US");
         $searchPhotosRequest->setPerPage(80);
         $searchPhotosRequest->setPage(2);
 
         $res = RequestSerializer::serializeSearchPhotosRequest($searchPhotosRequest);
         $this->assertEquals("github", $res["query"]);
+        $this->assertEquals("en-US", $res["locale"]);
         $this->assertEquals(80, $res["per_page"]);
         $this->assertEquals(2, $res["page"]);
     }
