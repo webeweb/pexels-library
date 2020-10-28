@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+### [1.6.0](https://github.com/webeweb/pexels-library/tree/v1.6.0) (2020-10-28)
+
+- Add Locale attribute into Search photo request.
+- Add Photographer Id attribute into Photo model
+- Add User model
+- Add user attribute into Video model
+
 ### [1.5.3](https://github.com/webeweb/pexels-library/tree/v1.5.3) (2020-06-25)
 
 - Improve code quality
