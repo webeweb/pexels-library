@@ -10,6 +10,7 @@ $provider = new ApiProvider("YOUR API KEY");
 // Create a Search photos model.
 $request = new SearchPhotosRequest();
 $request->setQuery("YOUR QUERY");
+$request->setLocale("en-US"); // Optional
 
 // Call the API and get the response.
 $response = $provider->searchPhotos($request);
@@ -38,6 +39,7 @@ foreach($response->getPhotos() as $current) {
     
     $current->getPhotographer();
     $current->getPhotographerUrl();
+    $current->getPhotographerId();
     
     /** @var Source src */
     $src = $current->getSrc();
@@ -129,6 +131,12 @@ foreach($response->getVideos() as $current) {
     $current->getFullRes();
     $current->getDuration();
     
+    /** @var User $user */
+    $user = $current->getUser();
+    $user->getId();
+    $user->getName();
+    $user->getUrl();
+
     /** @var VideoFile[] $videoFiles */
     $videoFiles = $current->getVideosFiles();
     foreach($videoFiles as $vf) {
