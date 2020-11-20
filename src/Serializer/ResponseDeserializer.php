@@ -45,8 +45,8 @@ class ResponseDeserializer {
         $model->setHeight(intval(ArrayHelper::get($response, "height", -1)));
         $model->setUrl(ArrayHelper::get($response, "url", null));
         $model->setPhotographer(ArrayHelper::get($response, "photographer", null));
-        $model->setPhotographerId(ArrayHelper::get($response, "photographer_id", null));
         $model->setPhotographerUrl(ArrayHelper::get($response, "photographer_url", null));
+        $model->setPhotographerId(ArrayHelper::get($response, "photographer_id", null));
         $model->setSrc(static::deserializeSource(ArrayHelper::get($response, "src", [])));
 
         return $model;
