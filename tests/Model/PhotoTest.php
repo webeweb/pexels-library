@@ -89,6 +89,7 @@ class PhotoTest extends AbstractTestCase {
 
         $this->assertNull($obj->getPhotographer());
         $this->assertNull($obj->getPhotographerUrl());
+        $this->assertNull($obj->getPhotographerId());
         $this->assertNull($obj->getSrc());
     }
 }
