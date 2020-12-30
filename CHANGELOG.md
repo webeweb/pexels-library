@@ -1,6 +1,17 @@
 CHANGELOG
 =========
 
+### [1.7.0](https://github.com/webeweb/pexels-library/tree/v1.7.0) (2020-12-30)
+
+> IMPORTANT NOTICE: The following PHP versions are now not supported
+> - PHP 5.6
+> - PHP 7.0
+
+- Add PHP 8.0 support
+- Improve PHP doc
+- Improve unit tests
+- Migrating from PHP 5.6 to PHP 7.1
+
 ### [1.6.0](https://github.com/webeweb/pexels-library/tree/v1.6.0) (2020-10-28)
 
 - Add Locale attribute into Search photo request.
