@@ -234,7 +234,7 @@ class ResponseDeserializer {
      * @param string $rawResponse The raw response.
      * @return VideosResponse Returns the photos response.
      */
-    public static function deserializeVideosResponse(string $rawResponse): VideoResponse {
+    public static function deserializeVideosResponse(string $rawResponse): VideosResponse {
 
         $decodedResponse = json_decode(trim($rawResponse), true);
 

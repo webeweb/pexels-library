@@ -24,12 +24,12 @@ interface PaginateResponseInterface {
      *
      * @return string Returns the next page.
      */
-    public function getNextPage(): string;
+    public function getNextPage(): ?string;
 
     /**
      * Get the prev page.
      *
      * @return string Returns the prev page.
      */
-    public function getPrevPage(): string;
+    public function getPrevPage(): ?string;
 }

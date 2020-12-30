@@ -31,7 +31,7 @@ trait StringNextPageTrait {
      *
      * @return string|null Returns the next page.
      */
-    public function getNextPage(): string {
+    public function getNextPage(): ?string {
         return $this->nextPage;
     }
 

@@ -51,7 +51,7 @@ class GetPhotoRequest extends AbstractRequest implements SubstituteRequestInterf
     /**
      * {@inheritdoc}
      */
-    public function getSubstituteValue(): string {
-        return $this->getId() . "";
+    public function getSubstituteValue() {
+        return $this->getId();
     }
 }

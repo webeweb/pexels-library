@@ -29,7 +29,7 @@ interface SubstituteRequestInterface {
     /**
      * Get the substitute value.
      *
-     * @return string Returns the substitute value.
+     * @return mixed Returns the substitute value.
      */
-    public function getSubstituteValue(): string;
+    public function getSubstituteValue();
 }
