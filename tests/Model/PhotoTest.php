@@ -28,7 +28,7 @@ class PhotoTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetPhotographer() {
+    public function testSetPhotographer(): void {
 
         $obj = new Photo();
 
@@ -41,7 +41,7 @@ class PhotoTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetPhotographerId() {
+    public function testSetPhotographerId(): void {
 
         $obj = new Photo();
 
@@ -54,7 +54,7 @@ class PhotoTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetPhotographerUrl() {
+    public function testSetPhotographerUrl(): void {
 
         $obj = new Photo();
 
@@ -67,7 +67,7 @@ class PhotoTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetSrc() {
+    public function testSetSrc(): void {
 
         // Set a Source mock.
         $src = new Source();
@@ -83,7 +83,7 @@ class PhotoTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new Photo();
 

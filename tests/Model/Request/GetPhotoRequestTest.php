@@ -27,7 +27,7 @@ class GetPhotoRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetSubstituteValue() {
+    public function testGetSubstituteValue(): void {
 
         $obj = new GetPhotoRequest();
 
@@ -40,7 +40,7 @@ class GetPhotoRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("/v1/photos/:id", GetPhotoRequest::GET_PHOTO_RESOURCE_PATH);
 

@@ -22,25 +22,25 @@ trait IntegerTotalResultsTrait {
     /**
      * Total results.
      *
-     * @var int
+     * @var int|null
      */
     private $totalResults;
 
     /**
      * Get the total results.
      *
-     * @return int Returns the total results.
+     * @return int|null Returns the total results.
      */
-    public function getTotalResults() {
+    public function getTotalResults(): ?int {
         return $this->totalResults;
     }
 
     /**
      * Set the total results.
      *
-     * @param int $totalResults The total result.
+     * @param int|null $totalResults The total result.
      */
-    public function setTotalResults($totalResults) {
+    public function setTotalResults(?int $totalResults): self {
         $this->totalResults = $totalResults;
         return $this;
     }

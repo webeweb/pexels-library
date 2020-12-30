@@ -24,57 +24,57 @@ trait RateLimitTrait {
     /**
      * Limit.
      *
-     * @var int
+     * @var int|null
      */
     private $limit;
 
     /**
      * Remaining.
      *
-     * @var int
+     * @var int|null
      */
     private $remaining;
 
     /**
      * Reset.
      *
-     * @var DateTime
+     * @var DateTime|null
      */
     private $reset;
 
     /**
      * Get the limit.
      *
-     * @return int Returns the limit.
+     * @return int|null Returns the limit.
      */
-    public function getLimit() {
+    public function getLimit(): ?int {
         return $this->limit;
     }
 
     /**
      * Get the remaining.
      *
-     * @return int Returns the remaining.
+     * @return int|null Returns the remaining.
      */
-    public function getRemaining() {
+    public function getRemaining(): ?int {
         return $this->remaining;
     }
 
     /**
      * Get the reset.
      *
-     * @return DateTime Returns reset.
+     * @return DateTime|null Returns reset.
      */
-    public function getReset() {
+    public function getReset(): ?DateTime {
         return $this->reset;
     }
 
     /**
      * Set the limit.
      *
-     * @param int $limit The limit.
+     * @param int|null $limit The limit.
      */
-    public function setLimit($limit) {
+    public function setLimit(?int $limit): self {
         $this->limit = $limit;
         return $this;
     }
@@ -82,9 +82,9 @@ trait RateLimitTrait {
     /**
      * Set the remaining.
      *
-     * @param int $remaining The remaining.
+     * @param int|null $remaining The remaining.
      */
-    public function setRemaining($remaining) {
+    public function setRemaining(?int $remaining): self {
         $this->remaining = $remaining;
         return $this;
     }
@@ -94,7 +94,7 @@ trait RateLimitTrait {
      *
      * @param DateTime|null $reset The reset.
      */
-    public function setReset(DateTime $reset = null) {
+    public function setReset(?DateTime $reset): self {
         $this->reset = $reset;
         return $this;
     }

@@ -27,7 +27,7 @@ class IntegerMinDurationTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetMinDuration() {
+    public function testSetMinDuration(): void {
 
         $obj = new TestIntegerMinDurationTrait();
 
@@ -40,7 +40,7 @@ class IntegerMinDurationTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestIntegerMinDurationTrait();
 

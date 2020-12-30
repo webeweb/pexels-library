@@ -29,7 +29,7 @@ class RateLimitTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetLimit() {
+    public function testSetLimit(): void {
 
         $obj = new TestRateLimitTrait();
 
@@ -42,7 +42,7 @@ class RateLimitTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetRemaining() {
+    public function testSetRemaining(): void {
 
         $obj = new TestRateLimitTrait();
 
@@ -56,7 +56,7 @@ class RateLimitTraitTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSetReset() {
+    public function testSetReset(): void {
 
         // Set a Date/time mock.
         $reset = new DateTime();
@@ -72,7 +72,7 @@ class RateLimitTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestRateLimitTrait();
 

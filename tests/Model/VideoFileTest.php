@@ -27,7 +27,7 @@ class VideoFileTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetFileType() {
+    public function testSetFileType(): void {
 
         $obj = new VideoFile();
 
@@ -40,7 +40,7 @@ class VideoFileTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetQuality() {
+    public function testSetQuality(): void {
 
         $obj = new VideoFile();
 
@@ -53,7 +53,7 @@ class VideoFileTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new VideoFile();
 

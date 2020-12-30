@@ -28,7 +28,7 @@ class PhotoResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetPhoto() {
+    public function testSetPhoto(): void {
 
         // Set a Photo mock.
         $photo = new Photo();
@@ -44,7 +44,7 @@ class PhotoResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new PhotoResponse();
 

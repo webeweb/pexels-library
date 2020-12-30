@@ -27,7 +27,7 @@ class IntegerMinWidthTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetMinWidth() {
+    public function testSetMinWidth(): void {
 
         $obj = new TestIntegerMinWidthTrait();
 
@@ -40,7 +40,7 @@ class IntegerMinWidthTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestIntegerMinWidthTrait();
 

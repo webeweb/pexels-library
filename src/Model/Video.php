@@ -22,7 +22,7 @@ class Video extends AbstractMedia {
     /**
      * Duration.
      *
-     * @var int
+     * @var int|null
      */
     private $duration;
 
@@ -36,14 +36,14 @@ class Video extends AbstractMedia {
     /**
      * Image.
      *
-     * @var string
+     * @var string|null
      */
     private $image;
 
     /**
      * User.
      *
-     * @var User
+     * @var User|null
      */
     private $user;
 
@@ -77,7 +77,7 @@ class Video extends AbstractMedia {
      * @param VideoFile $videoFile The video file.
      * @return Video Returns this video.
      */
-    public function addVideoFile(VideoFile $videoFile) {
+    public function addVideoFile(VideoFile $videoFile): Video {
         $this->videoFiles[] = $videoFile;
         return $this;
     }
@@ -88,7 +88,7 @@ class Video extends AbstractMedia {
      * @param VideoPicture $videoPicture The video picture.
      * @return Video Returns this video.
      */
-    public function addVideoPicture(VideoPicture $videoPicture) {
+    public function addVideoPicture(VideoPicture $videoPicture): Video {
         $this->videoPictures[] = $videoPicture;
         return $this;
     }
@@ -96,9 +96,9 @@ class Video extends AbstractMedia {
     /**
      * Get the duration.
      *
-     * @return int Returns the duration.
+     * @return int|null Returns the duration.
      */
-    public function getDuration() {
+    public function getDuration(): ?int {
         return $this->duration;
     }
 
@@ -114,18 +114,18 @@ class Video extends AbstractMedia {
     /**
      * Get the image.
      *
-     * @return string Returns the image.
+     * @return string|null Returns the image.
      */
-    public function getImage() {
+    public function getImage(): ?string {
         return $this->image;
     }
 
     /**
      * Get the user.
      *
-     * @return User Returns the user.
+     * @return User|null Returns the user.
      */
-    public function getUser() {
+    public function getUser(): ?User {
         return $this->user;
     }
 
@@ -134,7 +134,7 @@ class Video extends AbstractMedia {
      *
      * @return VideoFile[] Returns teh video files.
      */
-    public function getVideoFiles() {
+    public function getVideoFiles(): array {
         return $this->videoFiles;
     }
 
@@ -143,17 +143,17 @@ class Video extends AbstractMedia {
      *
      * @return VideoPicture[] Returns teh video pictures.
      */
-    public function getVideoPictures() {
+    public function getVideoPictures(): array {
         return $this->videoPictures;
     }
 
     /**
      * Set the duration.
      *
-     * @param int $duration The duration.
+     * @param int|null $duration The duration.
      * @return Video Returns this video.
      */
-    public function setDuration($duration) {
+    public function setDuration(?int $duration): Video {
         $this->duration = $duration;
         return $this;
     }
@@ -164,7 +164,7 @@ class Video extends AbstractMedia {
      * @param mixed $fullRes The full res.
      * @return Video Returns this video.
      */
-    public function setFullRes($fullRes) {
+    public function setFullRes($fullRes): Video {
         $this->fullRes = $fullRes;
         return $this;
     }
@@ -172,10 +172,10 @@ class Video extends AbstractMedia {
     /**
      * Set the image.
      *
-     * @param string $image The image.
+     * @param string|null $image The image.
      * @return Video Returns this video.
      */
-    public function setImage($image) {
+    public function setImage(?string $image): Video {
         $this->image = $image;
         return $this;
     }
@@ -186,7 +186,7 @@ class Video extends AbstractMedia {
      * @param User|null $user The user.
      * @return Video Returns this video.
      */
-    public function setUser(User $user = null) {
+    public function setUser(?User $user): Video {
         $this->user = $user;
         return $this;
     }
@@ -197,7 +197,7 @@ class Video extends AbstractMedia {
      * @param VideoFile[] $videoFiles The video files.
      * @return Video Returns this video.
      */
-    protected function setVideoFiles(array $videoFiles) {
+    protected function setVideoFiles(array $videoFiles): Video {
         $this->videoFiles = $videoFiles;
         return $this;
     }
@@ -208,7 +208,7 @@ class Video extends AbstractMedia {
      * @param VideoPicture[] $videoPictures The video pictures.
      * @return Video Returns this video.
      */
-    protected function setVideoPictures(array $videoPictures) {
+    protected function setVideoPictures(array $videoPictures): Video {
         $this->videoPictures = $videoPictures;
         return $this;
     }

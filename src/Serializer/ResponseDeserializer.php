@@ -37,7 +37,7 @@ class ResponseDeserializer {
      * @param array $response The response.
      * @return Photo Returns a photo.
      */
-    protected static function deserializePhoto(array $response) {
+    protected static function deserializePhoto(array $response): Photo {
 
         $model = new Photo();
         $model->setId(intval(ArrayHelper::get($response, "id", -1)));
@@ -58,7 +58,7 @@ class ResponseDeserializer {
      * @param string $rawResponse The raw response.
      * @return PhotoResponse Returns the photo response.
      */
-    public static function deserializePhotoResponse($rawResponse) {
+    public static function deserializePhotoResponse(string $rawResponse): PhotoResponse {
 
         $decodedResponse = json_decode(trim($rawResponse), true);
 
@@ -80,7 +80,7 @@ class ResponseDeserializer {
      * @param string $rawResponse The raw response.
      * @return PhotosResponse Returns the photos response.
      */
-    public static function deserializePhotosResponse($rawResponse) {
+    public static function deserializePhotosResponse(string $rawResponse): PhotosResponse {
 
         $decodedResponse = json_decode(trim($rawResponse), true);
 
@@ -111,7 +111,7 @@ class ResponseDeserializer {
      * @param array $response The response.
      * @return Source Returns a source.
      */
-    protected static function deserializeSource(array $response) {
+    protected static function deserializeSource(array $response): Source {
 
         $model = new Source();
         $model->setOriginal(ArrayHelper::get($response, "original", null));
@@ -132,7 +132,7 @@ class ResponseDeserializer {
      * @param array $response The response.
      * @return User Returns an user.
      */
-    protected static function deserializeUser(array $response) {
+    protected static function deserializeUser(array $response): User {
 
         $model = new User();
         $model->setId(intval(ArrayHelper::get($response, "id", -1)));
@@ -148,7 +148,7 @@ class ResponseDeserializer {
      * @param array $response The response.
      * @return Video Returns a video.
      */
-    protected static function deserializeVideo(array $response) {
+    protected static function deserializeVideo(array $response): Video {
 
         $model = new Video();
         $model->setId(intval(ArrayHelper::get($response, "id", -1)));
@@ -177,7 +177,7 @@ class ResponseDeserializer {
      * @param array $response The response.
      * @return VideoFile Returns a video file.
      */
-    protected static function deserializeVideoFile(array $response) {
+    protected static function deserializeVideoFile(array $response): VideoFile {
 
         $model = new VideoFile();
         $model->setId(intval(ArrayHelper::get($response, "id", -1)));
@@ -196,7 +196,7 @@ class ResponseDeserializer {
      * @param array $response The response.
      * @return VideoPicture Returns a video picture.
      */
-    protected static function deserializeVideoPicture(array $response) {
+    protected static function deserializeVideoPicture(array $response): VideoPicture {
 
         $model = new VideoPicture();
         $model->setId(intval(ArrayHelper::get($response, "id", -1)));
@@ -212,7 +212,7 @@ class ResponseDeserializer {
      * @param string $rawResponse The raw response.
      * @return VideoResponse Returns the video response.
      */
-    public static function deserializeVideoResponse($rawResponse) {
+    public static function deserializeVideoResponse(string $rawResponse): VideoResponse {
 
         $decodedResponse = json_decode(trim($rawResponse), true);
 
@@ -234,7 +234,7 @@ class ResponseDeserializer {
      * @param string $rawResponse The raw response.
      * @return VideosResponse Returns the photos response.
      */
-    public static function deserializeVideosResponse($rawResponse) {
+    public static function deserializeVideosResponse(string $rawResponse): VideoResponse {
 
         $decodedResponse = json_decode(trim($rawResponse), true);
 

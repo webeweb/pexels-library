@@ -11,8 +11,8 @@
 
 namespace WBW\Library\Pexels\Model\Request;
 
+use WBW\Library\Core\Model\Attribute\IntegerPageTrait;
 use WBW\Library\Pexels\Model\AbstractRequest;
-use WBW\Library\Pexels\Model\Attribute\IntegerPageTrait;
 use WBW\Library\Pexels\Model\Attribute\IntegerPerPageTrait;
 
 /**
@@ -45,7 +45,7 @@ class CuratedPhotosRequest extends AbstractRequest {
     /**
      * {@inheritDoc}
      */
-    public function getResourcePath() {
+    public function getResourcePath(): string {
         return self::CURATED_PHOTO_RESOURCE_PATH;
     }
 }

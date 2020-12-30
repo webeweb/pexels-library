@@ -27,7 +27,7 @@ class SourceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetLandscape() {
+    public function testSetLandscape(): void {
 
         $obj = new Source();
 
@@ -40,7 +40,7 @@ class SourceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetLarge() {
+    public function testSetLarge(): void {
 
         $obj = new Source();
 
@@ -53,7 +53,7 @@ class SourceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetLarge2x() {
+    public function testSetLarge2x(): void {
 
         $obj = new Source();
 
@@ -66,7 +66,7 @@ class SourceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetMedium() {
+    public function testSetMedium(): void {
 
         $obj = new Source();
 
@@ -79,7 +79,7 @@ class SourceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetOriginal() {
+    public function testSetOriginal(): void {
 
         $obj = new Source();
 
@@ -92,7 +92,7 @@ class SourceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetPortrait() {
+    public function testSetPortrait(): void {
 
         $obj = new Source();
 
@@ -105,7 +105,7 @@ class SourceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetSmall() {
+    public function testSetSmall(): void {
 
         $obj = new Source();
 
@@ -118,7 +118,7 @@ class SourceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetTiny() {
+    public function testSetTiny(): void {
 
         $obj = new Source();
 
@@ -131,7 +131,7 @@ class SourceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new Source();
 

@@ -22,25 +22,25 @@ trait IntegerMaxWidthTrait {
     /**
      * Max width.
      *
-     * @var int
+     * @var int|null
      */
     private $maxWidth;
 
     /**
      * Get the max width.
      *
-     * @return int Returns the max width.
+     * @return int|null Returns the max width.
      */
-    public function getMaxWidth() {
+    public function getMaxWidth(): ?int {
         return $this->maxWidth;
     }
 
     /**
      * Set the max width.
      *
-     * @param int $maxWidth The max width.
+     * @param int|null $maxWidth The max width.
      */
-    public function setMaxWidth($maxWidth) {
+    public function setMaxWidth(?int $maxWidth): self {
         $this->maxWidth = $maxWidth;
         return $this;
     }

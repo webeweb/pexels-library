@@ -27,7 +27,7 @@ class IntegerMaxDurationTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetMaxDuration() {
+    public function testSetMaxDuration(): void {
 
         $obj = new TestIntegerMaxDurationTrait();
 
@@ -40,7 +40,7 @@ class IntegerMaxDurationTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestIntegerMaxDurationTrait();
 

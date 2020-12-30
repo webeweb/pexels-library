@@ -36,6 +36,6 @@ abstract class AbstractMedia {
      * Constructor.
      */
     public function __construct() {
-        // NOTHING TO DO.
+        // NOTHING TO DO
     }
 }

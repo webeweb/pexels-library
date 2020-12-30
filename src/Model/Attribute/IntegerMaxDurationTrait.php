@@ -22,25 +22,25 @@ trait IntegerMaxDurationTrait {
     /**
      * Max duration.
      *
-     * @var int
+     * @var int|null
      */
     private $maxDuration;
 
     /**
      * Get the max duration.
      *
-     * @return int Returns the max duration.
+     * @return int|null Returns the max duration.
      */
-    public function getMaxDuration() {
+    public function getMaxDuration(): ?int {
         return $this->maxDuration;
     }
 
     /**
      * Set the max duration.
      *
-     * @param int $maxDuration The max duration.
+     * @param int|null $maxDuration The max duration.
      */
-    public function setMaxDuration($maxDuration) {
+    public function setMaxDuration(?int $maxDuration): self {
         $this->maxDuration = $maxDuration;
         return $this;
     }

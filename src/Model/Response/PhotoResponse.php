@@ -25,9 +25,9 @@ class PhotoResponse extends AbstractResponse {
     /**
      * Get the photo.
      *
-     * @return Photo Returns the photo.
+     * @return Photo|null Returns the photo.
      */
-    public function getPhoto() {
+    public function getPhoto(): ?Photo {
         $medias = $this->getMedias();
         return 1 === count($medias) ? $medias[0] : null;
     }
@@ -38,7 +38,7 @@ class PhotoResponse extends AbstractResponse {
      * @param Photo $photo The photo.
      * @return PhotoResponse Returns this photo response.
      */
-    public function setPhoto(Photo $photo) {
+    public function setPhoto(Photo $photo): PhotoResponse {
         return $this->setMedias([$photo]);
     }
 }

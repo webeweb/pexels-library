@@ -25,9 +25,9 @@ class VideoResponse extends AbstractResponse {
     /**
      * Get the video.
      *
-     * @return Video Returns the video.
+     * @return Video|null Returns the video.
      */
-    public function getVideo() {
+    public function getVideo(): ?Video {
         $medias = $this->getMedias();
         return 1 === count($medias) ? $medias[0] : null;
     }
@@ -38,7 +38,7 @@ class VideoResponse extends AbstractResponse {
      * @param Video $video The video.
      * @return VideoResponse Returns this video response.
      */
-    public function setVideo(Video $video) {
+    public function setVideo(Video $video): VideoResponse {
         return $this->setMedias([$video]);
     }
 }

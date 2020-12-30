@@ -39,7 +39,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializePhoto() {
+    public function testDeserializePhoto(): void {
 
         $arg = json_decode(TestFixtures::SAMPLE_PHOTOS_RESPONSE, true)["photos"][0];
 
@@ -61,7 +61,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializePhotoResponse() {
+    public function testDeserializePhotoResponse(): void {
 
         $arg = json_decode(TestFixtures::SAMPLE_PHOTOS_RESPONSE, true)["photos"][0];
 
@@ -82,7 +82,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializePhotoResponseWithBadRawResponse() {
+    public function testDeserializePhotoResponseWithBadRawResponse(): void {
 
         $obj = ResponseDeserializer::deserializePhotoResponse("");
         $this->assertInstanceOf(PhotoResponse::class, $obj);
@@ -95,7 +95,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializePhotosResponse() {
+    public function testDeserializePhotosResponse(): void {
 
         $obj = ResponseDeserializer::deserializePhotosResponse(TestFixtures::SAMPLE_PHOTOS_RESPONSE);
         $this->assertInstanceOf(PhotosResponse::class, $obj);
@@ -113,7 +113,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializePhotosResponseWithBadRawResponse() {
+    public function testDeserializePhotosResponseWithBadRawResponse(): void {
 
         $obj = ResponseDeserializer::deserializePhotosResponse("");
         $this->assertInstanceOf(PhotosResponse::class, $obj);
@@ -131,7 +131,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializeSource() {
+    public function testDeserializeSource(): void {
 
         $arg = json_decode(TestFixtures::SAMPLE_PHOTOS_RESPONSE, true)["photos"][0]["src"];
 
@@ -153,7 +153,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializeUser() {
+    public function testDeserializeUser(): void {
 
         $arg = json_decode(TestFixtures::SAMPLE_VIDEOS_RESPONSE, true)["videos"][0]["user"];
 
@@ -170,7 +170,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializeVideo() {
+    public function testDeserializeVideo(): void {
 
         $arg = json_decode(TestFixtures::SAMPLE_VIDEOS_RESPONSE, true)["videos"][0];
 
@@ -194,7 +194,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializeVideoFile() {
+    public function testDeserializeVideoFile(): void {
 
         $arg = json_decode(TestFixtures::SAMPLE_VIDEOS_RESPONSE, true)["videos"][0]["video_files"][0];
 
@@ -214,7 +214,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializeVideoPicture() {
+    public function testDeserializeVideoPicture(): void {
 
         $arg = json_decode(TestFixtures::SAMPLE_VIDEOS_RESPONSE, true)["videos"][0]["video_pictures"][0];
 
@@ -231,7 +231,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializeVideoResponse() {
+    public function testDeserializeVideoResponse(): void {
 
         $arg = json_decode(TestFixtures::SAMPLE_VIDEOS_RESPONSE, true)["videos"][0];
 
@@ -254,7 +254,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializeVideoResponseWithBadRewResponse() {
+    public function testDeserializeVideoResponseWithBadRewResponse(): void {
 
         $obj = ResponseDeserializer::deserializeVideoResponse("");
         $this->assertInstanceOf(VideoResponse::class, $obj);
@@ -267,7 +267,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializeVideosResponse() {
+    public function testDeserializeVideosResponse(): void {
 
         $obj = ResponseDeserializer::deserializeVideosResponse(TestFixtures::SAMPLE_VIDEOS_RESPONSE);
         $this->assertInstanceOf(VideosResponse::class, $obj);
@@ -285,7 +285,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializeVideosResponseWithBadRawResponse() {
+    public function testDeserializeVideosResponseWithBadRawResponse(): void {
 
         $obj = ResponseDeserializer::deserializeVideosResponse("");
         $this->assertInstanceOf(VideosResponse::class, $obj);

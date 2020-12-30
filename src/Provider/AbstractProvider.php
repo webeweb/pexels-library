@@ -50,10 +50,10 @@ abstract class AbstractProvider extends BaseProvider {
     /**
      * Constructor.
      *
-     * @param string $authorization The authorization.
+     * @param string|null $authorization The authorization.
      * @param LoggerInterface|null $logger The logger.
      */
-    public function __construct($authorization = null, LoggerInterface $logger = null) {
+    public function __construct(string $authorization = null, LoggerInterface $logger = null) {
         parent::__construct($logger);
         $this->setAuthorization($authorization);
         $this->setDebug(false);
@@ -64,7 +64,7 @@ abstract class AbstractProvider extends BaseProvider {
      *
      * @return array Returns the configuration.
      */
-    private function buildConfiguration() {
+    private function buildConfiguration(): array {
         return [
             "debug"       => $this->getDebug(),
             "headers"     => [
@@ -83,7 +83,7 @@ abstract class AbstractProvider extends BaseProvider {
      * @return string Returns the resource path.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    private function buildResourcePath(AbstractRequest $request) {
+    private function buildResourcePath(AbstractRequest $request): string {
 
         if (false === ($request instanceof SubstituteRequestInterface)) {
             return $request->getResourcePath();
@@ -105,7 +105,7 @@ abstract class AbstractProvider extends BaseProvider {
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    private function callApi($uri, array $queryData) {
+    private function callApi(string $uri, array $queryData): string {
 
         if (null === $this->getAuthorization()) {
             throw new InvalidArgumentException('The mandatory parameter "authorization" is missing');
@@ -143,7 +143,7 @@ abstract class AbstractProvider extends BaseProvider {
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    protected function callApiWithRequest(AbstractRequest $request, array $queryData) {
+    protected function callApiWithRequest(AbstractRequest $request, array $queryData): string {
 
         try {
 
@@ -165,7 +165,7 @@ abstract class AbstractProvider extends BaseProvider {
      * @throws APIException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    protected function callApiWithResponse(PaginateResponseInterface $response, $nextPage) {
+    protected function callApiWithResponse(PaginateResponseInterface $response, bool $nextPage): string {
 
         try {
 
@@ -184,19 +184,19 @@ abstract class AbstractProvider extends BaseProvider {
     /**
      * Get the authorization.
      *
-     * @return string Returns the authorization.
+     * @return string|null Returns the authorization.
      */
-    public function getAuthorization() {
+    public function getAuthorization(): ?string {
         return $this->authorization;
     }
 
     /**
      * Set the authorization.
      *
-     * @param string $authorization The authorization.
+     * @param string|null $authorization The authorization.
      * @return AbstractProvider Returns this provider.
      */
-    public function setAuthorization($authorization) {
+    public function setAuthorization(?string $authorization): AbstractProvider {
         $this->authorization = $authorization;
         return $this;
     }

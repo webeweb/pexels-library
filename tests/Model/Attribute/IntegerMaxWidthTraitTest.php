@@ -27,7 +27,7 @@ class IntegerMaxWidthTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetMaxWidth() {
+    public function testSetMaxWidth(): void {
 
         $obj = new TestIntegerMaxWidthTrait();
 
@@ -40,7 +40,7 @@ class IntegerMaxWidthTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestIntegerMaxWidthTrait();
 

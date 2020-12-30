@@ -27,7 +27,7 @@ class IntegerTotalResultsTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetTotalResults() {
+    public function testSetTotalResults(): void {
 
         $obj = new TestIntegerTotalResultsTrait();
 
@@ -40,7 +40,7 @@ class IntegerTotalResultsTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestIntegerTotalResultsTrait();
 

@@ -28,42 +28,42 @@ class VideoPicture {
     /**
      * Number.
      *
-     * @var int
+     * @var int|null
      */
     private $nr;
 
     /**
      * Picture.
      *
-     * @var string
+     * @var string|null
      */
     private $picture;
 
     /**
      * Get the number.
      *
-     * @return int Returns the number.
+     * @return int|null Returns the number.
      */
-    public function getNr() {
+    public function getNr(): ?int {
         return $this->nr;
     }
 
     /**
      * Get the picture.
      *
-     * @return string Returns the picture.
+     * @return string|null Returns the picture.
      */
-    public function getPicture() {
+    public function getPicture(): ?string {
         return $this->picture;
     }
 
     /**
      * Set the number.
      *
-     * @param int $nr The number.
+     * @param int|null $nr The number.
      * @return VideoPicture Returns this video picture.
      */
-    public function setNr($nr) {
+    public function setNr(?int $nr): VideoPicture {
         $this->nr = $nr;
         return $this;
     }
@@ -71,10 +71,10 @@ class VideoPicture {
     /**
      * Set the picture.
      *
-     * @param string $picture The picture.
+     * @param string|null $picture The picture.
      * @return VideoPicture Returns this picture.
      */
-    public function setPicture($picture) {
+    public function setPicture(?string $picture): VideoPicture {
         $this->picture = $picture;
         return $this;
     }

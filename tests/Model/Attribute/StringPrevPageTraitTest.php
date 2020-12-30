@@ -27,7 +27,7 @@ class StringPrevPageTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetPrevPage() {
+    public function testSetPrevPage(): void {
 
         $obj = new TestStringPrevPageTrait();
 
@@ -40,7 +40,7 @@ class StringPrevPageTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestStringPrevPageTrait();
 

@@ -11,15 +11,15 @@
 
 namespace WBW\Library\Pexels\Model\Response;
 
+use WBW\Library\Core\Model\Attribute\IntegerPageTrait;
 use WBW\Library\Core\Model\Attribute\StringUrlTrait;
 use WBW\Library\Pexels\API\PaginateResponseInterface;
 use WBW\Library\Pexels\Model\AbstractResponse;
-use WBW\Library\Pexels\Model\Video;
-use WBW\Library\Pexels\Model\Attribute\IntegerPageTrait;
 use WBW\Library\Pexels\Model\Attribute\IntegerPerPageTrait;
 use WBW\Library\Pexels\Model\Attribute\IntegerTotalResultsTrait;
 use WBW\Library\Pexels\Model\Attribute\StringNextPageTrait;
 use WBW\Library\Pexels\Model\Attribute\StringPrevPageTrait;
+use WBW\Library\Pexels\Model\Video;
 
 /**
  * Videos response.
@@ -49,7 +49,7 @@ class VideosResponse extends AbstractResponse implements PaginateResponseInterfa
      * @param Video $video The video.
      * @return VideosResponse Returns this video response.
      */
-    public function addVideo(Video $video) {
+    public function addVideo(Video $video): VideosResponse {
         return $this->addMedia($video);
     }
 
@@ -58,7 +58,7 @@ class VideosResponse extends AbstractResponse implements PaginateResponseInterfa
      *
      * @return Video[] Returns the videos.
      */
-    public function getVideos() {
+    public function getVideos(): array {
         return $this->getMedias();
     }
 }

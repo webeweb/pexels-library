@@ -22,25 +22,25 @@ trait StringNextPageTrait {
     /**
      * Next page.
      *
-     * @var string
+     * @var string|null
      */
     private $nextPage;
 
     /**
      * Get the next page.
      *
-     * @return string Returns the next page.
+     * @return string|null Returns the next page.
      */
-    public function getNextPage() {
+    public function getNextPage(): string {
         return $this->nextPage;
     }
 
     /**
      * Set the next page.
      *
-     * @param string $nextPage The next page.
+     * @param string|null $nextPage The next page.
      */
-    public function setNextPage($nextPage) {
+    public function setNextPage(?string $nextPage): self {
         $this->nextPage = $nextPage;
         return $this;
     }

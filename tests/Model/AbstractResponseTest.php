@@ -23,24 +23,11 @@ use WBW\Library\Pexels\Tests\Fixtures\Model\TestResponse;
 class AbstractResponseTest extends AbstractTestCase {
 
     /**
-     * Tests the setRawResponse() method.
-     *
-     * @return void
-     */
-    public function testSetRawResponse() {
-
-        $obj = new TestResponse();
-
-        $obj->setRawResponse("rawResponse");
-        $this->assertEquals("rawResponse", $obj->getRawResponse());
-    }
-
-    /**
      * Tests the __construct() method.
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestResponse();
 

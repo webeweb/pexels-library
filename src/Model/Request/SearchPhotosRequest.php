@@ -11,9 +11,9 @@
 
 namespace WBW\Library\Pexels\Model\Request;
 
+use WBW\Library\Core\Model\Attribute\IntegerPageTrait;
 use WBW\Library\Core\Model\Attribute\StringQueryTrait;
 use WBW\Library\Pexels\Model\AbstractRequest;
-use WBW\Library\Pexels\Model\Attribute\IntegerPageTrait;
 use WBW\Library\Pexels\Model\Attribute\IntegerPerPageTrait;
 
 /**
@@ -38,29 +38,9 @@ class SearchPhotosRequest extends AbstractRequest {
     /**
      * Locale.
      *
-     * @var string
+     * @var string|null
      */
     private $locale;
-
-    /**
-     * Get the locale.
-     *
-     * @return string Returns the locale.
-     */
-    public function getLocale() {
-        return $this->locale;
-    }
-
-    /**
-     * Set the locale.
-     *
-     * @param string $locale The locale.
-     * @return SearchPhotosRequest Returns this search photos request.
-     */
-    public function setLocale($locale) {
-        $this->locale = $locale;
-        return $this;
-    }
 
     /**
      * Constructor.
@@ -72,9 +52,29 @@ class SearchPhotosRequest extends AbstractRequest {
     }
 
     /**
+     * Get the locale.
+     *
+     * @return string|null Returns the locale.
+     */
+    public function getLocale(): ?string {
+        return $this->locale;
+    }
+
+    /**
      * {@inheritDoc}
      */
-    public function getResourcePath() {
+    public function getResourcePath(): string {
         return self::SEARCH_PHOTOS_RESOURCE_PATH;
+    }
+
+    /**
+     * Set the locale.
+     *
+     * @param string|null $locale The locale.
+     * @return SearchPhotosRequest Returns this search photos request.
+     */
+    public function setLocale(?string $locale): SearchPhotosRequest {
+        $this->locale = $locale;
+        return $this;
     }
 }

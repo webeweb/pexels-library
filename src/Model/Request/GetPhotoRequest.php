@@ -37,21 +37,21 @@ class GetPhotoRequest extends AbstractRequest implements SubstituteRequestInterf
     /**
      * {@inheritDoc}
      */
-    public function getResourcePath() {
+    public function getResourcePath(): string {
         return self::GET_PHOTO_RESOURCE_PATH;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getSubstituteName() {
+    public function getSubstituteName(): string {
         return ":id";
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getSubstituteValue() {
-        return $this->getId();
+    public function getSubstituteValue(): string {
+        return $this->getId() . "";
     }
 }

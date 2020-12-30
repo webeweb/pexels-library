@@ -27,7 +27,7 @@ class IntegerPageTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetPage() {
+    public function testSetPage(): void {
 
         $obj = new TestIntegerPageTrait();
 
@@ -40,7 +40,7 @@ class IntegerPageTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestIntegerPageTrait();
 

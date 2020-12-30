@@ -30,7 +30,7 @@ class VideoTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testAddVideoFile() {
+    public function testAddVideoFile(): void {
 
         // Set a Video file mock.
         $videoFile = new VideoFile();
@@ -46,7 +46,7 @@ class VideoTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testAddVideoPicture() {
+    public function testAddVideoPicture(): void {
 
         // Set a Video picture mock.
         $videoPicture = new VideoPicture();
@@ -62,7 +62,7 @@ class VideoTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetDuration() {
+    public function testSetDuration(): void {
 
         $obj = new Video();
 
@@ -75,7 +75,7 @@ class VideoTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetFullRes() {
+    public function testSetFullRes(): void {
 
         $obj = new Video();
 
@@ -88,7 +88,7 @@ class VideoTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetImage() {
+    public function testSetImage(): void {
 
         $obj = new Video();
 
@@ -101,7 +101,7 @@ class VideoTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetUser() {
+    public function testSetUser(): void {
 
         // Set an User mock.
         $user = new User();
@@ -117,7 +117,7 @@ class VideoTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new Video();
 

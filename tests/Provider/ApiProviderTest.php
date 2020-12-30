@@ -47,7 +47,7 @@ class ApiProviderTest extends AbstractTestCase {
     /**
      * {inheritdoc}
      */
-    protected function setUp() {
+    protected function setUp(): void {
         parent::setUp();
 
         // Set an authorization mock.
@@ -59,7 +59,7 @@ class ApiProviderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testBeforeReturnResponse() {
+    public function testBeforeReturnResponse(): void {
 
         // Set a Photos response mock.
         $photosResponse = new PhotosResponse();
@@ -77,7 +77,7 @@ class ApiProviderTest extends AbstractTestCase {
      *
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testCuratedPhotos() {
+    public function testCuratedPhotos(): void {
 
         // Set a Logger mock.
         $logger = $this->getMockBuilder(LoggerInterface::class)->getMock();
@@ -104,7 +104,7 @@ class ApiProviderTest extends AbstractTestCase {
      *
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testCuratedPhotosWithInvalidArgumentException() {
+    public function testCuratedPhotosWithInvalidArgumentException(): void {
 
         // Set a Curated photos request mock.
         $curatedPhotosRequest = new CuratedPhotosRequest();
@@ -126,7 +126,7 @@ class ApiProviderTest extends AbstractTestCase {
      *
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testGetPhoto() {
+    public function testGetPhoto(): void {
 
         // Set a Get photos request mock.
         $getPhotoRequest = new GetPhotoRequest();
@@ -151,7 +151,7 @@ class ApiProviderTest extends AbstractTestCase {
      *
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testGetPhotoWithInvalidArgumentException() {
+    public function testGetPhotoWithInvalidArgumentException(): void {
 
         // Set a Get photos request mock.
         $getPhotoRequest = new GetPhotoRequest();
@@ -174,7 +174,7 @@ class ApiProviderTest extends AbstractTestCase {
      *
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testGetVideo() {
+    public function testGetVideo(): void {
 
         // Set a Get video request mock.
         $getVideoRequest = new GetVideoRequest();
@@ -199,7 +199,7 @@ class ApiProviderTest extends AbstractTestCase {
      *
      * @return void.
      */
-    public function testNextPageWithPhotosResponse() {
+    public function testNextPageWithPhotosResponse(): void {
 
         // Set a Search photos request mock.
         $searchPhotosRequest = new SearchPhotosRequest();
@@ -224,7 +224,7 @@ class ApiProviderTest extends AbstractTestCase {
      *
      * @return void.
      */
-    public function testNextPageWithVideosResponse() {
+    public function testNextPageWithVideosResponse(): void {
 
         // Set a Search videos request mock.
         $searchVideosRequest = new SearchVideosRequest();
@@ -249,7 +249,7 @@ class ApiProviderTest extends AbstractTestCase {
      *
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testPopularVideos() {
+    public function testPopularVideos(): void {
 
         // Set a Popular videos request mock.
         $popularVideosRequest = new PopularVideosRequest();
@@ -273,7 +273,7 @@ class ApiProviderTest extends AbstractTestCase {
      *
      * @return void.
      */
-    public function testPrevPageWithPhotosResponse() {
+    public function testPrevPageWithPhotosResponse(): void {
 
         // Set a Search photos request mock.
         $searchPhotosRequest = new SearchPhotosRequest();
@@ -299,7 +299,7 @@ class ApiProviderTest extends AbstractTestCase {
      *
      * @return void.
      */
-    public function testPrevPageWithVideosResponse() {
+    public function testPrevPageWithVideosResponse(): void {
 
         // Set a Search videos request mock.
         $searchVideosRequest = new SearchVideosRequest();
@@ -326,7 +326,7 @@ class ApiProviderTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSearchPhotos() {
+    public function testSearchPhotos(): void {
 
         // Set a Search photos request mock.
         $searchPhotoRequest = new SearchPhotosRequest();
@@ -351,7 +351,7 @@ class ApiProviderTest extends AbstractTestCase {
      *
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSearchVideos() {
+    public function testSearchVideos(): void {
 
         // Set a Search videos request mock.
         $searchVideosRequest = new SearchVideosRequest();

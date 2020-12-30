@@ -22,56 +22,56 @@ class Source {
     /**
      * Landscape.
      *
-     * @var string
+     * @var string|null
      */
     private $landscape;
 
     /**
      * Large.
      *
-     * @var string
+     * @var string|null
      */
     private $large;
 
     /**
      * Large 2X.
      *
-     * @var string
+     * @var string|null
      */
     private $large2x;
 
     /**
      * Medium.
      *
-     * @var string
+     * @var string|null
      */
     private $medium;
 
     /**
      * Original.
      *
-     * @var string
+     * @var string|null
      */
     private $original;
 
     /**
      * Portrait.
      *
-     * @var string
+     * @var string|null
      */
     private $portrait;
 
     /**
      * Small.
      *
-     * @var string
+     * @var string|null
      */
     private $small;
 
     /**
      * Tiny.
      *
-     * @var string
+     * @var string|null
      */
     private $tiny;
 
@@ -79,88 +79,88 @@ class Source {
      * Constructor.
      */
     public function __construct() {
-        // NOTHING TO DO.
+        // NOTHING TO DO
     }
 
     /**
      * Get the landscape.
      *
-     * @return string Returns the landscape.
+     * @return string|null Returns the landscape.
      */
-    public function getLandscape() {
+    public function getLandscape(): ?string {
         return $this->landscape;
     }
 
     /**
      * Get the large.
      *
-     * @return string Returns the large.
+     * @return string|null Returns the large.
      */
-    public function getLarge() {
+    public function getLarge(): ?string {
         return $this->large;
     }
 
     /**
      * Get the large 2x.
      *
-     * @return string Returns the large 2x.
+     * @return string|null Returns the large 2x.
      */
-    public function getLarge2x() {
+    public function getLarge2x(): ?string {
         return $this->large2x;
     }
 
     /**
      * Get the medium.
      *
-     * @return string Returns the medium.
+     * @return string|null Returns the medium.
      */
-    public function getMedium() {
+    public function getMedium(): ?string {
         return $this->medium;
     }
 
     /**
      * Get the original.
      *
-     * @return string Returns the original.
+     * @return string|null Returns the original.
      */
-    public function getOriginal() {
+    public function getOriginal(): ?string {
         return $this->original;
     }
 
     /**
      * Get the portrait.
      *
-     * @return string Returns the portrait.
+     * @return string|null Returns the portrait.
      */
-    public function getPortrait() {
+    public function getPortrait(): ?string {
         return $this->portrait;
     }
 
     /**
      * Get the small.
      *
-     * @return string Returns the small.
+     * @return string|null Returns the small.
      */
-    public function getSmall() {
+    public function getSmall(): ?string {
         return $this->small;
     }
 
     /**
      * Get the tiny.
      *
-     * @return string Returns the tiny.
+     * @return string|null Returns the tiny.
      */
-    public function getTiny() {
+    public function getTiny(): ?string {
         return $this->tiny;
     }
 
     /**
      * Set the landscape.
      *
-     * @param string $landscape The landscape.
+     * @param string|null $landscape The landscape.
      * @return Source Returns this source.
      */
-    public function setLandscape($landscape) {
+    public function setLandscape(?string $landscape): Source {
         $this->landscape = $landscape;
         return $this;
     }
@@ -168,10 +168,10 @@ class Source {
     /**
      * Set the large.
      *
-     * @param string $large The large.
+     * @param string|null $large The large.
      * @return Source Returns this source.
      */
-    public function setLarge($large) {
+    public function setLarge(?string $large): Source {
         $this->large = $large;
         return $this;
     }
@@ -179,10 +179,10 @@ class Source {
     /**
      * Set the large 2x.
      *
-     * @param string $large2x The large 2x.
+     * @param string|null $large2x The large 2x.
      * @return Source Returns this source.
      */
-    public function setLarge2x($large2x) {
+    public function setLarge2x(?string $large2x): Source {
         $this->large2x = $large2x;
         return $this;
     }
@@ -190,10 +190,10 @@ class Source {
     /**
      * Set the medium.
      *
-     * @param string $medium The medium.
+     * @param string|null $medium The medium.
      * @return Source Returns this source.
      */
-    public function setMedium($medium) {
+    public function setMedium(?string $medium): Source {
         $this->medium = $medium;
         return $this;
     }
@@ -201,10 +201,10 @@ class Source {
     /**
      * Set the original.
      *
-     * @param string $original The original.
+     * @param string|null $original The original.
      * @return Source Returns this source.
      */
-    public function setOriginal($original) {
+    public function setOriginal(?string $original): Source {
         $this->original = $original;
         return $this;
     }
@@ -212,10 +212,10 @@ class Source {
     /**
      * Set the portrait.
      *
-     * @param string $portrait The portrait.
+     * @param string|null $portrait The portrait.
      * @return Source Returns this source.
      */
-    public function setPortrait($portrait) {
+    public function setPortrait(?string $portrait): Source {
         $this->portrait = $portrait;
         return $this;
     }
@@ -223,10 +223,10 @@ class Source {
     /**
      * Set the small.
      *
-     * @param string $small The small.
+     * @param string|null $small The small.
      * @return Source Returns this source.
      */
-    public function setSmall($small) {
+    public function setSmall(?string $small): Source {
         $this->small = $small;
         return $this;
     }
@@ -234,10 +234,10 @@ class Source {
     /**
      * Set the tiny.
      *
-     * @param string $tiny The tiny.
+     * @param string|null $tiny The tiny.
      * @return Source Returns this source.
      */
-    public function setTiny($tiny) {
+    public function setTiny(?string $tiny): Source {
         $this->tiny = $tiny;
         return $this;
     }

@@ -27,7 +27,7 @@ class VideoPictureTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetNr() {
+    public function testSetNr(): void {
 
         $obj = new VideoPicture();
 
@@ -40,7 +40,7 @@ class VideoPictureTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetPicture() {
+    public function testSetPicture(): void {
 
         $obj = new VideoPicture();
 
@@ -53,7 +53,7 @@ class VideoPictureTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new VideoPicture();
 

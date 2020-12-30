@@ -22,25 +22,25 @@ trait StringPrevPageTrait {
     /**
      * Prev page.
      *
-     * @var string
+     * @var string|null
      */
     private $prevPage;
 
     /**
      * Get the prev page.
      *
-     * @return string Returns the prev page.
+     * @return string|null Returns the prev page.
      */
-    public function getPrevPage() {
+    public function getPrevPage(): ?string {
         return $this->prevPage;
     }
 
     /**
      * Set the prev page.
      *
-     * @param string $prevPage The prev page.
+     * @param string|null $prevPage The prev page.
      */
-    public function setPrevPage($prevPage) {
+    public function setPrevPage(?string $prevPage): self {
         $this->prevPage = $prevPage;
         return $this;
     }

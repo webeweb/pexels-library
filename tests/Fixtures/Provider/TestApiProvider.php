@@ -25,7 +25,7 @@ class TestApiProvider extends ApiProvider {
     /**
      * {@inheritDoc}
      */
-    public function beforeReturnResponse(AbstractResponse $response) {
+    public function beforeReturnResponse(AbstractResponse $response): AbstractResponse {
         return parent::beforeReturnResponse($response);
     }
 }

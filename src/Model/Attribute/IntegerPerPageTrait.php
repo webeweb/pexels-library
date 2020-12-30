@@ -22,25 +22,25 @@ trait IntegerPerPageTrait {
     /**
      * Per page.
      *
-     * @var int
+     * @var int|null
      */
     private $perPage;
 
     /**
      * Get the per page.
      *
-     * @return int Returns the per page.
+     * @return int|null Returns the per page.
      */
-    public function getPerPage() {
+    public function getPerPage(): ?int {
         return $this->perPage;
     }
 
     /**
      * Set the per page.
      *
-     * @param int $perPage The per page.
+     * @param int|null $perPage The per page.
      */
-    public function setPerPage($perPage) {
+    public function setPerPage(?int $perPage): self {
         $this->perPage = $perPage;
         return $this;
     }

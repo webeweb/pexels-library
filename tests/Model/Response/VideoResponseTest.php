@@ -28,7 +28,7 @@ class VideoResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetVideo() {
+    public function testSetVideo(): void {
 
         // Set a Video mock.
         $video = new Video();
@@ -44,7 +44,7 @@ class VideoResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new VideoResponse();
 

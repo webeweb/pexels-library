@@ -11,6 +11,8 @@
 
 namespace WBW\Library\Pexels\Model;
 
+use WBW\Library\Core\Model\Attribute\StringRawResponseTrait;
+
 /**
  * Abstract response.
  *
@@ -21,6 +23,7 @@ namespace WBW\Library\Pexels\Model;
 abstract class AbstractResponse {
 
     use RateLimitTrait;
+    use StringRawResponseTrait;
 
     /**
      * Medias.
@@ -28,13 +31,6 @@ abstract class AbstractResponse {
      * @var AbstractMedia[]
      */
     private $medias;
-
-    /**
-     * Raw response.
-     *
-     * @var string
-     */
-    private $rawResponse;
 
     /**
      * Constructor.
@@ -49,7 +45,7 @@ abstract class AbstractResponse {
      * @param AbstractMedia $media The media.
      * @return AbstractResponse Returns this response.
      */
-    protected function addMedia(AbstractMedia $media) {
+    protected function addMedia(AbstractMedia $media): AbstractResponse {
         $this->medias[] = $media;
         return $this;
     }
@@ -59,17 +55,8 @@ abstract class AbstractResponse {
      *
      * @return AbstractMedia[] Returns the medias.
      */
-    protected function getMedias() {
+    protected function getMedias(): array {
         return $this->medias;
-    }
-
-    /**
-     * Get the raw response.
-     *
-     * @return string Returns the raw response.
-     */
-    public function getRawResponse() {
-        return $this->rawResponse;
     }
 
     /**
@@ -78,19 +65,8 @@ abstract class AbstractResponse {
      * @param AbstractMedia[] $medias The medias.
      * @return AbstractResponse Returns this response.
      */
-    protected function setMedias(array $medias) {
+    protected function setMedias(array $medias): AbstractResponse {
         $this->medias = $medias;
-        return $this;
-    }
-
-    /**
-     * Set the raw response.
-     *
-     * @param string $rawResponse The raw response.
-     * @return AbstractResponse Returns this response.
-     */
-    public function setRawResponse($rawResponse) {
-        $this->rawResponse = $rawResponse;
         return $this;
     }
 }

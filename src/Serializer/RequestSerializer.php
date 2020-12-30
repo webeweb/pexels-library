@@ -32,7 +32,7 @@ class RequestSerializer {
      * @param CuratedPhotosRequest $request The curated photos request.
      * @return array Returns the serialized curated photos request.
      */
-    public static function serializeCuratedPhotosRequest(CuratedPhotosRequest $request) {
+    public static function serializeCuratedPhotosRequest(CuratedPhotosRequest $request): array {
 
         $result = [];
 
@@ -48,7 +48,7 @@ class RequestSerializer {
      * @param PopularVideosRequest $request The popular photos request.
      * @return array Returns the serialized popular videos request.
      */
-    public static function serializePopularVideosRequest(PopularVideosRequest $request) {
+    public static function serializePopularVideosRequest(PopularVideosRequest $request): array {
 
         $result = [];
 
@@ -69,7 +69,7 @@ class RequestSerializer {
      * @return array Returns the serialized search photos request.
      * @throws InvalidArgumentException Throws an invalid argument exception if a mandatory parameter is missing.
      */
-    public static function serializeSearchPhotosRequest(SearchPhotosRequest $request) {
+    public static function serializeSearchPhotosRequest(SearchPhotosRequest $request): array {
 
         $result = [];
 
@@ -92,7 +92,7 @@ class RequestSerializer {
      * @return array Returns the serialized search videos request.
      * @throws InvalidArgumentException Throws an invalid argument exception if a mandatory parameter is missing.
      */
-    public static function serializeSearchVideosRequest(SearchVideosRequest $request) {
+    public static function serializeSearchVideosRequest(SearchVideosRequest $request): array {
 
         $result = [];
 

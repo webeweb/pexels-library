@@ -11,13 +11,13 @@
 
 namespace WBW\Library\Pexels\Model\Request;
 
+use WBW\Library\Core\Model\Attribute\IntegerPageTrait;
 use WBW\Library\Core\Model\Attribute\StringQueryTrait;
 use WBW\Library\Pexels\Model\AbstractRequest;
 use WBW\Library\Pexels\Model\Attribute\IntegerMaxDurationTrait;
 use WBW\Library\Pexels\Model\Attribute\IntegerMaxWidthTrait;
 use WBW\Library\Pexels\Model\Attribute\IntegerMinDurationTrait;
 use WBW\Library\Pexels\Model\Attribute\IntegerMinWidthTrait;
-use WBW\Library\Pexels\Model\Attribute\IntegerPageTrait;
 use WBW\Library\Pexels\Model\Attribute\IntegerPerPageTrait;
 
 /**
@@ -55,7 +55,7 @@ class SearchVideosRequest extends AbstractRequest {
     /**
      * {@inheritDoc}
      */
-    public function getResourcePath() {
+    public function getResourcePath(): string {
         return self::SEARCH_VIDEOS_RESOURCE_PATH;
     }
 }

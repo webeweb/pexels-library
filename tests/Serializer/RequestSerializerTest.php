@@ -33,7 +33,7 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeCuratedPhotosRequest() {
+    public function testSerializeCuratedPhotosRequest(): void {
 
         // Set a Curated photos request mock.
         $curatedPhotosRequest = new CuratedPhotosRequest();
@@ -50,7 +50,7 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializePopularVideosRequest() {
+    public function testSerializePopularVideosRequest(): void {
 
         // Set a Popular videos request mock.
         $popularVideosRequest = new PopularVideosRequest();
@@ -75,7 +75,7 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeSearchPhotosRequest() {
+    public function testSerializeSearchPhotosRequest(): void {
 
         // Set a Search photos request mock.
         $searchPhotosRequest = new SearchPhotosRequest();
@@ -96,7 +96,7 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeSearchPhotosRequestWithInvalidArgumentException() {
+    public function testSerializeSearchPhotosRequestWithInvalidArgumentException(): void {
 
         // Set a Search photos request mock.
         $searchPhotosRequest = new SearchPhotosRequest();
@@ -116,7 +116,7 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeSearchVideosRequest() {
+    public function testSerializeSearchVideosRequest(): void {
 
         // Set a Search videos request mock.
         $searchVideosRequest = new SearchVideosRequest();
@@ -143,7 +143,7 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeSearchVideosRequestWithInvalidArgumentException() {
+    public function testSerializeSearchVideosRequestWithInvalidArgumentException(): void {
 
         // Set a Search videos request mock.
         $searchPhotosRequest = new SearchVideosRequest();

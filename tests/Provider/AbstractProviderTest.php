@@ -27,7 +27,7 @@ class AbstractProviderTest extends AbstractTestCase {
      *
      * @retunr void.
      */
-    public function testSetAuthorization() {
+    public function testSetAuthorization(): void {
 
         $obj = new TestProvider();
 
@@ -40,7 +40,7 @@ class AbstractProviderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetDebug() {
+    public function testSetDebug(): void {
 
         $obj = new TestProvider();
 
@@ -53,7 +53,7 @@ class AbstractProviderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("https://api.pexels.com", TestProvider::ENDPOINT_PATH);
 

@@ -27,7 +27,7 @@ class GetVideoRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetSubstituteValue() {
+    public function testGetSubstituteValue(): void {
 
         $obj = new GetVideoRequest();
 
@@ -40,7 +40,7 @@ class GetVideoRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("/v1/videos/videos/:id", GetVideoRequest::GET_VIDEO_RESOURCE_PATH);
 

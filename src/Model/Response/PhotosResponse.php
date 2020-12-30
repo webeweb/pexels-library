@@ -11,10 +11,10 @@
 
 namespace WBW\Library\Pexels\Model\Response;
 
+use WBW\Library\Core\Model\Attribute\IntegerPageTrait;
 use WBW\Library\Core\Model\Attribute\StringUrlTrait;
 use WBW\Library\Pexels\API\PaginateResponseInterface;
 use WBW\Library\Pexels\Model\AbstractResponse;
-use WBW\Library\Pexels\Model\Attribute\IntegerPageTrait;
 use WBW\Library\Pexels\Model\Attribute\IntegerPerPageTrait;
 use WBW\Library\Pexels\Model\Attribute\IntegerTotalResultsTrait;
 use WBW\Library\Pexels\Model\Attribute\StringNextPageTrait;
@@ -49,7 +49,7 @@ class PhotosResponse extends AbstractResponse implements PaginateResponseInterfa
      * @param Photo $photo The photo.
      * @return PhotosResponse Returns this photo response.
      */
-    public function addPhoto(Photo $photo) {
+    public function addPhoto(Photo $photo): PhotosResponse {
         return $this->addMedia($photo);
     }
 
@@ -58,7 +58,7 @@ class PhotosResponse extends AbstractResponse implements PaginateResponseInterfa
      *
      * @return Photo[] Returns the photos.
      */
-    public function getPhotos() {
+    public function getPhotos(): array {
         return $this->getMedias();
     }
 }

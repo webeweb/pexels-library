@@ -22,74 +22,74 @@ class Photo extends AbstractMedia {
     /**
      * Photographer.
      *
-     * @var string
+     * @var string|null
      */
     private $photographer;
 
     /**
      * Photographer id.
      *
-     * @var string
+     * @var string|null
      */
     private $photographerId;
 
     /**
      * Photographer URL.
      *
-     * @var string
+     * @var string|null
      */
     private $photographerUrl;
 
     /**
      * Source.
      *
-     * @var Source
+     * @var Source|null
      */
     private $src;
 
     /**
      * Get the photographer.
      *
-     * @return string Returns the photographer.
+     * @return string|null Returns the photographer.
      */
-    public function getPhotographer() {
+    public function getPhotographer(): ?string {
         return $this->photographer;
     }
 
     /**
      * Get the photographer id.
      *
-     * @return string Returns the photographer id.
+     * @return string|null Returns the photographer id.
      */
-    public function getPhotographerId() {
+    public function getPhotographerId(): ?string {
         return $this->photographerId;
     }
 
     /**
      * Get the photographer URL.
      *
-     * @return string Returns the photographer URL.
+     * @return string|null Returns the photographer URL.
      */
-    public function getPhotographerUrl() {
+    public function getPhotographerUrl(): ?string {
         return $this->photographerUrl;
     }
 
     /**
      * Get the source.
      *
-     * @return Source Returns the source.
+     * @return Source|null Returns the source.
      */
-    public function getSrc() {
+    public function getSrc(): ?Source {
         return $this->src;
     }
 
     /**
      * Set the photographer.
      *
-     * @param string $photographer The photographer.
+     * @param string|null $photographer The photographer.
      * @return Photo Returns this photo.
      */
-    public function setPhotographer($photographer) {
+    public function setPhotographer(?string $photographer): Photo {
         $this->photographer = $photographer;
         return $this;
     }
@@ -97,10 +97,10 @@ class Photo extends AbstractMedia {
     /**
      * Set the photographer id.
      *
-     * @param string $photographerId The photographer id.
+     * @param string|null $photographerId The photographer id.
      * @return Photo Returns this photo.
      */
-    public function setPhotographerId($photographerId) {
+    public function setPhotographerId(?string $photographerId): Photo {
         $this->photographerId = $photographerId;
         return $this;
     }
@@ -108,10 +108,10 @@ class Photo extends AbstractMedia {
     /**
      * Set the photographer URL.
      *
-     * @param string $photographerUrl The photographer URL.
+     * @param string|null $photographerUrl The photographer URL.
      * @return Photo Returns this photo.
      */
-    public function setPhotographerUrl($photographerUrl) {
+    public function setPhotographerUrl(?string $photographerUrl): Photo {
         $this->photographerUrl = $photographerUrl;
         return $this;
     }
@@ -122,9 +122,8 @@ class Photo extends AbstractMedia {
      * @param Source|null $src The source.
      * @return Photo Returns this photo.
      */
-    public function setSrc(Source $src = null) {
+    public function setSrc(?Source $src): Photo {
         $this->src = $src;
         return $this;
     }
-
 }

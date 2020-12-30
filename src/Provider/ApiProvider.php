@@ -42,7 +42,7 @@ class ApiProvider extends AbstractProvider {
      * @param AbstractResponse $response The response.
      * @return AbstractResponse Returns the response.
      */
-    protected function beforeReturnResponse(AbstractResponse $response) {
+    protected function beforeReturnResponse(AbstractResponse $response): AbstractResponse {
 
         $response->setLimit($this->getLimit());
         $response->setRemaining($this->getRemaining());
@@ -59,7 +59,7 @@ class ApiProvider extends AbstractProvider {
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function curatedPhotos(CuratedPhotosRequest $request) {
+    public function curatedPhotos(CuratedPhotosRequest $request): PhotosResponse {
 
         $queryData = RequestSerializer::serializeCuratedPhotosRequest($request);
 
@@ -76,7 +76,7 @@ class ApiProvider extends AbstractProvider {
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function getPhoto(GetPhotoRequest $request) {
+    public function getPhoto(GetPhotoRequest $request): PhotoResponse {
 
         $rawResponse = $this->callApiWithRequest($request, []);
 
@@ -91,7 +91,7 @@ class ApiProvider extends AbstractProvider {
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function getVideo(GetVideoRequest $request) {
+    public function getVideo(GetVideoRequest $request): VideoResponse {
 
         $rawResponse = $this->callApiWithRequest($request, []);
 
@@ -125,7 +125,7 @@ class ApiProvider extends AbstractProvider {
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function popularVideos(PopularVideosRequest $response) {
+    public function popularVideos(PopularVideosRequest $response): VideosResponse {
 
         $queryData = RequestSerializer::serializePopularVideosRequest($response);
 
@@ -161,7 +161,7 @@ class ApiProvider extends AbstractProvider {
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a mandatory parameter is missing.
      */
-    public function searchPhotos(SearchPhotosRequest $request) {
+    public function searchPhotos(SearchPhotosRequest $request): PhotosResponse {
 
         $queryData = RequestSerializer::serializeSearchPhotosRequest($request);
 
@@ -178,7 +178,7 @@ class ApiProvider extends AbstractProvider {
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a mandatory parameter is missing.
      */
-    public function searchVideos(SearchVideosRequest $request) {
+    public function searchVideos(SearchVideosRequest $request): VideosResponse {
 
         $queryData = RequestSerializer::serializeSearchVideosRequest($request);
 

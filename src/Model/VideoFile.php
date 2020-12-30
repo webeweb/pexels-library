@@ -34,42 +34,42 @@ class VideoFile {
     /**
      * File type.
      *
-     * @var string
+     * @var string|null
      */
     private $fileType;
 
     /**
      * Quality.
      *
-     * @var string
+     * @var string|null
      */
     private $quality;
 
     /**
      * Get the file type.
      *
-     * @return string Returns the file type.
+     * @return string|null Returns the file type.
      */
-    public function getFileType() {
+    public function getFileType(): ?string {
         return $this->fileType;
     }
 
     /**
      * Get the quality.
      *
-     * @return string Returns the quality.
+     * @return string|null Returns the quality.
      */
-    public function getQuality() {
+    public function getQuality(): ?string {
         return $this->quality;
     }
 
     /**
      * Set the file type.
      *
-     * @param string $fileType The file type.
+     * @param string|null $fileType The file type.
      * @return VideoFile Returns this video file.
      */
-    public function setFileType($fileType) {
+    public function setFileType(?string $fileType): VideoFile {
         $this->fileType = $fileType;
         return $this;
     }
@@ -77,12 +77,11 @@ class VideoFile {
     /**
      * Set the quality.
      *
-     * @param string $quality Returns the quality.
+     * @param string|null $quality Returns the quality.
      * @return VideoFile Returns this video file.
      */
-    public function setQuality($quality) {
+    public function setQuality(?string $quality): VideoFile {
         $this->quality = $quality;
         return $this;
     }
-
 }

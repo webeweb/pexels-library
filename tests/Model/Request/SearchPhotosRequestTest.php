@@ -27,7 +27,7 @@ class SearchPhotosRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetLocale() {
+    public function testSetLocale(): void {
 
         $obj = new SearchPhotosRequest();
 
@@ -40,7 +40,7 @@ class SearchPhotosRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("/v1/search", SearchPhotosRequest::SEARCH_PHOTOS_RESOURCE_PATH);
 

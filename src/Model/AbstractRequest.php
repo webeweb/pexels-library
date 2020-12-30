@@ -26,7 +26,7 @@ abstract class AbstractRequest implements RequestInterface {
      * Constructor.
      */
     public function __construct() {
-        // NOTHING TO DO.
+        // NOTHING TO DO
     }
 
     /**
@@ -34,5 +34,5 @@ abstract class AbstractRequest implements RequestInterface {
      *
      * @return string Returns the resource path.
      */
-    abstract public function getResourcePath();
+    abstract public function getResourcePath(): string;
 }

@@ -22,25 +22,25 @@ trait IntegerMinWidthTrait {
     /**
      * Min width.
      *
-     * @var int
+     * @var int|null
      */
     private $minWidth;
 
     /**
      * Get the min width.
      *
-     * @return int Returns the min width.
+     * @return int|null Returns the min width.
      */
-    public function getMinWidth() {
+    public function getMinWidth(): ?int {
         return $this->minWidth;
     }
 
     /**
      * Set the min width.
      *
-     * @param int $minWidth The min width.
+     * @param int|null $minWidth The min width.
      */
-    public function setMinWidth($minWidth) {
+    public function setMinWidth(?int $minWidth): self {
         $this->minWidth = $minWidth;
         return $this;
     }
