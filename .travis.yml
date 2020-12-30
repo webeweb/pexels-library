@@ -2,26 +2,26 @@
 language: "php"
 
 php:
-    - "5.6"
-    - "7.0"
     - "7.1"
     - "7.2"
     - "7.3"
     - "7.4"
+    - "8.0"
     - "nightly"
 
 jobs:
     allow_failures:
         -   php: "nightly"
 
-os: linux
+os:       linux
 
 before_install:
     #- echo "memory_limit=4096M" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+    - echo "xdebug.mode=coverage" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
 
 install:
     - COMPOSER_MEMORY_LIMIT=-1 composer update
-    - wget -c -nc --retry-connrefused --tries=0 https://github.com/php-coveralls/php-coveralls/releases/download/v2.2.0/php-coveralls.phar -O coveralls.phar
+    - wget -c -nc --retry-connrefused --tries=0 https://github.com/php-coveralls/php-coveralls/releases/download/v2.4.3/php-coveralls.phar -O coveralls.phar
     - chmod +x coveralls.phar
     - php coveralls.phar --version
 
