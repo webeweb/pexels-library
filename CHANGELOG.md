@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [1.7.2](https://github.com/webeweb/pexels-library/tree/v1.7.2) (2020-12-31)
+
+- Fix compatibility
+
 ### [1.7.1](https://github.com/webeweb/pexels-library/tree/v1.7.1) (2020-12-30)
 
 - Fix minimum PHP version
