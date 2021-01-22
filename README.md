@@ -1,8 +1,8 @@
 pexels-library
 ==============
 
-[![Build Status](https://img.shields.io/travis/com/webeweb/pexels-library/master.svg?style=flat-square)](https://travis-ci.com/webeweb/pexels-library)
-[![Coverage Status](https://img.shields.io/coveralls/webeweb/pexels-library/master.svg?style=flat-square)](https://coveralls.io/github/webeweb/pexels-library?branch=master)
+[![Build Status](https://img.shields.io/scrutinizer/build/g/webeweb/pexels-library/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/webeweb/pexels-library/build-status/master)
+[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/webeweb/pexels-library/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/webeweb/pexels-library/?branch=master)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/quality/g/webeweb/pexels-library/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/webeweb/pexels-library/?branch=master)
 [![Latest Stable Version](https://img.shields.io/packagist/v/webeweb/pexels-library.svg?style=flat-square)](https://packagist.org/packages/webeweb/pexels-library)
 [![Latest Unstable Version](https://img.shields.io/packagist/vpre/webeweb/pexels-library.svg?style=flat-square)](https://packagist.org/packages/webeweb/pexels-library)
