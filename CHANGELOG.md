@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [1.7.3](https://github.com/webeweb/pexels-library/tree/v1.7.3) (2021-01-25)
+
+- Improve code quality
+- Improve PHPDoc
+
 ### [1.7.2](https://github.com/webeweb/pexels-library/tree/v1.7.2) (2020-12-31)
 
 - Fix compatibility
