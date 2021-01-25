@@ -43,10 +43,10 @@ class ResponseDeserializer {
         $model->setId(intval(ArrayHelper::get($response, "id", -1)));
         $model->setWidth(intval(ArrayHelper::get($response, "width", -1)));
         $model->setHeight(intval(ArrayHelper::get($response, "height", -1)));
-        $model->setUrl(ArrayHelper::get($response, "url", null));
-        $model->setPhotographer(ArrayHelper::get($response, "photographer", null));
-        $model->setPhotographerUrl(ArrayHelper::get($response, "photographer_url", null));
-        $model->setPhotographerId(ArrayHelper::get($response, "photographer_id", null));
+        $model->setUrl(ArrayHelper::get($response, "url"));
+        $model->setPhotographer(ArrayHelper::get($response, "photographer"));
+        $model->setPhotographerUrl(ArrayHelper::get($response, "photographer_url"));
+        $model->setPhotographerId(ArrayHelper::get($response, "photographer_id"));
         $model->setSrc(static::deserializeSource(ArrayHelper::get($response, "src", [])));
 
         return $model;
@@ -94,9 +94,9 @@ class ResponseDeserializer {
         $model->setTotalResults(intval(ArrayHelper::get($decodedResponse, "total_results", -1)));
         $model->setPage(intval(ArrayHelper::get($decodedResponse, "page", -1)));
         $model->setPerPage(intval(ArrayHelper::get($decodedResponse, "per_page", -1)));
-        $model->setUrl(ArrayHelper::get($decodedResponse, "url", null));
-        $model->setPrevPage(ArrayHelper::get($decodedResponse, "prev_page", null));
-        $model->setNextPage(ArrayHelper::get($decodedResponse, "next_page", null));
+        $model->setUrl(ArrayHelper::get($decodedResponse, "url"));
+        $model->setPrevPage(ArrayHelper::get($decodedResponse, "prev_page"));
+        $model->setNextPage(ArrayHelper::get($decodedResponse, "next_page"));
 
         foreach (ArrayHelper::get($decodedResponse, "photos", []) as $current) {
             $model->addPhoto(static::deserializePhoto($current));
@@ -114,14 +114,14 @@ class ResponseDeserializer {
     protected static function deserializeSource(array $response): Source {
 
         $model = new Source();
-        $model->setOriginal(ArrayHelper::get($response, "original", null));
-        $model->setLarge(ArrayHelper::get($response, "large", null));
-        $model->setLarge2x(ArrayHelper::get($response, "large2x", null));
-        $model->setMedium(ArrayHelper::get($response, "medium", null));
-        $model->setSmall(ArrayHelper::get($response, "small", null));
-        $model->setPortrait(ArrayHelper::get($response, "portrait", null));
-        $model->setLandscape(ArrayHelper::get($response, "landscape", null));
-        $model->setTiny(ArrayHelper::get($response, "tiny", null));
+        $model->setOriginal(ArrayHelper::get($response, "original"));
+        $model->setLarge(ArrayHelper::get($response, "large"));
+        $model->setLarge2x(ArrayHelper::get($response, "large2x"));
+        $model->setMedium(ArrayHelper::get($response, "medium"));
+        $model->setSmall(ArrayHelper::get($response, "small"));
+        $model->setPortrait(ArrayHelper::get($response, "portrait"));
+        $model->setLandscape(ArrayHelper::get($response, "landscape"));
+        $model->setTiny(ArrayHelper::get($response, "tiny"));
 
         return $model;
     }
@@ -136,8 +136,8 @@ class ResponseDeserializer {
 
         $model = new User();
         $model->setId(intval(ArrayHelper::get($response, "id", -1)));
-        $model->setName(ArrayHelper::get($response, "name", null));
-        $model->setUrl(ArrayHelper::get($response, "url", null));
+        $model->setName(ArrayHelper::get($response, "name"));
+        $model->setUrl(ArrayHelper::get($response, "url"));
 
         return $model;
     }
@@ -154,9 +154,9 @@ class ResponseDeserializer {
         $model->setId(intval(ArrayHelper::get($response, "id", -1)));
         $model->setWidth(intval(ArrayHelper::get($response, "width", -1)));
         $model->setHeight(intval(ArrayHelper::get($response, "height", -1)));
-        $model->setUrl(ArrayHelper::get($response, "url", null));
-        $model->setImage(ArrayHelper::get($response, "image", null));
-        $model->setFullRes(ArrayHelper::get($response, "full_res", null));
+        $model->setUrl(ArrayHelper::get($response, "url"));
+        $model->setImage(ArrayHelper::get($response, "image"));
+        $model->setFullRes(ArrayHelper::get($response, "full_res"));
         $model->setDuration(intval(ArrayHelper::get($response, "duration", -1)));
         $model->setUser(static::deserializeUser(ArrayHelper::get($response, "user", [])));
 
@@ -181,11 +181,11 @@ class ResponseDeserializer {
 
         $model = new VideoFile();
         $model->setId(intval(ArrayHelper::get($response, "id", -1)));
-        $model->setQuality(ArrayHelper::get($response, "quality", null));
-        $model->setFileType(ArrayHelper::get($response, "file_type", null));
+        $model->setQuality(ArrayHelper::get($response, "quality"));
+        $model->setFileType(ArrayHelper::get($response, "file_type"));
         $model->setWidth(intval(ArrayHelper::get($response, "width", -1)));
         $model->setHeight(intval(ArrayHelper::get($response, "height", -1)));
-        $model->setLink(ArrayHelper::get($response, "link", null));
+        $model->setLink(ArrayHelper::get($response, "link"));
 
         return $model;
     }
@@ -200,7 +200,7 @@ class ResponseDeserializer {
 
         $model = new VideoPicture();
         $model->setId(intval(ArrayHelper::get($response, "id", -1)));
-        $model->setPicture(ArrayHelper::get($response, "picture", null));
+        $model->setPicture(ArrayHelper::get($response, "picture"));
         $model->setNr(intval(ArrayHelper::get($response, "nr", -1)));
 
         return $model;
@@ -248,9 +248,9 @@ class ResponseDeserializer {
         $model->setTotalResults(intval(ArrayHelper::get($decodedResponse, "total_results", -1)));
         $model->setPage(intval(ArrayHelper::get($decodedResponse, "page", -1)));
         $model->setPerPage(intval(ArrayHelper::get($decodedResponse, "per_page", -1)));
-        $model->setUrl(ArrayHelper::get($decodedResponse, "url", null));
-        $model->setPrevPage(ArrayHelper::get($decodedResponse, "prev_page", null));
-        $model->setNextPage(ArrayHelper::get($decodedResponse, "next_page", null));
+        $model->setUrl(ArrayHelper::get($decodedResponse, "url"));
+        $model->setPrevPage(ArrayHelper::get($decodedResponse, "prev_page"));
+        $model->setNextPage(ArrayHelper::get($decodedResponse, "next_page"));
 
         foreach (ArrayHelper::get($decodedResponse, "videos", []) as $current) {
             $model->addVideo(static::deserializeVideo($current));

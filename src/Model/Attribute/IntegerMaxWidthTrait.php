@@ -39,6 +39,7 @@ trait IntegerMaxWidthTrait {
      * Set the max width.
      *
      * @param int|null $maxWidth The max width.
+     * @return self Returns this instance.
      */
     public function setMaxWidth(?int $maxWidth): self {
         $this->maxWidth = $maxWidth;

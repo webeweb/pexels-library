@@ -39,6 +39,7 @@ trait IntegerMinDurationTrait {
      * Set the min duration.
      *
      * @param int|null $minDuration The min duration.
+     * @return self Returns this instance.
      */
     public function setMinDuration(?int $minDuration): self {
         $this->minDuration = $minDuration;

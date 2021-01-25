@@ -39,6 +39,7 @@ trait IntegerPerPageTrait {
      * Set the per page.
      *
      * @param int|null $perPage The per page.
+     * @return self Returns this instance.
      */
     public function setPerPage(?int $perPage): self {
         $this->perPage = $perPage;

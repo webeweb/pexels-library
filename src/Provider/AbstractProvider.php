@@ -13,6 +13,7 @@ namespace WBW\Library\Pexels\Provider;
 
 use Exception;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use WBW\Library\Core\Exception\ApiException;
@@ -102,8 +103,9 @@ abstract class AbstractProvider extends BaseProvider {
      * @param string $uri The URI.
      * @param array $queryData The query data.
      * @return string Returns the raw response.
-     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      */
     private function callApi(string $uri, array $queryData): string {
 
@@ -140,8 +142,9 @@ abstract class AbstractProvider extends BaseProvider {
      * @param AbstractRequest $request The request.
      * @param array $queryData The query data.
      * @return string Returns the raw response.
-     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      */
     protected function callApiWithRequest(AbstractRequest $request, array $queryData): string {
 
@@ -162,8 +165,9 @@ abstract class AbstractProvider extends BaseProvider {
      * @param PaginateResponseInterface $response The request.
      * @param bool $nextPage Next page ?.
      * @return string Returns the raw response.
-     * @throws APIException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      */
     protected function callApiWithResponse(PaginateResponseInterface $response, bool $nextPage): string {
 

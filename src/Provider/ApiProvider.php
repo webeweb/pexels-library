@@ -11,6 +11,7 @@
 
 namespace WBW\Library\Pexels\Provider;
 
+use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use WBW\Library\Core\Exception\ApiException;
 use WBW\Library\Pexels\API\PaginateResponseInterface;
@@ -56,8 +57,9 @@ class ApiProvider extends AbstractProvider {
      *
      * @param CuratedPhotosRequest $request The curated photos request.
      * @return PhotosResponse Returns the photos response.
-     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      */
     public function curatedPhotos(CuratedPhotosRequest $request): PhotosResponse {
 
@@ -73,8 +75,9 @@ class ApiProvider extends AbstractProvider {
      *
      * @param GetPhotoRequest $request The get photo request.
      * @return PhotoResponse Returns the photo response.
-     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      */
     public function getPhoto(GetPhotoRequest $request): PhotoResponse {
 
@@ -88,8 +91,9 @@ class ApiProvider extends AbstractProvider {
      *
      * @param GetVideoRequest $request The get video request.
      * @return VideoResponse Returns the video response.
-     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      */
     public function getVideo(GetVideoRequest $request): VideoResponse {
 
@@ -102,9 +106,10 @@ class ApiProvider extends AbstractProvider {
      * Next page.
      *
      * @param PaginateResponseInterface $response The response.
-     * @return ImagesResponse|VideosResponse Returns the response.
-     * @throws ApiException Throws an API exception if an error occurs.
+     * @return PhotosResponse|VideosResponse Returns the response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      */
     public function nextPage(PaginateResponseInterface $response) {
 
@@ -122,8 +127,9 @@ class ApiProvider extends AbstractProvider {
      *
      * @param PopularVideosRequest $response The popular videos request.
      * @return VideosResponse Returns the videos response.
-     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      */
     public function popularVideos(PopularVideosRequest $response): VideosResponse {
 
@@ -138,9 +144,10 @@ class ApiProvider extends AbstractProvider {
      * Prev page.
      *
      * @param PaginateResponseInterface $response The response.
-     * @return ImagesResponse|VideosResponse Returns the response.
-     * @throws ApiException Throws an API exception if an error occurs.
+     * @return PhotosResponse|VideosResponse Returns the response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      */
     public function prevPage(PaginateResponseInterface $response) {
 
@@ -158,8 +165,9 @@ class ApiProvider extends AbstractProvider {
      *
      * @param SearchPhotosRequest $request The search photos request.
      * @return PhotosResponse Returns the photo response.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
-     * @throws InvalidArgumentException Throws an invalid argument exception if a mandatory parameter is missing.
      */
     public function searchPhotos(SearchPhotosRequest $request): PhotosResponse {
 
@@ -175,8 +183,9 @@ class ApiProvider extends AbstractProvider {
      *
      * @param SearchVideosRequest $request The search videos request.
      * @return VideosResponse Returns the videos response.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
-     * @throws InvalidArgumentException Throws an invalid argument exception if a mandatory parameter is missing.
      */
     public function searchVideos(SearchVideosRequest $request): VideosResponse {
 

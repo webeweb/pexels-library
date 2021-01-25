@@ -39,6 +39,7 @@ trait IntegerTotalResultsTrait {
      * Set the total results.
      *
      * @param int|null $totalResults The total result.
+     * @return self Returns this instance.
      */
     public function setTotalResults(?int $totalResults): self {
         $this->totalResults = $totalResults;

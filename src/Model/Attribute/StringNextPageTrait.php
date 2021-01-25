@@ -39,6 +39,7 @@ trait StringNextPageTrait {
      * Set the next page.
      *
      * @param string|null $nextPage The next page.
+     * @return self Returns this instance.
      */
     public function setNextPage(?string $nextPage): self {
         $this->nextPage = $nextPage;

@@ -51,7 +51,7 @@ class GetVideoRequest extends AbstractRequest implements SubstituteRequestInterf
     /**
      * {@inheritdoc}
      */
-    public function getSubstituteValue() {
+    public function getSubstituteValue(): ?int {
         return $this->getId();
     }
 }

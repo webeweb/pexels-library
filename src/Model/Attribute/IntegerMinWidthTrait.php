@@ -39,6 +39,7 @@ trait IntegerMinWidthTrait {
      * Set the min width.
      *
      * @param int|null $minWidth The min width.
+     * @return self Returns this instance.
      */
     public function setMinWidth(?int $minWidth): self {
         $this->minWidth = $minWidth;

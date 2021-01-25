@@ -39,6 +39,7 @@ trait IntegerMaxDurationTrait {
      * Set the max duration.
      *
      * @param int|null $maxDuration The max duration.
+     * @return self Returns this instance.
      */
     public function setMaxDuration(?int $maxDuration): self {
         $this->maxDuration = $maxDuration;

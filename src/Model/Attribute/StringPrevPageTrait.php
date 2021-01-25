@@ -39,6 +39,7 @@ trait StringPrevPageTrait {
      * Set the prev page.
      *
      * @param string|null $prevPage The prev page.
+     * @return self Returns this instance.
      */
     public function setPrevPage(?string $prevPage): self {
         $this->prevPage = $prevPage;
