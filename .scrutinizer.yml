@@ -16,9 +16,6 @@ build:
         'PHP8.0':
             environment:
                 php: 8.0.0
-        analysis:
-            environment:
-                php: 7.1.27
     environment:
         php:
             ini:
