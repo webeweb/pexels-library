@@ -1,40 +1,4 @@
 # .scrutinizer.yml
-build:
-    nodes:
-        'PHP7.1':
-            environment:
-                php: 7.1.27
-        'PHP7.2':
-            environment:
-                php: 7.2.15
-        'PHP7.3':
-            environment:
-                php: 7.3.25
-        'PHP7.4':
-            environment:
-                php: 7.4.13
-        'PHP8.0':
-            environment:
-                php: 8.0.0
-    environment:
-        php:
-            ini:
-                'xdebug.mode': "coverage"
-    dependencies:
-        before:
-            - sed -i 's/zend_extension_ts/zend_extension/' ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
-            - if [ "" == "$(php -m | grep zip)" ]; then pecl install zip; fi;
-        override:
-            - COMPOSER_MEMORY_LIMIT=-1 composer update
-    tests:
-        before:
-            - mkdir -p build/logs
-        override:
-            -   command: vendor/bin/phpunit --coverage-clover build/logs/clover.xml
-                coverage:
-                    file:   build/logs/clover.xml
-                    format: clover
-
 checks:
     php:
         code_rating: true
