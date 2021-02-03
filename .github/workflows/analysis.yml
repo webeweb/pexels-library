@@ -1,7 +1,7 @@
 # .github/workflows/analysis.yml
 name: "analysis"
 
-on: [ push, release, pull_request ]
+on: [ push ]
 
 jobs:
 

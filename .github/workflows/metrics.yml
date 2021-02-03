@@ -1,7 +1,7 @@
 # .github/workflows/metrics.yml
 name: "metrics"
 
-on: [ push, release, pull_request ]
+on: [ push ]
 
 jobs:
 
