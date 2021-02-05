@@ -38,7 +38,7 @@ class GetVideoRequest extends AbstractRequest implements SubstituteRequestInterf
      * {@inheritDoc}
      */
     public function getResourcePath(): string {
-        return self::GET_VIDEO_RESOURCE_PATH;
+        return static::GET_VIDEO_RESOURCE_PATH;
     }
 
     /**
