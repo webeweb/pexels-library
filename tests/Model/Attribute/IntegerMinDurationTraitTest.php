@@ -34,16 +34,4 @@ class IntegerMinDurationTraitTest extends AbstractTestCase {
         $obj->setMinDuration(1);
         $this->assertEquals(1, $obj->getMinDuration());
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestIntegerMinDurationTrait();
-
-        $this->assertNull($obj->getMinDuration());
-    }
 }

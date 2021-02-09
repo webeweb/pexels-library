@@ -34,16 +34,4 @@ class IntegerPerPageTraitTest extends AbstractTestCase {
         $obj->setPerPage(15);
         $this->assertEquals(15, $obj->getPerPage());
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestIntegerPerPageTrait();
-
-        $this->assertNull($obj->getPerPage());
-    }
 }

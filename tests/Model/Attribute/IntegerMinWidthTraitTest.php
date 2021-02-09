@@ -34,16 +34,4 @@ class IntegerMinWidthTraitTest extends AbstractTestCase {
         $obj->setMinWidth(1280);
         $this->assertEquals(1280, $obj->getMinWidth());
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestIntegerMinWidthTrait();
-
-        $this->assertNull($obj->getMinWidth());
-    }
 }

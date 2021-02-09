@@ -34,16 +34,4 @@ class StringPrevPageTraitTest extends AbstractTestCase {
         $obj->setPrevPage("prevPage");
         $this->assertEquals("prevPage", $obj->getPrevPage());
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestStringPrevPageTrait();
-
-        $this->assertNull($obj->getPrevPage());
-    }
 }

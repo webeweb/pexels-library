@@ -34,16 +34,4 @@ class StringNextPageTraitTest extends AbstractTestCase {
         $obj->setNextPage("nextPage");
         $this->assertEquals("nextPage", $obj->getNextPage());
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestStringNextPageTrait();
-
-        $this->assertNull($obj->getNextPage());
-    }
 }

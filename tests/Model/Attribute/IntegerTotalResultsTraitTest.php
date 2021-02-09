@@ -34,16 +34,4 @@ class IntegerTotalResultsTraitTest extends AbstractTestCase {
         $obj->setTotalResults(1);
         $this->assertEquals(1, $obj->getTotalResults());
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestIntegerTotalResultsTrait();
-
-        $this->assertNull($obj->getTotalResults());
-    }
 }

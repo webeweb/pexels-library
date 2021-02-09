@@ -66,18 +66,4 @@ class RateLimitTraitTest extends AbstractTestCase {
         $obj->setReset($reset);
         $this->assertSame($reset, $obj->getReset());
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestRateLimitTrait();
-
-        $this->assertNull($obj->getLimit());
-        $this->assertNull($obj->getRemaining());
-        $this->assertNull($obj->getReset());
-    }
 }

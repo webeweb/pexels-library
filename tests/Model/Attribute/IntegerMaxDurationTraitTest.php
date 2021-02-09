@@ -34,16 +34,4 @@ class IntegerMaxDurationTraitTest extends AbstractTestCase {
         $obj->setMaxDuration(60);
         $this->assertEquals(60, $obj->getMaxDuration());
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestIntegerMaxDurationTrait();
-
-        $this->assertNull($obj->getMaxDuration());
-    }
 }

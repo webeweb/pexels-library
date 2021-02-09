@@ -34,16 +34,4 @@ class IntegerMaxWidthTraitTest extends AbstractTestCase {
         $obj->setMaxWidth(1920);
         $this->assertEquals(1920, $obj->getMaxWidth());
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestIntegerMaxWidthTrait();
-
-        $this->assertNull($obj->getMaxWidth());
-    }
 }
