@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [1.7.5](https://github.com/webeweb/pexels-library/tree/v1.7.5) (2021-02-09)
+
+- Improve unit tests
+
 ### [1.7.4](https://github.com/webeweb/pexels-library/tree/v1.7.4) (2021-02-05)
 
 - Replace CLass:: by static::
