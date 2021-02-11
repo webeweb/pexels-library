@@ -2,7 +2,7 @@ pexels-library
 ==============
 
 [![Build Status](https://img.shields.io/github/workflow/status/webeweb/pexels-library/build?style=flat-square)](https://github.com/webeweb/pexels-library/actions)
-[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/webeweb/pexels-library/master.svg?style=flat-square)](https://coveralls.io/github/webeweb/pexels-library?branch=master)
+[![Coverage Status](https://img.shields.io/coveralls/github/webeweb/pexels-library/master.svg?style=flat-square)](https://coveralls.io/github/webeweb/pexels-library?branch=master)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/quality/g/webeweb/pexels-library/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/webeweb/pexels-library/?branch=master)
 [![Latest Stable Version](https://img.shields.io/packagist/v/webeweb/pexels-library.svg?style=flat-square)](https://packagist.org/packages/webeweb/pexels-library)
 [![Latest Unstable Version](https://img.shields.io/packagist/vpre/webeweb/pexels-library.svg?style=flat-square)](https://packagist.org/packages/webeweb/pexels-library)
