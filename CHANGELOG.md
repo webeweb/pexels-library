@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [1.7.6](https://github.com/webeweb/pexels-library/tree/v1.7.6) (2021-03-01)
+
+- Improve code quality
+
 ### [1.7.5](https://github.com/webeweb/pexels-library/tree/v1.7.5) (2021-02-09)
 
 - Improve unit tests
