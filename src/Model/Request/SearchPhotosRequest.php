@@ -48,7 +48,7 @@ class SearchPhotosRequest extends AbstractRequest {
     public function __construct() {
         parent::__construct();
         $this->setPage(1);
-        $this->setPerPage(static::PER_PAGE_DEFAULT);
+        $this->setPerPage(self::PER_PAGE_DEFAULT);
     }
 
     /**
@@ -64,7 +64,7 @@ class SearchPhotosRequest extends AbstractRequest {
      * {@inheritDoc}
      */
     public function getResourcePath(): string {
-        return static::SEARCH_PHOTOS_RESOURCE_PATH;
+        return self::SEARCH_PHOTOS_RESOURCE_PATH;
     }
 
     /**

@@ -150,7 +150,7 @@ abstract class AbstractProvider extends BaseProvider {
 
         try {
 
-            $uri = static::ENDPOINT_PATH . $this->buildResourcePath($request);
+            $uri = self::ENDPOINT_PATH . $this->buildResourcePath($request);
 
             return $this->callApi($uri, $queryData);
         } catch (InvalidArgumentException $ex) {

@@ -47,13 +47,13 @@ class PopularVideosRequest extends AbstractRequest {
     public function __construct() {
         parent::__construct();
         $this->setPage(1);
-        $this->setPerPage(static::PER_PAGE_DEFAULT);
+        $this->setPerPage(self::PER_PAGE_DEFAULT);
     }
 
     /**
      * {@inheritDoc}
      */
     public function getResourcePath(): string {
-        return static::POPULAR_VIDEOS_RESOURCE_PATH;
+        return self::POPULAR_VIDEOS_RESOURCE_PATH;
     }
 }
