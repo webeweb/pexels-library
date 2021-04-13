@@ -12,15 +12,15 @@
 namespace WBW\Library\Pexels\Tests\Serializer;
 
 use WBW\Library\Pexels\Model\Photo;
-use WBW\Library\Pexels\Model\Response\PhotoResponse;
-use WBW\Library\Pexels\Model\Response\PhotosResponse;
-use WBW\Library\Pexels\Model\Response\VideoResponse;
-use WBW\Library\Pexels\Model\Response\VideosResponse;
 use WBW\Library\Pexels\Model\Source;
 use WBW\Library\Pexels\Model\User;
 use WBW\Library\Pexels\Model\Video;
 use WBW\Library\Pexels\Model\VideoFile;
 use WBW\Library\Pexels\Model\VideoPicture;
+use WBW\Library\Pexels\Response\PhotoResponse;
+use WBW\Library\Pexels\Response\PhotosResponse;
+use WBW\Library\Pexels\Response\VideoResponse;
+use WBW\Library\Pexels\Response\VideosResponse;
 use WBW\Library\Pexels\Serializer\ResponseDeserializer;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 use WBW\Library\Pexels\Tests\Fixtures\Serializer\TestResponseDeserializer;

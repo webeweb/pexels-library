@@ -9,15 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pexels\Model;
+namespace WBW\Library\Pexels\Response;
 
 use WBW\Library\Core\Model\Attribute\StringRawResponseTrait;
+use WBW\Library\Pexels\Model\AbstractMedia;
+use WBW\Library\Pexels\Model\RateLimitTrait;
 
 /**
  * Abstract response.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pexels\Model
+ * @package WBW\Library\Pexels\Response
  * @abstract
  */
 abstract class AbstractResponse {

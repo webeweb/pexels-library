@@ -9,16 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pexels\Model\Response;
+namespace WBW\Library\Pexels\Response;
 
-use WBW\Library\Pexels\Model\AbstractResponse;
 use WBW\Library\Pexels\Model\Video;
 
 /**
  * Video response.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pexels\Model\Response
+ * @package WBW\Library\Pexels\Response
  */
 class VideoResponse extends AbstractResponse {
 

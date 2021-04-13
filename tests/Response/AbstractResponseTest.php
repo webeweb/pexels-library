@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pexels\Tests\Model;
+namespace WBW\Library\Pexels\Tests\Response;
 
 use WBW\Library\Pexels\Tests\AbstractTestCase;
-use WBW\Library\Pexels\Tests\Fixtures\Model\TestResponse;
+use WBW\Library\Pexels\Tests\Fixtures\Response\TestResponse;
 
 /**
  * Abstract response test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pexels\Tests\Model
+ * @package WBW\Library\Pexels\Tests\Response
  */
 class AbstractResponseTest extends AbstractTestCase {
 

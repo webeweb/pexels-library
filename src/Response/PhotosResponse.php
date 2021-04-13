@@ -9,25 +9,24 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pexels\Model\Response;
+namespace WBW\Library\Pexels\Response;
 
 use WBW\Library\Core\Model\Attribute\IntegerPageTrait;
 use WBW\Library\Core\Model\Attribute\StringUrlTrait;
 use WBW\Library\Pexels\API\PaginateResponseInterface;
-use WBW\Library\Pexels\Model\AbstractResponse;
 use WBW\Library\Pexels\Model\Attribute\IntegerPerPageTrait;
 use WBW\Library\Pexels\Model\Attribute\IntegerTotalResultsTrait;
 use WBW\Library\Pexels\Model\Attribute\StringNextPageTrait;
 use WBW\Library\Pexels\Model\Attribute\StringPrevPageTrait;
-use WBW\Library\Pexels\Model\Video;
+use WBW\Library\Pexels\Model\Photo;
 
 /**
- * Videos response.
+ * Photos response.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pexels\Model\Response
+ * @package WBW\Library\Pexels\Response
  */
-class VideosResponse extends AbstractResponse implements PaginateResponseInterface {
+class PhotosResponse extends AbstractResponse implements PaginateResponseInterface {
 
     use IntegerPageTrait;
     use IntegerPerPageTrait;
@@ -44,21 +43,21 @@ class VideosResponse extends AbstractResponse implements PaginateResponseInterfa
     }
 
     /**
-     * Add a video.
+     * Add a photo.
      *
-     * @param Video $video The video.
-     * @return VideosResponse Returns this video response.
+     * @param Photo $photo The photo.
+     * @return PhotosResponse Returns this photo response.
      */
-    public function addVideo(Video $video): VideosResponse {
-        return $this->addMedia($video);
+    public function addPhoto(Photo $photo): PhotosResponse {
+        return $this->addMedia($photo);
     }
 
     /**
-     * Get the videos.
+     * Get the photos.
      *
-     * @return Video[] Returns the videos.
+     * @return Photo[] Returns the photos.
      */
-    public function getVideos(): array {
+    public function getPhotos(): array {
         return $this->getMedias();
     }
 }

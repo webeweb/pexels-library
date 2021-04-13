@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pexels\Tests\Model\Response;
+namespace WBW\Library\Pexels\Tests\Response;
 
-use WBW\Library\Pexels\Model\Response\VideosResponse;
 use WBW\Library\Pexels\Model\Video;
+use WBW\Library\Pexels\Response\VideosResponse;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 
 /**
  * Videos response test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pexels\Tests\Model\Response
+ * @package WBW\Library\Pexels\Tests\Response
  */
 class VideosResponseTest extends AbstractTestCase {
 
