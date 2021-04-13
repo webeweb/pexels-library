@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pexels\Tests\Model\Request;
+namespace WBW\Library\Pexels\Tests\Request;
 
-use WBW\Library\Pexels\Model\Request\CuratedPhotosRequest;
+use WBW\Library\Pexels\Request\CuratedPhotosRequest;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 
 /**
  * Curated request test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pexels\Tests\Model\Request
+ * @package WBW\Library\Pexels\Tests\Request
  */
 class CuratedPhotosRequestTest extends AbstractTestCase {
 

@@ -9,17 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pexels\Model\Request;
+namespace WBW\Library\Pexels\Request;
 
 use WBW\Library\Core\Model\Attribute\IntegerIdTrait;
 use WBW\Library\Pexels\API\SubstituteRequestInterface;
-use WBW\Library\Pexels\Model\AbstractRequest;
 
 /**
  * Get video request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pexels\Model\Request
+ * @package WBW\Library\Pexels\Request
  */
 class GetVideoRequest extends AbstractRequest implements SubstituteRequestInterface {
 

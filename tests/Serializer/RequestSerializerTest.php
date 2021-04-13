@@ -13,10 +13,10 @@ namespace WBW\Library\Pexels\Tests\Serializer;
 
 use Exception;
 use InvalidArgumentException;
-use WBW\Library\Pexels\Model\Request\CuratedPhotosRequest;
-use WBW\Library\Pexels\Model\Request\PopularVideosRequest;
-use WBW\Library\Pexels\Model\Request\SearchPhotosRequest;
-use WBW\Library\Pexels\Model\Request\SearchVideosRequest;
+use WBW\Library\Pexels\Request\CuratedPhotosRequest;
+use WBW\Library\Pexels\Request\PopularVideosRequest;
+use WBW\Library\Pexels\Request\SearchPhotosRequest;
+use WBW\Library\Pexels\Request\SearchVideosRequest;
 use WBW\Library\Pexels\Serializer\RequestSerializer;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 

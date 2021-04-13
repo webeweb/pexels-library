@@ -9,29 +9,36 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pexels\Model\Request;
+namespace WBW\Library\Pexels\Request;
 
 use WBW\Library\Core\Model\Attribute\IntegerPageTrait;
-use WBW\Library\Pexels\Model\AbstractRequest;
+use WBW\Library\Pexels\Model\Attribute\IntegerMaxDurationTrait;
+use WBW\Library\Pexels\Model\Attribute\IntegerMaxWidthTrait;
+use WBW\Library\Pexels\Model\Attribute\IntegerMinDurationTrait;
+use WBW\Library\Pexels\Model\Attribute\IntegerMinWidthTrait;
 use WBW\Library\Pexels\Model\Attribute\IntegerPerPageTrait;
 
 /**
- * Curated photos request.
+ * Popular videos request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pexels\Model\Request
+ * @package WBW\Library\Pexels\Request
  */
-class CuratedPhotosRequest extends AbstractRequest {
+class PopularVideosRequest extends AbstractRequest {
 
+    use IntegerMinDurationTrait;
+    use IntegerMinWidthTrait;
+    use IntegerMaxDurationTrait;
+    use IntegerMaxWidthTrait;
     use IntegerPageTrait;
     use IntegerPerPageTrait;
 
     /**
-     * Curated photo resource path.
+     * Popular videos resource path.
      *
      * @var string
      */
-    const CURATED_PHOTO_RESOURCE_PATH = "/v1/curated";
+    const POPULAR_VIDEOS_RESOURCE_PATH = "/videos/popular";
 
     /**
      * Constructor.
@@ -46,6 +53,6 @@ class CuratedPhotosRequest extends AbstractRequest {
      * {@inheritDoc}
      */
     public function getResourcePath(): string {
-        return self::CURATED_PHOTO_RESOURCE_PATH;
+        return self::POPULAR_VIDEOS_RESOURCE_PATH;
     }
 }

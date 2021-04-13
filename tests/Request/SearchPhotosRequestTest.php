@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pexels\Tests\Model\Request;
+namespace WBW\Library\Pexels\Tests\Request;
 
-use WBW\Library\Pexels\Model\Request\SearchPhotosRequest;
+use WBW\Library\Pexels\Request\SearchPhotosRequest;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 
 /**
  * Search photos request test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pexels\Tests\Model\Request
+ * @package WBW\Library\Pexels\Tests\Request
  */
 class SearchPhotosRequestTest extends AbstractTestCase {
 

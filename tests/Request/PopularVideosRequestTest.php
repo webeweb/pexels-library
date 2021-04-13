@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pexels\Tests\Model\Request;
+namespace WBW\Library\Pexels\Tests\Request;
 
-use WBW\Library\Pexels\Model\Request\SearchVideosRequest;
+use WBW\Library\Pexels\Request\PopularVideosRequest;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 
 /**
- * Search videos request test.
+ * Popular videos request test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pexels\Tests\Model\Request
+ * @package WBW\Library\Pexels\Tests\Request
  */
-class SearchVideosRequestTest extends AbstractTestCase {
+class PopularVideosRequestTest extends AbstractTestCase {
 
     /**
      * Tests the __construct() method.
@@ -29,17 +29,16 @@ class SearchVideosRequestTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("/videos/search", SearchVideosRequest::SEARCH_VIDEOS_RESOURCE_PATH);
+        $this->assertEquals("/videos/popular", PopularVideosRequest::POPULAR_VIDEOS_RESOURCE_PATH);
 
-        $obj = new SearchVideosRequest();
+        $obj = new PopularVideosRequest();
 
-        $this->assertEquals(SearchVideosRequest::SEARCH_VIDEOS_RESOURCE_PATH, $obj->getResourcePath());
+        $this->assertEquals(PopularVideosRequest::POPULAR_VIDEOS_RESOURCE_PATH, $obj->getResourcePath());
         $this->assertNull($obj->getMaxDuration());
         $this->assertNull($obj->getMaxWidth());
         $this->assertNull($obj->getMinDuration());
         $this->assertNull($obj->getMinWidth());
         $this->assertEquals(1, $obj->getPage());
         $this->assertEquals(15, $obj->getPerPage());
-        $this->assertNull($obj->getQuery());
     }
 }

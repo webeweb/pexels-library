@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pexels\Model\Request;
+namespace WBW\Library\Pexels\Request;
 
 use WBW\Library\Core\Model\Attribute\IntegerPageTrait;
-use WBW\Library\Pexels\Model\AbstractRequest;
+use WBW\Library\Core\Model\Attribute\StringQueryTrait;
 use WBW\Library\Pexels\Model\Attribute\IntegerMaxDurationTrait;
 use WBW\Library\Pexels\Model\Attribute\IntegerMaxWidthTrait;
 use WBW\Library\Pexels\Model\Attribute\IntegerMinDurationTrait;
@@ -20,12 +20,12 @@ use WBW\Library\Pexels\Model\Attribute\IntegerMinWidthTrait;
 use WBW\Library\Pexels\Model\Attribute\IntegerPerPageTrait;
 
 /**
- * Popular videos request.
+ * Search videos request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pexels\Model\Request
+ * @package WBW\Library\Pexels\Request
  */
-class PopularVideosRequest extends AbstractRequest {
+class SearchVideosRequest extends AbstractRequest {
 
     use IntegerMinDurationTrait;
     use IntegerMinWidthTrait;
@@ -33,13 +33,14 @@ class PopularVideosRequest extends AbstractRequest {
     use IntegerMaxWidthTrait;
     use IntegerPageTrait;
     use IntegerPerPageTrait;
+    use StringQueryTrait;
 
     /**
-     * Popular videos resource path.
+     * Search videos resource path.
      *
      * @var string
      */
-    const POPULAR_VIDEOS_RESOURCE_PATH = "/videos/popular";
+    const SEARCH_VIDEOS_RESOURCE_PATH = "/videos/search";
 
     /**
      * Constructor.
@@ -54,6 +55,6 @@ class PopularVideosRequest extends AbstractRequest {
      * {@inheritDoc}
      */
     public function getResourcePath(): string {
-        return self::POPULAR_VIDEOS_RESOURCE_PATH;
+        return self::SEARCH_VIDEOS_RESOURCE_PATH;
     }
 }

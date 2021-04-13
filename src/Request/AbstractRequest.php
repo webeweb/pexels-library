@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pexels\Model;
+namespace WBW\Library\Pexels\Request;
 
 use WBW\Library\Pexels\API\RequestInterface;
 
@@ -17,7 +17,7 @@ use WBW\Library\Pexels\API\RequestInterface;
  * Abstract request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pexels\Model
+ * @package WBW\Library\Pexels\Request
  * @abstract
  */
 abstract class AbstractRequest implements RequestInterface {

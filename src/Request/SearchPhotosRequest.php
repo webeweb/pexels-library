@@ -9,18 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pexels\Model\Request;
+namespace WBW\Library\Pexels\Request;
 
 use WBW\Library\Core\Model\Attribute\IntegerPageTrait;
 use WBW\Library\Core\Model\Attribute\StringQueryTrait;
-use WBW\Library\Pexels\Model\AbstractRequest;
 use WBW\Library\Pexels\Model\Attribute\IntegerPerPageTrait;
 
 /**
  * Search photos request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\Pexels\Model\Request
+ * @package WBW\Library\Pexels\Request
  */
 class SearchPhotosRequest extends AbstractRequest {
 
