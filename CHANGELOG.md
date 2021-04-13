@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [2.0.0](https://github.com/webeweb/pexels-library/tree/v2.0.0) (2021-04-13)
+
+- Move Request models
+- Move Response models
+
 ### [1.7.6](https://github.com/webeweb/pexels-library/tree/v1.7.6) (2021-03-01)
 
 - Improve code quality
