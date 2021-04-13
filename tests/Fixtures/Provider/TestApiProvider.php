@@ -11,8 +11,8 @@
 
 namespace WBW\Library\Pexels\Tests\Fixtures\Provider;
 
-use WBW\Library\Pexels\Model\AbstractResponse;
 use WBW\Library\Pexels\Provider\ApiProvider;
+use WBW\Library\Pexels\Response\AbstractResponse;
 
 /**
  * Test API provider.

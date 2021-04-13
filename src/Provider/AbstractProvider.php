@@ -20,8 +20,8 @@ use WBW\Library\Core\Exception\ApiException;
 use WBW\Library\Core\Provider\AbstractProvider as BaseProvider;
 use WBW\Library\Pexels\API\PaginateResponseInterface;
 use WBW\Library\Pexels\API\SubstituteRequestInterface;
-use WBW\Library\Pexels\Model\AbstractRequest;
 use WBW\Library\Pexels\Model\RateLimitTrait;
+use WBW\Library\Pexels\Request\AbstractRequest;
 
 /**
  * Abstract provider.
