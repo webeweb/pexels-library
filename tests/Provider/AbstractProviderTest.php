@@ -11,6 +11,7 @@
 
 namespace WBW\Library\Pexels\Tests\Provider;
 
+use WBW\Library\Core\Logger\NullLogger;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 use WBW\Library\Pexels\Tests\Fixtures\Provider\TestProvider;
 
@@ -42,11 +43,16 @@ class AbstractProviderTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
+        // Set a Logger mock.
+        $logger = new NullLogger();
+
         $this->assertEquals("https://api.pexels.com", TestProvider::ENDPOINT_PATH);
 
-        $obj = new TestProvider();
+        $obj = new TestProvider("authorization", $logger);
 
-        $this->assertNull($obj->getAuthorization());
+        $this->assertSame($logger, $obj->getLogger());
+
+        $this->assertEquals("authorization", $obj->getAuthorization());
         $this->assertNull($obj->getLimit());
         $this->assertNull($obj->getRemaining());
         $this->assertNull($obj->getReset());
