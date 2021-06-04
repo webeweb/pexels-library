@@ -25,7 +25,7 @@ class AbstractProviderTest extends AbstractTestCase {
     /**
      * Tests the setAuthorization() method.
      *
-     * @retunr void.
+     * @return void
      */
     public function testSetAuthorization(): void {
 
@@ -33,19 +33,6 @@ class AbstractProviderTest extends AbstractTestCase {
 
         $obj->setAuthorization("authorization");
         $this->assertEquals("authorization", $obj->getAuthorization());
-    }
-
-    /**
-     * Tests the setDebug() method.
-     *
-     * @return void
-     */
-    public function testSetDebug(): void {
-
-        $obj = new TestProvider();
-
-        $obj->setDebug(true);
-        $this->assertTrue($obj->getDebug());
     }
 
     /**
@@ -60,7 +47,6 @@ class AbstractProviderTest extends AbstractTestCase {
         $obj = new TestProvider();
 
         $this->assertNull($obj->getAuthorization());
-        $this->assertFalse($obj->getDebug());
         $this->assertNull($obj->getLimit());
         $this->assertNull($obj->getRemaining());
         $this->assertNull($obj->getReset());
