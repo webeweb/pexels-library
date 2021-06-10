@@ -41,6 +41,8 @@ class RequestSerializerTest extends AbstractTestCase {
         $curatedPhotosRequest->setPage(2);
 
         $res = RequestSerializer::serializeCuratedPhotosRequest($curatedPhotosRequest);
+        $this->assertCount(2, $res);
+
         $this->assertEquals(80, $res["per_page"]);
         $this->assertEquals(2, $res["page"]);
     }
@@ -62,6 +64,8 @@ class RequestSerializerTest extends AbstractTestCase {
         $popularVideosRequest->setMaxDuration(60);
 
         $res = RequestSerializer::serializePopularVideosRequest($popularVideosRequest);
+        $this->assertCount(6, $res);
+
         $this->assertEquals(80, $res["per_page"]);
         $this->assertEquals(2, $res["page"]);
         $this->assertEquals(1280, $res["min_width"]);
@@ -85,6 +89,8 @@ class RequestSerializerTest extends AbstractTestCase {
         $searchPhotosRequest->setPage(2);
 
         $res = RequestSerializer::serializeSearchPhotosRequest($searchPhotosRequest);
+        $this->assertCount(4, $res);
+
         $this->assertEquals("github", $res["query"]);
         $this->assertEquals("en-US", $res["locale"]);
         $this->assertEquals(80, $res["per_page"]);
@@ -129,6 +135,8 @@ class RequestSerializerTest extends AbstractTestCase {
         $searchVideosRequest->setMaxDuration(60);
 
         $res = RequestSerializer::serializeSearchVideosRequest($searchVideosRequest);
+        $this->assertCount(7, $res);
+
         $this->assertEquals("github", $res["query"]);
         $this->assertEquals(80, $res["per_page"]);
         $this->assertEquals(2, $res["page"]);
