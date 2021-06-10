@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Improve unit tests
+
 ### [2.0.0](https://github.com/webeweb/pexels-library/tree/v2.0.0) (2021-04-13)
 
 - Move Request models
