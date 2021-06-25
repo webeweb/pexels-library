@@ -26,7 +26,7 @@ use WBW\Library\Pexels\Model\Video;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\Pexels\Response
  */
-class VideosResponse extends AbstractResponse implements PaginateResponseInterface {
+class VideosResponse extends AbstractMediaResponse implements PaginateResponseInterface {
 
     use IntegerPageTrait;
     use IntegerPerPageTrait;

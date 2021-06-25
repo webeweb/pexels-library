@@ -12,7 +12,6 @@
 namespace WBW\Library\Pexels\Response;
 
 use WBW\Library\Core\Model\Attribute\StringRawResponseTrait;
-use WBW\Library\Pexels\Model\AbstractMedia;
 use WBW\Library\Pexels\Model\RateLimitTrait;
 
 /**
@@ -28,47 +27,9 @@ abstract class AbstractResponse {
     use StringRawResponseTrait;
 
     /**
-     * Medias.
-     *
-     * @var AbstractMedia[]
-     */
-    private $medias;
-
-    /**
      * Constructor.
      */
     public function __construct() {
-        $this->setMedias([]);
-    }
-
-    /**
-     * Add a media.
-     *
-     * @param AbstractMedia $media The media.
-     * @return AbstractResponse Returns this response.
-     */
-    protected function addMedia(AbstractMedia $media): AbstractResponse {
-        $this->medias[] = $media;
-        return $this;
-    }
-
-    /**
-     * Get the medias.
-     *
-     * @return AbstractMedia[] Returns the medias.
-     */
-    protected function getMedias(): array {
-        return $this->medias;
-    }
-
-    /**
-     * Set the medias.
-     *
-     * @param AbstractMedia[] $medias The medias.
-     * @return AbstractResponse Returns this response.
-     */
-    protected function setMedias(array $medias): AbstractResponse {
-        $this->medias = $medias;
-        return $this;
+        // NOTHING TO DO
     }
 }

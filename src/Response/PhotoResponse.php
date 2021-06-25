@@ -19,7 +19,7 @@ use WBW\Library\Pexels\Model\Photo;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\Pexels\Response
  */
-class PhotoResponse extends AbstractResponse {
+class PhotoResponse extends AbstractMediaResponse {
 
     /**
      * Get the photo.

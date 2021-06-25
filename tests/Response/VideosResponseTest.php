@@ -51,9 +51,9 @@ class VideosResponseTest extends AbstractTestCase {
         $this->assertNull($obj->getNextPage());
         $this->assertNull($obj->getPage());
         $this->assertNull($obj->getPerPage());
-        $this->assertCount(0, $obj->getVideos());
         $this->assertNull($obj->getPrevPage());
         $this->assertNull($obj->getTotalResults());
         $this->assertNull($obj->getUrl());
+        $this->assertEquals([], $obj->getVideos());
     }
 }

@@ -19,7 +19,7 @@ use WBW\Library\Pexels\Model\Video;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\Pexels\Response
  */
-class VideoResponse extends AbstractResponse {
+class VideoResponse extends AbstractMediaResponse {
 
     /**
      * Get the video.

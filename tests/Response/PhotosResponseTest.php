@@ -51,7 +51,7 @@ class PhotosResponseTest extends AbstractTestCase {
         $this->assertNull($obj->getNextPage());
         $this->assertNull($obj->getPage());
         $this->assertNull($obj->getPerPage());
-        $this->assertCount(0, $obj->getPhotos());
+        $this->assertEquals([], $obj->getPhotos());
         $this->assertNull($obj->getPrevPage());
         $this->assertNull($obj->getTotalResults());
         $this->assertNull($obj->getUrl());

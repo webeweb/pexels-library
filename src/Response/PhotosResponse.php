@@ -26,7 +26,7 @@ use WBW\Library\Pexels\Model\Photo;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\Pexels\Response
  */
-class PhotosResponse extends AbstractResponse implements PaginateResponseInterface {
+class PhotosResponse extends AbstractMediaResponse implements PaginateResponseInterface {
 
     use IntegerPageTrait;
     use IntegerPerPageTrait;
