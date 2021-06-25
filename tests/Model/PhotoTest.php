@@ -24,6 +24,32 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class PhotoTest extends AbstractTestCase {
 
     /**
+     * Tests the setAvgColor() method.
+     *
+     * @return void
+     */
+    public function testSetAvgColor(): void {
+
+        $obj = new Photo();
+
+        $obj->setAvgColor("avgColor");
+        $this->assertEquals("avgColor", $obj->getAvgColor());
+    }
+
+    /**
+     * Tests the setLiked() method.
+     *
+     * @return void
+     */
+    public function testSetLiked(): void {
+
+        $obj = new Photo();
+
+        $obj->setLiked(true);
+        $this->assertTrue($obj->getLiked());
+    }
+
+    /**
      * Tests the setPhotographer() method.
      *
      * @return void
@@ -87,6 +113,8 @@ class PhotoTest extends AbstractTestCase {
 
         $obj = new Photo();
 
+        $this->assertNull($obj->getAvgColor());
+        $this->assertNull($obj->getLiked());
         $this->assertNull($obj->getPhotographer());
         $this->assertNull($obj->getPhotographerUrl());
         $this->assertNull($obj->getPhotographerId());

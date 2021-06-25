@@ -20,6 +20,20 @@ namespace WBW\Library\Pexels\Model;
 class Photo extends AbstractMedia {
 
     /**
+     * Average color.
+     *
+     * @var string|null
+     */
+    private $avgColor;
+
+    /**
+     * Liked.
+     *
+     * @var bool|null
+     */
+    private $liked;
+
+    /**
      * Photographer.
      *
      * @var string|null
@@ -46,6 +60,24 @@ class Photo extends AbstractMedia {
      * @var Source|null
      */
     private $src;
+
+    /**
+     * Get the average color.
+     *
+     * @return string|null Returns the average color.
+     */
+    public function getAvgColor(): ?string {
+        return $this->avgColor;
+    }
+
+    /**
+     * Get the liked.
+     *
+     * @return bool|null Returns the liked.
+     */
+    public function getLiked(): ?bool {
+        return $this->liked;
+    }
 
     /**
      * Get the photographer.
@@ -81,6 +113,28 @@ class Photo extends AbstractMedia {
      */
     public function getSrc(): ?Source {
         return $this->src;
+    }
+
+    /**
+     * Set the average color.
+     *
+     * @param string|null $avgColor The average color.
+     * @return Photo Returns this photo.
+     */
+    public function setAvgColor(?string $avgColor): Photo {
+        $this->avgColor = $avgColor;
+        return $this;
+    }
+
+    /**
+     * Set the liked.
+     *
+     * @param bool|null $liked The liked.
+     * @return Photo Returns this photo.
+     */
+    public function setLiked(?bool $liked): Photo {
+        $this->liked = $liked;
+        return $this;
     }
 
     /**
