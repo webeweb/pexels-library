@@ -12,19 +12,15 @@
 namespace WBW\Library\Pexels\Tests\Serializer;
 
 use WBW\Library\Pexels\Model\Photo;
-use WBW\Library\Pexels\Model\Source;
-use WBW\Library\Pexels\Model\User;
 use WBW\Library\Pexels\Model\Video;
-use WBW\Library\Pexels\Model\VideoFile;
-use WBW\Library\Pexels\Model\VideoPicture;
+use WBW\Library\Pexels\Response\CollectionResponse;
+use WBW\Library\Pexels\Response\CollectionsResponse;
 use WBW\Library\Pexels\Response\PhotoResponse;
 use WBW\Library\Pexels\Response\PhotosResponse;
 use WBW\Library\Pexels\Response\VideoResponse;
 use WBW\Library\Pexels\Response\VideosResponse;
 use WBW\Library\Pexels\Serializer\ResponseDeserializer;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
-use WBW\Library\Pexels\Tests\Fixtures\Serializer\TestResponseDeserializer;
-use WBW\Library\Pexels\Tests\Fixtures\TestFixtures;
 
 /**
  * Response deserializer test.
@@ -35,25 +31,78 @@ use WBW\Library\Pexels\Tests\Fixtures\TestFixtures;
 class ResponseDeserializerTest extends AbstractTestCase {
 
     /**
-     * Tests the deserializePhoto() method.
+     * Tests the deserializeCollectionResponse() method.
      *
      * @return void
      */
-    public function testDeserializePhoto(): void {
+    public function testDeserializeCollectionResponse(): void {
 
-        $arg = json_decode(TestFixtures::SAMPLE_PHOTOS_RESPONSE, true)["photos"][0];
+        $arg = file_get_contents(__DIR__ . "/ResponseDeserializerTest.testDeserializeCollectionResponse.json");
 
-        $obj = TestResponseDeserializer::deserializePhoto($arg);
-        $this->assertInstanceOf(Photo::class, $obj);
+        $obj = ResponseDeserializer::deserializeCollectionResponse($arg);
+        $this->assertInstanceOf(CollectionResponse::class, $obj);
 
-        $this->assertEquals(1181292, $obj->getId());
-        $this->assertEquals(3756, $obj->getWidth());
-        $this->assertEquals(5627, $obj->getHeight());
-        $this->assertEquals("https://www.pexels.com/photo/photography-of-a-woman-using-laptop-1181292/", $obj->getUrl());
-        $this->assertEquals("Christina Morillo", $obj->getPhotographer());
-        $this->assertEquals("https://www.pexels.com/@divinetechygirl", $obj->getPhotographerUrl());
-        $this->assertEquals(680589, $obj->getPhotographerId());
-        $this->assertNotNull($obj->getSrc());
+        $this->assertInstanceOf(Photo::class, $obj->getMedias()[0]);
+        $this->assertInstanceOf(Video::class, $obj->getMedias()[1]);
+
+        $this->assertEquals(2, $obj->getPage());
+        $this->assertEquals(2, $obj->getPerPage());
+        $this->assertEquals(6, $obj->getTotalResults());
+        $this->assertEquals("https://api.pexels.com/v1/collections/9mp14cx/?page=3&per_page=2", $obj->getNextPage());
+        $this->assertEquals("https://api.pexels.com/v1/collections/9mp14cx/?page=1&per_page=2", $obj->getPrevPage());
+    }
+
+    /**
+     * Tests the deserializeCollectionResponse() method.
+     *
+     * @return void
+     */
+    public function testDeserializeCollectionResponseWithBadRawResponse(): void {
+
+        $obj = ResponseDeserializer::deserializeCollectionResponse("");
+        $this->assertInstanceOf(CollectionResponse::class, $obj);
+
+        $this->assertEquals([], $obj->getMedias());
+    }
+
+    /**
+     * Tests the deserializeCollectionsResponse() method.
+     *
+     * @return void
+     */
+    public function testDeserializeCollectionsResponse(): void {
+
+        $arg = file_get_contents(__DIR__ . "/ResponseDeserializerTest.testDeserializeCollectionsResponse.json");
+
+        $obj = ResponseDeserializer::deserializeCollectionsResponse($arg);
+        $this->assertInstanceOf(CollectionsResponse::class, $obj);
+
+        $this->assertEquals("9mp14cx", $obj->getCollections()[0]->getId());
+        $this->assertEquals("Cool Cats", $obj->getCollections()[0]->getTitle());
+        $this->assertNull($obj->getCollections()[0]->getDescription());
+        $this->assertFalse($obj->getCollections()[0]->getPrivate());
+        $this->assertEquals(6, $obj->getCollections()[0]->getMediaCount());
+        $this->assertEquals(5, $obj->getCollections()[0]->getPhotosCount());
+        $this->assertEquals(1, $obj->getCollections()[0]->getVideosCount());
+
+        $this->assertEquals(2, $obj->getPage());
+        $this->assertEquals(1, $obj->getPerPage());
+        $this->assertEquals(5, $obj->getTotalResults());
+        $this->assertEquals("https://api.pexels.com/v1/collections/?page=3&per_page=1", $obj->getNextPage());
+        $this->assertEquals("https://api.pexels.com/v1/collections/?page=1&per_page=1", $obj->getPrevPage());
+    }
+
+    /**
+     * Tests the deserializeCollectionsResponse() method.
+     *
+     * @return void
+     */
+    public function testDeserializeCollectionsResponseWithBadRawResponse(): void {
+
+        $obj = ResponseDeserializer::deserializeCollectionsResponse("");
+        $this->assertInstanceOf(CollectionsResponse::class, $obj);
+
+        $this->assertEquals([], $obj->getCollections());
     }
 
     /**
@@ -63,9 +112,10 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializePhotoResponse(): void {
 
-        $arg = json_decode(TestFixtures::SAMPLE_PHOTOS_RESPONSE, true)["photos"][0];
+        $arg = file_get_contents(__DIR__ . "/ResponseDeserializerTest.testDeserializeSearchPhotosResponse.json");
+        $tmp = json_decode($arg, true)["photos"][0];
 
-        $obj = ResponseDeserializer::deserializePhotoResponse(json_encode($arg));
+        $obj = ResponseDeserializer::deserializePhotoResponse(json_encode($tmp));
         $this->assertInstanceOf(PhotoResponse::class, $obj);
 
         $this->assertEquals(1181292, $obj->getPhoto()->getId());
@@ -97,7 +147,9 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializePhotosResponse(): void {
 
-        $obj = ResponseDeserializer::deserializePhotosResponse(TestFixtures::SAMPLE_PHOTOS_RESPONSE);
+        $arg = file_get_contents(__DIR__ . "/ResponseDeserializerTest.testDeserializeSearchPhotosResponse.json");
+
+        $obj = ResponseDeserializer::deserializePhotosResponse($arg);
         $this->assertInstanceOf(PhotosResponse::class, $obj);
 
         $this->assertEquals(6, $obj->getTotalResults());
@@ -127,115 +179,16 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializeSource() method.
-     *
-     * @return void
-     */
-    public function testDeserializeSource(): void {
-
-        $arg = json_decode(TestFixtures::SAMPLE_PHOTOS_RESPONSE, true)["photos"][0]["src"];
-
-        $obj = TestResponseDeserializer::deserializeSource($arg);
-        $this->assertInstanceOf(Source::class, $obj);
-
-        $this->assertEquals("https://images.pexels.com/photos/1181292/pexels-photo-1181292.jpeg", $obj->getOriginal());
-        $this->assertEquals("https://images.pexels.com/photos/1181292/pexels-photo-1181292.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", $obj->getLarge2x());
-        $this->assertEquals("https://images.pexels.com/photos/1181292/pexels-photo-1181292.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", $obj->getLarge());
-        $this->assertEquals("https://images.pexels.com/photos/1181292/pexels-photo-1181292.jpeg?auto=compress&cs=tinysrgb&h=350", $obj->getMedium());
-        $this->assertEquals("https://images.pexels.com/photos/1181292/pexels-photo-1181292.jpeg?auto=compress&cs=tinysrgb&h=130", $obj->getSmall());
-        $this->assertEquals("https://images.pexels.com/photos/1181292/pexels-photo-1181292.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800", $obj->getPortrait());
-        $this->assertEquals("https://images.pexels.com/photos/1181292/pexels-photo-1181292.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200", $obj->getLandscape());
-        $this->assertEquals("https://images.pexels.com/photos/1181292/pexels-photo-1181292.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=200&w=280", $obj->getTiny());
-    }
-
-    /**
-     * Tests the deserializeUser() method.
-     *
-     * @return void
-     */
-    public function testDeserializeUser(): void {
-
-        $arg = json_decode(TestFixtures::SAMPLE_VIDEOS_RESPONSE, true)["videos"][0]["user"];
-
-        $obj = TestResponseDeserializer::deserializeUser($arg);
-        $this->assertInstanceOf(User::class, $obj);
-
-        $this->assertEquals(680589, $obj->getId());
-        $this->assertEquals("Joey Farina", $obj->getName());
-        $this->assertEquals("https://www.pexels.com/@joey", $obj->getUrl());
-    }
-
-    /**
-     * Tests the deserializeVideo() method.
-     *
-     * @return void
-     */
-    public function testDeserializeVideo(): void {
-
-        $arg = json_decode(TestFixtures::SAMPLE_VIDEOS_RESPONSE, true)["videos"][0];
-
-        $obj = TestResponseDeserializer::deserializeVideo($arg);
-        $this->assertInstanceOf(Video::class, $obj);
-
-        $this->assertEquals(1972034, $obj->getId());
-        $this->assertEquals(1920, $obj->getWidth());
-        $this->assertEquals(1080, $obj->getHeight());
-        $this->assertEquals("https://videos.pexels.com/videos/following-a-woman-in-slow-motion-1972034", $obj->getUrl());
-        $this->assertEquals("https://images.pexels.com/videos/1972034/free-video-1972034.jpg?fit=crop&w=1200&h=630&auto=compress&cs=tinysrgb", $obj->getImage());
-        $this->assertNull($obj->getFullRes());
-        $this->assertEquals(129, $obj->getDuration());
-        $this->assertNotNull($obj->getUser());
-        $this->assertCount(3, $obj->getVideoFiles());
-        $this->assertCount(15, $obj->getVideoPictures());
-    }
-
-    /**
-     * Tests the deserializeVideoFile() method.
-     *
-     * @return void
-     */
-    public function testDeserializeVideoFile(): void {
-
-        $arg = json_decode(TestFixtures::SAMPLE_VIDEOS_RESPONSE, true)["videos"][0]["video_files"][0];
-
-        $obj = TestResponseDeserializer::deserializeVideoFile($arg);
-        $this->assertInstanceOf(VideoFile::class, $obj);
-
-        $this->assertEquals(81787, $obj->getId());
-        $this->assertEquals("hd", $obj->getQuality());
-        $this->assertEquals("video/mp4", $obj->getFileType());
-        $this->assertEquals(1280, $obj->getWidth());
-        $this->assertEquals(720, $obj->getHeight());
-        $this->assertEquals("https://player.vimeo.com/external/320621378.hd.mp4?s=3311792d05f51c075d5b7f7c0fb10fd01df68aad&profile_id=174&oauth2_token_id=57447761", $obj->getLink());
-    }
-
-    /**
-     * Tests the deserializeVideoPicture() method.
-     *
-     * @return void
-     */
-    public function testDeserializeVideoPicture(): void {
-
-        $arg = json_decode(TestFixtures::SAMPLE_VIDEOS_RESPONSE, true)["videos"][0]["video_pictures"][0];
-
-        $obj = TestResponseDeserializer::deserializeVideoPicture($arg);
-        $this->assertInstanceOf(VideoPicture::class, $obj);
-
-        $this->assertEquals(199681, $obj->getId());
-        $this->assertEquals("https://static-videos.pexels.com/videos/1972034/pictures/preview-0.jpg", $obj->getPicture());
-        $this->assertEquals(0, $obj->getNr());
-    }
-
-    /**
      * Tests the deserializeVideoResponse() method.
      *
      * @return void
      */
     public function testDeserializeVideoResponse(): void {
 
-        $arg = json_decode(TestFixtures::SAMPLE_VIDEOS_RESPONSE, true)["videos"][0];
+        $arg = file_get_contents(__DIR__ . "/ResponseDeserializerTest.testDeserializeSearchVideosResponse.json");
+        $tmp = json_decode($arg, true)["videos"][0];
 
-        $obj = ResponseDeserializer::deserializeVideoResponse(json_encode($arg));
+        $obj = ResponseDeserializer::deserializeVideoResponse(json_encode($tmp));
         $this->assertInstanceOf(VideoResponse::class, $obj);
 
         $this->assertEquals(1972034, $obj->getVideo()->getId());
@@ -269,7 +222,9 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeVideosResponse(): void {
 
-        $obj = ResponseDeserializer::deserializeVideosResponse(TestFixtures::SAMPLE_VIDEOS_RESPONSE);
+        $arg = file_get_contents(__DIR__ . "/ResponseDeserializerTest.testDeserializeSearchVideosResponse.json");
+
+        $obj = ResponseDeserializer::deserializeVideosResponse($arg);
         $this->assertInstanceOf(VideosResponse::class, $obj);
 
         $this->assertEquals(7206, $obj->getTotalResults());
