@@ -18,6 +18,8 @@ use WBW\Library\Pexels\Model\Attribute\IntegerMaxWidthTrait;
 use WBW\Library\Pexels\Model\Attribute\IntegerMinDurationTrait;
 use WBW\Library\Pexels\Model\Attribute\IntegerMinWidthTrait;
 use WBW\Library\Pexels\Model\Attribute\IntegerPerPageTrait;
+use WBW\Library\Pexels\Model\Attribute\StringOrientationTrait;
+use WBW\Library\Pexels\Model\Attribute\StringSizeTrait;
 
 /**
  * Search videos request.
@@ -33,7 +35,9 @@ class SearchVideosRequest extends AbstractRequest {
     use IntegerMaxWidthTrait;
     use IntegerPageTrait;
     use IntegerPerPageTrait;
+    use StringOrientationTrait;
     use StringQueryTrait;
+    use StringSizeTrait;
 
     /**
      * Search videos resource path.
