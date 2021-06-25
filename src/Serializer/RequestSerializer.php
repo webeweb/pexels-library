@@ -78,6 +78,8 @@ class RequestSerializer {
         }
 
         ArrayHelper::set($result, "query", $request->getQuery());
+        ArrayHelper::set($result, "orientation", $request->getOrientation(), [null]);
+        ArrayHelper::set($result, "size", $request->getSize(), [null]);
         ArrayHelper::set($result, "locale", $request->getLocale());
         ArrayHelper::set($result, "per_page", $request->getPerPage(), [null, SearchPhotosRequest::PER_PAGE_DEFAULT]);
         ArrayHelper::set($result, "page", $request->getPage(), [null, 1]);
@@ -101,6 +103,8 @@ class RequestSerializer {
         }
 
         ArrayHelper::set($result, "query", $request->getQuery());
+        ArrayHelper::set($result, "orientation", $request->getOrientation(), [null]);
+        ArrayHelper::set($result, "size", $request->getSize(), [null]);
         ArrayHelper::set($result, "per_page", $request->getPerPage(), [null, SearchVideosRequest::PER_PAGE_DEFAULT]);
         ArrayHelper::set($result, "page", $request->getPage(), [null, 1]);
         ArrayHelper::set($result, "min_width", $request->getMinWidth(), [null]);

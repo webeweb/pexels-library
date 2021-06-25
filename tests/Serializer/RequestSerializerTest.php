@@ -84,14 +84,18 @@ class RequestSerializerTest extends AbstractTestCase {
         // Set a Search photos request mock.
         $searchPhotosRequest = new SearchPhotosRequest();
         $searchPhotosRequest->setQuery("github");
+        $searchPhotosRequest->setOrientation("landscape");
+        $searchPhotosRequest->setSize("large");
         $searchPhotosRequest->setLocale("en-US");
         $searchPhotosRequest->setPerPage(80);
         $searchPhotosRequest->setPage(2);
 
         $res = RequestSerializer::serializeSearchPhotosRequest($searchPhotosRequest);
-        $this->assertCount(4, $res);
+        $this->assertCount(6, $res);
 
         $this->assertEquals("github", $res["query"]);
+        $this->assertEquals("landscape", $res["orientation"]);
+        $this->assertEquals("large", $res["size"]);
         $this->assertEquals("en-US", $res["locale"]);
         $this->assertEquals(80, $res["per_page"]);
         $this->assertEquals(2, $res["page"]);
@@ -127,6 +131,8 @@ class RequestSerializerTest extends AbstractTestCase {
         // Set a Search videos request mock.
         $searchVideosRequest = new SearchVideosRequest();
         $searchVideosRequest->setQuery("github");
+        $searchVideosRequest->setOrientation("landscape");
+        $searchVideosRequest->setSize("large");
         $searchVideosRequest->setPerPage(80);
         $searchVideosRequest->setPage(2);
         $searchVideosRequest->setMinWidth(1280);
@@ -135,9 +141,11 @@ class RequestSerializerTest extends AbstractTestCase {
         $searchVideosRequest->setMaxDuration(60);
 
         $res = RequestSerializer::serializeSearchVideosRequest($searchVideosRequest);
-        $this->assertCount(7, $res);
+        $this->assertCount(9, $res);
 
         $this->assertEquals("github", $res["query"]);
+        $this->assertEquals("landscape", $res["orientation"]);
+        $this->assertEquals("large", $res["size"]);
         $this->assertEquals(80, $res["per_page"]);
         $this->assertEquals(2, $res["page"]);
         $this->assertEquals(1280, $res["min_width"]);
