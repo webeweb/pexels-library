@@ -5,11 +5,13 @@ Search photos
 
 ```php
 // Create the API provider.
-$provider = new ApiProvider("YOUR API KEY");
+$provider = new ApiProvider("YOUR_API_KEY");
 
 // Create a Search photos request.
 $request = new SearchPhotosRequest();
 $request->setQuery("YOUR QUERY");
+$request->setOrientation("landscape"); // Optional
+$request->setSize("large"); // Optional
 $request->setLocale("en-US"); // Optional
 
 // Call the API and get the response.
@@ -58,7 +60,7 @@ Curated photos
 
 ```php
 // Create the API provider.
-$provider = new ApiProvider("YOUR API KEY");
+$provider = new ApiProvider("YOUR_API_KEY");
 
 // Create a Curated photo request.
 $request = new CuratedPhotosRequest();
@@ -74,7 +76,7 @@ Get a photo
 
 ```php
 // Create the API provider.
-$provider = new ApiProvider("YOUR API KEY");
+$provider = new ApiProvider("YOUR_API_KEY");
 
 // Create a Get photo request.
 $request = new GetPhotoRequest();
@@ -96,11 +98,14 @@ Search videos
 
 ```php
 // Create the API provider.
-$provider = new ApiProvider("YOUR API KEY");
+$provider = new ApiProvider("YOUR_API_KEY");
 
 // Create a Search videos request.
 $request = new SearchVideosRequest();
 $request->setQuery("YOUR QUERY");
+$request->setOrientation("landscape"); // Optional
+$request->setSize("large"); // Optional
+$request->setLocale("en-US"); // Optional
 
 // Call the API and get the response.
 $response = $provider->searchVideos($request);
@@ -164,7 +169,7 @@ Popular videos
 
 ```php
 // Create the API provider.
-$provider = new ApiProvider("YOUR API KEY");
+$provider = new ApiProvider("YOUR_API_KEY");
 
 // Create a Popular videos request.
 $request = new PopularVideosRequest();
@@ -180,7 +185,7 @@ Get a video
 
 ```php
 // Create the API provider.
-$provider = new ApiProvider("YOUR API KEY");
+$provider = new ApiProvider("YOUR_API_KEY");
 
 // Create a Get video request.
 $request = new GetVideoRequest();
