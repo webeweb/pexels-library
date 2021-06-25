@@ -15,7 +15,7 @@ use WBW\Library\Pexels\Request\CuratedPhotosRequest;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 
 /**
- * Curated request test.
+ * Curated photos request test.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\Pexels\Tests\Request
