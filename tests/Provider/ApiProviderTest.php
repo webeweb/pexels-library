@@ -16,12 +16,15 @@ use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use WBW\Library\Core\Exception\ApiException;
 use WBW\Library\Pexels\Provider\ApiProvider;
+use WBW\Library\Pexels\Request\CollectionRequest;
+use WBW\Library\Pexels\Request\CollectionsRequest;
 use WBW\Library\Pexels\Request\CuratedPhotosRequest;
 use WBW\Library\Pexels\Request\GetPhotoRequest;
 use WBW\Library\Pexels\Request\GetVideoRequest;
 use WBW\Library\Pexels\Request\PopularVideosRequest;
 use WBW\Library\Pexels\Request\SearchPhotosRequest;
 use WBW\Library\Pexels\Request\SearchVideosRequest;
+use WBW\Library\Pexels\Response\CollectionsResponse;
 use WBW\Library\Pexels\Response\PhotoResponse;
 use WBW\Library\Pexels\Response\PhotosResponse;
 use WBW\Library\Pexels\Response\VideoResponse;
@@ -70,6 +73,61 @@ class ApiProviderTest extends AbstractTestCase {
         $this->assertSame($obj->getLimit(), $photosResponse->getLimit());
         $this->assertSame($obj->getRemaining(), $photosResponse->getRemaining());
         $this->assertSame($obj->getReset(), $photosResponse->getReset());
+    }
+
+    /**
+     * Tests the collection() method.
+     *
+     * @throws Exception Throws an exception if an error occurs.
+     */
+    public function testCollection(): void {
+
+        // Set a Logger mock.
+        $logger = $this->getMockBuilder(LoggerInterface::class)->getMock();
+
+        // Set a Curated photos request mock.
+        $collectionRequest = new CollectionRequest();
+        $collectionRequest->setId("id");
+
+        $obj = new ApiProvider($this->authorization, $logger);
+
+        try {
+
+            $res = $obj->collection($collectionRequest);
+
+            $this->assertInstanceOf(CollectionsResponse::class, $res);
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(ApiException::class, $ex);
+            $this->assertEquals(403, $ex->getPrevious()->getCode());
+        }
+    }
+
+    /**
+     * Tests the collections() method.
+     *
+     * @throws Exception Throws an exception if an error occurs.
+     */
+    public function testCollections(): void {
+
+        // Set a Logger mock.
+        $logger = $this->getMockBuilder(LoggerInterface::class)->getMock();
+
+        // Set a Curated photos request mock.
+        $collectionsRequest = new CollectionsRequest();
+
+        $obj = new ApiProvider($this->authorization, $logger);
+
+        try {
+
+            $res = $obj->collections($collectionsRequest);
+
+            $this->assertInstanceOf(CollectionsResponse::class, $res);
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(ApiException::class, $ex);
+            $this->assertEquals(403, $ex->getPrevious()->getCode());
+        }
     }
 
     /**

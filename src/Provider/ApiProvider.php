@@ -15,6 +15,8 @@ use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use WBW\Library\Core\Exception\ApiException;
 use WBW\Library\Pexels\API\PaginateResponseInterface;
+use WBW\Library\Pexels\Request\CollectionRequest;
+use WBW\Library\Pexels\Request\CollectionsRequest;
 use WBW\Library\Pexels\Request\CuratedPhotosRequest;
 use WBW\Library\Pexels\Request\GetPhotoRequest;
 use WBW\Library\Pexels\Request\GetVideoRequest;
@@ -22,6 +24,8 @@ use WBW\Library\Pexels\Request\PopularVideosRequest;
 use WBW\Library\Pexels\Request\SearchPhotosRequest;
 use WBW\Library\Pexels\Request\SearchVideosRequest;
 use WBW\Library\Pexels\Response\AbstractResponse;
+use WBW\Library\Pexels\Response\CollectionResponse;
+use WBW\Library\Pexels\Response\CollectionsResponse;
 use WBW\Library\Pexels\Response\PhotoResponse;
 use WBW\Library\Pexels\Response\PhotosResponse;
 use WBW\Library\Pexels\Response\VideoResponse;
@@ -50,6 +54,42 @@ class ApiProvider extends AbstractProvider {
         $response->setReset($this->getReset());
 
         return $response;
+    }
+
+    /**
+     * Collection.
+     *
+     * @param CollectionRequest $request The curated photos request.
+     * @return CollectionResponse Returns the collection response.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
+     */
+    public function collection(CollectionRequest $request): CollectionResponse {
+
+        $queryData = RequestSerializer::serializeCollectionRequest($request);
+
+        $rawResponse = $this->callApiWithRequest($request, $queryData);
+
+        return $this->beforeReturnResponse(ResponseDeserializer::deserializeCollectionResponse($rawResponse));
+    }
+
+    /**
+     * Collections.
+     *
+     * @param CollectionsRequest $request The curated photos request.
+     * @return CollectionsResponse Returns the collections response.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
+     */
+    public function collections(CollectionsRequest $request): CollectionsResponse {
+
+        $queryData = RequestSerializer::serializeCollectionsRequest($request);
+
+        $rawResponse = $this->callApiWithRequest($request, $queryData);
+
+        return $this->beforeReturnResponse(ResponseDeserializer::deserializeCollectionsResponse($rawResponse));
     }
 
     /**
