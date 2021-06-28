@@ -11,15 +11,12 @@
 
 namespace WBW\Library\Pexels\Request;
 
-use WBW\Library\Core\Model\Attribute\IntegerPageTrait;
-use WBW\Library\Core\Model\Attribute\StringQueryTrait;
-use WBW\Library\Pexels\Model\Attribute\IntegerMaxDurationTrait;
-use WBW\Library\Pexels\Model\Attribute\IntegerMaxWidthTrait;
-use WBW\Library\Pexels\Model\Attribute\IntegerMinDurationTrait;
-use WBW\Library\Pexels\Model\Attribute\IntegerMinWidthTrait;
-use WBW\Library\Pexels\Model\Attribute\IntegerPerPageTrait;
-use WBW\Library\Pexels\Model\Attribute\StringOrientationTrait;
-use WBW\Library\Pexels\Model\Attribute\StringSizeTrait;
+use WBW\Library\Traits\Integers\IntegerPageTrait;
+use WBW\Library\Traits\Integers\IntegerPerPageTrait;
+use WBW\Library\Traits\Strings\StringLocaleTrait;
+use WBW\Library\Traits\Strings\StringOrientationTrait;
+use WBW\Library\Traits\Strings\StringQueryTrait;
+use WBW\Library\Traits\Strings\StringSizeTrait;
 
 /**
  * Search videos request.
@@ -29,12 +26,9 @@ use WBW\Library\Pexels\Model\Attribute\StringSizeTrait;
  */
 class SearchVideosRequest extends AbstractRequest {
 
-    use IntegerMinDurationTrait;
-    use IntegerMinWidthTrait;
-    use IntegerMaxDurationTrait;
-    use IntegerMaxWidthTrait;
     use IntegerPageTrait;
     use IntegerPerPageTrait;
+    use StringLocaleTrait;
     use StringOrientationTrait;
     use StringQueryTrait;
     use StringSizeTrait;

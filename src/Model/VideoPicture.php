@@ -11,7 +11,7 @@
 
 namespace WBW\Library\Pexels\Model;
 
-use WBW\Library\Core\Model\Attribute\IntegerIdTrait;
+use WBW\Library\Traits\Integers\IntegerIdTrait;
 
 /**
  * Video picture.

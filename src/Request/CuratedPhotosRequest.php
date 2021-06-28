@@ -11,8 +11,8 @@
 
 namespace WBW\Library\Pexels\Request;
 
-use WBW\Library\Core\Model\Attribute\IntegerPageTrait;
-use WBW\Library\Pexels\Model\Attribute\IntegerPerPageTrait;
+use WBW\Library\Traits\Integers\IntegerPageTrait;
+use WBW\Library\Traits\Integers\IntegerPerPageTrait;
 
 /**
  * Curated photos request.

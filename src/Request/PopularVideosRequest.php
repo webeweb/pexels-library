@@ -11,12 +11,12 @@
 
 namespace WBW\Library\Pexels\Request;
 
-use WBW\Library\Core\Model\Attribute\IntegerPageTrait;
-use WBW\Library\Pexels\Model\Attribute\IntegerMaxDurationTrait;
-use WBW\Library\Pexels\Model\Attribute\IntegerMaxWidthTrait;
-use WBW\Library\Pexels\Model\Attribute\IntegerMinDurationTrait;
-use WBW\Library\Pexels\Model\Attribute\IntegerMinWidthTrait;
-use WBW\Library\Pexels\Model\Attribute\IntegerPerPageTrait;
+use WBW\Library\Traits\Integers\IntegerMaxDurationTrait;
+use WBW\Library\Traits\Integers\IntegerMinDurationTrait;
+use WBW\Library\Traits\Integers\IntegerMinHeightTrait;
+use WBW\Library\Traits\Integers\IntegerMinWidthTrait;
+use WBW\Library\Traits\Integers\IntegerPageTrait;
+use WBW\Library\Traits\Integers\IntegerPerPageTrait;
 
 /**
  * Popular videos request.
@@ -27,9 +27,9 @@ use WBW\Library\Pexels\Model\Attribute\IntegerPerPageTrait;
 class PopularVideosRequest extends AbstractRequest {
 
     use IntegerMinDurationTrait;
+    use IntegerMinHeightTrait;
     use IntegerMinWidthTrait;
     use IntegerMaxDurationTrait;
-    use IntegerMaxWidthTrait;
     use IntegerPageTrait;
     use IntegerPerPageTrait;
 

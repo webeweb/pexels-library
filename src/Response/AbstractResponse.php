@@ -11,8 +11,8 @@
 
 namespace WBW\Library\Pexels\Response;
 
-use WBW\Library\Core\Model\Attribute\StringRawResponseTrait;
 use WBW\Library\Pexels\Model\RateLimitTrait;
+use WBW\Library\Traits\Strings\StringRawResponseTrait;
 
 /**
  * Abstract response.

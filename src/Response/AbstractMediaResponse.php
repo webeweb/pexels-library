@@ -36,7 +36,6 @@ abstract class AbstractMediaResponse extends AbstractResponse {
         $this->setMedias([]);
     }
 
-
     /**
      * Add a media.
      *

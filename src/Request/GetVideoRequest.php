@@ -11,8 +11,8 @@
 
 namespace WBW\Library\Pexels\Request;
 
-use WBW\Library\Core\Model\Attribute\IntegerIdTrait;
 use WBW\Library\Pexels\API\SubstituteRequestInterface;
+use WBW\Library\Traits\Integers\IntegerIdTrait;
 
 /**
  * Get video request.

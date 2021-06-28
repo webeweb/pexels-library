@@ -11,9 +11,9 @@
 
 namespace WBW\Library\Pexels\Model;
 
-use WBW\Library\Core\Model\Attribute\StringDescriptionTrait;
-use WBW\Library\Core\Model\Attribute\StringIdTrait;
-use WBW\Library\Core\Model\Attribute\StringTitleTrait;
+use WBW\Library\Traits\Strings\StringDescriptionTrait;
+use WBW\Library\Traits\Strings\StringIdTrait;
+use WBW\Library\Traits\Strings\StringTitleTrait;
 
 /**
  * Collection.

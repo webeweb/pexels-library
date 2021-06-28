@@ -11,14 +11,14 @@
 
 namespace WBW\Library\Pexels\Response;
 
-use WBW\Library\Core\Model\Attribute\IntegerPageTrait;
-use WBW\Library\Core\Model\Attribute\StringUrlTrait;
 use WBW\Library\Pexels\API\PaginateResponseInterface;
-use WBW\Library\Pexels\Model\Attribute\IntegerPerPageTrait;
 use WBW\Library\Pexels\Model\Attribute\IntegerTotalResultsTrait;
 use WBW\Library\Pexels\Model\Attribute\StringNextPageTrait;
 use WBW\Library\Pexels\Model\Attribute\StringPrevPageTrait;
 use WBW\Library\Pexels\Model\Video;
+use WBW\Library\Traits\Integers\IntegerPageTrait;
+use WBW\Library\Traits\Integers\IntegerPerPageTrait;
+use WBW\Library\Traits\Strings\StringUrlTrait;
 
 /**
  * Videos response.

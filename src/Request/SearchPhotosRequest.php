@@ -11,11 +11,12 @@
 
 namespace WBW\Library\Pexels\Request;
 
-use WBW\Library\Core\Model\Attribute\IntegerPageTrait;
-use WBW\Library\Core\Model\Attribute\StringQueryTrait;
-use WBW\Library\Pexels\Model\Attribute\IntegerPerPageTrait;
-use WBW\Library\Pexels\Model\Attribute\StringOrientationTrait;
-use WBW\Library\Pexels\Model\Attribute\StringSizeTrait;
+use WBW\Library\Traits\Integers\IntegerPageTrait;
+use WBW\Library\Traits\Integers\IntegerPerPageTrait;
+use WBW\Library\Traits\Strings\StringLocaleTrait;
+use WBW\Library\Traits\Strings\StringOrientationTrait;
+use WBW\Library\Traits\Strings\StringQueryTrait;
+use WBW\Library\Traits\Strings\StringSizeTrait;
 
 /**
  * Search photos request.
@@ -27,6 +28,7 @@ class SearchPhotosRequest extends AbstractRequest {
 
     use IntegerPageTrait;
     use IntegerPerPageTrait;
+    use StringLocaleTrait;
     use StringOrientationTrait;
     use StringQueryTrait;
     use StringSizeTrait;
@@ -39,11 +41,11 @@ class SearchPhotosRequest extends AbstractRequest {
     const SEARCH_PHOTOS_RESOURCE_PATH = "/v1/search";
 
     /**
-     * Locale.
+     * Color.
      *
      * @var string|null
      */
-    private $locale;
+    private $color;
 
     /**
      * Constructor.
@@ -55,12 +57,12 @@ class SearchPhotosRequest extends AbstractRequest {
     }
 
     /**
-     * Get the locale.
+     * Get the color.
      *
-     * @return string|null Returns the locale.
+     * @return string|null Returns the color.
      */
-    public function getLocale(): ?string {
-        return $this->locale;
+    public function getColor(): ?string {
+        return $this->color;
     }
 
     /**
@@ -71,13 +73,13 @@ class SearchPhotosRequest extends AbstractRequest {
     }
 
     /**
-     * Set the locale.
+     * Set the color.
      *
-     * @param string|null $locale The locale.
+     * @param string|null $color The color.
      * @return SearchPhotosRequest Returns this search photos request.
      */
-    public function setLocale(?string $locale): SearchPhotosRequest {
-        $this->locale = $locale;
+    public function setColor(?string $color): SearchPhotosRequest {
+        $this->color = $color;
         return $this;
     }
 }

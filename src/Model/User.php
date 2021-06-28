@@ -11,9 +11,9 @@
 
 namespace WBW\Library\Pexels\Model;
 
-use WBW\Library\Core\Model\Attribute\IntegerIdTrait;
-use WBW\Library\Core\Model\Attribute\StringNameTrait;
-use WBW\Library\Core\Model\Attribute\StringUrlTrait;
+use WBW\Library\Traits\Integers\IntegerIdTrait;
+use WBW\Library\Traits\Strings\StringNameTrait;
+use WBW\Library\Traits\Strings\StringUrlTrait;
 
 /**
  * User.

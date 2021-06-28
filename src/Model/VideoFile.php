@@ -11,10 +11,10 @@
 
 namespace WBW\Library\Pexels\Model;
 
-use WBW\Library\Core\Model\Attribute\IntegerHeightTrait;
-use WBW\Library\Core\Model\Attribute\IntegerIdTrait;
-use WBW\Library\Core\Model\Attribute\IntegerWidthTrait;
-use WBW\Library\Core\Model\Attribute\StringLinkTrait;
+use WBW\Library\Traits\Integers\IntegerHeightTrait;
+use WBW\Library\Traits\Integers\IntegerIdTrait;
+use WBW\Library\Traits\Integers\IntegerWidthTrait;
+use WBW\Library\Traits\Strings\StringLinkTrait;
 
 /**
  * Video file.

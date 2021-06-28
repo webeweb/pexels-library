@@ -23,19 +23,6 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class SearchPhotosRequestTest extends AbstractTestCase {
 
     /**
-     * Tests the setLocale() method.
-     *
-     * @return void
-     */
-    public function testSetLocale(): void {
-
-        $obj = new SearchPhotosRequest();
-
-        $obj->setLocale("locale");
-        $this->assertEquals("locale", $obj->getLocale());
-    }
-
-    /**
      * Tests the __construct() method.
      *
      * @return void
@@ -47,10 +34,11 @@ class SearchPhotosRequestTest extends AbstractTestCase {
         $obj = new SearchPhotosRequest();
 
         $this->assertEquals(SearchPhotosRequest::SEARCH_PHOTOS_RESOURCE_PATH, $obj->getResourcePath());
-        $this->assertEquals(1, $obj->getPage());
-        $this->assertEquals(15, $obj->getPerPage());
+        $this->assertNull($obj->getColor());
         $this->assertNull($obj->getLocale());
         $this->assertNull($obj->getOrientation());
+        $this->assertEquals(1, $obj->getPage());
+        $this->assertEquals(15, $obj->getPerPage());
         $this->assertNull($obj->getQuery());
         $this->assertNull($obj->getSize());
     }

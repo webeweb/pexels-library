@@ -13,6 +13,8 @@ namespace WBW\Library\Pexels\Tests\Serializer;
 
 use Exception;
 use InvalidArgumentException;
+use WBW\Library\Pexels\Request\CollectionRequest;
+use WBW\Library\Pexels\Request\CollectionsRequest;
 use WBW\Library\Pexels\Request\CuratedPhotosRequest;
 use WBW\Library\Pexels\Request\PopularVideosRequest;
 use WBW\Library\Pexels\Request\SearchPhotosRequest;
@@ -29,6 +31,46 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class RequestSerializerTest extends AbstractTestCase {
 
     /**
+     * Tests the serializeCollectionRequest() method.
+     *
+     * @return void
+     */
+    public function testSerializeCollectionRequest(): void {
+
+        // Set a Curated photos request mock.
+        $request = new CollectionRequest();
+        $request->setType("photos");
+        $request->setPage(2);
+        $request->setPerPage(80);
+
+        $res = RequestSerializer::serializeCollectionRequest($request);
+        $this->assertCount(3, $res);
+
+        $this->assertEquals("photos", $res["type"]);
+        $this->assertEquals(2, $res["page"]);
+        $this->assertEquals(80, $res["per_page"]);
+    }
+
+    /**
+     * Tests the serializeCollectionsRequest() method.
+     *
+     * @return void
+     */
+    public function testSerializeCollectionsRequest(): void {
+
+        // Set a Curated photos request mock.
+        $request = new CollectionsRequest();
+        $request->setPage(2);
+        $request->setPerPage(80);
+
+        $res = RequestSerializer::serializeCollectionsRequest($request);
+        $this->assertCount(2, $res);
+
+        $this->assertEquals(2, $res["page"]);
+        $this->assertEquals(80, $res["per_page"]);
+    }
+
+    /**
      * Tests the serializeCuratedPhotosRequest() method.
      *
      * @return void
@@ -36,15 +78,15 @@ class RequestSerializerTest extends AbstractTestCase {
     public function testSerializeCuratedPhotosRequest(): void {
 
         // Set a Curated photos request mock.
-        $curatedPhotosRequest = new CuratedPhotosRequest();
-        $curatedPhotosRequest->setPerPage(80);
-        $curatedPhotosRequest->setPage(2);
+        $request = new CuratedPhotosRequest();
+        $request->setPage(2);
+        $request->setPerPage(80);
 
-        $res = RequestSerializer::serializeCuratedPhotosRequest($curatedPhotosRequest);
+        $res = RequestSerializer::serializeCuratedPhotosRequest($request);
         $this->assertCount(2, $res);
 
-        $this->assertEquals(80, $res["per_page"]);
         $this->assertEquals(2, $res["page"]);
+        $this->assertEquals(80, $res["per_page"]);
     }
 
     /**
@@ -55,23 +97,23 @@ class RequestSerializerTest extends AbstractTestCase {
     public function testSerializePopularVideosRequest(): void {
 
         // Set a Popular videos request mock.
-        $popularVideosRequest = new PopularVideosRequest();
-        $popularVideosRequest->setPerPage(80);
-        $popularVideosRequest->setPage(2);
-        $popularVideosRequest->setMinWidth(1280);
-        $popularVideosRequest->setMaxWidth(1920);
-        $popularVideosRequest->setMinDuration(1);
-        $popularVideosRequest->setMaxDuration(60);
+        $request = new PopularVideosRequest();
+        $request->setMinWidth(1280);
+        $request->setMinHeight(1024);
+        $request->setMinDuration(1);
+        $request->setMaxDuration(60);
+        $request->setPage(2);
+        $request->setPerPage(80);
 
-        $res = RequestSerializer::serializePopularVideosRequest($popularVideosRequest);
+        $res = RequestSerializer::serializePopularVideosRequest($request);
         $this->assertCount(6, $res);
 
-        $this->assertEquals(80, $res["per_page"]);
-        $this->assertEquals(2, $res["page"]);
         $this->assertEquals(1280, $res["min_width"]);
-        $this->assertEquals(1920, $res["max_width"]);
+        $this->assertEquals(1024, $res["min_height"]);
         $this->assertEquals(1, $res["min_duration"]);
         $this->assertEquals(60, $res["max_duration"]);
+        $this->assertEquals(2, $res["page"]);
+        $this->assertEquals(80, $res["per_page"]);
     }
 
     /**
@@ -82,15 +124,15 @@ class RequestSerializerTest extends AbstractTestCase {
     public function testSerializeSearchPhotosRequest(): void {
 
         // Set a Search photos request mock.
-        $searchPhotosRequest = new SearchPhotosRequest();
-        $searchPhotosRequest->setQuery("github");
-        $searchPhotosRequest->setOrientation("landscape");
-        $searchPhotosRequest->setSize("large");
-        $searchPhotosRequest->setLocale("en-US");
-        $searchPhotosRequest->setPerPage(80);
-        $searchPhotosRequest->setPage(2);
+        $request = new SearchPhotosRequest();
+        $request->setQuery("github");
+        $request->setOrientation("landscape");
+        $request->setSize("large");
+        $request->setLocale("en-US");
+        $request->setPage(2);
+        $request->setPerPage(80);
 
-        $res = RequestSerializer::serializeSearchPhotosRequest($searchPhotosRequest);
+        $res = RequestSerializer::serializeSearchPhotosRequest($request);
         $this->assertCount(6, $res);
 
         $this->assertEquals("github", $res["query"]);
@@ -109,11 +151,11 @@ class RequestSerializerTest extends AbstractTestCase {
     public function testSerializeSearchPhotosRequestWithInvalidArgumentException(): void {
 
         // Set a Search photos request mock.
-        $searchPhotosRequest = new SearchPhotosRequest();
+        $request = new SearchPhotosRequest();
 
         try {
 
-            RequestSerializer::serializeSearchPhotosRequest($searchPhotosRequest);
+            RequestSerializer::serializeSearchPhotosRequest($request);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
@@ -129,29 +171,23 @@ class RequestSerializerTest extends AbstractTestCase {
     public function testSerializeSearchVideosRequest(): void {
 
         // Set a Search videos request mock.
-        $searchVideosRequest = new SearchVideosRequest();
-        $searchVideosRequest->setQuery("github");
-        $searchVideosRequest->setOrientation("landscape");
-        $searchVideosRequest->setSize("large");
-        $searchVideosRequest->setPerPage(80);
-        $searchVideosRequest->setPage(2);
-        $searchVideosRequest->setMinWidth(1280);
-        $searchVideosRequest->setMaxWidth(1920);
-        $searchVideosRequest->setMinDuration(1);
-        $searchVideosRequest->setMaxDuration(60);
+        $request = new SearchVideosRequest();
+        $request->setQuery("github");
+        $request->setOrientation("landscape");
+        $request->setSize("large");
+        $request->setLocale("en-US");
+        $request->setPage(2);
+        $request->setPerPage(80);
 
-        $res = RequestSerializer::serializeSearchVideosRequest($searchVideosRequest);
-        $this->assertCount(9, $res);
+        $res = RequestSerializer::serializeSearchVideosRequest($request);
+        $this->assertCount(6, $res);
 
         $this->assertEquals("github", $res["query"]);
         $this->assertEquals("landscape", $res["orientation"]);
         $this->assertEquals("large", $res["size"]);
-        $this->assertEquals(80, $res["per_page"]);
+        $this->assertEquals("en-US", $res["locale"]);
         $this->assertEquals(2, $res["page"]);
-        $this->assertEquals(1280, $res["min_width"]);
-        $this->assertEquals(1920, $res["max_width"]);
-        $this->assertEquals(1, $res["min_duration"]);
-        $this->assertEquals(60, $res["max_duration"]);
+        $this->assertEquals(80, $res["per_page"]);
     }
 
     /**
@@ -162,11 +198,11 @@ class RequestSerializerTest extends AbstractTestCase {
     public function testSerializeSearchVideosRequestWithInvalidArgumentException(): void {
 
         // Set a Search videos request mock.
-        $searchPhotosRequest = new SearchVideosRequest();
+        $request = new SearchVideosRequest();
 
         try {
 
-            RequestSerializer::serializeSearchVideosRequest($searchPhotosRequest);
+            RequestSerializer::serializeSearchVideosRequest($request);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);

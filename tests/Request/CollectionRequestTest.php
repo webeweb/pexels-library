@@ -32,6 +32,8 @@ class CollectionRequestTest extends AbstractTestCase {
         $obj = new CollectionRequest();
 
         $this->assertEquals(CollectionRequest::COLLECTIONS_RESOURCE_PATH . "/", $obj->getResourcePath());
+        $this->assertNull($obj->getId());
+        $this->assertNull($obj->getType());
 
         $obj->setId("id");
         $this->assertEquals(CollectionRequest::COLLECTIONS_RESOURCE_PATH . "/id", $obj->getResourcePath());

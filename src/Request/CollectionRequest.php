@@ -11,7 +11,8 @@
 
 namespace WBW\Library\Pexels\Request;
 
-use WBW\Library\Core\Model\Attribute\StringIdTrait;
+use WBW\Library\Traits\Strings\StringIdTrait;
+use WBW\Library\Traits\Strings\StringTypeTrait;
 
 /**
  * Collection request.
@@ -22,6 +23,7 @@ use WBW\Library\Core\Model\Attribute\StringIdTrait;
 class CollectionRequest extends CollectionsRequest {
 
     use StringIdTrait;
+    use StringTypeTrait;
 
     /**
      * {@inheritDoc}

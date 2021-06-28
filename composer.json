@@ -23,7 +23,8 @@
         "ext-json": "*",
         "guzzlehttp/guzzle": "^6.0",
         "psr/log": "^1.0",
-        "webeweb/core-library": "^6.8"
+        "webeweb/core-library": "^7.0",
+        "webeweb/traits-library": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.0|^9.0"
