@@ -65,14 +65,14 @@ class ApiProviderTest extends AbstractTestCase {
     public function testBeforeReturnResponse(): void {
 
         // Set a Photos response mock.
-        $photosResponse = new PhotosResponse();
+        $response = new PhotosResponse();
 
         $obj = new TestApiProvider();
 
-        $obj->beforeReturnResponse($photosResponse);
-        $this->assertSame($obj->getLimit(), $photosResponse->getLimit());
-        $this->assertSame($obj->getRemaining(), $photosResponse->getRemaining());
-        $this->assertSame($obj->getReset(), $photosResponse->getReset());
+        $obj->beforeReturnResponse($response);
+        $this->assertSame($obj->getLimit(), $response->getLimit());
+        $this->assertSame($obj->getRemaining(), $response->getRemaining());
+        $this->assertSame($obj->getReset(), $response->getReset());
     }
 
     /**
@@ -85,21 +85,21 @@ class ApiProviderTest extends AbstractTestCase {
         // Set a Logger mock.
         $logger = $this->getMockBuilder(LoggerInterface::class)->getMock();
 
-        // Set a Curated photos request mock.
-        $collectionRequest = new CollectionRequest();
-        $collectionRequest->setId("id");
+        // Set a Collectionsrequest mock.
+        $request = new CollectionRequest();
+        $request->setId("id");
 
         $obj = new ApiProvider($this->authorization, $logger);
 
         try {
 
-            $res = $obj->collection($collectionRequest);
+            $res = $obj->collection($request);
 
             $this->assertInstanceOf(CollectionsResponse::class, $res);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(403, $ex->getPrevious()->getCode());
+            $this->assertEquals(401, $ex->getPrevious()->getCode());
         }
     }
 
@@ -113,20 +113,20 @@ class ApiProviderTest extends AbstractTestCase {
         // Set a Logger mock.
         $logger = $this->getMockBuilder(LoggerInterface::class)->getMock();
 
-        // Set a Curated photos request mock.
-        $collectionsRequest = new CollectionsRequest();
+        // Set a Collections request mock.
+        $request = new CollectionsRequest();
 
         $obj = new ApiProvider($this->authorization, $logger);
 
         try {
 
-            $res = $obj->collections($collectionsRequest);
+            $res = $obj->collections($request);
 
             $this->assertInstanceOf(CollectionsResponse::class, $res);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(403, $ex->getPrevious()->getCode());
+            $this->assertEquals(401, $ex->getPrevious()->getCode());
         }
     }
 
@@ -141,13 +141,13 @@ class ApiProviderTest extends AbstractTestCase {
         $logger = $this->getMockBuilder(LoggerInterface::class)->getMock();
 
         // Set a Curated photos request mock.
-        $curatedPhotosRequest = new CuratedPhotosRequest();
+        $request = new CuratedPhotosRequest();
 
         $obj = new ApiProvider($this->authorization, $logger);
 
         try {
 
-            $res = $obj->curatedPhotos($curatedPhotosRequest);
+            $res = $obj->curatedPhotos($request);
 
             $this->assertInstanceOf(PhotosResponse::class, $res);
         } catch (Exception $ex) {
@@ -165,13 +165,13 @@ class ApiProviderTest extends AbstractTestCase {
     public function testCuratedPhotosWithInvalidArgumentException(): void {
 
         // Set a Curated photos request mock.
-        $curatedPhotosRequest = new CuratedPhotosRequest();
+        $request = new CuratedPhotosRequest();
 
         $obj = new ApiProvider();
 
         try {
 
-            $obj->curatedPhotos($curatedPhotosRequest);
+            $obj->curatedPhotos($request);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
@@ -187,20 +187,20 @@ class ApiProviderTest extends AbstractTestCase {
     public function testGetPhoto(): void {
 
         // Set a Get photos request mock.
-        $getPhotoRequest = new GetPhotoRequest();
-        $getPhotoRequest->setId(-1);
+        $request = new GetPhotoRequest();
+        $request->setId(-1);
 
         $obj = new ApiProvider($this->authorization);
 
         try {
 
-            $res = $obj->getPhoto($getPhotoRequest);
+            $res = $obj->getPhoto($request);
 
             $this->assertInstanceOf(PhotoResponse::class, $res);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(403, $ex->getPrevious()->getCode());
+            $this->assertEquals(404, $ex->getPrevious()->getCode());
         }
     }
 
@@ -212,14 +212,14 @@ class ApiProviderTest extends AbstractTestCase {
     public function testGetPhotoWithInvalidArgumentException(): void {
 
         // Set a Get photos request mock.
-        $getPhotoRequest = new GetPhotoRequest();
-        // $getPhotoRequest->setId(1181292);
+        $request = new GetPhotoRequest();
+        // $request->setId(1181292);
 
         $obj = new ApiProvider($this->authorization);
 
         try {
 
-            $obj->getPhoto($getPhotoRequest);
+            $obj->getPhoto($request);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
@@ -235,20 +235,20 @@ class ApiProviderTest extends AbstractTestCase {
     public function testGetVideo(): void {
 
         // Set a Get video request mock.
-        $getVideoRequest = new GetVideoRequest();
-        $getVideoRequest->setId(-1);
+        $request = new GetVideoRequest();
+        $request->setId(-1);
 
         $obj = new ApiProvider($this->authorization);
 
         try {
 
-            $res = $obj->getVideo($getVideoRequest);
+            $res = $obj->getVideo($request);
 
             $this->assertInstanceOf(VideoResponse::class, $res);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(403, $ex->getPrevious()->getCode());
+            $this->assertEquals(404, $ex->getPrevious()->getCode());
         }
     }
 
@@ -260,14 +260,14 @@ class ApiProviderTest extends AbstractTestCase {
     public function testNextPageWithPhotosResponse(): void {
 
         // Set a Search photos request mock.
-        $searchPhotosRequest = new SearchPhotosRequest();
-        $searchPhotosRequest->setQuery("landscape");
+        $request = new SearchPhotosRequest();
+        $request->setQuery("landscape");
 
         $obj = new ApiProvider($this->authorization);
 
         try {
 
-            $res = $obj->nextPage($obj->searchPhotos($searchPhotosRequest));
+            $res = $obj->nextPage($obj->searchPhotos($request));
 
             $this->assertInstanceOf(PhotosResponse::class, $res);
         } catch (Exception $ex) {
@@ -285,14 +285,14 @@ class ApiProviderTest extends AbstractTestCase {
     public function testNextPageWithVideosResponse(): void {
 
         // Set a Search videos request mock.
-        $searchVideosRequest = new SearchVideosRequest();
-        $searchVideosRequest->setQuery("landscape");
+        $request = new SearchVideosRequest();
+        $request->setQuery("landscape");
 
         $obj = new ApiProvider($this->authorization);
 
         try {
 
-            $res = $obj->nextPage($obj->searchVideos($searchVideosRequest));
+            $res = $obj->nextPage($obj->searchVideos($request));
 
             $this->assertInstanceOf(VideosResponse::class, $res);
         } catch (Exception $ex) {
@@ -310,13 +310,13 @@ class ApiProviderTest extends AbstractTestCase {
     public function testPopularVideos(): void {
 
         // Set a Popular videos request mock.
-        $popularVideosRequest = new PopularVideosRequest();
+        $request = new PopularVideosRequest();
 
         $obj = new ApiProvider($this->authorization);
 
         try {
 
-            $res = $obj->popularVideos($popularVideosRequest);
+            $res = $obj->popularVideos($request);
 
             $this->assertInstanceOf(VideosResponse::class, $res);
         } catch (Exception $ex) {
@@ -334,15 +334,15 @@ class ApiProviderTest extends AbstractTestCase {
     public function testPrevPageWithPhotosResponse(): void {
 
         // Set a Search photos request mock.
-        $searchPhotosRequest = new SearchPhotosRequest();
-        $searchPhotosRequest->setQuery("landscape");
-        $searchPhotosRequest->setPage(2);
+        $request = new SearchPhotosRequest();
+        $request->setQuery("landscape");
+        $request->setPage(2);
 
         $obj = new ApiProvider($this->authorization);
 
         try {
 
-            $res = $obj->prevPage($obj->searchPhotos($searchPhotosRequest));
+            $res = $obj->prevPage($obj->searchPhotos($request));
 
             $this->assertInstanceOf(PhotosResponse::class, $res);
         } catch (Exception $ex) {
@@ -360,15 +360,15 @@ class ApiProviderTest extends AbstractTestCase {
     public function testPrevPageWithVideosResponse(): void {
 
         // Set a Search videos request mock.
-        $searchVideosRequest = new SearchVideosRequest();
-        $searchVideosRequest->setQuery("landscape");
-        $searchVideosRequest->setPage(2);
+        $request = new SearchVideosRequest();
+        $request->setQuery("landscape");
+        $request->setPage(2);
 
         $obj = new ApiProvider($this->authorization);
 
         try {
 
-            $res = $obj->prevPage($obj->searchVideos($searchVideosRequest));
+            $res = $obj->prevPage($obj->searchVideos($request));
 
             $this->assertInstanceOf(VideosResponse::class, $res);
         } catch (Exception $ex) {
@@ -387,14 +387,14 @@ class ApiProviderTest extends AbstractTestCase {
     public function testSearchPhotos(): void {
 
         // Set a Search photos request mock.
-        $searchPhotoRequest = new SearchPhotosRequest();
-        $searchPhotoRequest->setQuery("github");
+        $request = new SearchPhotosRequest();
+        $request->setQuery("github");
 
         $obj = new ApiProvider($this->authorization);
 
         try {
 
-            $res = $obj->searchPhotos($searchPhotoRequest);
+            $res = $obj->searchPhotos($request);
 
             $this->assertInstanceOf(PhotosResponse::class, $res);
         } catch (Exception $ex) {
@@ -412,14 +412,14 @@ class ApiProviderTest extends AbstractTestCase {
     public function testSearchVideos(): void {
 
         // Set a Search videos request mock.
-        $searchVideosRequest = new SearchVideosRequest();
-        $searchVideosRequest->setQuery("github");
+        $request = new SearchVideosRequest();
+        $request->setQuery("github");
 
         $obj = new ApiProvider($this->authorization);
 
         try {
 
-            $res = $obj->searchVideos($searchVideosRequest);
+            $res = $obj->searchVideos($request);
 
             $this->assertInstanceOf(VideosResponse::class, $res);
         } catch (Exception $ex) {
