@@ -202,3 +202,64 @@ $response->getReset();
 /** @var Video $video */
 $video = $response->getVideo();
 ```
+
+Collections
+
+```php
+// Create the API provider.
+$provider = new ApiProvider("YOUR_API_KEY");
+
+// Create a Collections request.
+$request = new CollectionsRequest();
+
+// Call the API and get the response.
+$response = $provider->collections($request);
+
+// Handle the response.
+$response->getLimit();
+$response->getRemaining();
+$response->getReset();
+
+/** @var Collection $current */
+foreach($response->getCollections() as $current) {
+
+    $current->getId();
+    $current->getTitle();
+    $current->getDescription();
+    $current->getPrivate();
+    $current->getMediaCount();
+    $current->getPhotosCount();
+    $current->getVideosCount();
+}
+```
+
+Collection
+
+```php
+// Create the API provider.
+$provider = new ApiProvider("YOUR_API_KEY");
+
+// Create a Collection request.
+$request = new CollectionRequest();
+$request->setId("id");
+
+// Call the API and get the response.
+$response = $provider->collection($request);
+
+// Handle the response.
+$response->getLimit();
+$response->getRemaining();
+$response->getReset();
+
+/** @var AbstractMedia $current */
+foreach($response->getMedias() as $current) {
+
+    if (true === ($current instanceof Photo)) {
+        // same as search photos
+    }
+
+    if (true === ($current instanceof Video)) {
+        // same as search videos
+    }
+}
+```
