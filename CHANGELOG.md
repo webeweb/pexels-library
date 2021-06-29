@@ -1,13 +1,14 @@
 CHANGELOG
 =========
 
-### master
+### [2.1.0](https://github.com/webeweb/pexels-library/tree/v2.1.0) (2021-06-29)
 
 - Add Collections request
 - Add Collection request
 - Add orientation parameter into Search photos/videos request
 - Add size parameter into Search photos/videos request
 - Update dependencies
+- Update documentation
 
 ### [2.0.0](https://github.com/webeweb/pexels-library/tree/v2.0.0) (2021-04-13)
 
