@@ -24,6 +24,7 @@
         "guzzlehttp/guzzle": "^6.0",
         "psr/log": "^1.0",
         "webeweb/core-library": "^7.0",
+        "webeweb/provider-library": "^1.3",
         "webeweb/traits-library": "^1.0"
     },
     "require-dev": {

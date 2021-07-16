@@ -17,7 +17,7 @@ use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use WBW\Library\Core\Exception\ApiException;
-use WBW\Library\Core\Provider\AbstractProvider as BaseProvider;
+use WBW\Library\Provider\Provider\AbstractProvider as BaseProvider;
 use WBW\Library\Pexels\API\PaginateResponseInterface;
 use WBW\Library\Pexels\API\SubstituteRequestInterface;
 use WBW\Library\Pexels\Model\RateLimitTrait;
