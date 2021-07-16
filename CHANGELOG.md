@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.1.1](https://github.com/webeweb/pexels-library/tree/v2.1.1) (2021-07-16)
+
+- Update dependencies
+
 ### [2.1.0](https://github.com/webeweb/pexels-library/tree/v2.1.0) (2021-06-29)
 
 - Add Collections request
