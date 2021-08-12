@@ -18,10 +18,10 @@ use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use WBW\Library\Pexels\API\PaginateResponseInterface;
 use WBW\Library\Pexels\API\SubstituteRequestInterface;
-use WBW\Library\Pexels\Model\RateLimitTrait;
 use WBW\Library\Pexels\Request\AbstractRequest;
 use WBW\Library\Provider\Exception\ApiException;
 use WBW\Library\Provider\Provider\AbstractProvider as BaseProvider;
+use WBW\Library\Traits\Compounds\CompoundRateLimitTrait;
 
 /**
  * Abstract provider.
@@ -32,7 +32,7 @@ use WBW\Library\Provider\Provider\AbstractProvider as BaseProvider;
  */
 abstract class AbstractProvider extends BaseProvider {
 
-    use RateLimitTrait;
+    use CompoundRateLimitTrait;
 
     /**
      * Endpoint path.
