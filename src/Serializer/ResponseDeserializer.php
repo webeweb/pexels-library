@@ -11,13 +11,13 @@
 
 namespace WBW\Library\Pexels\Serializer;
 
-use WBW\Library\Core\Argument\Helper\ArrayHelper;
 use WBW\Library\Pexels\Response\CollectionResponse;
 use WBW\Library\Pexels\Response\CollectionsResponse;
 use WBW\Library\Pexels\Response\PhotoResponse;
 use WBW\Library\Pexels\Response\PhotosResponse;
 use WBW\Library\Pexels\Response\VideoResponse;
 use WBW\Library\Pexels\Response\VideosResponse;
+use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
  * Response deserializer.

@@ -11,7 +11,6 @@
 
 namespace WBW\Library\Pexels\Serializer;
 
-use WBW\Library\Core\Argument\Helper\ArrayHelper;
 use WBW\Library\Pexels\Model\Collection;
 use WBW\Library\Pexels\Model\Photo;
 use WBW\Library\Pexels\Model\Source;
@@ -19,6 +18,7 @@ use WBW\Library\Pexels\Model\User;
 use WBW\Library\Pexels\Model\Video;
 use WBW\Library\Pexels\Model\VideoFile;
 use WBW\Library\Pexels\Model\VideoPicture;
+use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
  * JSON deserializer.

@@ -14,7 +14,6 @@ namespace WBW\Library\Pexels\Tests\Provider;
 use Exception;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
-use WBW\Library\Core\Exception\ApiException;
 use WBW\Library\Pexels\Provider\ApiProvider;
 use WBW\Library\Pexels\Request\CollectionRequest;
 use WBW\Library\Pexels\Request\CollectionsRequest;
@@ -31,6 +30,7 @@ use WBW\Library\Pexels\Response\VideoResponse;
 use WBW\Library\Pexels\Response\VideosResponse;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 use WBW\Library\Pexels\Tests\Fixtures\Provider\TestApiProvider;
+use WBW\Library\Provider\Exception\ApiException;
 
 /**
  * API provider test.

@@ -12,13 +12,13 @@
 namespace WBW\Library\Pexels\Serializer;
 
 use InvalidArgumentException;
-use WBW\Library\Core\Argument\Helper\ArrayHelper;
 use WBW\Library\Pexels\Request\CollectionRequest;
 use WBW\Library\Pexels\Request\CollectionsRequest;
 use WBW\Library\Pexels\Request\CuratedPhotosRequest;
 use WBW\Library\Pexels\Request\PopularVideosRequest;
 use WBW\Library\Pexels\Request\SearchPhotosRequest;
 use WBW\Library\Pexels\Request\SearchVideosRequest;
+use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
  * Request serializer.

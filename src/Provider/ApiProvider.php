@@ -13,7 +13,6 @@ namespace WBW\Library\Pexels\Provider;
 
 use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
-use WBW\Library\Core\Exception\ApiException;
 use WBW\Library\Pexels\API\PaginateResponseInterface;
 use WBW\Library\Pexels\Request\CollectionRequest;
 use WBW\Library\Pexels\Request\CollectionsRequest;
@@ -32,6 +31,7 @@ use WBW\Library\Pexels\Response\VideoResponse;
 use WBW\Library\Pexels\Response\VideosResponse;
 use WBW\Library\Pexels\Serializer\RequestSerializer;
 use WBW\Library\Pexels\Serializer\ResponseDeserializer;
+use WBW\Library\Provider\Exception\ApiException;
 
 /**
  * API provider.
