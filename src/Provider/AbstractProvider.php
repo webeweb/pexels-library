@@ -19,8 +19,8 @@ use Psr\Log\LoggerInterface;
 use WBW\Library\Pexels\API\PaginateResponseInterface;
 use WBW\Library\Pexels\API\SubstituteRequestInterface;
 use WBW\Library\Pexels\Request\AbstractRequest;
+use WBW\Library\Provider\AbstractProvider as BaseProvider;
 use WBW\Library\Provider\Exception\ApiException;
-use WBW\Library\Provider\Provider\AbstractProvider as BaseProvider;
 use WBW\Library\Traits\Compounds\CompoundRateLimitTrait;
 
 /**
