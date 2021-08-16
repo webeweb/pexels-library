@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.1.4](https://github.com/webeweb/pexels-library/tree/v2.1.4) (2021-08-16)
+
+- Update dependencies
+
 ### [2.1.3](https://github.com/webeweb/pexels-library/tree/v2.1.3) (2021-08-12)
 
 - Replace rate limit trait
