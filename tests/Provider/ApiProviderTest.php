@@ -223,7 +223,7 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The substitute value :id is missing", $ex->getMessage());
+            $this->assertEquals('The substituable value ":id" is missing', $ex->getMessage());
         }
     }
 

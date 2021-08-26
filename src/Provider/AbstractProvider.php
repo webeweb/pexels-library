@@ -17,7 +17,6 @@ use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use WBW\Library\Pexels\API\PaginateResponseInterface;
-use WBW\Library\Pexels\API\SubstituteRequestInterface;
 use WBW\Library\Pexels\Request\AbstractRequest;
 use WBW\Library\Provider\AbstractProvider as BaseProvider;
 use WBW\Library\Provider\Exception\ApiException;
@@ -74,26 +73,6 @@ abstract class AbstractProvider extends BaseProvider {
             ],
             "synchronous" => true,
         ];
-    }
-
-    /**
-     * Build a resource path.
-     *
-     * @param AbstractRequest $request The request.
-     * @return string Returns the resource path.
-     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     */
-    private function buildResourcePath(AbstractRequest $request): string {
-
-        if (false === ($request instanceof SubstituteRequestInterface)) {
-            return $request->getResourcePath();
-        }
-
-        if (null === $request->getSubstituteValue()) {
-            throw new InvalidArgumentException(sprintf("The substitute value %s is missing", $request->getSubstituteName()));
-        }
-
-        return str_replace($request->getSubstituteName(), $request->getSubstituteValue(), $request->getResourcePath());
     }
 
     /**

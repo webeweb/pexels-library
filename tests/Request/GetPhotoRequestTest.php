@@ -13,6 +13,7 @@ namespace WBW\Library\Pexels\Tests\Request;
 
 use WBW\Library\Pexels\Request\GetPhotoRequest;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
+use WBW\Library\Provider\API\SubstituableRequestInterface;
 
 /**
  * Get photo request test.
@@ -23,16 +24,16 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class GetPhotoRequestTest extends AbstractTestCase {
 
     /**
-     * Tests the getSubstituteValue() method.
+     * Tests the getSubstituables() method.
      *
      * @return void
      */
-    public function testGetSubstituteValue(): void {
+    public function testGetSubstituables(): void {
 
         $obj = new GetPhotoRequest();
 
         $obj->setId(1);
-        $this->assertEquals(1, $obj->getSubstituteValue());
+        $this->assertEquals([":id" => 1], $obj->getSubstituables());
     }
 
     /**
@@ -46,8 +47,10 @@ class GetPhotoRequestTest extends AbstractTestCase {
 
         $obj = new GetPhotoRequest();
 
+        $this->assertInstanceOf(SubstituableRequestInterface::class, $obj);
+
         $this->assertEquals(GetPhotoRequest::GET_PHOTO_RESOURCE_PATH, $obj->getResourcePath());
         $this->assertNull($obj->getId());
-        $this->assertEquals(":id", $obj->getSubstituteName());
+        $this->assertEquals([":id" => null], $obj->getSubstituables());
     }
 }

@@ -12,6 +12,7 @@
 namespace WBW\Library\Pexels\Request;
 
 use WBW\Library\Pexels\API\RequestInterface;
+use WBW\Library\Provider\Request\AbstractRequest as BaseRequest;
 
 /**
  * Abstract request.
@@ -20,7 +21,7 @@ use WBW\Library\Pexels\API\RequestInterface;
  * @package WBW\Library\Pexels\Request
  * @abstract
  */
-abstract class AbstractRequest implements RequestInterface {
+abstract class AbstractRequest extends BaseRequest implements RequestInterface {
 
     /**
      * Constructor.
@@ -28,11 +29,4 @@ abstract class AbstractRequest implements RequestInterface {
     public function __construct() {
         // NOTHING TO DO
     }
-
-    /**
-     * Get the resource path.
-     *
-     * @return string Returns the resource path.
-     */
-    abstract public function getResourcePath(): string;
 }

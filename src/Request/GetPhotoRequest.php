@@ -11,7 +11,7 @@
 
 namespace WBW\Library\Pexels\Request;
 
-use WBW\Library\Pexels\API\SubstituteRequestInterface;
+use WBW\Library\Provider\API\SubstituableRequestInterface;
 use WBW\Library\Traits\Integers\IntegerIdTrait;
 
 /**
@@ -20,7 +20,7 @@ use WBW\Library\Traits\Integers\IntegerIdTrait;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\Pexels\Request
  */
-class GetPhotoRequest extends AbstractRequest implements SubstituteRequestInterface {
+class GetPhotoRequest extends AbstractRequest implements SubstituableRequestInterface {
 
     use IntegerIdTrait {
         setId as public;
@@ -43,14 +43,9 @@ class GetPhotoRequest extends AbstractRequest implements SubstituteRequestInterf
     /**
      * {@inheritdoc}
      */
-    public function getSubstituteName(): string {
-        return ":id";
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getSubstituteValue(): ?int {
-        return $this->getId();
+    public function getSubstituables(): array {
+        return [
+            ":id" => $this->getId(),
+        ];
     }
 }
