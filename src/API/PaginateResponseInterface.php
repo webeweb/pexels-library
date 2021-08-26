@@ -27,9 +27,9 @@ interface PaginateResponseInterface {
     public function getNextPage(): ?string;
 
     /**
-     * Get the prev page.
+     * Get the previous page.
      *
-     * @return string Returns the prev page.
+     * @return string Returns the previous page.
      */
     public function getPrevPage(): ?string;
 }
