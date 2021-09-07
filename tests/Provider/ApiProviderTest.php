@@ -85,7 +85,7 @@ class ApiProviderTest extends AbstractTestCase {
         // Set a Logger mock.
         $logger = $this->getMockBuilder(LoggerInterface::class)->getMock();
 
-        // Set a Collectionsrequest mock.
+        // Set a Collections request mock.
         $request = new CollectionRequest();
         $request->setId("id");
 
