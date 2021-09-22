@@ -4,6 +4,11 @@ DOCUMENTATION
 Search photos
 
 ```php
+use WBW\Library\Pexels\Model\Photo;
+use WBW\Library\Pexels\Model\Source;
+use WBW\Library\Pexels\Provider\ApiProvider;
+use WBW\Library\Pexels\Request\SearchPhotosRequest;
+
 // Create the API provider.
 $provider = new ApiProvider("YOUR_API_KEY");
 
@@ -59,6 +64,11 @@ foreach($response->getPhotos() as $current) {
 Curated photos
 
 ```php
+use WBW\Library\Pexels\Model\Photo;
+use WBW\Library\Pexels\Model\Source;
+use WBW\Library\Pexels\Provider\ApiProvider;
+use WBW\Library\Pexels\Request\CuratedPhotosRequest;
+
 // Create the API provider.
 $provider = new ApiProvider("YOUR_API_KEY");
 
@@ -97,6 +107,13 @@ $photo = $response->getPhoto();
 Search videos
 
 ```php
+use WBW\Library\Pexels\Model\User;
+use WBW\Library\Pexels\Model\Video;
+use WBW\Library\Pexels\Model\VideoFile;
+use WBW\Library\Pexels\Model\VideoPicture;
+use WBW\Library\Pexels\Provider\ApiProvider;
+use WBW\Library\Pexels\Request\SearchVideosRequest;
+
 // Create the API provider.
 $provider = new ApiProvider("YOUR_API_KEY");
 
@@ -168,6 +185,13 @@ foreach($response->getVideos() as $current) {
 Popular videos
 
 ```php
+use WBW\Library\Pexels\Model\User;
+use WBW\Library\Pexels\Model\Video;
+use WBW\Library\Pexels\Model\VideoFile;
+use WBW\Library\Pexels\Model\VideoPicture;
+use WBW\Library\Pexels\Provider\ApiProvider;
+use WBW\Library\Pexels\Request\PopularVideosRequest;
+
 // Create the API provider.
 $provider = new ApiProvider("YOUR_API_KEY");
 
@@ -184,6 +208,13 @@ $response = $provider->popularVideos($request);
 Get a video
 
 ```php
+use WBW\Library\Pexels\Model\User;
+use WBW\Library\Pexels\Model\Video;
+use WBW\Library\Pexels\Model\VideoFile;
+use WBW\Library\Pexels\Model\VideoPicture;
+use WBW\Library\Pexels\Provider\ApiProvider;
+use WBW\Library\Pexels\Request\GetVideoRequest;
+
 // Create the API provider.
 $provider = new ApiProvider("YOUR_API_KEY");
 
@@ -206,6 +237,10 @@ $video = $response->getVideo();
 Collections
 
 ```php
+use WBW\Library\Pexels\Model\Collection;
+use WBW\Library\Pexels\Provider\ApiProvider;
+use WBW\Library\Pexels\Request\CollectionsRequest;
+
 // Create the API provider.
 $provider = new ApiProvider("YOUR_API_KEY");
 
@@ -236,6 +271,12 @@ foreach($response->getCollections() as $current) {
 Collection
 
 ```php
+use WBW\Library\Pexels\Model\AbstractMedia;
+use WBW\Library\Pexels\Model\Photo;
+use WBW\Library\Pexels\Model\Video;
+use WBW\Library\Pexels\Provider\ApiProvider;
+use WBW\Library\Pexels\Request\CollectionRequest;
+
 // Create the API provider.
 $provider = new ApiProvider("YOUR_API_KEY");
 
