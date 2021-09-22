@@ -85,6 +85,11 @@ $response = $provider->curatedPhotos($request);
 Get a photo
 
 ```php
+use WBW\Library\Pexels\Model\Photo;
+use WBW\Library\Pexels\Model\Source;
+use WBW\Library\Pexels\Provider\ApiProvider;
+use WBW\Library\Pexels\Request\GetPhotoRequest;
+
 // Create the API provider.
 $provider = new ApiProvider("YOUR_API_KEY");
 
