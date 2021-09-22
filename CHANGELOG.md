@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.1.6](https://github.com/webeweb/pexels-library/tree/v2.1.6) (2021-09-22)
+
+- Improve documentation
+
 ### [2.1.5](https://github.com/webeweb/pexels-library/tree/v2.1.5) (2021-08-26)
 
 - Improve PHPDoc
