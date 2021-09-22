@@ -15,6 +15,7 @@
         <whitelist>
             <directory>./</directory>
             <exclude>
+                <directory>dev</directory>
                 <directory>tests</directory>
                 <directory>vendor</directory>
             </exclude>
