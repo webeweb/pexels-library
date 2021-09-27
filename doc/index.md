@@ -1,6 +1,23 @@
 DOCUMENTATION
 =============
 
+> IMPORTANT NOTICE: The API provider can be used with a debug flag and/or a
+> logger with the following code:
+
+```php
+use Psr\Log\LoggerInterface;
+use WBW\Library\Pexels\Provider\ApiProvider;
+
+/** @var LoggerInterface $logger */
+// $logger = ...
+
+// Create the API provider.
+$provider = new ApiProvider("YOUR_API_KEY", $logger);
+$provider->setDebug(true);
+```
+
+---
+
 Search photos
 
 ```php
