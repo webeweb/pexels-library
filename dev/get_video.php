@@ -29,44 +29,48 @@ $request->setId(1234);
 $response = $provider->getVideo($request);
 
 // Handle the response.
-echo "Limit: " . $response->getLimit() . "\n";
-echo "Remaining: " . $response->getRemaining() . "\n";
-echo "Reset: " . $response->getReset() . "\n";
+$format = "%20s: %s\n";
+
+echo sprintf($format, "Limit", $response->getLimit());
+echo sprintf($format, "Remaining", $response->getRemaining());
+echo sprintf($format, "Reset", $response->getReset());
 
 /** @var Video $video */
 $video = $response->getVideo();
-echo "Id:" . $video->getId() . "\n";
-echo "Width:" . $video->getWidth() . "\n";
-echo "Height:" . $video->getHeight() . "\n";
-echo "URL:" . $video->getUrl() . "\n";
 
-echo "Image:" . $video->getImage() . "\n";
-echo "Full res:" . $video->getFullRes() . "\n";
-echo "Duration:" . $video->getDuration() . "\n";
+echo sprintf($format, "Id", $video->getId());
+echo sprintf($format, "Width", $video->getWidth());
+echo sprintf($format, "Height", $video->getHeight());
+echo sprintf($format, "URL", $video->getUrl());
+
+echo sprintf($format, "Image", $video->getImage());
+echo sprintf($format, "Full res", $video->getFullRes());
+echo sprintf($format, "Duration", $video->getDuration());
 
 /** @var User $user */
-$user = $video->getUser() . "\n";
-echo "Id:" . $user->getId() . "\n";
-echo "Name:" . $user->getName() . "\n";
-echo "Url:" . $user->getUrl() . "\n";
+$user = $video->getUser();
+
+echo sprintf($format, "Id", $user->getId());
+echo sprintf($format, "Name", $user->getName());
+echo sprintf($format, "Url", $user->getUrl());
 
 /** @var VideoFile[] $videoFiles */
 $videoFiles = $video->getVideosFiles();
 foreach ($videoFiles as $vf) {
 
-    echo "Id:" . $vf->getId() . "\n";
-    echo "Quality:" . $vf->getQuality() . "\n";
-    echo "File type:" . $vf->getFileType() . "\n";
-    echo "Width:" . $vf->getWidth() . "\n";
-    echo "Height:" . $vf->getHeight() . "\n";
-    echo "Link:" . $vf->getLink() . "\n";
+    echo sprintf($format, "Id", $vf->getId());
+    echo sprintf($format, "Quality", $vf->getQuality());
+    echo sprintf($format, "File type", $vf->getFileType());
+    echo sprintf($format, "Width", $vf->getWidth());
+    echo sprintf($format, "Height", $vf->getHeight());
+    echo sprintf($format, "Link", $vf->getLink());
 }
 
 /** @var VideoPicture[] $videoPictures */
 $videoPictures = $video->getVideosPictures();
 foreach ($videoPictures as $vp) {
 
-    echo "Id:" . $vp->getId() . "\n";
-    echo "Picture:" . $vp->getPicture() . "\n";
-    echo "Nr:" . $vp->getNr() . "\n";
+    echo sprintf($format, "Id", $vp->getId());
+    echo sprintf($format, "Picture", $vp->getPicture());
+    echo sprintf($format, "Nr", $vp->getNr());
 }

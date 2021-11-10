@@ -26,28 +26,32 @@ $request->setId(1234);
 $response = $provider->getPhoto($request);
 
 // Handle the response.
-echo "Limit: " . $response->getLimit() . "\n";
-echo "Remaining: " . $response->getRemaining() . "\n";
-echo "Reset: " . $response->getReset() . "\n";
+$format = "%20s: %s\n";
+
+echo sprintf($format, "Limit", $response->getLimit());
+echo sprintf($format, "Remaining", $response->getRemaining());
+echo sprintf($format, "Reset", $response->getReset());
 
 /** @var Photo $photo */
 $photo = $response->getPhoto();
-echo "Id: " . $photo->getId() . "\n";
-echo "Width: " . $photo->getWidth() . "\n";
-echo "Height: " . $photo->getHeight() . "\n";
-echo "URL: " . $photo->getUrl() . "\n";
 
-echo "Photographer: " . $photo->getPhotographer() . "\n";
-echo "Photographer URL: " . $photo->getPhotographerUrl() . "\n";
-echo "Photographer id: " . $photo->getPhotographerId() . "\n";
+echo sprintf($format, "Id", $photo->getId());
+echo sprintf($format, "Width", $photo->getWidth());
+echo sprintf($format, "Height", $photo->getHeight());
+echo sprintf($format, "URL", $photo->getUrl());
+
+echo sprintf($format, "Photographer", $photo->getPhotographer());
+echo sprintf($format, "Photographer URL", $photo->getPhotographerUrl());
+echo sprintf($format, "Photographer id", $photo->getPhotographerId());
 
 /** @var Source src */
-$src = $photo->getSrc() . "\n";
-echo "Original: " . $src->getOriginal() . "\n";
-echo "Large 2x: " . $src->getLarge2x() . "\n";
-echo "Large: " . $src->getLarge() . "\n";
-echo "Medium: " . $src->getMedium() . "\n";
-echo "Small: " . $src->getSmall() . "\n";
-echo "Portrait: " . $src->getPortrait() . "\n";
-echo "Landscape: " . $src->getLandscape() . "\n";
-echo "Tiny: " . $src->getTiny() . "\n";
+$src = $photo->getSrc();
+
+echo sprintf($format, "Original", $src->getOriginal());
+echo sprintf($format, "Large 2x", $src->getLarge2x());
+echo sprintf($format, "Large", $src->getLarge());
+echo sprintf($format, "Medium", $src->getMedium());
+echo sprintf($format, "Small", $src->getSmall());
+echo sprintf($format, "Portrait", $src->getPortrait());
+echo sprintf($format, "Landscape", $src->getLandscape());
+echo sprintf($format, "Tiny", $src->getTiny());

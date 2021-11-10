@@ -28,9 +28,11 @@ $request->setId("id");
 $response = $provider->collection($request);
 
 // Handle the response.
-echo "Limit: " . $response->getLimit() . "\n";
-echo "Remaining: " . $response->getRemaining() . "\n";
-echo "Reset: " . $response->getReset() . "\n";
+$format = "%20s: %s\n";
+
+echo sprintf($format, "Limit", $response->getLimit());
+echo sprintf($format, "Remaining", $response->getRemaining());
+echo sprintf($format, "Reset", $response->getReset());
 
 /** @var AbstractMedia $current */
 foreach ($response->getMedias() as $current) {

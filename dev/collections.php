@@ -25,18 +25,20 @@ $request = new CollectionsRequest();
 $response = $provider->collections($request);
 
 // Handle the response.
-echo "Limit: " . $response->getLimit() . "\n";
-echo "Remaining: " . $response->getRemaining() . "\n";
-echo "Reset: " . $response->getReset() . "\n";
+$format = "%20s: %s\n";
+
+echo sprintf($format, "Limit", $response->getLimit());
+echo sprintf($format, "Remaining", $response->getRemaining());
+echo sprintf($format, "Reset", $response->getReset());
 
 /** @var Collection $current */
 foreach ($response->getCollections() as $current) {
 
-    echo "Id:" . $current->getId() . "\n";
-    echo "Title:" . $current->getTitle() . "\n";
-    echo "Description:" . $current->getDescription() . "\n";
-    echo "Private:" . $current->getPrivate() . "\n";
-    echo "Media count:" . $current->getMediaCount() . "\n";
-    echo "Photos count:" . $current->getPhotosCount() . "\n";
-    echo "Video count:" . $current->getVideosCount() . "\n";
+    echo sprintf($format, "Id", $current->getId());
+    echo sprintf($format, "Title", $current->getTitle());
+    echo sprintf($format, "Description", $current->getDescription());
+    echo sprintf($format, "Private", $current->getPrivate());
+    echo sprintf($format, "Media count", $current->getMediaCount());
+    echo sprintf($format, "Photos count", $current->getPhotosCount());
+    echo sprintf($format, "Video count", $current->getVideosCount());
 }

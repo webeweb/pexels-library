@@ -30,40 +30,44 @@ $request->setLocale("en-US"); // Optional
 $response = $provider->searchPhotos($request);
 
 // Handle the response.
-echo "Limit: " . $response->getLimit() . "\n";
-echo "Remaining: " . $response->getRemaining() . "\n";
-echo "Reset: " . $response->getReset() . "\n";
+$format = "%20s: %s\n";
 
-echo "Per page: " . $response->getPerPage() . "\n";
-echo "Page: " . $response->getPage() . "\n";
-echo "Total results: " . $response->getTotalResults() . "\n";
+echo sprintf($format, "Limit", $response->getLimit());
+echo sprintf($format, "Remaining", $response->getRemaining());
+echo sprintf($format, "Reset", $response->getReset());
 
-echo "Prev page: " . $response->getPrevPage() . "\n";
-echo "Next page: " . $response->getNextPage() . "\n";
+echo sprintf($format, "Per page", $response->getPerPage());
+echo sprintf($format, "Page", $response->getPage());
+echo sprintf($format, "Total results", $response->getTotalResults());
 
-echo "URL: " . $response->getUrl() . "\n";
+echo sprintf($format, "Prev page", $response->getPrevPage());
+echo sprintf($format, "Next page", $response->getNextPage());
+
+echo sprintf($format, "URL", $response->getUrl());
 
 /** @var Photo $current */
 foreach ($response->getPhotos() as $current) {
 
     echo "\n";
-    echo "Id: " . $current->getId() . "\n";
-    echo "Width: " . $current->getWidth() . "\n";
-    echo "Height: " . $current->getHeight() . "\n";
-    echo "URL: " . $current->getUrl() . "\n";
 
-    echo "Photographer: " . $current->getPhotographer() . "\n";
-    echo "Photographer URL: " . $current->getPhotographerUrl() . "\n";
-    echo "Photographer id: " . $current->getPhotographerId() . "\n";
+    echo sprintf($format, "Id", $current->getId());
+    echo sprintf($format, "Width", $current->getWidth());
+    echo sprintf($format, "Height", $current->getHeight());
+    echo sprintf($format, "URL", $current->getUrl());
+
+    echo sprintf($format, "Photographer", $current->getPhotographer());
+    echo sprintf($format, "Photographer URL", $current->getPhotographerUrl());
+    echo sprintf($format, "Photographer id", $current->getPhotographerId());
 
     /** @var Source src */
-    $src = $current->getSrc() . "\n";
-    echo "Original: " . $src->getOriginal() . "\n";
-    echo "Large 2x: " . $src->getLarge2x() . "\n";
-    echo "Large: " . $src->getLarge() . "\n";
-    echo "Medium: " . $src->getMedium() . "\n";
-    echo "Small: " . $src->getSmall() . "\n";
-    echo "Portrait: " . $src->getPortrait() . "\n";
-    echo "Landscape: " . $src->getLandscape() . "\n";
-    echo "Tiny: " . $src->getTiny() . "\n";
+    $src = $current->getSrc();
+
+    echo sprintf($format, "Original", $src->getOriginal());
+    echo sprintf($format, "Large 2x", $src->getLarge2x());
+    echo sprintf($format, "Large", $src->getLarge());
+    echo sprintf($format, "Medium", $src->getMedium());
+    echo sprintf($format, "Small", $src->getSmall());
+    echo sprintf($format, "Portrait", $src->getPortrait());
+    echo sprintf($format, "Landscape", $src->getLandscape());
+    echo sprintf($format, "Tiny", $src->getTiny());
 }

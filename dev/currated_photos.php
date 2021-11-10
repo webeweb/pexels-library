@@ -23,6 +23,4 @@ $request = new CuratedPhotosRequest();
 $response = $provider->curatedPhotos($request);
 
 // Handle the response (same as search photos).
-
-// Handle the response (same as search photos).
 // ...
