@@ -13,7 +13,7 @@ namespace WBW\Library\Pexels\Provider;
 
 use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
-use WBW\Library\Pexels\API\PaginateResponseInterface;
+use WBW\Library\Pexels\Api\PaginateResponseInterface;
 use WBW\Library\Pexels\Request\CollectionRequest;
 use WBW\Library\Pexels\Request\CollectionsRequest;
 use WBW\Library\Pexels\Request\CuratedPhotosRequest;

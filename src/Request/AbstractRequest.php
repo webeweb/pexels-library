@@ -11,7 +11,7 @@
 
 namespace WBW\Library\Pexels\Request;
 
-use WBW\Library\Pexels\API\RequestInterface;
+use WBW\Library\Pexels\Api\RequestInterface;
 use WBW\Library\Provider\Request\AbstractRequest as BaseRequest;
 
 /**

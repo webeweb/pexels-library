@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pexels\API;
+namespace WBW\Library\Pexels\Api;
 
 /**
  * Paginate response interface.

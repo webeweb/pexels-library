@@ -16,7 +16,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
-use WBW\Library\Pexels\API\PaginateResponseInterface;
+use WBW\Library\Pexels\Api\PaginateResponseInterface;
 use WBW\Library\Pexels\Request\AbstractRequest;
 use WBW\Library\Provider\AbstractProvider as BaseProvider;
 use WBW\Library\Provider\Exception\ApiException;

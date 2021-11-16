@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pexels\Tests\API;
+namespace WBW\Library\Pexels\Tests\Api;
 
-use WBW\Library\Pexels\API\RequestInterface;
+use WBW\Library\Pexels\Api\RequestInterface;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 
 /**

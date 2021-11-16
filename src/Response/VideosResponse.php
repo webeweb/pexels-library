@@ -11,7 +11,7 @@
 
 namespace WBW\Library\Pexels\Response;
 
-use WBW\Library\Pexels\API\PaginateResponseInterface;
+use WBW\Library\Pexels\Api\PaginateResponseInterface;
 use WBW\Library\Pexels\Model\Attribute\IntegerTotalResultsTrait;
 use WBW\Library\Pexels\Model\Attribute\StringNextPageTrait;
 use WBW\Library\Pexels\Model\Attribute\StringPrevPageTrait;
