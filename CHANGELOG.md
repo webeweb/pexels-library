@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [2.3.0](https://github.com/webeweb/pexels-library/tree/v2.3.0) (2021-11-16)
+
+- Improve unit tests
+- Rename API package
+
 ### [2.2.0](https://github.com/webeweb/pexels-library/tree/v2.2.0) (2021-09-24)
 
 - Update dependencies
