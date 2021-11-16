@@ -37,19 +37,21 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeCollectionResponse(): void {
 
-        $arg = file_get_contents(__DIR__ . "/ResponseDeserializerTest.testDeserializeCollectionResponse.json");
+        // Set a JSON mock.
+        $json = file_get_contents(__DIR__ . "/ResponseDeserializerTest.testDeserializeCollectionResponse.json");
 
-        $obj = ResponseDeserializer::deserializeCollectionResponse($arg);
-        $this->assertInstanceOf(CollectionResponse::class, $obj);
+        $res = ResponseDeserializer::deserializeCollectionResponse($json);
+        $this->assertInstanceOf(CollectionResponse::class, $res);
 
-        $this->assertInstanceOf(Photo::class, $obj->getMedias()[0]);
-        $this->assertInstanceOf(Video::class, $obj->getMedias()[1]);
+        $this->assertEquals($json, $res->getRawResponse());
+        $this->assertEquals(2, $res->getPage());
+        $this->assertEquals(2, $res->getPerPage());
+        $this->assertEquals(6, $res->getTotalResults());
+        $this->assertEquals("https://api.pexels.com/v1/collections/9mp14cx/?page=3&per_page=2", $res->getNextPage());
+        $this->assertEquals("https://api.pexels.com/v1/collections/9mp14cx/?page=1&per_page=2", $res->getPrevPage());
 
-        $this->assertEquals(2, $obj->getPage());
-        $this->assertEquals(2, $obj->getPerPage());
-        $this->assertEquals(6, $obj->getTotalResults());
-        $this->assertEquals("https://api.pexels.com/v1/collections/9mp14cx/?page=3&per_page=2", $obj->getNextPage());
-        $this->assertEquals("https://api.pexels.com/v1/collections/9mp14cx/?page=1&per_page=2", $obj->getPrevPage());
+        $this->assertInstanceOf(Photo::class, $res->getMedias()[0]);
+        $this->assertInstanceOf(Video::class, $res->getMedias()[1]);
     }
 
     /**
@@ -59,10 +61,14 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeCollectionResponseWithBadRawResponse(): void {
 
-        $obj = ResponseDeserializer::deserializeCollectionResponse("");
-        $this->assertInstanceOf(CollectionResponse::class, $obj);
+        // Set a JSON mock.
+        $json = "";
 
-        $this->assertEquals([], $obj->getMedias());
+        $res = ResponseDeserializer::deserializeCollectionResponse($json);
+        $this->assertInstanceOf(CollectionResponse::class, $res);
+
+        $this->assertEquals($json, $res->getRawResponse());
+        $this->assertEquals([], $res->getMedias());
     }
 
     /**
@@ -72,24 +78,26 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeCollectionsResponse(): void {
 
-        $arg = file_get_contents(__DIR__ . "/ResponseDeserializerTest.testDeserializeCollectionsResponse.json");
+        // Set a JSON mock.
+        $json = file_get_contents(__DIR__ . "/ResponseDeserializerTest.testDeserializeCollectionsResponse.json");
 
-        $obj = ResponseDeserializer::deserializeCollectionsResponse($arg);
-        $this->assertInstanceOf(CollectionsResponse::class, $obj);
+        $res = ResponseDeserializer::deserializeCollectionsResponse($json);
+        $this->assertInstanceOf(CollectionsResponse::class, $res);
 
-        $this->assertEquals("9mp14cx", $obj->getCollections()[0]->getId());
-        $this->assertEquals("Cool Cats", $obj->getCollections()[0]->getTitle());
-        $this->assertNull($obj->getCollections()[0]->getDescription());
-        $this->assertFalse($obj->getCollections()[0]->getPrivate());
-        $this->assertEquals(6, $obj->getCollections()[0]->getMediaCount());
-        $this->assertEquals(5, $obj->getCollections()[0]->getPhotosCount());
-        $this->assertEquals(1, $obj->getCollections()[0]->getVideosCount());
+        $this->assertEquals($json, $res->getRawResponse());
+        $this->assertEquals(2, $res->getPage());
+        $this->assertEquals(1, $res->getPerPage());
+        $this->assertEquals(5, $res->getTotalResults());
+        $this->assertEquals("https://api.pexels.com/v1/collections/?page=3&per_page=1", $res->getNextPage());
+        $this->assertEquals("https://api.pexels.com/v1/collections/?page=1&per_page=1", $res->getPrevPage());
 
-        $this->assertEquals(2, $obj->getPage());
-        $this->assertEquals(1, $obj->getPerPage());
-        $this->assertEquals(5, $obj->getTotalResults());
-        $this->assertEquals("https://api.pexels.com/v1/collections/?page=3&per_page=1", $obj->getNextPage());
-        $this->assertEquals("https://api.pexels.com/v1/collections/?page=1&per_page=1", $obj->getPrevPage());
+        $this->assertEquals("9mp14cx", $res->getCollections()[0]->getId());
+        $this->assertEquals("Cool Cats", $res->getCollections()[0]->getTitle());
+        $this->assertNull($res->getCollections()[0]->getDescription());
+        $this->assertFalse($res->getCollections()[0]->getPrivate());
+        $this->assertEquals(6, $res->getCollections()[0]->getMediaCount());
+        $this->assertEquals(5, $res->getCollections()[0]->getPhotosCount());
+        $this->assertEquals(1, $res->getCollections()[0]->getVideosCount());
     }
 
     /**
@@ -99,10 +107,14 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeCollectionsResponseWithBadRawResponse(): void {
 
-        $obj = ResponseDeserializer::deserializeCollectionsResponse("");
-        $this->assertInstanceOf(CollectionsResponse::class, $obj);
+        // Set a JSON mock.
+        $json = "";
 
-        $this->assertEquals([], $obj->getCollections());
+        $res = ResponseDeserializer::deserializeCollectionsResponse($json);
+        $this->assertInstanceOf(CollectionsResponse::class, $res);
+
+        $this->assertEquals($json, $res->getRawResponse());
+        $this->assertEquals([], $res->getCollections());
     }
 
     /**
@@ -112,19 +124,22 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializePhotoResponse(): void {
 
-        $arg = file_get_contents(__DIR__ . "/ResponseDeserializerTest.testDeserializeSearchPhotosResponse.json");
-        $tmp = json_decode($arg, true)["photos"][0];
+        // Set a JSON mock.
+        $json = file_get_contents(__DIR__ . "/ResponseDeserializerTest.testDeserializeSearchPhotosResponse.json");
+        $data = json_decode($json, true);
+        $tmp  = json_encode($data["photos"][0]);
 
-        $obj = ResponseDeserializer::deserializePhotoResponse(json_encode($tmp));
-        $this->assertInstanceOf(PhotoResponse::class, $obj);
+        $res = ResponseDeserializer::deserializePhotoResponse($tmp);
+        $this->assertInstanceOf(PhotoResponse::class, $res);
 
-        $this->assertEquals(1181292, $obj->getPhoto()->getId());
-        $this->assertEquals(3756, $obj->getPhoto()->getWidth());
-        $this->assertEquals(5627, $obj->getPhoto()->getHeight());
-        $this->assertEquals("https://www.pexels.com/photo/photography-of-a-woman-using-laptop-1181292/", $obj->getPhoto()->getUrl());
-        $this->assertEquals("Christina Morillo", $obj->getPhoto()->getPhotographer());
-        $this->assertEquals("https://www.pexels.com/@divinetechygirl", $obj->getPhoto()->getPhotographerUrl());
-        $this->assertNotNull($obj->getPhoto()->getSrc());
+        $this->assertEquals($tmp, $res->getRawResponse());
+        $this->assertEquals(1181292, $res->getPhoto()->getId());
+        $this->assertEquals(3756, $res->getPhoto()->getWidth());
+        $this->assertEquals(5627, $res->getPhoto()->getHeight());
+        $this->assertEquals("https://www.pexels.com/photo/photography-of-a-woman-using-laptop-1181292/", $res->getPhoto()->getUrl());
+        $this->assertEquals("Christina Morillo", $res->getPhoto()->getPhotographer());
+        $this->assertEquals("https://www.pexels.com/@divinetechygirl", $res->getPhoto()->getPhotographerUrl());
+        $this->assertNotNull($res->getPhoto()->getSrc());
     }
 
     /**
@@ -134,10 +149,14 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializePhotoResponseWithBadRawResponse(): void {
 
-        $obj = ResponseDeserializer::deserializePhotoResponse("");
-        $this->assertInstanceOf(PhotoResponse::class, $obj);
+        // Set a JSON mock.
+        $json = "";
 
-        $this->assertNull($obj->getPhoto());
+        $res = ResponseDeserializer::deserializePhotoResponse($json);
+        $this->assertInstanceOf(PhotoResponse::class, $res);
+
+        $this->assertEquals($json, $res->getRawResponse());
+        $this->assertNull($res->getPhoto());
     }
 
     /**
@@ -147,17 +166,19 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializePhotosResponse(): void {
 
-        $arg = file_get_contents(__DIR__ . "/ResponseDeserializerTest.testDeserializeSearchPhotosResponse.json");
+        // Set a JSON mock.
+        $json = file_get_contents(__DIR__ . "/ResponseDeserializerTest.testDeserializeSearchPhotosResponse.json");
 
-        $obj = ResponseDeserializer::deserializePhotosResponse($arg);
-        $this->assertInstanceOf(PhotosResponse::class, $obj);
+        $res = ResponseDeserializer::deserializePhotosResponse($json);
+        $this->assertInstanceOf(PhotosResponse::class, $res);
 
-        $this->assertEquals(6, $obj->getTotalResults());
-        $this->assertEquals(1, $obj->getPage());
-        $this->assertEquals(15, $obj->getPerPage());
-        $this->assertNull($obj->getUrl());
-        $this->assertNull($obj->getNextPage());
-        $this->assertCount(1, $obj->getPhotos());
+        $this->assertEquals($json, $res->getRawResponse());
+        $this->assertEquals(6, $res->getTotalResults());
+        $this->assertEquals(1, $res->getPage());
+        $this->assertEquals(15, $res->getPerPage());
+        $this->assertNull($res->getUrl());
+        $this->assertNull($res->getNextPage());
+        $this->assertCount(1, $res->getPhotos());
     }
 
     /**
@@ -167,15 +188,19 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializePhotosResponseWithBadRawResponse(): void {
 
-        $obj = ResponseDeserializer::deserializePhotosResponse("");
-        $this->assertInstanceOf(PhotosResponse::class, $obj);
+        // Set a JSON mock.
+        $json = "";
 
-        $this->assertNull($obj->getTotalResults());
-        $this->assertNull($obj->getPage());
-        $this->assertNull($obj->getPerPage());
-        $this->assertNull($obj->getUrl());
-        $this->assertNull($obj->getNextPage());
-        $this->assertCount(0, $obj->getPhotos());
+        $res = ResponseDeserializer::deserializePhotosResponse($json);
+        $this->assertInstanceOf(PhotosResponse::class, $res);
+
+        $this->assertEquals($json, $res->getRawResponse());
+        $this->assertNull($res->getTotalResults());
+        $this->assertNull($res->getPage());
+        $this->assertNull($res->getPerPage());
+        $this->assertNull($res->getUrl());
+        $this->assertNull($res->getNextPage());
+        $this->assertCount(0, $res->getPhotos());
     }
 
     /**
@@ -185,21 +210,24 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeVideoResponse(): void {
 
-        $arg = file_get_contents(__DIR__ . "/ResponseDeserializerTest.testDeserializeSearchVideosResponse.json");
-        $tmp = json_decode($arg, true)["videos"][0];
+        // Set a JSON mock.
+        $json = file_get_contents(__DIR__ . "/ResponseDeserializerTest.testDeserializeSearchVideosResponse.json");
+        $data = json_decode($json, true);
+        $tmp  = json_encode($data["videos"][0]);
 
-        $obj = ResponseDeserializer::deserializeVideoResponse(json_encode($tmp));
-        $this->assertInstanceOf(VideoResponse::class, $obj);
+        $res = ResponseDeserializer::deserializeVideoResponse($tmp);
+        $this->assertInstanceOf(VideoResponse::class, $res);
 
-        $this->assertEquals(1972034, $obj->getVideo()->getId());
-        $this->assertEquals(1920, $obj->getVideo()->getWidth());
-        $this->assertEquals(1080, $obj->getVideo()->getHeight());
-        $this->assertEquals("https://videos.pexels.com/videos/following-a-woman-in-slow-motion-1972034", $obj->getVideo()->getUrl());
-        $this->assertEquals("https://images.pexels.com/videos/1972034/free-video-1972034.jpg?fit=crop&w=1200&h=630&auto=compress&cs=tinysrgb", $obj->getVideo()->getImage());
-        $this->assertNull($obj->getVideo()->getFullRes());
-        $this->assertEquals(129, $obj->getVideo()->getDuration());
-        $this->assertCount(3, $obj->getVideo()->getVideoFiles());
-        $this->assertCount(15, $obj->getVideo()->getVideoPictures());
+        $this->assertEquals($tmp, $res->getRawResponse());
+        $this->assertEquals(1972034, $res->getVideo()->getId());
+        $this->assertEquals(1920, $res->getVideo()->getWidth());
+        $this->assertEquals(1080, $res->getVideo()->getHeight());
+        $this->assertEquals("https://videos.pexels.com/videos/following-a-woman-in-slow-motion-1972034", $res->getVideo()->getUrl());
+        $this->assertEquals("https://images.pexels.com/videos/1972034/free-video-1972034.jpg?fit=crop&w=1200&h=630&auto=compress&cs=tinysrgb", $res->getVideo()->getImage());
+        $this->assertNull($res->getVideo()->getFullRes());
+        $this->assertEquals(129, $res->getVideo()->getDuration());
+        $this->assertCount(3, $res->getVideo()->getVideoFiles());
+        $this->assertCount(15, $res->getVideo()->getVideoPictures());
     }
 
     /**
@@ -209,10 +237,14 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeVideoResponseWithBadRewResponse(): void {
 
-        $obj = ResponseDeserializer::deserializeVideoResponse("");
-        $this->assertInstanceOf(VideoResponse::class, $obj);
+        // Set a JSON mock.
+        $json = "";
 
-        $this->assertNull($obj->getVideo());
+        $res = ResponseDeserializer::deserializeVideoResponse($json);
+        $this->assertInstanceOf(VideoResponse::class, $res);
+
+        $this->assertEquals($json, $res->getRawResponse());
+        $this->assertNull($res->getVideo());
     }
 
     /**
@@ -222,17 +254,19 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeVideosResponse(): void {
 
-        $arg = file_get_contents(__DIR__ . "/ResponseDeserializerTest.testDeserializeSearchVideosResponse.json");
+        // Set a JSON mock.
+        $json = file_get_contents(__DIR__ . "/ResponseDeserializerTest.testDeserializeSearchVideosResponse.json");
 
-        $obj = ResponseDeserializer::deserializeVideosResponse($arg);
-        $this->assertInstanceOf(VideosResponse::class, $obj);
+        $res = ResponseDeserializer::deserializeVideosResponse($json);
+        $this->assertInstanceOf(VideosResponse::class, $res);
 
-        $this->assertEquals(7206, $obj->getTotalResults());
-        $this->assertEquals(1, $obj->getPage());
-        $this->assertEquals(15, $obj->getPerPage());
-        $this->assertEquals("http://api-videos.pexels.com/popular-videos", $obj->getUrl());
-        $this->assertNull($obj->getNextPage());
-        $this->assertCount(1, $obj->getVideos());
+        $this->assertEquals($json, $res->getRawResponse());
+        $this->assertEquals(7206, $res->getTotalResults());
+        $this->assertEquals(1, $res->getPage());
+        $this->assertEquals(15, $res->getPerPage());
+        $this->assertEquals("http://api-videos.pexels.com/popular-videos", $res->getUrl());
+        $this->assertNull($res->getNextPage());
+        $this->assertCount(1, $res->getVideos());
     }
 
     /**
@@ -242,14 +276,18 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeVideosResponseWithBadRawResponse(): void {
 
-        $obj = ResponseDeserializer::deserializeVideosResponse("");
-        $this->assertInstanceOf(VideosResponse::class, $obj);
+        // Set a JSON mock.
+        $json = "";
 
-        $this->assertNull($obj->getTotalResults());
-        $this->assertNull($obj->getPage());
-        $this->assertNull($obj->getPerPage());
-        $this->assertNull($obj->getUrl());
-        $this->assertNull($obj->getNextPage());
-        $this->assertCount(0, $obj->getVideos());
+        $res = ResponseDeserializer::deserializeVideosResponse($json);
+        $this->assertInstanceOf(VideosResponse::class, $res);
+
+        $this->assertEquals($json, $res->getRawResponse());
+        $this->assertNull($res->getTotalResults());
+        $this->assertNull($res->getPage());
+        $this->assertNull($res->getPerPage());
+        $this->assertNull($res->getUrl());
+        $this->assertNull($res->getNextPage());
+        $this->assertCount(0, $res->getVideos());
     }
 }

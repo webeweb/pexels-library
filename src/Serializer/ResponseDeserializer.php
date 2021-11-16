@@ -35,16 +35,16 @@ class ResponseDeserializer {
      */
     public static function deserializeCollectionResponse(string $rawResponse): CollectionResponse {
 
-        $decodedResponse = json_decode(trim($rawResponse), true);
+        $data = json_decode(trim($rawResponse), true);
 
         $model = new CollectionResponse();
         $model->setRawResponse($rawResponse);
 
-        if (null === $decodedResponse) {
+        if (null === $data) {
             return $model;
         }
 
-        foreach (ArrayHelper::get($decodedResponse, "media", []) as $current) {
+        foreach (ArrayHelper::get($data, "media", []) as $current) {
 
             $type = ArrayHelper::get($current, "type");
             if ("Photo" === $type) {
@@ -55,11 +55,11 @@ class ResponseDeserializer {
             }
         }
 
-        $model->setPage(intval(ArrayHelper::get($decodedResponse, "page", -1)));
-        $model->setPerPage(intval(ArrayHelper::get($decodedResponse, "per_page", -1)));
-        $model->setTotalResults(intval(ArrayHelper::get($decodedResponse, "total_results", -1)));
-        $model->setNextPage(ArrayHelper::get($decodedResponse, "next_page"));
-        $model->setPrevPage(ArrayHelper::get($decodedResponse, "prev_page"));
+        $model->setPage(intval(ArrayHelper::get($data, "page", -1)));
+        $model->setPerPage(intval(ArrayHelper::get($data, "per_page", -1)));
+        $model->setTotalResults(intval(ArrayHelper::get($data, "total_results", -1)));
+        $model->setNextPage(ArrayHelper::get($data, "next_page"));
+        $model->setPrevPage(ArrayHelper::get($data, "prev_page"));
 
         return $model;
     }
@@ -72,24 +72,24 @@ class ResponseDeserializer {
      */
     public static function deserializeCollectionsResponse(string $rawResponse): CollectionsResponse {
 
-        $decodedResponse = json_decode(trim($rawResponse), true);
+        $data = json_decode(trim($rawResponse), true);
 
         $model = new CollectionsResponse();
         $model->setRawResponse($rawResponse);
 
-        if (null === $decodedResponse) {
+        if (null === $data) {
             return $model;
         }
 
-        foreach (ArrayHelper::get($decodedResponse, "collections", []) as $current) {
+        foreach (ArrayHelper::get($data, "collections", []) as $current) {
             $model->addCollection(JsonDeserializer::deserializeCollection($current));
         }
 
-        $model->setPage(intval(ArrayHelper::get($decodedResponse, "page", -1)));
-        $model->setPerPage(intval(ArrayHelper::get($decodedResponse, "per_page", -1)));
-        $model->setTotalResults(intval(ArrayHelper::get($decodedResponse, "total_results", -1)));
-        $model->setNextPage(ArrayHelper::get($decodedResponse, "next_page"));
-        $model->setPrevPage(ArrayHelper::get($decodedResponse, "prev_page"));
+        $model->setPage(intval(ArrayHelper::get($data, "page", -1)));
+        $model->setPerPage(intval(ArrayHelper::get($data, "per_page", -1)));
+        $model->setTotalResults(intval(ArrayHelper::get($data, "total_results", -1)));
+        $model->setNextPage(ArrayHelper::get($data, "next_page"));
+        $model->setPrevPage(ArrayHelper::get($data, "prev_page"));
 
         return $model;
     }
@@ -102,16 +102,16 @@ class ResponseDeserializer {
      */
     public static function deserializePhotoResponse(string $rawResponse): PhotoResponse {
 
-        $decodedResponse = json_decode(trim($rawResponse), true);
+        $data = json_decode(trim($rawResponse), true);
 
         $model = new PhotoResponse();
         $model->setRawResponse($rawResponse);
 
-        if (null === $decodedResponse) {
+        if (null === $data) {
             return $model;
         }
 
-        $model->setPhoto(JsonDeserializer::deserializePhoto($decodedResponse));
+        $model->setPhoto(JsonDeserializer::deserializePhoto($data));
 
         return $model;
     }
@@ -124,23 +124,23 @@ class ResponseDeserializer {
      */
     public static function deserializePhotosResponse(string $rawResponse): PhotosResponse {
 
-        $decodedResponse = json_decode(trim($rawResponse), true);
+        $data = json_decode(trim($rawResponse), true);
 
         $model = new PhotosResponse();
         $model->setRawResponse($rawResponse);
 
-        if (null === $decodedResponse) {
+        if (null === $data) {
             return $model;
         }
 
-        $model->setTotalResults(intval(ArrayHelper::get($decodedResponse, "total_results", -1)));
-        $model->setPage(intval(ArrayHelper::get($decodedResponse, "page", -1)));
-        $model->setPerPage(intval(ArrayHelper::get($decodedResponse, "per_page", -1)));
-        $model->setUrl(ArrayHelper::get($decodedResponse, "url"));
-        $model->setPrevPage(ArrayHelper::get($decodedResponse, "prev_page"));
-        $model->setNextPage(ArrayHelper::get($decodedResponse, "next_page"));
+        $model->setTotalResults(intval(ArrayHelper::get($data, "total_results", -1)));
+        $model->setPage(intval(ArrayHelper::get($data, "page", -1)));
+        $model->setPerPage(intval(ArrayHelper::get($data, "per_page", -1)));
+        $model->setUrl(ArrayHelper::get($data, "url"));
+        $model->setPrevPage(ArrayHelper::get($data, "prev_page"));
+        $model->setNextPage(ArrayHelper::get($data, "next_page"));
 
-        foreach (ArrayHelper::get($decodedResponse, "photos", []) as $current) {
+        foreach (ArrayHelper::get($data, "photos", []) as $current) {
             $model->addPhoto(JsonDeserializer::deserializePhoto($current));
         }
 
@@ -155,16 +155,16 @@ class ResponseDeserializer {
      */
     public static function deserializeVideoResponse(string $rawResponse): VideoResponse {
 
-        $decodedResponse = json_decode(trim($rawResponse), true);
+        $data = json_decode(trim($rawResponse), true);
 
         $model = new VideoResponse();
         $model->setRawResponse($rawResponse);
 
-        if (null === $decodedResponse) {
+        if (null === $data) {
             return $model;
         }
 
-        $model->setVideo(JsonDeserializer::deserializeVideo($decodedResponse));
+        $model->setVideo(JsonDeserializer::deserializeVideo($data));
 
         return $model;
     }
@@ -177,23 +177,23 @@ class ResponseDeserializer {
      */
     public static function deserializeVideosResponse(string $rawResponse): VideosResponse {
 
-        $decodedResponse = json_decode(trim($rawResponse), true);
+        $data = json_decode(trim($rawResponse), true);
 
         $model = new VideosResponse();
         $model->setRawResponse($rawResponse);
 
-        if (null === $decodedResponse) {
+        if (null === $data) {
             return $model;
         }
 
-        $model->setTotalResults(intval(ArrayHelper::get($decodedResponse, "total_results", -1)));
-        $model->setPage(intval(ArrayHelper::get($decodedResponse, "page", -1)));
-        $model->setPerPage(intval(ArrayHelper::get($decodedResponse, "per_page", -1)));
-        $model->setUrl(ArrayHelper::get($decodedResponse, "url"));
-        $model->setPrevPage(ArrayHelper::get($decodedResponse, "prev_page"));
-        $model->setNextPage(ArrayHelper::get($decodedResponse, "next_page"));
+        $model->setTotalResults(intval(ArrayHelper::get($data, "total_results", -1)));
+        $model->setPage(intval(ArrayHelper::get($data, "page", -1)));
+        $model->setPerPage(intval(ArrayHelper::get($data, "per_page", -1)));
+        $model->setUrl(ArrayHelper::get($data, "url"));
+        $model->setPrevPage(ArrayHelper::get($data, "prev_page"));
+        $model->setNextPage(ArrayHelper::get($data, "next_page"));
 
-        foreach (ArrayHelper::get($decodedResponse, "videos", []) as $current) {
+        foreach (ArrayHelper::get($data, "videos", []) as $current) {
             $model->addVideo(JsonDeserializer::deserializeVideo($current));
         }
 
