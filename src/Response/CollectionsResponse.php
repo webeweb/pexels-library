@@ -44,6 +44,7 @@ class CollectionsResponse extends AbstractResponse {
      */
     public function __construct() {
         parent::__construct();
+
         $this->setCollections([]);
     }
 
