@@ -13,7 +13,7 @@ namespace WBW\Library\Pexels\Tests\Request;
 
 use WBW\Library\Pexels\Request\GetPhotoRequest;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
-use WBW\Library\Provider\API\SubstituableRequestInterface;
+use WBW\Library\Provider\Api\SubstituableRequestInterface;
 
 /**
  * Get photo request test.

@@ -11,7 +11,7 @@
 
 namespace WBW\Library\Pexels\Request;
 
-use WBW\Library\Provider\API\SubstituableRequestInterface;
+use WBW\Library\Provider\Api\SubstituableRequestInterface;
 use WBW\Library\Traits\Integers\IntegerIdTrait;
 
 /**
