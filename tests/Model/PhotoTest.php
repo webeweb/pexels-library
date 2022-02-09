@@ -24,6 +24,19 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class PhotoTest extends AbstractTestCase {
 
     /**
+     * Tests the setAlt() method.
+     *
+     * @return void
+     */
+    public function testSetAlt(): void {
+
+        $obj = new Photo();
+
+        $obj->setAlt("alt");
+        $this->assertEquals("alt", $obj->getAlt());
+    }
+
+    /**
      * Tests the setAvgColor() method.
      *
      * @return void
@@ -113,6 +126,7 @@ class PhotoTest extends AbstractTestCase {
 
         $obj = new Photo();
 
+        $this->assertNull($obj->getAlt());
         $this->assertNull($obj->getAvgColor());
         $this->assertNull($obj->getLiked());
         $this->assertNull($obj->getPhotographer());

@@ -20,6 +20,13 @@ namespace WBW\Library\Pexels\Model;
 class Photo extends AbstractMedia {
 
     /**
+     * Alt.
+     *
+     * @var string|null
+     */
+    private $alt;
+
+    /**
      * Average color.
      *
      * @var string|null
@@ -60,6 +67,15 @@ class Photo extends AbstractMedia {
      * @var Source|null
      */
     private $src;
+
+    /**
+     * Get the alt.
+     *
+     * @return string|null Returns the alt.
+     */
+    public function getAlt(): ?string {
+        return $this->alt;
+    }
 
     /**
      * Get the average color.
@@ -113,6 +129,17 @@ class Photo extends AbstractMedia {
      */
     public function getSrc(): ?Source {
         return $this->src;
+    }
+
+    /**
+     * Set the alt.
+     *
+     * @param string|null $alt The alt.
+     * @return Photo Returns this photo.
+     */
+    public function setAlt(?string $alt): Photo {
+        $this->alt = $alt;
+        return $this;
     }
 
     /**

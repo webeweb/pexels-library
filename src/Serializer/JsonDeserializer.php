@@ -67,6 +67,7 @@ class JsonDeserializer {
         $model->setAvgColor(ArrayHelper::get($response, "avg_color"));
         $model->setSrc(static::deserializeSource(ArrayHelper::get($response, "src", [])));
         $model->setLiked(ArrayHelper::get($response, "liked"));
+        $model->setAlt(ArrayHelper::get($response, "alt"));
 
         return $model;
     }
