@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [2.5.0](https://github.com/webeweb/pexels-library/tree/v2.5.0) (2022-02-09)
+
+- Add alt attribute support into Photo
+- Add color support into Search photo request
+
 ### [2.4.0](https://github.com/webeweb/pexels-library/tree/v2.4.0) (2021-12-08)
 
 - Update dependencies
