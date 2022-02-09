@@ -128,16 +128,18 @@ class RequestSerializerTest extends AbstractTestCase {
         $request->setQuery("github");
         $request->setOrientation("landscape");
         $request->setSize("large");
+        $request->setColor("color");
         $request->setLocale("en-US");
         $request->setPage(2);
         $request->setPerPage(80);
 
         $res = RequestSerializer::serializeSearchPhotosRequest($request);
-        $this->assertCount(6, $res);
+        $this->assertCount(7, $res);
 
         $this->assertEquals("github", $res["query"]);
         $this->assertEquals("landscape", $res["orientation"]);
         $this->assertEquals("large", $res["size"]);
+        $this->assertEquals("color", $res["color"]);
         $this->assertEquals("en-US", $res["locale"]);
         $this->assertEquals(80, $res["per_page"]);
         $this->assertEquals(2, $res["page"]);
