@@ -23,7 +23,7 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class CuratedPhotosRequestTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

@@ -24,7 +24,7 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class VideosResponseTest extends AbstractTestCase {
 
     /**
-     * Tests the addVideo() method.
+     * Tests addVideo()
      *
      * @return void
      */
@@ -40,7 +40,7 @@ class VideosResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

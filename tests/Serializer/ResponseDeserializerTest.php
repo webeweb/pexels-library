@@ -31,7 +31,7 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class ResponseDeserializerTest extends AbstractTestCase {
 
     /**
-     * Tests the deserializeCollectionResponse() method.
+     * Tests deserializeCollectionResponse()
      *
      * @return void
      */
@@ -55,7 +55,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializeCollectionResponse() method.
+     * Tests deserializeCollectionResponse()
      *
      * @return void
      */
@@ -72,7 +72,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializeCollectionsResponse() method.
+     * Tests deserializeCollectionsResponse()
      *
      * @return void
      */
@@ -101,7 +101,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializeCollectionsResponse() method.
+     * Tests deserializeCollectionsResponse()
      *
      * @return void
      */
@@ -118,7 +118,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializePhotoResponse() method.
+     * Tests deserializePhotoResponse()
      *
      * @return void
      */
@@ -143,7 +143,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializePhotoResponse() method.
+     * Tests deserializePhotoResponse()
      *
      * @return void
      */
@@ -160,7 +160,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializePhotosResponse() method.
+     * Tests deserializePhotosResponse()
      *
      * @return void
      */
@@ -182,7 +182,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializePhotosResponse() method.
+     * Tests deserializePhotosResponse()
      *
      * @return void
      */
@@ -204,7 +204,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializeVideoResponse() method.
+     * Tests deserializeVideoResponse()
      *
      * @return void
      */
@@ -231,7 +231,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializeVideoResponse() method.
+     * Tests deserializeVideoResponse()
      *
      * @return void
      */
@@ -248,7 +248,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializeVideosResponse() method.
+     * Tests deserializeVideosResponse()
      *
      * @return void
      */
@@ -270,7 +270,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializeVideosResponse() method.
+     * Tests deserializeVideosResponse()
      *
      * @return void
      */

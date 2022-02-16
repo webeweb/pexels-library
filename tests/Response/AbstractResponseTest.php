@@ -23,7 +23,7 @@ use WBW\Library\Pexels\Tests\Fixtures\Response\TestResponse;
 class AbstractResponseTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

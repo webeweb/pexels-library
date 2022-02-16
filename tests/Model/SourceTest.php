@@ -23,7 +23,7 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class SourceTest extends AbstractTestCase {
 
     /**
-     * Tests the setLandscape() method.
+     * Tests setLandscape()
      *
      * @return void
      */
@@ -36,7 +36,7 @@ class SourceTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setLarge() method.
+     * Tests setLarge()
      *
      * @return void
      */
@@ -49,7 +49,7 @@ class SourceTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setLarge2x() method.
+     * Tests setLarge2x()
      *
      * @return void
      */
@@ -62,7 +62,7 @@ class SourceTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setMedium() method.
+     * Tests setMedium()
      *
      * @return void
      */
@@ -75,7 +75,7 @@ class SourceTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setOriginal() method.
+     * Tests setOriginal()
      *
      * @return void
      */
@@ -88,7 +88,7 @@ class SourceTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setPortrait() method.
+     * Tests setPortrait()
      *
      * @return void
      */
@@ -101,7 +101,7 @@ class SourceTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setSmall() method.
+     * Tests setSmall()
      *
      * @return void
      */
@@ -114,7 +114,7 @@ class SourceTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setTiny() method.
+     * Tests setTiny()
      *
      * @return void
      */
@@ -127,7 +127,7 @@ class SourceTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

@@ -58,7 +58,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the beforeReturnResponse() method.
+     * Tests beforeReturnResponse()
      *
      * @return void
      */
@@ -76,7 +76,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the collection() method.
+     * Tests collection()
      *
      * @throws Exception Throws an exception if an error occurs.
      */
@@ -104,7 +104,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the collections() method.
+     * Tests collections()
      *
      * @throws Exception Throws an exception if an error occurs.
      */
@@ -131,7 +131,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the curatedPhotos() method.
+     * Tests curatedPhotos()
      *
      * @throws Exception Throws an exception if an error occurs.
      */
@@ -158,7 +158,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the curatedPhotos() method.
+     * Tests curatedPhotos()
      *
      * @throws Exception Throws an exception if an error occurs.
      */
@@ -180,7 +180,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the getPhoto() method.
+     * Tests getPhoto()
      *
      * @throws Exception Throws an exception if an error occurs.
      */
@@ -205,7 +205,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the getPhoto() method.
+     * Tests getPhoto()
      *
      * @throws Exception Throws an exception if an error occurs.
      */
@@ -228,7 +228,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the getVideo() method.
+     * Tests getVideo()
      *
      * @throws Exception Throws an exception if an error occurs.
      */
@@ -253,7 +253,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the nextPage() method.
+     * Tests nextPage()
      *
      * @return void.
      */
@@ -278,7 +278,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the nextPage() method.
+     * Tests nextPage()
      *
      * @return void.
      */
@@ -303,7 +303,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the popularVideos() method.
+     * Tests popularVideos()
      *
      * @throws Exception Throws an exception if an error occurs.
      */
@@ -327,7 +327,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the prevPage() method.
+     * Tests prevPage()
      *
      * @return void.
      */
@@ -353,7 +353,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the prevPage() method.
+     * Tests prevPage()
      *
      * @return void.
      */
@@ -379,7 +379,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the searchPhotos() method.
+     * Tests searchPhotos()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -405,7 +405,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the searchVideos() method.
+     * Tests searchVideos()
      *
      * @throws Exception Throws an exception if an error occurs.
      */

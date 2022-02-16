@@ -23,7 +23,7 @@ use WBW\Library\Pexels\Tests\Fixtures\Model\Attribute\TestStringNextPageTrait;
 class StringNextPageTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the setNextPage() method.
+     * Tests setNextPage()
      *
      * @return void
      */

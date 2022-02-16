@@ -31,7 +31,7 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class RequestSerializerTest extends AbstractTestCase {
 
     /**
-     * Tests the serializeCollectionRequest() method.
+     * Tests serializeCollectionRequest()
      *
      * @return void
      */
@@ -52,7 +52,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the serializeCollectionsRequest() method.
+     * Tests serializeCollectionsRequest()
      *
      * @return void
      */
@@ -71,7 +71,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the serializeCuratedPhotosRequest() method.
+     * Tests serializeCuratedPhotosRequest()
      *
      * @return void
      */
@@ -90,7 +90,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the serializePopularVideosRequest() method.
+     * Tests serializePopularVideosRequest()
      *
      * @return void
      */
@@ -117,7 +117,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the serializeSearchPhotosRequest() method.
+     * Tests serializeSearchPhotosRequest()
      *
      * @return void
      */
@@ -146,7 +146,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the serializeSearchPhotosRequest() method.
+     * Tests serializeSearchPhotosRequest()
      *
      * @return void
      */
@@ -166,7 +166,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the serializeSearchVideosRequest() method.
+     * Tests serializeSearchVideosRequest()
      *
      * @return void
      */
@@ -193,7 +193,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the serializeSearchVideosRequest() method.
+     * Tests serializeSearchVideosRequest()
      *
      * @return void
      */
