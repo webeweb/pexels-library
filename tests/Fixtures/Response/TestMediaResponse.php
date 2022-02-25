@@ -17,7 +17,7 @@ use WBW\Library\Pexels\Response\AbstractMediaResponse;
 /**
  * Test media response.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Tests\Fixtures\Response
  */
 class TestMediaResponse extends AbstractMediaResponse {

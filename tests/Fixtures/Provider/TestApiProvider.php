@@ -17,7 +17,7 @@ use WBW\Library\Pexels\Response\AbstractResponse;
 /**
  * Test API provider.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Tests\Fixtures\Provider
  */
 class TestApiProvider extends ApiProvider {

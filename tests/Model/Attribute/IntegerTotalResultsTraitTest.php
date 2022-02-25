@@ -17,7 +17,7 @@ use WBW\Library\Pexels\Tests\Fixtures\Model\Attribute\TestIntegerTotalResultsTra
 /**
  * Integer total results trait test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Tests\Model\Attribute
  */
 class IntegerTotalResultsTraitTest extends AbstractTestCase {

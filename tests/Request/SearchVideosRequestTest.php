@@ -17,7 +17,7 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 /**
  * Search videos request test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Tests\Request
  */
 class SearchVideosRequestTest extends AbstractTestCase {

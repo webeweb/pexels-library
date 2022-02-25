@@ -21,7 +21,7 @@ use WBW\Library\Traits\Integers\IntegerPerPageTrait;
 /**
  * Popular videos request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Request
  */
 class PopularVideosRequest extends AbstractRequest {

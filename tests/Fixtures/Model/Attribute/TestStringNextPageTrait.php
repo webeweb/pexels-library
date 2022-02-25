@@ -16,7 +16,7 @@ use WBW\Library\Pexels\Model\Attribute\StringNextPageTrait;
 /**
  * Test string next page trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Tests\Fixtures\Model\Attribute
  */
 class TestStringNextPageTrait {

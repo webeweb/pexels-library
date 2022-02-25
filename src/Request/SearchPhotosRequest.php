@@ -21,7 +21,7 @@ use WBW\Library\Traits\Strings\StringSizeTrait;
 /**
  * Search photos request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Request
  */
 class SearchPhotosRequest extends AbstractRequest {

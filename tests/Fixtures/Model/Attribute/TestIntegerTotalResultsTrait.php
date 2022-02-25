@@ -16,7 +16,7 @@ use WBW\Library\Pexels\Model\Attribute\IntegerTotalResultsTrait;
 /**
  * Test integer total results trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Tests\Fixtures\Model\Attribute
  */
 class TestIntegerTotalResultsTrait {

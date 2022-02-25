@@ -20,7 +20,7 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 /**
  * Video test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Tests\Model
  */
 class VideoTest extends AbstractTestCase {

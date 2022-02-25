@@ -18,7 +18,7 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 /**
  * Videos response test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Tests\Response
  */
 class VideosResponseTest extends AbstractTestCase {

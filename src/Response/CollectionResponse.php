@@ -22,7 +22,7 @@ use WBW\Library\Traits\Strings\StringIdTrait;
 /**
  * Collection response.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Response
  */
 class CollectionResponse extends AbstractMediaResponse {

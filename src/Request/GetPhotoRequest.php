@@ -17,7 +17,7 @@ use WBW\Library\Traits\Integers\IntegerIdTrait;
 /**
  * Get photo request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Request
  */
 class GetPhotoRequest extends AbstractRequest implements SubstituableRequestInterface {

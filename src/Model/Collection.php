@@ -18,7 +18,7 @@ use WBW\Library\Traits\Strings\StringTitleTrait;
 /**
  * Collection.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Model
  */
 class Collection {

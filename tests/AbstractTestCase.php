@@ -16,7 +16,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Abstract test case.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Tests
  * @abstract
  */

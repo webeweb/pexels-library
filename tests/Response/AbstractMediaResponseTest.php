@@ -18,7 +18,7 @@ use WBW\Library\Pexels\Tests\Fixtures\Response\TestMediaResponse;
 /**
  * Abstract media response test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Tests\Response
  */
 class AbstractMediaResponseTest extends AbstractTestCase {

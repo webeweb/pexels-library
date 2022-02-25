@@ -22,7 +22,7 @@ use WBW\Library\Pexels\Serializer\ResponseDeserializer;
 /**
  * Test response deserializer.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Tests\Fixtures\Serializer
  */
 class TestResponseDeserializer extends ResponseDeserializer {

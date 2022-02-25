@@ -17,7 +17,7 @@ use WBW\Library\Traits\Integers\IntegerIdTrait;
 /**
  * Get video request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\Pexels\Request
  */
 class GetVideoRequest extends AbstractRequest implements SubstituableRequestInterface {
