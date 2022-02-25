@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Improve PHPDoc
+
 ### [2.5.0](https://github.com/webeweb/pexels-library/tree/v2.5.0) (2022-02-09)
 
 - Add alt attribute support into Photo
