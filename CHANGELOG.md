@@ -1,8 +1,10 @@
 CHANGELOG
 =========
 
-### master
+### [2.6.0](https://github.com/webeweb/pexels-library/tree/v2.6.0) (2022-04-28)
 
+- Add a simple method to test package with an API key
+- Improve code quality
 - Improve PHPDoc
 
 ### [2.5.0](https://github.com/webeweb/pexels-library/tree/v2.5.0) (2022-02-09)
