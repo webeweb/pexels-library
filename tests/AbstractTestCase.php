@@ -22,4 +22,19 @@ use PHPUnit\Framework\TestCase;
  */
 abstract class AbstractTestCase extends TestCase {
 
+    /**
+     * Get the token.
+     *
+     * @return string Returns the token.
+     */
+    public static function getToken(): string {
+
+        $path = __DIR__ . "/../.token";
+
+        if (true === file_exists($path)) {
+            return file_get_contents($path);
+        }
+
+        return "YOUR_API_KEY";
+    }
 }

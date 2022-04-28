@@ -23,6 +23,7 @@ use WBW\Library\Pexels\Request\GetVideoRequest;
 use WBW\Library\Pexels\Request\PopularVideosRequest;
 use WBW\Library\Pexels\Request\SearchPhotosRequest;
 use WBW\Library\Pexels\Request\SearchVideosRequest;
+use WBW\Library\Pexels\Response\CollectionResponse;
 use WBW\Library\Pexels\Response\CollectionsResponse;
 use WBW\Library\Pexels\Response\PhotoResponse;
 use WBW\Library\Pexels\Response\PhotosResponse;
@@ -54,7 +55,7 @@ class ApiProviderTest extends AbstractTestCase {
         parent::setUp();
 
         // Set an authorization mock.
-        $this->authorization = "YOUR_API_KEY";
+        $this->authorization = static::getToken();
     }
 
     /**
@@ -87,7 +88,7 @@ class ApiProviderTest extends AbstractTestCase {
 
         // Set a Collections request mock.
         $request = new CollectionRequest();
-        $request->setId("id");
+        $request->setId("8xntbhr");
 
         $obj = new ApiProvider($this->authorization, $logger);
 
@@ -95,7 +96,7 @@ class ApiProviderTest extends AbstractTestCase {
 
             $res = $obj->collection($request);
 
-            $this->assertInstanceOf(CollectionsResponse::class, $res);
+            $this->assertInstanceOf(CollectionResponse::class, $res);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
@@ -188,7 +189,7 @@ class ApiProviderTest extends AbstractTestCase {
 
         // Set a Get photos request mock.
         $request = new GetPhotoRequest();
-        $request->setId(-1);
+        $request->setId(2014422);
 
         $obj = new ApiProvider($this->authorization);
 

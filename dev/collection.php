@@ -16,9 +16,10 @@ use WBW\Library\Pexels\Model\Photo;
 use WBW\Library\Pexels\Model\Video;
 use WBW\Library\Pexels\Provider\ApiProvider;
 use WBW\Library\Pexels\Request\CollectionRequest;
+use WBW\Library\Pexels\Tests\AbstractTestCase;
 
 // Create the API provider.
-$provider = new ApiProvider("YOUR_API_KEY");
+$provider = new ApiProvider(AbstractTestCase::getToken());
 
 // Create a Collection request.
 $request = new CollectionRequest();

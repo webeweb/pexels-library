@@ -14,9 +14,11 @@ require_once __DIR__ . "/../vendor/autoload.php";
 use WBW\Library\Pexels\Model\Collection;
 use WBW\Library\Pexels\Provider\ApiProvider;
 use WBW\Library\Pexels\Request\CollectionsRequest;
+use WBW\Library\Pexels\Tests\AbstractTestCase;
 
 // Create the API provider.
-$provider = new ApiProvider("YOUR_API_KEY");
+$provider = new ApiProvider(AbstractTestCase::getToken());
+
 
 // Create a Collections request.
 $request = new CollectionsRequest();
