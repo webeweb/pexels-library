@@ -29,7 +29,7 @@ $request->setId("id");
 $response = $provider->collection($request);
 
 // Handle the response.
-$format = "%20s: %s\n";
+$format = "%-20s: %s\n";
 
 echo sprintf($format, "Limit", $response->getLimit());
 echo sprintf($format, "Remaining", $response->getRemaining());

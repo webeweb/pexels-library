@@ -17,7 +17,6 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 // Create the API provider.
 $provider = new ApiProvider(AbstractTestCase::getToken());
 
-
 // Create a Curated photo request.
 $request = new CuratedPhotosRequest();
 
