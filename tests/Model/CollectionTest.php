@@ -83,12 +83,14 @@ class CollectionTest extends AbstractTestCase {
 
         $obj = new Collection();
 
-        $this->assertNull($obj->getDescription());
         $this->assertNull($obj->getId());
+        $this->assertNull($obj->getDescription());
+        $this->assertNull($obj->getRawData());
+        $this->assertNull($obj->getTitle());
+
         $this->assertNull($obj->getMediaCount());
         $this->assertNull($obj->getPhotosCount());
         $this->assertNull($obj->getPrivate());
-        $this->assertNull($obj->getTitle());
         $this->assertNull($obj->getVideosCount());
     }
 }

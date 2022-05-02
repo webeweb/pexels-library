@@ -33,6 +33,7 @@ class UserTest extends AbstractTestCase {
 
         $this->assertNull($obj->getId());
         $this->assertNull($obj->getName());
+        $this->assertNull($obj->getRawData());
         $this->assertNull($obj->getUrl());
     }
 }

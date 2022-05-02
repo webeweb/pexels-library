@@ -122,14 +122,18 @@ class VideoTest extends AbstractTestCase {
         $obj = new Video();
 
         $this->assertNull($obj->getId());
+        $this->assertNull($obj->getHeight());
+        $this->assertNull($obj->getWidth());
+        $this->assertNull($obj->getUrl());
+
+        $this->assertNull($obj->getRawData());
+
+        $this->assertNull($obj->getId());
         $this->assertNull($obj->getDuration());
         $this->assertNull($obj->getFullRes());
-        $this->assertNull($obj->getHeight());
         $this->assertNull($obj->getImage());
-        $this->assertNull($obj->getUrl());
         $this->assertNull($obj->getUser());
         $this->assertCount(0, $obj->getVideoFiles());
         $this->assertCount(0, $obj->getVideoPictures());
-        $this->assertNull($obj->getWidth());
     }
 }

@@ -37,6 +37,7 @@ class JsonDeserializer {
     public static function deserializeCollection(array $response): Collection {
 
         $model = new Collection();
+        $model->setRawData(json_encode($response));
         $model->setId(ArrayHelper::get($response, "id"));
         $model->setTitle(ArrayHelper::get($response, "title"));
         $model->setDescription(ArrayHelper::get($response, "description"));
@@ -57,6 +58,7 @@ class JsonDeserializer {
     public static function deserializePhoto(array $response): Photo {
 
         $model = new Photo();
+        $model->setRawData(json_encode($response));
         $model->setId(ArrayHelper::get($response, "id"));
         $model->setWidth(ArrayHelper::get($response, "width"));
         $model->setHeight(ArrayHelper::get($response, "height"));
@@ -81,6 +83,7 @@ class JsonDeserializer {
     public static function deserializeSource(array $response): Source {
 
         $model = new Source();
+        $model->setRawData(json_encode($response));
         $model->setOriginal(ArrayHelper::get($response, "original"));
         $model->setLarge(ArrayHelper::get($response, "large"));
         $model->setLarge2x(ArrayHelper::get($response, "large2x"));
@@ -102,6 +105,7 @@ class JsonDeserializer {
     public static function deserializeUser(array $response): User {
 
         $model = new User();
+        $model->setRawData(json_encode($response));
         $model->setId(ArrayHelper::get($response, "id"));
         $model->setName(ArrayHelper::get($response, "name"));
         $model->setUrl(ArrayHelper::get($response, "url"));
@@ -118,6 +122,7 @@ class JsonDeserializer {
     public static function deserializeVideo(array $response): Video {
 
         $model = new Video();
+        $model->setRawData(json_encode($response));
         $model->setId(ArrayHelper::get($response, "id"));
         $model->setWidth(ArrayHelper::get($response, "width"));
         $model->setHeight(ArrayHelper::get($response, "height"));
@@ -147,6 +152,7 @@ class JsonDeserializer {
     public static function deserializeVideoFile(array $response): VideoFile {
 
         $model = new VideoFile();
+        $model->setRawData(json_encode($response));
         $model->setId(ArrayHelper::get($response, "id"));
         $model->setQuality(ArrayHelper::get($response, "quality"));
         $model->setFileType(ArrayHelper::get($response, "file_type"));
@@ -166,6 +172,7 @@ class JsonDeserializer {
     public static function deserializeVideoPicture(array $response): VideoPicture {
 
         $model = new VideoPicture();
+        $model->setRawData(json_encode($response));
         $model->setId(ArrayHelper::get($response, "id"));
         $model->setPicture(ArrayHelper::get($response, "picture"));
         $model->setNr(ArrayHelper::get($response, "nr"));

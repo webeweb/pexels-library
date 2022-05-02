@@ -11,6 +11,8 @@
 
 namespace WBW\Library\Pexels\Model;
 
+use WBW\Library\Traits\Strings\StringRawDataTrait;
+
 /**
  * Photo.
  *
@@ -18,6 +20,8 @@ namespace WBW\Library\Pexels\Model;
  * @package WBW\Library\Pexels\Model
  */
 class Photo extends AbstractMedia {
+
+    use StringRawDataTrait;
 
     /**
      * Alt.

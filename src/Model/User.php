@@ -13,6 +13,7 @@ namespace WBW\Library\Pexels\Model;
 
 use WBW\Library\Traits\Integers\IntegerIdTrait;
 use WBW\Library\Traits\Strings\StringNameTrait;
+use WBW\Library\Traits\Strings\StringRawDataTrait;
 use WBW\Library\Traits\Strings\StringUrlTrait;
 
 /**
@@ -27,6 +28,7 @@ class User {
         setId as public;
     }
     use StringNameTrait;
+    use StringRawDataTrait;
     use StringUrlTrait;
 
     /**

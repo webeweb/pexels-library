@@ -58,10 +58,12 @@ class VideoFileTest extends AbstractTestCase {
         $obj = new VideoFile();
 
         $this->assertNull($obj->getId());
-        $this->assertNull($obj->getFileType());
         $this->assertNull($obj->getHeight());
         $this->assertNull($obj->getLink());
-        $this->assertNull($obj->getQuality());
         $this->assertNull($obj->getWidth());
+        $this->assertNull($obj->getRawData());
+
+        $this->assertNull($obj->getFileType());
+        $this->assertNull($obj->getQuality());
     }
 }

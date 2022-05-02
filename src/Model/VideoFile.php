@@ -15,6 +15,7 @@ use WBW\Library\Traits\Integers\IntegerHeightTrait;
 use WBW\Library\Traits\Integers\IntegerIdTrait;
 use WBW\Library\Traits\Integers\IntegerWidthTrait;
 use WBW\Library\Traits\Strings\StringLinkTrait;
+use WBW\Library\Traits\Strings\StringRawDataTrait;
 
 /**
  * Video file.
@@ -30,6 +31,7 @@ class VideoFile {
     }
     use IntegerWidthTrait;
     use StringLinkTrait;
+    use StringRawDataTrait;
 
     /**
      * File type.

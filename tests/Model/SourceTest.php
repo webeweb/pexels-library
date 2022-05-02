@@ -135,6 +135,8 @@ class SourceTest extends AbstractTestCase {
 
         $obj = new Source();
 
+        $this->assertNull($obj->getRawData());
+
         $this->assertNull($obj->getLandscape());
         $this->assertNull($obj->getLarge());
         $this->assertNull($obj->getLarge2x());

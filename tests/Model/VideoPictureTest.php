@@ -58,6 +58,8 @@ class VideoPictureTest extends AbstractTestCase {
         $obj = new VideoPicture();
 
         $this->assertNull($obj->getId());
+        $this->assertNull($obj->getRawData());
+
         $this->assertNull($obj->getNr());
         $this->assertNull($obj->getPicture());
     }

@@ -11,6 +11,8 @@
 
 namespace WBW\Library\Pexels\Model;
 
+use WBW\Library\Traits\Strings\StringRawDataTrait;
+
 /**
  * Source.
  *
@@ -18,6 +20,8 @@ namespace WBW\Library\Pexels\Model;
  * @package WBW\Library\Pexels\Model
  */
 class Source {
+
+    use StringRawDataTrait;
 
     /**
      * Landscape.

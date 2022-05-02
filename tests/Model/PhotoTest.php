@@ -126,6 +126,8 @@ class PhotoTest extends AbstractTestCase {
 
         $obj = new Photo();
 
+        $this->assertNull($obj->getRawData());
+
         $this->assertNull($obj->getAlt());
         $this->assertNull($obj->getAvgColor());
         $this->assertNull($obj->getLiked());
