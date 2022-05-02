@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.7.0](https://github.com/webeweb/pexels-library/tree/v2.7.0) (2022-05-02)
+
+- Add a raw data attribute into each model
+
 ### [2.6.0](https://github.com/webeweb/pexels-library/tree/v2.6.0) (2022-04-28)
 
 - Add a simple method to test package with an API key
