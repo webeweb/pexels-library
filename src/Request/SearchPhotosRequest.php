@@ -67,7 +67,7 @@ class SearchPhotosRequest extends AbstractRequest {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getResourcePath(): string {
         return self::SEARCH_PHOTOS_RESOURCE_PATH;

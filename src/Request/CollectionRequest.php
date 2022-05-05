@@ -26,7 +26,7 @@ class CollectionRequest extends CollectionsRequest {
     use StringTypeTrait;
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getResourcePath(): string {
         return implode("/", [

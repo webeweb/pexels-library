@@ -23,14 +23,14 @@ use WBW\Library\Pexels\Response\AbstractMediaResponse;
 class TestMediaResponse extends AbstractMediaResponse {
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function addMedia(AbstractMedia $media): AbstractMediaResponse {
         return parent::addMedia($media);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getMedias(): array {
         return parent::getMedias();

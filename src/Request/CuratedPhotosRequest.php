@@ -43,7 +43,7 @@ class CuratedPhotosRequest extends AbstractRequest {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getResourcePath(): string {
         return self::CURATED_PHOTO_RESOURCE_PATH;

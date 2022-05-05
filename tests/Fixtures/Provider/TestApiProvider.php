@@ -23,7 +23,7 @@ use WBW\Library\Pexels\Response\AbstractResponse;
 class TestApiProvider extends ApiProvider {
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function beforeReturnResponse(AbstractResponse $response): AbstractResponse {
         return parent::beforeReturnResponse($response);

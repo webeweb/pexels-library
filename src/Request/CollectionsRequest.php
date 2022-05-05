@@ -43,7 +43,7 @@ class CollectionsRequest extends AbstractRequest {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getResourcePath(): string {
         return self::COLLECTIONS_RESOURCE_PATH;

@@ -28,42 +28,42 @@ use WBW\Library\Pexels\Serializer\ResponseDeserializer;
 class TestResponseDeserializer extends ResponseDeserializer {
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function deserializePhoto(array $response): Photo {
         return parent::deserializePhoto($response);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function deserializeSource(array $response): Source {
         return parent::deserializeSource($response);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function deserializeUser(array $response): User {
         return parent::deserializeUser($response);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function deserializeVideo(array $response): Video {
         return parent::deserializeVideo($response);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function deserializeVideoFile(array $response): VideoFile {
         return parent::deserializeVideoFile($response);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function deserializeVideoPicture(array $response): VideoPicture {
         return parent::deserializeVideoPicture($response);

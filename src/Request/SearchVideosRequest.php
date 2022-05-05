@@ -51,7 +51,7 @@ class SearchVideosRequest extends AbstractRequest {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getResourcePath(): string {
         return self::SEARCH_VIDEOS_RESOURCE_PATH;
