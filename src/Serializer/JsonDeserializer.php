@@ -29,7 +29,7 @@ use WBW\Library\Types\Helper\ArrayHelper;
 class JsonDeserializer {
 
     /**
-     * Deserialize a collection.
+     * Deserializes a collection.
      *
      * @param array $data The data.
      * @return Collection Returns a collection.
@@ -37,7 +37,7 @@ class JsonDeserializer {
     public static function deserializeCollection(array $data): Collection {
 
         $model = new Collection();
-        $model->setRawData(json_encode($data));
+        $model->setRawData(json_encode($data, JSON_PRETTY_PRINT));
         $model->setId(ArrayHelper::get($data, "id"));
         $model->setTitle(ArrayHelper::get($data, "title"));
         $model->setDescription(ArrayHelper::get($data, "description"));
@@ -50,7 +50,7 @@ class JsonDeserializer {
     }
 
     /**
-     * Deserialize a photo.
+     * Deserializes a photo.
      *
      * @param array $data The data.
      * @return Photo Returns a photo.
@@ -58,7 +58,7 @@ class JsonDeserializer {
     public static function deserializePhoto(array $data): Photo {
 
         $model = new Photo();
-        $model->setRawData(json_encode($data));
+        $model->setRawData(json_encode($data, JSON_PRETTY_PRINT));
         $model->setId(ArrayHelper::get($data, "id"));
         $model->setWidth(ArrayHelper::get($data, "width"));
         $model->setHeight(ArrayHelper::get($data, "height"));
@@ -75,7 +75,7 @@ class JsonDeserializer {
     }
 
     /**
-     * Deserialize a source.
+     * Deserializes a source.
      *
      * @param array $data The data.
      * @return Source Returns a source.
@@ -83,7 +83,7 @@ class JsonDeserializer {
     public static function deserializeSource(array $data): Source {
 
         $model = new Source();
-        $model->setRawData(json_encode($data));
+        $model->setRawData(json_encode($data, JSON_PRETTY_PRINT));
         $model->setOriginal(ArrayHelper::get($data, "original"));
         $model->setLarge(ArrayHelper::get($data, "large"));
         $model->setLarge2x(ArrayHelper::get($data, "large2x"));
@@ -97,7 +97,7 @@ class JsonDeserializer {
     }
 
     /**
-     * Deserialize an user.
+     * Deserializes an user.
      *
      * @param array $data The data.
      * @return User Returns an user.
@@ -105,7 +105,7 @@ class JsonDeserializer {
     public static function deserializeUser(array $data): User {
 
         $model = new User();
-        $model->setRawData(json_encode($data));
+        $model->setRawData(json_encode($data, JSON_PRETTY_PRINT));
         $model->setId(ArrayHelper::get($data, "id"));
         $model->setName(ArrayHelper::get($data, "name"));
         $model->setUrl(ArrayHelper::get($data, "url"));
@@ -114,7 +114,7 @@ class JsonDeserializer {
     }
 
     /**
-     * Deserialize a video.
+     * Deserializes a video.
      *
      * @param array $data The data.
      * @return Video Returns a video.
@@ -122,7 +122,7 @@ class JsonDeserializer {
     public static function deserializeVideo(array $data): Video {
 
         $model = new Video();
-        $model->setRawData(json_encode($data));
+        $model->setRawData(json_encode($data, JSON_PRETTY_PRINT));
         $model->setId(ArrayHelper::get($data, "id"));
         $model->setWidth(ArrayHelper::get($data, "width"));
         $model->setHeight(ArrayHelper::get($data, "height"));
@@ -144,7 +144,7 @@ class JsonDeserializer {
     }
 
     /**
-     * Deserialize a video file.
+     * Deserializes a video file.
      *
      * @param array $data The data.
      * @return VideoFile Returns a video file.
@@ -152,7 +152,7 @@ class JsonDeserializer {
     public static function deserializeVideoFile(array $data): VideoFile {
 
         $model = new VideoFile();
-        $model->setRawData(json_encode($data));
+        $model->setRawData(json_encode($data, JSON_PRETTY_PRINT));
         $model->setId(ArrayHelper::get($data, "id"));
         $model->setQuality(ArrayHelper::get($data, "quality"));
         $model->setFileType(ArrayHelper::get($data, "file_type"));
@@ -164,7 +164,7 @@ class JsonDeserializer {
     }
 
     /**
-     * Deserialize a video picture.
+     * Deserializes a video picture.
      *
      * @param array $data The data.
      * @return VideoPicture Returns a video picture.
@@ -172,7 +172,7 @@ class JsonDeserializer {
     public static function deserializeVideoPicture(array $data): VideoPicture {
 
         $model = new VideoPicture();
-        $model->setRawData(json_encode($data));
+        $model->setRawData(json_encode($data, JSON_PRETTY_PRINT));
         $model->setId(ArrayHelper::get($data, "id"));
         $model->setPicture(ArrayHelper::get($data, "picture"));
         $model->setNr(ArrayHelper::get($data, "nr"));
