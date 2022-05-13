@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.8.0](https://github.com/webeweb/pexels-library/tree/v2.8.0) (2022-05-13)
+
+- Add requests constants
+
 ### [2.7.1](https://github.com/webeweb/pexels-library/tree/v2.7.1) (2022-05-09)
 
 - Fix raw data during JSON deserialization
