@@ -22,7 +22,6 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 // Create the API provider.
 $provider = new ApiProvider(AbstractTestCase::getToken());
 
-
 // Create a Get video request.
 $request = new GetVideoRequest();
 $request->setId(1234);

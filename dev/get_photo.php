@@ -19,7 +19,6 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 // Create the API provider.
 $provider = new ApiProvider(AbstractTestCase::getToken());
 
-
 // Create a Get photo request.
 $request = new GetPhotoRequest();
 $request->setId(1234);
