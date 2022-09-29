@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.9.0](https://github.com/webeweb/pexels-library/tree/v2.9.0) (2022-09-29)
+
+- Improve code quality
+
 ### [2.8.0](https://github.com/webeweb/pexels-library/tree/v2.8.0) (2022-05-13)
 
 - Add requests constants
