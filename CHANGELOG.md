@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.9.1](https://github.com/webeweb/pexels-library/tree/v2.9.1) (2022-12-12)
+
+- Fix documentation
+
 ### [2.9.0](https://github.com/webeweb/pexels-library/tree/v2.9.0) (2022-09-29)
 
 - Improve code quality
