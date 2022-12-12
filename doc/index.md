@@ -182,7 +182,7 @@ foreach($response->getVideos() as $current) {
     $user->getUrl();
 
     /** @var VideoFile[] $videoFiles */
-    $videoFiles = $current->getVideosFiles();
+    $videoFiles = $current->getVideoFiles();
     foreach($videoFiles as $vf) {
     
         $vf->getId();
