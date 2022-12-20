@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.10.0](https://github.com/webeweb/pexels-library/tree/v2.10.0) (2022-12-20)
+
+- Add PHP 8.2 support
+
 ### [2.9.1](https://github.com/webeweb/pexels-library/tree/v2.9.1) (2022-12-12)
 
 - Fix documentation
