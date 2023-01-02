@@ -11,8 +11,8 @@
 
 namespace WBW\Library\Pexels\Tests\Serializer;
 
-use Exception;
 use InvalidArgumentException;
+use Throwable;
 use WBW\Library\Pexels\Request\CollectionRequest;
 use WBW\Library\Pexels\Request\CollectionsRequest;
 use WBW\Library\Pexels\Request\CuratedPhotosRequest;
@@ -158,7 +158,7 @@ class RequestSerializerTest extends AbstractTestCase {
         try {
 
             RequestSerializer::serializeSearchPhotosRequest($request);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The mandatory parameter "query" is missing', $ex->getMessage());
@@ -205,7 +205,7 @@ class RequestSerializerTest extends AbstractTestCase {
         try {
 
             RequestSerializer::serializeSearchVideosRequest($request);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The mandatory parameter "query" is missing', $ex->getMessage());

@@ -11,9 +11,9 @@
 
 namespace WBW\Library\Pexels\Tests\Provider;
 
-use Exception;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
+use Throwable;
 use WBW\Library\Pexels\Provider\ApiProvider;
 use WBW\Library\Pexels\Request\CollectionRequest;
 use WBW\Library\Pexels\Request\CollectionsRequest;
@@ -79,7 +79,7 @@ class ApiProviderTest extends AbstractTestCase {
     /**
      * Tests collection()
      *
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testCollection(): void {
 
@@ -97,7 +97,7 @@ class ApiProviderTest extends AbstractTestCase {
             $res = $obj->collection($request);
 
             $this->assertInstanceOf(CollectionResponse::class, $res);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
             $this->assertEquals(500, $ex->getPrevious()->getCode());
@@ -107,7 +107,7 @@ class ApiProviderTest extends AbstractTestCase {
     /**
      * Tests collections()
      *
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testCollections(): void {
 
@@ -124,7 +124,7 @@ class ApiProviderTest extends AbstractTestCase {
             $res = $obj->collections($request);
 
             $this->assertInstanceOf(CollectionsResponse::class, $res);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
             $this->assertEquals(500, $ex->getPrevious()->getCode());
@@ -134,7 +134,7 @@ class ApiProviderTest extends AbstractTestCase {
     /**
      * Tests curatedPhotos()
      *
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testCuratedPhotos(): void {
 
@@ -151,7 +151,7 @@ class ApiProviderTest extends AbstractTestCase {
             $res = $obj->curatedPhotos($request);
 
             $this->assertInstanceOf(PhotosResponse::class, $res);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
             $this->assertEquals(500, $ex->getPrevious()->getCode());
@@ -161,7 +161,7 @@ class ApiProviderTest extends AbstractTestCase {
     /**
      * Tests curatedPhotos()
      *
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testCuratedPhotosWithInvalidArgumentException(): void {
 
@@ -173,7 +173,7 @@ class ApiProviderTest extends AbstractTestCase {
         try {
 
             $obj->curatedPhotos($request);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The mandatory parameter "authorization" is missing', $ex->getMessage());
@@ -183,7 +183,7 @@ class ApiProviderTest extends AbstractTestCase {
     /**
      * Tests getPhoto()
      *
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testGetPhoto(): void {
 
@@ -198,7 +198,7 @@ class ApiProviderTest extends AbstractTestCase {
             $res = $obj->getPhoto($request);
 
             $this->assertInstanceOf(PhotoResponse::class, $res);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
             $this->assertEquals(500, $ex->getPrevious()->getCode());
@@ -208,7 +208,7 @@ class ApiProviderTest extends AbstractTestCase {
     /**
      * Tests getPhoto()
      *
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testGetPhotoWithInvalidArgumentException(): void {
 
@@ -221,7 +221,7 @@ class ApiProviderTest extends AbstractTestCase {
         try {
 
             $obj->getPhoto($request);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The substituable value ":id" is missing', $ex->getMessage());
@@ -231,7 +231,7 @@ class ApiProviderTest extends AbstractTestCase {
     /**
      * Tests getVideo()
      *
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testGetVideo(): void {
 
@@ -246,7 +246,7 @@ class ApiProviderTest extends AbstractTestCase {
             $res = $obj->getVideo($request);
 
             $this->assertInstanceOf(VideoResponse::class, $res);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
             $this->assertEquals(500, $ex->getPrevious()->getCode());
@@ -271,7 +271,7 @@ class ApiProviderTest extends AbstractTestCase {
             $res = $obj->nextPage($obj->searchPhotos($request));
 
             $this->assertInstanceOf(PhotosResponse::class, $res);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
             $this->assertEquals(500, $ex->getPrevious()->getCode());
@@ -296,7 +296,7 @@ class ApiProviderTest extends AbstractTestCase {
             $res = $obj->nextPage($obj->searchVideos($request));
 
             $this->assertInstanceOf(VideosResponse::class, $res);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
             $this->assertEquals(500, $ex->getPrevious()->getCode());
@@ -306,7 +306,7 @@ class ApiProviderTest extends AbstractTestCase {
     /**
      * Tests popularVideos()
      *
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testPopularVideos(): void {
 
@@ -320,7 +320,7 @@ class ApiProviderTest extends AbstractTestCase {
             $res = $obj->popularVideos($request);
 
             $this->assertInstanceOf(VideosResponse::class, $res);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
             $this->assertEquals(500, $ex->getPrevious()->getCode());
@@ -346,7 +346,7 @@ class ApiProviderTest extends AbstractTestCase {
             $res = $obj->prevPage($obj->searchPhotos($request));
 
             $this->assertInstanceOf(PhotosResponse::class, $res);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
             $this->assertEquals(500, $ex->getPrevious()->getCode());
@@ -372,7 +372,7 @@ class ApiProviderTest extends AbstractTestCase {
             $res = $obj->prevPage($obj->searchVideos($request));
 
             $this->assertInstanceOf(VideosResponse::class, $res);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
             $this->assertEquals(500, $ex->getPrevious()->getCode());
@@ -383,7 +383,7 @@ class ApiProviderTest extends AbstractTestCase {
      * Tests searchPhotos()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSearchPhotos(): void {
 
@@ -398,7 +398,7 @@ class ApiProviderTest extends AbstractTestCase {
             $res = $obj->searchPhotos($request);
 
             $this->assertInstanceOf(PhotosResponse::class, $res);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
             $this->assertEquals(500, $ex->getPrevious()->getCode());
@@ -408,7 +408,7 @@ class ApiProviderTest extends AbstractTestCase {
     /**
      * Tests searchVideos()
      *
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSearchVideos(): void {
 
@@ -423,7 +423,7 @@ class ApiProviderTest extends AbstractTestCase {
             $res = $obj->searchVideos($request);
 
             $this->assertInstanceOf(VideosResponse::class, $res);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
             $this->assertEquals(500, $ex->getPrevious()->getCode());
