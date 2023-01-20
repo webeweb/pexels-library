@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Improve code quality
+
 ### [2.11.0](https://github.com/webeweb/pexels-library/tree/v2.11.0) (2023-01-02)
 
 - Improve code quality
