@@ -86,7 +86,7 @@ class ApiProviderTest extends AbstractTestCase {
         // Set a Logger mock.
         $logger = $this->getMockBuilder(LoggerInterface::class)->getMock();
 
-        // Set a Collections request mock.
+        // Set an Collections request mock.
         $request = new CollectionRequest();
         $request->setId("8xntbhr");
 
@@ -100,7 +100,7 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(500, $ex->getPrevious()->getCode());
+            $this->assertEquals(403, $ex->getPrevious()->getCode());
         }
     }
 
@@ -114,7 +114,7 @@ class ApiProviderTest extends AbstractTestCase {
         // Set a Logger mock.
         $logger = $this->getMockBuilder(LoggerInterface::class)->getMock();
 
-        // Set a Collections request mock.
+        // Set an Collections request mock.
         $request = new CollectionsRequest();
 
         $obj = new ApiProvider($this->authorization, $logger);
@@ -127,7 +127,7 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(500, $ex->getPrevious()->getCode());
+            $this->assertEquals(403, $ex->getPrevious()->getCode());
         }
     }
 
@@ -154,7 +154,7 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(500, $ex->getPrevious()->getCode());
+            $this->assertEquals(403, $ex->getPrevious()->getCode());
         }
     }
 
@@ -201,7 +201,7 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(500, $ex->getPrevious()->getCode());
+            $this->assertEquals(403, $ex->getPrevious()->getCode());
         }
     }
 
@@ -249,7 +249,7 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(500, $ex->getPrevious()->getCode());
+            $this->assertEquals(403, $ex->getPrevious()->getCode());
         }
     }
 
@@ -274,7 +274,7 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(500, $ex->getPrevious()->getCode());
+            $this->assertEquals(403, $ex->getPrevious()->getCode());
         }
     }
 
@@ -299,7 +299,7 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(500, $ex->getPrevious()->getCode());
+            $this->assertEquals(403, $ex->getPrevious()->getCode());
         }
     }
 
@@ -323,7 +323,7 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(500, $ex->getPrevious()->getCode());
+            $this->assertEquals(403, $ex->getPrevious()->getCode());
         }
     }
 
@@ -349,7 +349,7 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(500, $ex->getPrevious()->getCode());
+            $this->assertEquals(403, $ex->getPrevious()->getCode());
         }
     }
 
@@ -375,7 +375,7 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(500, $ex->getPrevious()->getCode());
+            $this->assertEquals(403, $ex->getPrevious()->getCode());
         }
     }
 
@@ -401,7 +401,7 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(500, $ex->getPrevious()->getCode());
+            $this->assertEquals(403, $ex->getPrevious()->getCode());
         }
     }
 
@@ -426,7 +426,7 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(500, $ex->getPrevious()->getCode());
+            $this->assertEquals(403, $ex->getPrevious()->getCode());
         }
     }
 }
