@@ -85,8 +85,8 @@ class JsonDeserializer {
         $model = new Source();
         $model->setRawData(json_encode($data, JSON_PRETTY_PRINT));
         $model->setOriginal(ArrayHelper::get($data, "original"));
-        $model->setLarge(ArrayHelper::get($data, "large"));
         $model->setLarge2x(ArrayHelper::get($data, "large2x"));
+        $model->setLarge(ArrayHelper::get($data, "large"));
         $model->setMedium(ArrayHelper::get($data, "medium"));
         $model->setSmall(ArrayHelper::get($data, "small"));
         $model->setPortrait(ArrayHelper::get($data, "portrait"));
