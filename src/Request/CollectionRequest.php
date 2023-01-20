@@ -29,6 +29,7 @@ class CollectionRequest extends CollectionsRequest {
      * {@inheritdoc}
      */
     public function getResourcePath(): string {
+
         return implode("/", [
             parent::getResourcePath(),
             $this->getId(),

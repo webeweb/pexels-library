@@ -12,6 +12,7 @@
 namespace WBW\Library\Pexels\Serializer;
 
 use InvalidArgumentException;
+use WBW\Library\Pexels\Api\RequestInterface;
 use WBW\Library\Pexels\Request\CollectionRequest;
 use WBW\Library\Pexels\Request\CollectionsRequest;
 use WBW\Library\Pexels\Request\CuratedPhotosRequest;
@@ -40,7 +41,7 @@ class RequestSerializer {
 
         ArrayHelper::set($result, "type", $request->getType(), [null]);
         ArrayHelper::set($result, "page", $request->getPage(), [null, 1]);
-        ArrayHelper::set($result, "per_page", $request->getPerPage(), [null, CollectionRequest::PER_PAGE_DEFAULT]);
+        ArrayHelper::set($result, "per_page", $request->getPerPage(), [null, RequestInterface::PER_PAGE_DEFAULT]);
 
         return $result;
     }
@@ -56,7 +57,7 @@ class RequestSerializer {
         $result = [];
 
         ArrayHelper::set($result, "page", $request->getPage(), [null, 1]);
-        ArrayHelper::set($result, "per_page", $request->getPerPage(), [null, CollectionsRequest::PER_PAGE_DEFAULT]);
+        ArrayHelper::set($result, "per_page", $request->getPerPage(), [null, RequestInterface::PER_PAGE_DEFAULT]);
 
         return $result;
     }
@@ -72,7 +73,7 @@ class RequestSerializer {
         $result = [];
 
         ArrayHelper::set($result, "page", $request->getPage(), [null, 1]);
-        ArrayHelper::set($result, "per_page", $request->getPerPage(), [null, CuratedPhotosRequest::PER_PAGE_DEFAULT]);
+        ArrayHelper::set($result, "per_page", $request->getPerPage(), [null, RequestInterface::PER_PAGE_DEFAULT]);
 
         return $result;
     }
@@ -92,7 +93,7 @@ class RequestSerializer {
         ArrayHelper::set($result, "min_duration", $request->getMinDuration(), [null]);
         ArrayHelper::set($result, "max_duration", $request->getMaxDuration(), [null]);
         ArrayHelper::set($result, "page", $request->getPage(), [null, 1]);
-        ArrayHelper::set($result, "per_page", $request->getPerPage(), [null, PopularVideosRequest::PER_PAGE_DEFAULT]);
+        ArrayHelper::set($result, "per_page", $request->getPerPage(), [null, RequestInterface::PER_PAGE_DEFAULT]);
 
         return $result;
     }
@@ -118,7 +119,7 @@ class RequestSerializer {
         ArrayHelper::set($result, "color", $request->getColor(), [null]);
         ArrayHelper::set($result, "locale", $request->getLocale());
         ArrayHelper::set($result, "page", $request->getPage(), [null, 1]);
-        ArrayHelper::set($result, "per_page", $request->getPerPage(), [null, SearchPhotosRequest::PER_PAGE_DEFAULT]);
+        ArrayHelper::set($result, "per_page", $request->getPerPage(), [null, RequestInterface::PER_PAGE_DEFAULT]);
 
         return $result;
     }
@@ -143,7 +144,7 @@ class RequestSerializer {
         ArrayHelper::set($result, "size", $request->getSize(), [null]);
         ArrayHelper::set($result, "locale", $request->getLocale(), [null]);
         ArrayHelper::set($result, "page", $request->getPage(), [null, 1]);
-        ArrayHelper::set($result, "per_page", $request->getPerPage(), [null, SearchVideosRequest::PER_PAGE_DEFAULT]);
+        ArrayHelper::set($result, "per_page", $request->getPerPage(), [null, RequestInterface::PER_PAGE_DEFAULT]);
 
         return $result;
     }
