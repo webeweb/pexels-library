@@ -25,6 +25,7 @@ use WBW\Library\Pexels\Model\Photo;
 use WBW\Library\Pexels\Model\Source;
 use WBW\Library\Pexels\Provider\ApiProvider;
 use WBW\Library\Pexels\Request\SearchPhotosRequest;
+use WBW\Library\Pexels\Response\PhotosResponse;
 
 // Create the API provider.
 $provider = new ApiProvider("YOUR_API_KEY");
@@ -36,8 +37,8 @@ $request->setOrientation("landscape"); // Optional
 $request->setSize("large"); // Optional
 $request->setLocale("en-US"); // Optional
 
-// Call the API and get the response.
-$response = $provider->searchPhotos($request);
+/** @var PhotosResponse $response */
+$response = $provider->sendRequest($request);
 
 // Handle the response.
 $response->getLimit();
@@ -85,6 +86,7 @@ use WBW\Library\Pexels\Model\Photo;
 use WBW\Library\Pexels\Model\Source;
 use WBW\Library\Pexels\Provider\ApiProvider;
 use WBW\Library\Pexels\Request\CuratedPhotosRequest;
+use WBW\Library\Pexels\Response\PhotosResponse;
 
 // Create the API provider.
 $provider = new ApiProvider("YOUR_API_KEY");
@@ -92,8 +94,8 @@ $provider = new ApiProvider("YOUR_API_KEY");
 // Create a Curated photo request.
 $request = new CuratedPhotosRequest();
 
-// Call the API and get the response.
-$response = $provider->curatedPhotos($request);
+/** @var PhotosResponse $response */
+$response = $provider->sendRequest($request);
 
 // Handle the response (same as search photos).
 // ...
@@ -106,6 +108,7 @@ use WBW\Library\Pexels\Model\Photo;
 use WBW\Library\Pexels\Model\Source;
 use WBW\Library\Pexels\Provider\ApiProvider;
 use WBW\Library\Pexels\Request\GetPhotoRequest;
+use WBW\Library\Pexels\Response\PhotoResponse;
 
 // Create the API provider.
 $provider = new ApiProvider("YOUR_API_KEY");
@@ -114,8 +117,8 @@ $provider = new ApiProvider("YOUR_API_KEY");
 $request = new GetPhotoRequest();
 $request->setId(1234);
 
-// Call the API and get the response.
-$response = $provider->getPhoto($request);
+/** @var PhotoResponse $response */
+$response = $provider->sendRequest($request);
 
 // Handle the response.
 $response->getLimit();
@@ -135,6 +138,7 @@ use WBW\Library\Pexels\Model\VideoFile;
 use WBW\Library\Pexels\Model\VideoPicture;
 use WBW\Library\Pexels\Provider\ApiProvider;
 use WBW\Library\Pexels\Request\SearchVideosRequest;
+use WBW\Library\Pexels\Response\VideosResponse;
 
 // Create the API provider.
 $provider = new ApiProvider("YOUR_API_KEY");
@@ -146,8 +150,8 @@ $request->setOrientation("landscape"); // Optional
 $request->setSize("large"); // Optional
 $request->setLocale("en-US"); // Optional
 
-// Call the API and get the response.
-$response = $provider->searchVideos($request);
+/** @var VideosResponse $response */
+$response = $provider->sendRequest($request);
 
 // Handle the response.
 $response->getLimit();
@@ -213,6 +217,7 @@ use WBW\Library\Pexels\Model\VideoFile;
 use WBW\Library\Pexels\Model\VideoPicture;
 use WBW\Library\Pexels\Provider\ApiProvider;
 use WBW\Library\Pexels\Request\PopularVideosRequest;
+use WBW\Library\Pexels\Response\VideosResponse;
 
 // Create the API provider.
 $provider = new ApiProvider("YOUR_API_KEY");
@@ -220,8 +225,8 @@ $provider = new ApiProvider("YOUR_API_KEY");
 // Create a Popular videos request.
 $request = new PopularVideosRequest();
 
-// Call the API and get the response.
-$response = $provider->popularVideos($request);
+/** @var VideosResponse $response */
+$response = $provider->sendRequest($request);
 
 // Handle the response (same as search videos).
 // ...
@@ -236,6 +241,7 @@ use WBW\Library\Pexels\Model\VideoFile;
 use WBW\Library\Pexels\Model\VideoPicture;
 use WBW\Library\Pexels\Provider\ApiProvider;
 use WBW\Library\Pexels\Request\GetVideoRequest;
+use WBW\Library\Pexels\Response\VideoResponse;
 
 // Create the API provider.
 $provider = new ApiProvider("YOUR_API_KEY");
@@ -244,8 +250,8 @@ $provider = new ApiProvider("YOUR_API_KEY");
 $request = new GetVideoRequest();
 $request->setId(1234);
 
-// Call the API and get the response.
-$response = $provider->getVideo($request);
+/** @var VideoResponse $response */
+$response = $provider->sendRequest($request);
 
 // Handle the response.
 $response->getLimit();
@@ -262,6 +268,7 @@ Collections
 use WBW\Library\Pexels\Model\Collection;
 use WBW\Library\Pexels\Provider\ApiProvider;
 use WBW\Library\Pexels\Request\CollectionsRequest;
+use WBW\Library\Pexels\Response\CollectionsResponse;
 
 // Create the API provider.
 $provider = new ApiProvider("YOUR_API_KEY");
@@ -269,8 +276,8 @@ $provider = new ApiProvider("YOUR_API_KEY");
 // Create a Collections request.
 $request = new CollectionsRequest();
 
-// Call the API and get the response.
-$response = $provider->collections($request);
+/** @var CollectionsResponse $response */
+$response = $provider->sendRequest($request);
 
 // Handle the response.
 $response->getLimit();
@@ -298,6 +305,7 @@ use WBW\Library\Pexels\Model\Photo;
 use WBW\Library\Pexels\Model\Video;
 use WBW\Library\Pexels\Provider\ApiProvider;
 use WBW\Library\Pexels\Request\CollectionRequest;
+use WBW\Library\Pexels\Response\CollectionResponse;
 
 // Create the API provider.
 $provider = new ApiProvider("YOUR_API_KEY");
@@ -306,8 +314,8 @@ $provider = new ApiProvider("YOUR_API_KEY");
 $request = new CollectionRequest();
 $request->setId("id");
 
-// Call the API and get the response.
-$response = $provider->collection($request);
+/** @var CollectionResponse $response */
+$response = $provider->sendRequest($request);
 
 // Handle the response.
 $response->getLimit();
