@@ -12,6 +12,7 @@
 namespace WBW\Library\Pexels\Tests\Response;
 
 use WBW\Library\Pexels\Model\Video;
+use WBW\Library\Pexels\Response\AbstractResponse;
 use WBW\Library\Pexels\Response\VideoResponse;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 
@@ -47,6 +48,8 @@ class VideoResponseTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new VideoResponse();
+
+        $this->assertInstanceOf(AbstractResponse::class, $obj);
 
         $this->assertNull($obj->getVideo());
     }

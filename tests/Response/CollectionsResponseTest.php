@@ -12,6 +12,7 @@
 namespace WBW\Library\Pexels\Tests\Response;
 
 use WBW\Library\Pexels\Model\Collection;
+use WBW\Library\Pexels\Response\AbstractResponse;
 use WBW\Library\Pexels\Response\CollectionsResponse;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 
@@ -47,6 +48,8 @@ class CollectionsResponseTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new CollectionsResponse();
+
+        $this->assertInstanceOf(AbstractResponse::class, $obj);
 
         $this->assertNull($obj->getNextPage());
         $this->assertNull($obj->getPage());
