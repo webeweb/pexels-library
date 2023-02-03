@@ -11,7 +11,9 @@
 
 namespace WBW\Library\Pexels\Tests\Request;
 
+use WBW\Library\Pexels\Request\AbstractRequest;
 use WBW\Library\Pexels\Request\PopularVideosRequest;
+use WBW\Library\Pexels\Response\VideosResponse;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 
 /**
@@ -23,6 +25,45 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class PopularVideosRequestTest extends AbstractTestCase {
 
     /**
+     * Tests deserializeResponse()
+     *
+     * @return void
+     */
+    public function testDeserializeResponse(): void {
+
+        $obj = new PopularVideosRequest();
+
+        $res = $obj->deserializeResponse("{}");
+        $this->assertInstanceOf(VideosResponse::class, $res);
+    }
+
+    /**
+     * Tests serializeRequest()
+     *
+     * @return void
+     */
+    public function testSerializeRequest(): void {
+
+        $obj = new PopularVideosRequest();
+        $obj->setMinWidth(1280);
+        $obj->setMinHeight(1024);
+        $obj->setMinDuration(1);
+        $obj->setMaxDuration(60);
+        $obj->setPage(2);
+        $obj->setPerPage(80);
+
+        $res = $obj->serializeRequest();
+        $this->assertCount(6, $res);
+
+        $this->assertEquals(1280, $res["min_width"]);
+        $this->assertEquals(1024, $res["min_height"]);
+        $this->assertEquals(1, $res["min_duration"]);
+        $this->assertEquals(60, $res["max_duration"]);
+        $this->assertEquals(2, $res["page"]);
+        $this->assertEquals(80, $res["per_page"]);
+    }
+
+    /**
      * Tests __construct()
      *
      * @return void
@@ -32,6 +73,8 @@ class PopularVideosRequestTest extends AbstractTestCase {
         $this->assertEquals("/videos/popular", PopularVideosRequest::POPULAR_VIDEOS_RESOURCE_PATH);
 
         $obj = new PopularVideosRequest();
+
+        $this->assertInstanceOf(AbstractRequest::class, $obj);
 
         $this->assertEquals(PopularVideosRequest::POPULAR_VIDEOS_RESOURCE_PATH, $obj->getResourcePath());
         $this->assertNull($obj->getMaxDuration());

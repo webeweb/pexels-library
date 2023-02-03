@@ -11,6 +11,8 @@
 
 namespace WBW\Library\Pexels\Request;
 
+use WBW\Library\Pexels\Response\AbstractResponse;
+use WBW\Library\Pexels\Serializer\ResponseDeserializer;
 use WBW\Library\Provider\Api\SubstituableRequestInterface;
 use WBW\Library\Traits\Integers\IntegerIdTrait;
 
@@ -36,6 +38,13 @@ class GetVideoRequest extends AbstractRequest implements SubstituableRequestInte
     /**
      * {@inheritdoc}
      */
+    public function deserializeResponse(string $rawResponse): AbstractResponse {
+        return ResponseDeserializer::deserializeVideoResponse($rawResponse);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getResourcePath(): string {
         return self::GET_VIDEO_RESOURCE_PATH;
     }
@@ -48,5 +57,12 @@ class GetVideoRequest extends AbstractRequest implements SubstituableRequestInte
         return [
             ":id" => $this->getId(),
         ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function serializeRequest(): array {
+        return [];
     }
 }

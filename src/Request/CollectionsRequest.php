@@ -11,6 +11,9 @@
 
 namespace WBW\Library\Pexels\Request;
 
+use WBW\Library\Pexels\Response\AbstractResponse;
+use WBW\Library\Pexels\Serializer\RequestSerializer;
+use WBW\Library\Pexels\Serializer\ResponseDeserializer;
 use WBW\Library\Traits\Integers\IntegerPageTrait;
 use WBW\Library\Traits\Integers\IntegerPerPageTrait;
 
@@ -45,7 +48,21 @@ class CollectionsRequest extends AbstractRequest {
     /**
      * {@inheritdoc}
      */
+    public function deserializeResponse(string $rawResponse): AbstractResponse {
+        return ResponseDeserializer::deserializeCollectionsResponse($rawResponse);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getResourcePath(): string {
         return self::COLLECTIONS_RESOURCE_PATH;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function serializeRequest(): array {
+        return RequestSerializer::serializeCollectionsRequest($this);
     }
 }

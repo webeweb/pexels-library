@@ -11,6 +11,9 @@
 
 namespace WBW\Library\Pexels\Request;
 
+use WBW\Library\Pexels\Response\AbstractResponse;
+use WBW\Library\Pexels\Serializer\RequestSerializer;
+use WBW\Library\Pexels\Serializer\ResponseDeserializer;
 use WBW\Library\Traits\Integers\IntegerPageTrait;
 use WBW\Library\Traits\Integers\IntegerPerPageTrait;
 
@@ -45,7 +48,21 @@ class CuratedPhotosRequest extends AbstractRequest {
     /**
      * {@inheritdoc}
      */
+    public function deserializeResponse(string $rawResponse): AbstractResponse {
+        return ResponseDeserializer::deserializePhotosResponse($rawResponse);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getResourcePath(): string {
         return self::CURATED_PHOTO_RESOURCE_PATH;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function serializeRequest(): array {
+        return RequestSerializer::serializeCuratedPhotosRequest($this);
     }
 }

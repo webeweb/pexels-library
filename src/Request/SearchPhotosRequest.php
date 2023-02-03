@@ -11,6 +11,9 @@
 
 namespace WBW\Library\Pexels\Request;
 
+use WBW\Library\Pexels\Response\AbstractResponse;
+use WBW\Library\Pexels\Serializer\RequestSerializer;
+use WBW\Library\Pexels\Serializer\ResponseDeserializer;
 use WBW\Library\Traits\Integers\IntegerPageTrait;
 use WBW\Library\Traits\Integers\IntegerPerPageTrait;
 use WBW\Library\Traits\Strings\StringLocaleTrait;
@@ -58,6 +61,13 @@ class SearchPhotosRequest extends AbstractRequest {
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function deserializeResponse(string $rawResponse): AbstractResponse {
+        return ResponseDeserializer::deserializePhotosResponse($rawResponse);
+    }
+
+    /**
      * Get the color.
      *
      * @return string|null Returns the color.
@@ -71,6 +81,13 @@ class SearchPhotosRequest extends AbstractRequest {
      */
     public function getResourcePath(): string {
         return self::SEARCH_PHOTOS_RESOURCE_PATH;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function serializeRequest(): array {
+        return RequestSerializer::serializeSearchPhotosRequest($this);
     }
 
     /**

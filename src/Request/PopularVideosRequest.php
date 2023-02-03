@@ -11,6 +11,9 @@
 
 namespace WBW\Library\Pexels\Request;
 
+use WBW\Library\Pexels\Response\AbstractResponse;
+use WBW\Library\Pexels\Serializer\RequestSerializer;
+use WBW\Library\Pexels\Serializer\ResponseDeserializer;
 use WBW\Library\Traits\Integers\IntegerMaxDurationTrait;
 use WBW\Library\Traits\Integers\IntegerMinDurationTrait;
 use WBW\Library\Traits\Integers\IntegerMinHeightTrait;
@@ -53,7 +56,21 @@ class PopularVideosRequest extends AbstractRequest {
     /**
      * {@inheritdoc}
      */
+    public function deserializeResponse(string $rawResponse): AbstractResponse {
+        return ResponseDeserializer::deserializeVideosResponse($rawResponse);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getResourcePath(): string {
         return self::POPULAR_VIDEOS_RESOURCE_PATH;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function serializeRequest(): array {
+        return RequestSerializer::serializePopularVideosRequest($this);
     }
 }

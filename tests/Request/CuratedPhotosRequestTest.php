@@ -11,7 +11,9 @@
 
 namespace WBW\Library\Pexels\Tests\Request;
 
+use WBW\Library\Pexels\Request\AbstractRequest;
 use WBW\Library\Pexels\Request\CuratedPhotosRequest;
+use WBW\Library\Pexels\Response\PhotosResponse;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 
 /**
@@ -23,6 +25,37 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class CuratedPhotosRequestTest extends AbstractTestCase {
 
     /**
+     * Tests deserializeResponse()
+     *
+     * @return void
+     */
+    public function testDeserializeResponse(): void {
+
+        $obj = new CuratedPhotosRequest();
+
+        $res = $obj->deserializeResponse("{}");
+        $this->assertInstanceOf(PhotosResponse::class, $res);
+    }
+
+    /**
+     * Tests serializeRequest()
+     *
+     * @return void
+     */
+    public function testSerializeRequest(): void {
+
+        $obj = new CuratedPhotosRequest();
+        $obj->setPage(2);
+        $obj->setPerPage(80);
+
+        $res = $obj->serializeRequest();
+        $this->assertCount(2, $res);
+
+        $this->assertEquals(2, $res["page"]);
+        $this->assertEquals(80, $res["per_page"]);
+    }
+
+    /**
      * Tests __construct()
      *
      * @return void
@@ -32,6 +65,8 @@ class CuratedPhotosRequestTest extends AbstractTestCase {
         $this->assertEquals("/v1/curated", CuratedPhotosRequest::CURATED_PHOTO_RESOURCE_PATH);
 
         $obj = new CuratedPhotosRequest();
+
+        $this->assertInstanceOf(AbstractRequest::class, $obj);
 
         $this->assertEquals(CuratedPhotosRequest::CURATED_PHOTO_RESOURCE_PATH, $obj->getResourcePath());
         $this->assertEquals(1, $obj->getPage());
