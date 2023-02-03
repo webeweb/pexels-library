@@ -11,6 +11,8 @@
 
 namespace WBW\Library\Pexels\Api;
 
+use WBW\Library\Pexels\Response\AbstractResponse;
+
 /**
  * Paginate response interface.
  *
@@ -18,6 +20,14 @@ namespace WBW\Library\Pexels\Api;
  * @package WBW\Library\Pexels\API
  */
 interface PaginateResponseInterface {
+
+    /**
+     * Deserializes a response.
+     *
+     * @param string $rawResponse The raw response.
+     * @return AbstractResponse Returns the deserialized response.
+     */
+    public function deserializeResponse(string $rawResponse): AbstractResponse;
 
     /**
      * Get the next page.

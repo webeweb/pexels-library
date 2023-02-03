@@ -16,6 +16,7 @@ use WBW\Library\Pexels\Model\Attribute\IntegerTotalResultsTrait;
 use WBW\Library\Pexels\Model\Attribute\StringNextPageTrait;
 use WBW\Library\Pexels\Model\Attribute\StringPrevPageTrait;
 use WBW\Library\Pexels\Model\Photo;
+use WBW\Library\Pexels\Serializer\ResponseDeserializer;
 use WBW\Library\Traits\Integers\IntegerPageTrait;
 use WBW\Library\Traits\Integers\IntegerPerPageTrait;
 use WBW\Library\Traits\Strings\StringUrlTrait;
@@ -50,6 +51,13 @@ class PhotosResponse extends AbstractMediaResponse implements PaginateResponseIn
      */
     public function addPhoto(Photo $photo): PhotosResponse {
         return $this->addMedia($photo);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function deserializeResponse(string $rawResponse): AbstractResponse {
+        return ResponseDeserializer::deserializePhotosResponse($rawResponse);
     }
 
     /**

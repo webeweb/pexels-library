@@ -11,7 +11,9 @@
 
 namespace WBW\Library\Pexels\Tests\Response;
 
+use WBW\Library\Pexels\Api\PaginateResponseInterface;
 use WBW\Library\Pexels\Model\Video;
+use WBW\Library\Pexels\Response\AbstractResponse;
 use WBW\Library\Pexels\Response\VideosResponse;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 
@@ -40,6 +42,19 @@ class VideosResponseTest extends AbstractTestCase {
     }
 
     /**
+     * Tests deserializeResponse()
+     *
+     * @return void
+     */
+    public function testDeserializeResponse(): void {
+
+        $obj = new VideosResponse();
+
+        $res = $obj->deserializeResponse("");
+        $this->assertInstanceOf(VideosResponse::class, $res);
+    }
+
+    /**
      * Tests __construct()
      *
      * @return void
@@ -47,6 +62,9 @@ class VideosResponseTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new VideosResponse();
+
+        $this->assertInstanceOf(AbstractResponse::class, $obj);
+        $this->assertInstanceOf(PaginateResponseInterface::class, $obj);
 
         $this->assertNull($obj->getNextPage());
         $this->assertNull($obj->getPage());

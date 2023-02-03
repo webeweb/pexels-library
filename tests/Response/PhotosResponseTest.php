@@ -11,7 +11,9 @@
 
 namespace WBW\Library\Pexels\Tests\Response;
 
+use WBW\Library\Pexels\Api\PaginateResponseInterface;
 use WBW\Library\Pexels\Model\Photo;
+use WBW\Library\Pexels\Response\AbstractResponse;
 use WBW\Library\Pexels\Response\PhotosResponse;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 
@@ -40,6 +42,19 @@ class PhotosResponseTest extends AbstractTestCase {
     }
 
     /**
+     * Tests deserializeResponse()
+     *
+     * @return void
+     */
+    public function testDeserializeResponse(): void {
+
+        $obj = new PhotosResponse();
+
+        $res = $obj->deserializeResponse("");
+        $this->assertInstanceOf(PhotosResponse::class, $res);
+    }
+
+    /**
      * Tests __construct()
      *
      * @return void
@@ -47,6 +62,9 @@ class PhotosResponseTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new PhotosResponse();
+
+        $this->assertInstanceOf(AbstractResponse::class, $obj);
+        $this->assertInstanceOf(PaginateResponseInterface::class, $obj);
 
         $this->assertNull($obj->getNextPage());
         $this->assertNull($obj->getPage());
