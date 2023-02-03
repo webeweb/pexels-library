@@ -78,7 +78,7 @@ abstract class AbstractProvider extends BaseProvider {
     }
 
     /**
-     * Call the API.
+     * Calls the API.
      *
      * @param string $uri The URI.
      * @param array $queryData The query data.
@@ -117,7 +117,7 @@ abstract class AbstractProvider extends BaseProvider {
     }
 
     /**
-     * Call the API.
+     * Calls the API with a request.
      *
      * @param AbstractRequest $request The request.
      * @param array $queryData The query data.
@@ -128,41 +128,29 @@ abstract class AbstractProvider extends BaseProvider {
      */
     protected function callApiWithRequest(AbstractRequest $request, array $queryData): string {
 
-        try {
+        $uri = self::ENDPOINT_PATH . $this->buildResourcePath($request);
 
-            $uri = self::ENDPOINT_PATH . $this->buildResourcePath($request);
-
-            return $this->callApi($uri, $queryData);
-        } catch (InvalidArgumentException $ex) {
-
-            throw $ex;
-        }
+        return $this->callApi($uri, $queryData);
     }
 
     /**
-     * Call the API.
+     * Calls the API with a response.
      *
      * @param PaginateResponseInterface $response The request.
-     * @param bool $nextPage Next page ?.
+     * @param bool $nextPage Next page ?
      * @return string Returns the raw response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
-    protected function callApiWithResponse(PaginateResponseInterface $response, bool $nextPage): string {
+    protected function callApiWithResponse(PaginateResponseInterface $response, bool $nextPage = true): string {
 
-        try {
-
-            $uri = false === $nextPage ? $response->getPrevPage() : $response->getNextPage();
-            if (null === $uri) {
-                return "";
-            }
-
-            return $this->callApi($uri, []);
-        } catch (InvalidArgumentException $ex) {
-
-            throw $ex;
+        $uri = true === $nextPage ? $response->getNextPage() : $response->getPrevPage();
+        if (null === $uri) {
+            return "";
         }
+
+        return $this->callApi($uri, []);
     }
 
     /**
