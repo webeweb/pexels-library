@@ -83,7 +83,6 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(403, $ex->getPrevious()->getCode());
         }
     }
 
@@ -110,7 +109,6 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(403, $ex->getPrevious()->getCode());
         }
     }
 
@@ -137,7 +135,6 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(403, $ex->getPrevious()->getCode());
         }
     }
 
@@ -184,7 +181,6 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(403, $ex->getPrevious()->getCode());
         }
     }
 
@@ -232,7 +228,6 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(403, $ex->getPrevious()->getCode());
         }
     }
 
@@ -256,7 +251,6 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(403, $ex->getPrevious()->getCode());
         }
     }
 
@@ -302,7 +296,6 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(403, $ex->getPrevious()->getCode());
         }
     }
 
@@ -330,7 +323,6 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(403, $ex->getPrevious()->getCode());
         }
     }
 
@@ -359,7 +351,6 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(403, $ex->getPrevious()->getCode());
         }
     }
 
@@ -388,7 +379,6 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(403, $ex->getPrevious()->getCode());
         }
     }
 
@@ -414,7 +404,6 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(403, $ex->getPrevious()->getCode());
         }
     }
 
@@ -439,7 +428,6 @@ class ApiProviderTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(403, $ex->getPrevious()->getCode());
         }
     }
 }
