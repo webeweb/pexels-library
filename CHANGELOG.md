@@ -1,9 +1,19 @@
 CHANGELOG
 =========
 
-### master
+### [3.0.0](https://github.com/webeweb/pexels-library/tree/v3.0.0) (2023-02-06)
 
-- Improve code quality
+> IMPORTANT NOTICE: The API provider has a unique method sendRequest() who replaced:
+> - collection()
+> - collections()
+> - curatedPhotos()
+> - getPhoto()
+> - getVideo()
+> - popularVideos()
+> - searchVideos()
+
+- Update dependencies
+- Update documentation
 
 ### [2.11.0](https://github.com/webeweb/pexels-library/tree/v2.11.0) (2023-01-02)
 
