@@ -32,6 +32,7 @@ use WBW\Library\Pexels\Response\VideoResponse;
 use WBW\Library\Pexels\Response\VideosResponse;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 use WBW\Library\Pexels\Tests\Fixtures\Provider\TestApiProvider;
+use WBW\Library\Pexels\Tests\Fixtures\Response\TestResponse;
 use WBW\Library\Provider\Exception\ApiException;
 
 /**
@@ -261,8 +262,8 @@ class ApiProviderTest extends AbstractTestCase {
      */
     public function testPopulateResponse(): void {
 
-        // Set a Photos response mock.
-        $response = new PhotosResponse();
+        // Set a response mock.
+        $response = new TestResponse();
 
         $obj = new TestApiProvider();
 

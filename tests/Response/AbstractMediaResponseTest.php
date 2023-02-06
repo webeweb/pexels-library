@@ -11,8 +11,8 @@
 
 namespace WBW\Library\Pexels\Tests\Response;
 
-use WBW\Library\Pexels\Model\Photo;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
+use WBW\Library\Pexels\Tests\Fixtures\Model\TestMedia;
 use WBW\Library\Pexels\Tests\Fixtures\Response\TestMediaResponse;
 
 /**
@@ -30,8 +30,8 @@ class AbstractMediaResponseTest extends AbstractTestCase {
      */
     public function testAddMedia(): void {
 
-        // Set a Media mock.
-        $media = new Photo();
+        // Set a media mock.
+        $media = new TestMedia();
 
         $obj = new TestMediaResponse();
 
