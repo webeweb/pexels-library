@@ -38,12 +38,12 @@ class RequestSerializerTest extends AbstractTestCase {
     public function testSerializeCollectionRequest(): void {
 
         // Set a Collection request mock.
-        $request = new CollectionRequest();
-        $request->setType("photos");
-        $request->setPage(2);
-        $request->setPerPage(80);
+        $arg = new CollectionRequest();
+        $arg->setType("photos");
+        $arg->setPage(2);
+        $arg->setPerPage(80);
 
-        $res = RequestSerializer::serializeCollectionRequest($request);
+        $res = RequestSerializer::serializeCollectionRequest($arg);
         $this->assertCount(3, $res);
 
         $this->assertEquals("photos", $res["type"]);
@@ -59,11 +59,11 @@ class RequestSerializerTest extends AbstractTestCase {
     public function testSerializeCollectionsRequest(): void {
 
         // Set a Collections request mock.
-        $request = new CollectionsRequest();
-        $request->setPage(2);
-        $request->setPerPage(80);
+        $arg = new CollectionsRequest();
+        $arg->setPage(2);
+        $arg->setPerPage(80);
 
-        $res = RequestSerializer::serializeCollectionsRequest($request);
+        $res = RequestSerializer::serializeCollectionsRequest($arg);
         $this->assertCount(2, $res);
 
         $this->assertEquals(2, $res["page"]);
@@ -78,11 +78,11 @@ class RequestSerializerTest extends AbstractTestCase {
     public function testSerializeCuratedPhotosRequest(): void {
 
         // Set a Curated photos request mock.
-        $request = new CuratedPhotosRequest();
-        $request->setPage(2);
-        $request->setPerPage(80);
+        $arg = new CuratedPhotosRequest();
+        $arg->setPage(2);
+        $arg->setPerPage(80);
 
-        $res = RequestSerializer::serializeCuratedPhotosRequest($request);
+        $res = RequestSerializer::serializeCuratedPhotosRequest($arg);
         $this->assertCount(2, $res);
 
         $this->assertEquals(2, $res["page"]);
@@ -97,15 +97,15 @@ class RequestSerializerTest extends AbstractTestCase {
     public function testSerializePopularVideosRequest(): void {
 
         // Set a Popular videos request.
-        $request = new PopularVideosRequest();
-        $request->setMinWidth(1280);
-        $request->setMinHeight(1024);
-        $request->setMinDuration(1);
-        $request->setMaxDuration(60);
-        $request->setPage(2);
-        $request->setPerPage(80);
+        $arg = new PopularVideosRequest();
+        $arg->setMinWidth(1280);
+        $arg->setMinHeight(1024);
+        $arg->setMinDuration(1);
+        $arg->setMaxDuration(60);
+        $arg->setPage(2);
+        $arg->setPerPage(80);
 
-        $res = RequestSerializer::serializePopularVideosRequest($request);
+        $res = RequestSerializer::serializePopularVideosRequest($arg);
         $this->assertCount(6, $res);
 
         $this->assertEquals(1280, $res["min_width"]);
@@ -124,16 +124,16 @@ class RequestSerializerTest extends AbstractTestCase {
     public function testSerializeSearchPhotosRequest(): void {
 
         // Set a Search photos request.
-        $request = new SearchPhotosRequest();
-        $request->setQuery("github");
-        $request->setOrientation("landscape");
-        $request->setSize("large");
-        $request->setColor("color");
-        $request->setLocale("en-US");
-        $request->setPage(2);
-        $request->setPerPage(80);
+        $arg = new SearchPhotosRequest();
+        $arg->setQuery("github");
+        $arg->setOrientation("landscape");
+        $arg->setSize("large");
+        $arg->setColor("color");
+        $arg->setLocale("en-US");
+        $arg->setPage(2);
+        $arg->setPerPage(80);
 
-        $res = RequestSerializer::serializeSearchPhotosRequest($request);
+        $res = RequestSerializer::serializeSearchPhotosRequest($arg);
         $this->assertCount(7, $res);
 
         $this->assertEquals("github", $res["query"]);
@@ -153,11 +153,11 @@ class RequestSerializerTest extends AbstractTestCase {
     public function testSerializeSearchPhotosRequestWithInvalidArgumentException(): void {
 
         // Set a Search photos request.
-        $request = new SearchPhotosRequest();
+        $arg = new SearchPhotosRequest();
 
         try {
 
-            RequestSerializer::serializeSearchPhotosRequest($request);
+            RequestSerializer::serializeSearchPhotosRequest($arg);
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
@@ -173,15 +173,15 @@ class RequestSerializerTest extends AbstractTestCase {
     public function testSerializeSearchVideosRequest(): void {
 
         // Set a Search videos request.
-        $request = new SearchVideosRequest();
-        $request->setQuery("github");
-        $request->setOrientation("landscape");
-        $request->setSize("large");
-        $request->setLocale("en-US");
-        $request->setPage(2);
-        $request->setPerPage(80);
+        $arg = new SearchVideosRequest();
+        $arg->setQuery("github");
+        $arg->setOrientation("landscape");
+        $arg->setSize("large");
+        $arg->setLocale("en-US");
+        $arg->setPage(2);
+        $arg->setPerPage(80);
 
-        $res = RequestSerializer::serializeSearchVideosRequest($request);
+        $res = RequestSerializer::serializeSearchVideosRequest($arg);
         $this->assertCount(6, $res);
 
         $this->assertEquals("github", $res["query"]);
@@ -200,11 +200,11 @@ class RequestSerializerTest extends AbstractTestCase {
     public function testSerializeSearchVideosRequestWithInvalidArgumentException(): void {
 
         // Set a Search videos request.
-        $request = new SearchVideosRequest();
+        $arg = new SearchVideosRequest();
 
         try {
 
-            RequestSerializer::serializeSearchVideosRequest($request);
+            RequestSerializer::serializeSearchVideosRequest($arg);
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
