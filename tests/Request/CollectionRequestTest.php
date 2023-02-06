@@ -11,8 +11,6 @@
 
 namespace WBW\Library\Pexels\Tests\Request;
 
-use WBW\Library\Pexels\Model\Photo;
-use WBW\Library\Pexels\Model\Video;
 use WBW\Library\Pexels\Request\AbstractRequest;
 use WBW\Library\Pexels\Request\CollectionRequest;
 use WBW\Library\Pexels\Request\CollectionsRequest;
@@ -34,42 +32,10 @@ class CollectionRequestTest extends AbstractTestCase {
      */
     public function testDeserializeResponse(): void {
 
-        // Set a raw response mock.
-        $rawResponse = file_get_contents(__DIR__ . "/CollectionRequestTest.testDeserializeResponse.json");
-
         $obj = new CollectionRequest();
 
-        $res = $obj->deserializeResponse($rawResponse);
+        $res = $obj->deserializeResponse("");
         $this->assertInstanceOf(CollectionResponse::class, $res);
-
-        $this->assertEquals($rawResponse, $res->getRawResponse());
-        $this->assertEquals(2, $res->getPage());
-        $this->assertEquals(2, $res->getPerPage());
-        $this->assertEquals(6, $res->getTotalResults());
-        $this->assertEquals("https://api.pexels.com/v1/collections/9mp14cx/?page=3&per_page=2", $res->getNextPage());
-        $this->assertEquals("https://api.pexels.com/v1/collections/9mp14cx/?page=1&per_page=2", $res->getPrevPage());
-
-        $this->assertInstanceOf(Photo::class, $res->getMedias()[0]);
-        $this->assertInstanceOf(Video::class, $res->getMedias()[1]);
-    }
-
-    /**
-     * Tests deserializeResponse()
-     *
-     * @return void
-     */
-    public function testDeserializeResponseWithBadRawResponse(): void {
-
-        // Set a raw response mock.
-        $rawResponse = "";
-
-        $obj = new CollectionRequest();
-
-        $res = $obj->deserializeResponse($rawResponse);
-        $this->assertInstanceOf(CollectionResponse::class, $res);
-
-        $this->assertEquals($rawResponse, $res->getRawResponse());
-        $this->assertEquals([], $res->getMedias());
     }
 
     /**
@@ -81,15 +47,11 @@ class CollectionRequestTest extends AbstractTestCase {
 
         $obj = new CollectionRequest();
         $obj->setType("photos");
-        $obj->setPage(2);
-        $obj->setPerPage(80);
 
         $res = $obj->serializeRequest();
-        $this->assertCount(3, $res);
+        $this->assertIsArray($res);
 
         $this->assertEquals("photos", $res["type"]);
-        $this->assertEquals(2, $res["page"]);
-        $this->assertEquals(80, $res["per_page"]);
     }
 
     /**

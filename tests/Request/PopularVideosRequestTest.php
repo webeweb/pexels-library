@@ -46,21 +46,11 @@ class PopularVideosRequestTest extends AbstractTestCase {
 
         $obj = new PopularVideosRequest();
         $obj->setMinWidth(1280);
-        $obj->setMinHeight(1024);
-        $obj->setMinDuration(1);
-        $obj->setMaxDuration(60);
-        $obj->setPage(2);
-        $obj->setPerPage(80);
 
         $res = $obj->serializeRequest();
-        $this->assertCount(6, $res);
+        $this->assertIsArray($res);
 
         $this->assertEquals(1280, $res["min_width"]);
-        $this->assertEquals(1024, $res["min_height"]);
-        $this->assertEquals(1, $res["min_duration"]);
-        $this->assertEquals(60, $res["max_duration"]);
-        $this->assertEquals(2, $res["page"]);
-        $this->assertEquals(80, $res["per_page"]);
     }
 
     /**

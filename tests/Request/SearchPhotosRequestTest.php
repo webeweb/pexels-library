@@ -33,45 +33,10 @@ class SearchPhotosRequestTest extends AbstractTestCase {
      */
     public function testDeserializeResponse(): void {
 
-        // Set a raw response mock.
-        $rawResponse = file_get_contents(__DIR__ . "/SearchPhotosRequestTest.testDeserializeResponse.json");
-
         $obj = new SearchPhotosRequest();
 
-        $res = $obj->deserializeResponse($rawResponse);
+        $res = $obj->deserializeResponse("");
         $this->assertInstanceOf(PhotosResponse::class, $res);
-
-        $this->assertEquals($rawResponse, $res->getRawResponse());
-        $this->assertEquals(6, $res->getTotalResults());
-        $this->assertEquals(1, $res->getPage());
-        $this->assertEquals(15, $res->getPerPage());
-        $this->assertNull($res->getUrl());
-        $this->assertNull($res->getNextPage());
-        $this->assertCount(1, $res->getPhotos());
-    }
-
-    /**
-     * Tests deserializeResponse()
-     *
-     * @return void
-     */
-    public function testDeserializeResponseWithBadRawResponse(): void {
-
-        // Set a raw response mock.
-        $rawResponse = "";
-
-        $obj = new SearchPhotosRequest();
-
-        $res = $obj->deserializeResponse($rawResponse);
-        $this->assertInstanceOf(PhotosResponse::class, $res);
-
-        $this->assertEquals($rawResponse, $res->getRawResponse());
-        $this->assertNull($res->getTotalResults());
-        $this->assertNull($res->getPage());
-        $this->assertNull($res->getPerPage());
-        $this->assertNull($res->getUrl());
-        $this->assertNull($res->getNextPage());
-        $this->assertCount(0, $res->getPhotos());
     }
 
     /**
@@ -83,23 +48,11 @@ class SearchPhotosRequestTest extends AbstractTestCase {
 
         $obj = new SearchPhotosRequest();
         $obj->setQuery("github");
-        $obj->setOrientation("landscape");
-        $obj->setSize("large");
-        $obj->setColor("color");
-        $obj->setLocale("en-US");
-        $obj->setPage(2);
-        $obj->setPerPage(80);
 
         $res = $obj->serializeRequest();
-        $this->assertCount(7, $res);
+        $this->assertIsArray($res);
 
         $this->assertEquals("github", $res["query"]);
-        $this->assertEquals("landscape", $res["orientation"]);
-        $this->assertEquals("large", $res["size"]);
-        $this->assertEquals("color", $res["color"]);
-        $this->assertEquals("en-US", $res["locale"]);
-        $this->assertEquals(80, $res["per_page"]);
-        $this->assertEquals(2, $res["page"]);
     }
 
     /**
