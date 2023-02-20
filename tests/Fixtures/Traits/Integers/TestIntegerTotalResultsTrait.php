@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pexels\Tests\Fixtures\Model\Attribute;
+namespace WBW\Library\Pexels\Tests\Fixtures\Traits\Integers;
 
-use WBW\Library\Pexels\Model\Attribute\IntegerTotalResultsTrait;
+use WBW\Library\Pexels\Traits\Integers\IntegerTotalResultsTrait;
 
 /**
  * Test integer total results trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\Pexels\Tests\Fixtures\Model\Attribute
+ * @package WBW\Library\Pexels\Tests\Fixtures\Traits\Integers
  */
 class TestIntegerTotalResultsTrait {
 

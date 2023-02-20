@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pexels\Tests\Model\Attribute;
+namespace WBW\Library\Pexels\Tests\Traits\Strings;
 
 use WBW\Library\Pexels\Tests\AbstractTestCase;
-use WBW\Library\Pexels\Tests\Fixtures\Model\Attribute\TestStringNextPageTrait;
+use WBW\Library\Pexels\Tests\Fixtures\Traits\Strings\TestStringNextPageTrait;
 
 /**
  * String next page trait test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\Pexels\Tests\Model\Attribute
+ * @package WBW\Library\Pexels\Tests\Traits\Strings
  */
 class StringNextPageTraitTest extends AbstractTestCase {
 

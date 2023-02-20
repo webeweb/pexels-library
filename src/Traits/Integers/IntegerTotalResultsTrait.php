@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pexels\Model\Attribute;
+namespace WBW\Library\Pexels\Traits\Integers;
 
 /**
  * Integer total results trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\Pexels\Model\Attribute
+ * @package WBW\Library\Pexels\Traits\Integers
  */
 trait IntegerTotalResultsTrait {
 

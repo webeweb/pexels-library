@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pexels\Tests\Model\Attribute;
+namespace WBW\Library\Pexels\Tests\Traits\Strings;
 
 use WBW\Library\Pexels\Tests\AbstractTestCase;
-use WBW\Library\Pexels\Tests\Fixtures\Model\Attribute\TestStringPrevPageTrait;
+use WBW\Library\Pexels\Tests\Fixtures\Traits\Strings\TestStringPrevPageTrait;
 
 /**
  * String prev page trait test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\Pexels\Tests\Model\Attribute
+ * @package WBW\Library\Pexels\Tests\Traits\Strings
  */
 class StringPrevPageTraitTest extends AbstractTestCase {
 

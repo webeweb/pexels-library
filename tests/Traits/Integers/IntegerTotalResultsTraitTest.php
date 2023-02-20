@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\Pexels\Tests\Model\Attribute;
+namespace WBW\Library\Pexels\Tests\Traits\Integers;
 
 use WBW\Library\Pexels\Tests\AbstractTestCase;
-use WBW\Library\Pexels\Tests\Fixtures\Model\Attribute\TestIntegerTotalResultsTrait;
+use WBW\Library\Pexels\Tests\Fixtures\Traits\Integers\TestIntegerTotalResultsTrait;
 
 /**
  * Integer total results trait test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\Pexels\Tests\Model\Attribute
+ * @package WBW\Library\Pexels\Tests\Traits\Integers
  */
 class IntegerTotalResultsTraitTest extends AbstractTestCase {
 

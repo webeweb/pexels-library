@@ -11,10 +11,10 @@
 
 namespace WBW\Library\Pexels\Response;
 
-use WBW\Library\Pexels\Model\Attribute\IntegerTotalResultsTrait;
-use WBW\Library\Pexels\Model\Attribute\StringNextPageTrait;
-use WBW\Library\Pexels\Model\Attribute\StringPrevPageTrait;
 use WBW\Library\Pexels\Model\Collection;
+use WBW\Library\Pexels\Traits\Integers\IntegerTotalResultsTrait;
+use WBW\Library\Pexels\Traits\Strings\StringNextPageTrait;
+use WBW\Library\Pexels\Traits\Strings\StringPrevPageTrait;
 use WBW\Library\Traits\Integers\IntegerPageTrait;
 use WBW\Library\Traits\Integers\IntegerPerPageTrait;
 
