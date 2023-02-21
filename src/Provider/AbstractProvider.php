@@ -60,7 +60,7 @@ abstract class AbstractProvider extends BaseProvider {
     }
 
     /**
-     * Build the configuration.
+     * Builds the configuration.
      *
      * @return array Returns the configuration.
      */
@@ -90,13 +90,12 @@ abstract class AbstractProvider extends BaseProvider {
     private function callApi(string $uri, array $queryData): string {
 
         if (null === $this->getAuthorization()) {
-            throw new InvalidArgumentException('The mandatory parameter "authorization" is missing');
+            throw $this->newMandatoryParameterException("authorization");
         }
 
         try {
 
             $config = $this->buildConfiguration();
-
             $client = new Client($config);
 
             $method  = "GET";
