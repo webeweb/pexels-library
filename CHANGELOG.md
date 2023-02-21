@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [3.2.0](https://github.com/webeweb/pexels-library/tree/v3.2.0) (2023-02-21)
+
+- Improve code quality
+- Update dependencies
+
 ### [3.1.0](https://github.com/webeweb/pexels-library/tree/v3.1.0) (2023-02-20)
 
 - Improve code quality
