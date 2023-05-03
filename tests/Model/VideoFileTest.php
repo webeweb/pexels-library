@@ -23,7 +23,7 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class VideoFileTest extends AbstractTestCase {
 
     /**
-     * Tests setFileType()
+     * Test setFileType()
      *
      * @return void
      */
@@ -36,7 +36,7 @@ class VideoFileTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setQuality()
+     * Test setQuality()
      *
      * @return void
      */
@@ -49,7 +49,7 @@ class VideoFileTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

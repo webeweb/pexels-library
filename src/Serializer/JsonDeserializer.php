@@ -29,7 +29,7 @@ use WBW\Library\Types\Helper\ArrayHelper;
 class JsonDeserializer {
 
     /**
-     * Deserializes a collection.
+     * Deserialize a collection.
      *
      * @param array $data The data.
      * @return Collection Returns a collection.
@@ -50,7 +50,7 @@ class JsonDeserializer {
     }
 
     /**
-     * Deserializes a photo.
+     * Deserialize a photo.
      *
      * @param array $data The data.
      * @return Photo Returns a photo.
@@ -75,7 +75,7 @@ class JsonDeserializer {
     }
 
     /**
-     * Deserializes a source.
+     * Deserialize a source.
      *
      * @param array $data The data.
      * @return Source Returns a source.
@@ -97,7 +97,7 @@ class JsonDeserializer {
     }
 
     /**
-     * Deserializes an user.
+     * Deserialize an user.
      *
      * @param array $data The data.
      * @return User Returns an user.
@@ -114,7 +114,7 @@ class JsonDeserializer {
     }
 
     /**
-     * Deserializes a video.
+     * Deserialize a video.
      *
      * @param array $data The data.
      * @return Video Returns a video.
@@ -144,7 +144,7 @@ class JsonDeserializer {
     }
 
     /**
-     * Deserializes a video file.
+     * Deserialize a video file.
      *
      * @param array $data The data.
      * @return VideoFile Returns a video file.
@@ -164,7 +164,7 @@ class JsonDeserializer {
     }
 
     /**
-     * Deserializes a video picture.
+     * Deserialize a video picture.
      *
      * @param array $data The data.
      * @return VideoPicture Returns a video picture.

@@ -33,7 +33,7 @@ abstract class AbstractRequest extends BaseRequest implements RequestInterface {
     }
 
     /**
-     * Deserializes a response.
+     * Deserialize a response.
      *
      * @param string $rawResponse The raw response.
      * @return AbstractResponse Returns the deserialized response.
@@ -41,7 +41,7 @@ abstract class AbstractRequest extends BaseRequest implements RequestInterface {
     abstract public function deserializeResponse(string $rawResponse): AbstractResponse;
 
     /**
-     * Serializes this request.
+     * Serialize this request.
      *
      * @return array Returns this serialized request.
      * @throws InvalidArgumentException Throws an invalid argument exception if a mandatory parameter is missing.

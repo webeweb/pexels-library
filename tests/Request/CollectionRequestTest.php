@@ -26,7 +26,7 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class CollectionRequestTest extends AbstractTestCase {
 
     /**
-     * Tests deserializeResponse()
+     * Test deserializeResponse()
      *
      * @return void
      */
@@ -39,7 +39,7 @@ class CollectionRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests serializeRequest()
+     * Test serializeRequest()
      *
      * @return void
      */
@@ -55,7 +55,7 @@ class CollectionRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

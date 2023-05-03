@@ -25,7 +25,7 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class PhotoResponseTest extends AbstractTestCase {
 
     /**
-     * Tests setPhoto()
+     * Test setPhoto()
      *
      * @return void
      */
@@ -41,7 +41,7 @@ class PhotoResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

@@ -25,7 +25,7 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class CuratedPhotosRequestTest extends AbstractTestCase {
 
     /**
-     * Tests deserializeResponse()
+     * Test deserializeResponse()
      *
      * @return void
      */
@@ -38,7 +38,7 @@ class CuratedPhotosRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests serializeRequest()
+     * Test serializeRequest()
      *
      * @return void
      */
@@ -51,7 +51,7 @@ class CuratedPhotosRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

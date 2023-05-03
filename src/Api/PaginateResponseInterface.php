@@ -22,7 +22,7 @@ use WBW\Library\Pexels\Response\AbstractResponse;
 interface PaginateResponseInterface {
 
     /**
-     * Deserializes a response.
+     * Deserialize a response.
      *
      * @param string $rawResponse The raw response.
      * @return AbstractResponse Returns the deserialized response.

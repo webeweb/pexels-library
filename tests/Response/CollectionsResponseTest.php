@@ -25,7 +25,7 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class CollectionsResponseTest extends AbstractTestCase {
 
     /**
-     * Tests addCollection()
+     * Test addCollection()
      *
      * @return void
      */
@@ -41,7 +41,7 @@ class CollectionsResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

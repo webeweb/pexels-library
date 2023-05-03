@@ -29,7 +29,7 @@ use WBW\Library\Provider\Exception\ApiException;
 class ApiProvider extends AbstractProvider {
 
     /**
-     * Populates a response.
+     * Populate a response.
      *
      * @param AbstractResponse $response The response.
      * @return AbstractResponse Returns the response.
@@ -44,7 +44,7 @@ class ApiProvider extends AbstractProvider {
     }
 
     /**
-     * Requests a next page.
+     * Request a next page.
      *
      * @param PaginateResponseInterface $response The response.
      * @return PhotosResponse|VideosResponse Returns the response.
@@ -76,7 +76,7 @@ class ApiProvider extends AbstractProvider {
     }
 
     /**
-     * Sends a request.
+     * Send a request.
      *
      * @param AbstractRequest $request The request.
      * @return AbstractResponse Returns the response.

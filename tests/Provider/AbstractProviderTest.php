@@ -24,7 +24,7 @@ use WBW\Library\Pexels\Tests\Fixtures\Provider\TestProvider;
 class AbstractProviderTest extends AbstractTestCase {
 
     /**
-     * Tests setAuthorization()
+     * Test setAuthorization()
      *
      * @return void
      */
@@ -37,7 +37,7 @@ class AbstractProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

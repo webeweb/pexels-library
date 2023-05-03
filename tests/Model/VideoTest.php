@@ -26,7 +26,7 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class VideoTest extends AbstractTestCase {
 
     /**
-     * Tests addVideoFile()
+     * Test addVideoFile()
      *
      * @return void
      */
@@ -42,7 +42,7 @@ class VideoTest extends AbstractTestCase {
     }
 
     /**
-     * Tests addVideoPicture()
+     * Test addVideoPicture()
      *
      * @return void
      */
@@ -58,7 +58,7 @@ class VideoTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setDuration()
+     * Test setDuration()
      *
      * @return void
      */
@@ -71,7 +71,7 @@ class VideoTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setFullRes()
+     * Test setFullRes()
      *
      * @return void
      */
@@ -84,7 +84,7 @@ class VideoTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setImage()
+     * Test setImage()
      *
      * @return void
      */
@@ -97,7 +97,7 @@ class VideoTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setUser()
+     * Test setUser()
      *
      * @return void
      */
@@ -113,7 +113,7 @@ class VideoTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

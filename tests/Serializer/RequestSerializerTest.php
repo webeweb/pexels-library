@@ -31,7 +31,7 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class RequestSerializerTest extends AbstractTestCase {
 
     /**
-     * Tests serializeCollectionRequest()
+     * Test serializeCollectionRequest()
      *
      * @return void
      */
@@ -52,7 +52,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests serializeCollectionRequest()
+     * Test serializeCollectionRequest()
      *
      * @return void
      */
@@ -71,7 +71,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests serializeCuratedPhotosRequest()
+     * Test serializeCuratedPhotosRequest()
      *
      * @return void
      */
@@ -90,7 +90,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests serializePopularVideosRequest()
+     * Test serializePopularVideosRequest()
      *
      * @return void
      */
@@ -117,7 +117,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests serializeSearchPhotosRequest()
+     * Test serializeSearchPhotosRequest()
      *
      * @return void
      */
@@ -146,7 +146,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests serializeSearchPhotosRequest()
+     * Test serializeSearchPhotosRequest()
      *
      * @return void
      */
@@ -166,7 +166,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests serializeSearchVideosRequest()
+     * Test serializeSearchVideosRequest()
      *
      * @return void
      */
@@ -193,7 +193,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests serializeSearchVideosRequest()
+     * Test serializeSearchVideosRequest()
      *
      * @return void
      */

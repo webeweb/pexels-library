@@ -23,7 +23,7 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class CollectionTest extends AbstractTestCase {
 
     /**
-     * Tests setMediaCount()
+     * Test setMediaCount()
      *
      * @return void
      */
@@ -36,7 +36,7 @@ class CollectionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setPhotosCount()
+     * Test setPhotosCount()
      *
      * @return void
      */
@@ -49,7 +49,7 @@ class CollectionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setPrivate()
+     * Test setPrivate()
      *
      * @return void
      */
@@ -62,7 +62,7 @@ class CollectionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setVideosCount()
+     * Test setVideosCount()
      *
      * @return void
      */
@@ -75,7 +75,7 @@ class CollectionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

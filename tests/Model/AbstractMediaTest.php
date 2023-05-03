@@ -23,7 +23,7 @@ use WBW\Library\Pexels\Tests\Fixtures\Model\TestMedia;
 class AbstractMediaTest extends AbstractTestCase {
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

@@ -24,7 +24,7 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class PhotoTest extends AbstractTestCase {
 
     /**
-     * Tests setAlt()
+     * Test setAlt()
      *
      * @return void
      */
@@ -37,7 +37,7 @@ class PhotoTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setAvgColor()
+     * Test setAvgColor()
      *
      * @return void
      */
@@ -50,7 +50,7 @@ class PhotoTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setLiked()
+     * Test setLiked()
      *
      * @return void
      */
@@ -63,7 +63,7 @@ class PhotoTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setPhotographer()
+     * Test setPhotographer()
      *
      * @return void
      */
@@ -76,7 +76,7 @@ class PhotoTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setPhotographerId()
+     * Test setPhotographerId()
      *
      * @return void
      */
@@ -89,7 +89,7 @@ class PhotoTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setPhotographerUrl()
+     * Test setPhotographerUrl()
      *
      * @return void
      */
@@ -102,7 +102,7 @@ class PhotoTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setSrc()
+     * Test setSrc()
      *
      * @return void
      */
@@ -118,7 +118,7 @@ class PhotoTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

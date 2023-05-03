@@ -23,7 +23,7 @@ use WBW\Library\Pexels\Tests\Fixtures\Traits\Strings\TestStringPrevPageTrait;
 class StringPrevPageTraitTest extends AbstractTestCase {
 
     /**
-     * Tests setPrevPage()
+     * Test setPrevPage()
      *
      * @return void
      */

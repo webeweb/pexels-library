@@ -24,7 +24,7 @@ use WBW\Library\Pexels\Tests\Fixtures\Response\TestMediaResponse;
 class AbstractMediaResponseTest extends AbstractTestCase {
 
     /**
-     * Tests addMedia()
+     * Test addMedia()
      *
      * @return void
      */
@@ -40,7 +40,7 @@ class AbstractMediaResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

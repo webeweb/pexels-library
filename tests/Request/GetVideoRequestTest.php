@@ -26,7 +26,7 @@ use WBW\Library\Provider\Api\SubstituableRequestInterface;
 class GetVideoRequestTest extends AbstractTestCase {
 
     /**
-     * Tests deserializeResponse()
+     * Test deserializeResponse()
      *
      * @return void
      */
@@ -39,7 +39,7 @@ class GetVideoRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests getSubstituables()
+     * Test getSubstituables()
      *
      * @return void
      */
@@ -52,7 +52,7 @@ class GetVideoRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests serializeRequest()
+     * Test serializeRequest()
      *
      * @return void
      */
@@ -65,7 +65,7 @@ class GetVideoRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

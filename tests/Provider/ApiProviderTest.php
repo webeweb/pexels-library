@@ -61,7 +61,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests collection()
+     * Test collection()
      *
      * @throws Throwable Throws an exception if an error occurs.
      */
@@ -88,7 +88,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests collections()
+     * Test collections()
      *
      * @throws Throwable Throws an exception if an error occurs.
      */
@@ -114,7 +114,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests curatedPhotos()
+     * Test curatedPhotos()
      *
      * @throws Throwable Throws an exception if an error occurs.
      */
@@ -140,7 +140,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests curatedPhotos()
+     * Test curatedPhotos()
      *
      * @throws Throwable Throws an exception if an error occurs.
      */
@@ -162,7 +162,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests getPhoto()
+     * Test getPhoto()
      *
      * @throws Throwable Throws an exception if an error occurs.
      */
@@ -186,7 +186,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests getPhoto()
+     * Test getPhoto()
      *
      * @throws Throwable Throws an exception if an error occurs.
      */
@@ -209,7 +209,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests getVideo()
+     * Test getVideo()
      *
      * @throws Throwable Throws an exception if an error occurs.
      */
@@ -233,7 +233,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests popularVideos()
+     * Test popularVideos()
      *
      * @throws Throwable Throws an exception if an error occurs.
      */
@@ -256,7 +256,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests populateResponse()
+     * Test populateResponse()
      *
      * @return void
      */
@@ -274,7 +274,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests requestNextPage()
+     * Test requestNextPage()
      *
      * @return void.
      */
@@ -301,7 +301,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests requestNextPage()
+     * Test requestNextPage()
      *
      * @return void.
      */
@@ -328,7 +328,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests requestPrevPage()
+     * Test requestPrevPage()
      *
      * @return void.
      */
@@ -356,7 +356,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests requestPrevPage()
+     * Test requestPrevPage()
      *
      * @return void.
      */
@@ -384,7 +384,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests searchPhotos()
+     * Test searchPhotos()
      *
      * @return void
      * @throws Throwable Throws an exception if an error occurs.
@@ -409,7 +409,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests searchVideos()
+     * Test searchVideos()
      *
      * @throws Throwable Throws an exception if an error occurs.
      */

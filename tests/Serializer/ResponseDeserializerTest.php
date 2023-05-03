@@ -31,7 +31,7 @@ use WBW\Library\Pexels\Tests\AbstractTestCase;
 class ResponseDeserializerTest extends AbstractTestCase {
 
     /**
-     * Tests deserializeCollectionResponse()
+     * Test deserializeCollectionResponse()
      *
      * @return void
      */
@@ -55,7 +55,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializeCollectionResponse()
+     * Test deserializeCollectionResponse()
      *
      * @return void
      */
@@ -72,7 +72,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializeCollectionsResponse()
+     * Test deserializeCollectionsResponse()
      *
      * @return void
      */
@@ -101,7 +101,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializeCollectionsResponse()
+     * Test deserializeCollectionsResponse()
      *
      * @return void
      */
@@ -118,7 +118,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializePhotoResponse()
+     * Test deserializePhotoResponse()
      *
      * @return void
      */
@@ -144,7 +144,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializePhotoResponse()
+     * Test deserializePhotoResponse()
      *
      * @return void
      */
@@ -161,7 +161,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializePhotosResponse()
+     * Test deserializePhotosResponse()
      *
      * @return void
      */
@@ -183,7 +183,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializePhotosResponse()
+     * Test deserializePhotosResponse()
      *
      * @return void
      */
@@ -205,7 +205,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializeVideoResponse()
+     * Test deserializeVideoResponse()
      *
      * @return void
      */
@@ -233,7 +233,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializeVideoResponse()
+     * Test deserializeVideoResponse()
      *
      * @return void
      */
@@ -250,7 +250,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializeVideosResponse()
+     * Test deserializeVideosResponse()
      *
      * @return void
      */
@@ -272,7 +272,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializeVideosResponse()
+     * Test deserializeVideosResponse()
      *
      * @return void
      */

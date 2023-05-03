@@ -23,7 +23,7 @@ use WBW\Library\Pexels\Tests\Fixtures\Traits\Integers\TestIntegerTotalResultsTra
 class IntegerTotalResultsTraitTest extends AbstractTestCase {
 
     /**
-     * Tests setTotalResults()
+     * Test setTotalResults()
      *
      * @return void
      */

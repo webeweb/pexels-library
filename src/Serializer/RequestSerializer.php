@@ -30,7 +30,7 @@ use WBW\Library\Types\Helper\ArrayHelper;
 class RequestSerializer {
 
     /**
-     * Serializes a collection request.
+     * Serialize a collection request.
      *
      * @param CollectionRequest $request The collection request.
      * @return array Returns the serialized curated photos request.
@@ -47,7 +47,7 @@ class RequestSerializer {
     }
 
     /**
-     * Serializes a collections request.
+     * Serialize a collections request.
      *
      * @param CollectionsRequest $request The collections request.
      * @return array Returns the serialized curated photos request.
@@ -63,7 +63,7 @@ class RequestSerializer {
     }
 
     /**
-     * Serializes a curated photos request.
+     * Serialize a curated photos request.
      *
      * @param CuratedPhotosRequest $request The curated photos request.
      * @return array Returns the serialized curated photos request.
@@ -79,7 +79,7 @@ class RequestSerializer {
     }
 
     /**
-     * Serializes a popular videos request.
+     * Serialize a popular videos request.
      *
      * @param PopularVideosRequest $request The popular photos request.
      * @return array Returns the serialized popular videos request.
@@ -99,7 +99,7 @@ class RequestSerializer {
     }
 
     /**
-     * Serializes a search photos request.
+     * Serialize a search photos request.
      *
      * @param SearchPhotosRequest $request The search photos request.
      * @return array Returns the serialized search photos request.
@@ -125,7 +125,7 @@ class RequestSerializer {
     }
 
     /**
-     * Serializes a search videos request.
+     * Serialize a search videos request.
      *
      * @param SearchVideosRequest $request The search photos request.
      * @return array Returns the serialized search videos request.
