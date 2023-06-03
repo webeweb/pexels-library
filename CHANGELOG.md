@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [3.3.0](https://github.com/webeweb/pexels-library/tree/v3.3.0) (2023-06-03)
+
+- Improve PHPDoc
+- Update dependencies
+
 ### [3.2.0](https://github.com/webeweb/pexels-library/tree/v3.2.0) (2023-02-21)
 
 - Improve code quality
