@@ -36,21 +36,21 @@ class GetPhotoRequest extends AbstractRequest implements SubstituableRequestInte
     const GET_PHOTO_RESOURCE_PATH = "/v1/photos/:id";
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function deserializeResponse(string $rawResponse): AbstractResponse {
         return ResponseDeserializer::deserializePhotoResponse($rawResponse);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResourcePath(): string {
         return self::GET_PHOTO_RESOURCE_PATH;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getSubstituables(): array {
 
@@ -60,7 +60,7 @@ class GetPhotoRequest extends AbstractRequest implements SubstituableRequestInte
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function serializeRequest(): array {
         return [];

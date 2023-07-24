@@ -23,7 +23,7 @@ use WBW\Library\Pexels\Response\AbstractResponse;
 class TestApiProvider extends ApiProvider {
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function populateResponse(AbstractResponse $response): AbstractResponse {
         return parent::populateResponse($response);

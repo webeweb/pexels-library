@@ -29,14 +29,14 @@ class CollectionRequest extends CollectionsRequest {
     use StringTypeTrait;
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function deserializeResponse(string $rawResponse): AbstractResponse {
         return ResponseDeserializer::deserializeCollectionResponse($rawResponse);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResourcePath(): string {
 
@@ -47,7 +47,7 @@ class CollectionRequest extends CollectionsRequest {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function serializeRequest(): array {
         return RequestSerializer::serializeCollectionRequest($this);

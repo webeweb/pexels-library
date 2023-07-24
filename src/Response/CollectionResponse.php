@@ -42,14 +42,14 @@ class CollectionResponse extends AbstractMediaResponse {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function addMedia(AbstractMedia $media): AbstractMediaResponse {
         return parent::addMedia($media);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getMedias(): array {
         return parent::getMedias();

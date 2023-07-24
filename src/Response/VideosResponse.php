@@ -54,7 +54,7 @@ class VideosResponse extends AbstractMediaResponse implements PaginateResponseIn
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function deserializeResponse(string $rawResponse): AbstractResponse {
         return ResponseDeserializer::deserializeVideosResponse($rawResponse);

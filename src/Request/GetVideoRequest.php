@@ -36,21 +36,21 @@ class GetVideoRequest extends AbstractRequest implements SubstituableRequestInte
     const GET_VIDEO_RESOURCE_PATH = "/v1/videos/videos/:id";
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function deserializeResponse(string $rawResponse): AbstractResponse {
         return ResponseDeserializer::deserializeVideoResponse($rawResponse);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResourcePath(): string {
         return self::GET_VIDEO_RESOURCE_PATH;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getSubstituables(): array {
 
@@ -60,7 +60,7 @@ class GetVideoRequest extends AbstractRequest implements SubstituableRequestInte
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function serializeRequest(): array {
         return [];
