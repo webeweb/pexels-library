@@ -66,6 +66,8 @@ class PhotosResponse extends AbstractMediaResponse implements PaginateResponseIn
      * @return Photo[] Returns the photos.
      */
     public function getPhotos(): array {
+
+        /** @var Photo[] */
         return $this->getMedias();
     }
 }
