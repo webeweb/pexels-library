@@ -33,7 +33,7 @@ class RequestSerializer {
      * Serialize a collection request.
      *
      * @param CollectionRequest $request The collection request.
-     * @return array Returns the serialized curated photos request.
+     * @return array<string,mixed> Returns the serialized curated photos request.
      */
     public static function serializeCollectionRequest(CollectionRequest $request): array {
 
@@ -50,7 +50,7 @@ class RequestSerializer {
      * Serialize a collections request.
      *
      * @param CollectionsRequest $request The collections request.
-     * @return array Returns the serialized curated photos request.
+     * @return array<string,mixed> Returns the serialized curated photos request.
      */
     public static function serializeCollectionsRequest(CollectionsRequest $request): array {
 
@@ -66,7 +66,7 @@ class RequestSerializer {
      * Serialize a curated photos request.
      *
      * @param CuratedPhotosRequest $request The curated photos request.
-     * @return array Returns the serialized curated photos request.
+     * @return array<string,mixed> Returns the serialized curated photos request.
      */
     public static function serializeCuratedPhotosRequest(CuratedPhotosRequest $request): array {
 
@@ -82,7 +82,7 @@ class RequestSerializer {
      * Serialize a popular videos request.
      *
      * @param PopularVideosRequest $request The popular photos request.
-     * @return array Returns the serialized popular videos request.
+     * @return array<string,mixed> Returns the serialized popular videos request.
      */
     public static function serializePopularVideosRequest(PopularVideosRequest $request): array {
 
@@ -102,7 +102,7 @@ class RequestSerializer {
      * Serialize a search photos request.
      *
      * @param SearchPhotosRequest $request The search photos request.
-     * @return array Returns the serialized search photos request.
+     * @return array<string,mixed> Returns the serialized search photos request.
      * @throws InvalidArgumentException Throws an invalid argument exception if a mandatory parameter is missing.
      */
     public static function serializeSearchPhotosRequest(SearchPhotosRequest $request): array {
@@ -128,7 +128,7 @@ class RequestSerializer {
      * Serialize a search videos request.
      *
      * @param SearchVideosRequest $request The search photos request.
-     * @return array Returns the serialized search videos request.
+     * @return array<string,mixed> Returns the serialized search videos request.
      * @throws InvalidArgumentException Throws an invalid argument exception if a mandatory parameter is missing.
      */
     public static function serializeSearchVideosRequest(SearchVideosRequest $request): array {
