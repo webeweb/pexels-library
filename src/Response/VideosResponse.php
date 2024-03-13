@@ -66,6 +66,8 @@ class VideosResponse extends AbstractMediaResponse implements PaginateResponseIn
      * @return Video[] Returns the videos.
      */
     public function getVideos(): array {
+
+        /** @var Video[] */
         return $this->getMedias();
     }
 }
