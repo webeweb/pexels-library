@@ -62,7 +62,7 @@ abstract class AbstractProvider extends BaseProvider {
     /**
      * Build the configuration.
      *
-     * @return array Returns the configuration.
+     * @return array<string,mixed> Returns the configuration.
      */
     private function buildConfiguration(): array {
 
@@ -81,7 +81,7 @@ abstract class AbstractProvider extends BaseProvider {
      * Call the API.
      *
      * @param string $uri The URI.
-     * @param array $queryData The query data.
+     * @param array<string,mixed> $queryData The query data.
      * @return string Returns the raw response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      * @throws GuzzleException Throws a Guzzle exception if an error occurs.
@@ -119,7 +119,7 @@ abstract class AbstractProvider extends BaseProvider {
      * Call the API with a request.
      *
      * @param AbstractRequest $request The request.
-     * @param array $queryData The query data.
+     * @param array<string,mixed> $queryData The query data.
      * @return string Returns the raw response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      * @throws GuzzleException Throws a Guzzle exception if an error occurs.
