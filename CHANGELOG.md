@@ -1,9 +1,12 @@
 CHANGELOG
 =========
 
-### master
+### [3.4.0](https://github.com/webeweb/pexels-library/tree/v3.4.0) (2024-03-13)
 
+- Add PHP 8.3 support
+- Improve code quality
 - Improve PHPDoc
+- Update dependencies
 
 ### [3.3.0](https://github.com/webeweb/pexels-library/tree/v3.3.0) (2023-06-03)
 
