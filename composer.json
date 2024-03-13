@@ -1,7 +1,8 @@
 {
     "name": "webeweb/pexels-library",
-    "type": "library",
     "description": "Integrate Pexels API with your projects",
+    "license": "MIT",
+    "type": "library",
     "keywords": [
         "API",
         "library",
@@ -10,14 +11,16 @@
         "video",
         "webeweb"
     ],
-    "homepage": "https://github.com/webeweb/pexels-library",
-    "license": "MIT",
     "authors": [
         {
             "name": "webeweb",
             "homepage": "https://github.com/webeweb"
         }
     ],
+    "homepage": "https://github.com/webeweb/pexels-library",
+    "support": {
+        "issues": "https://github.com/webeweb/pexels-library/issues"
+    },
     "require": {
         "php": "^7.1|^8.0",
         "ext-json": "*",
@@ -26,15 +29,10 @@
         "webeweb/core-library": "^8.69"
     },
     "require-dev": {
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan": "^1.4",
+        "phpstan/phpstan-phpunit": "^1.0",
         "phpunit/phpunit": "^7.0|^9.0"
-    },
-    "config": {
-        "sort-packages": true
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "3.x-dev"
-        }
     },
     "autoload": {
         "psr-4": {
@@ -46,7 +44,15 @@
             "WBW\\Library\\Pexels\\Tests\\": "tests/"
         }
     },
-    "support": {
-        "issues": "https://github.com/webeweb/pexels-library/issues"
+    "config": {
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.x-dev"
+        }
     }
 }
