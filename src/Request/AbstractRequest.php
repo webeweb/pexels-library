@@ -43,7 +43,7 @@ abstract class AbstractRequest extends BaseRequest implements RequestInterface {
     /**
      * Serialize this request.
      *
-     * @return array Returns this serialized request.
+     * @return array<string,mixed> Returns this serialized request.
      * @throws InvalidArgumentException Throws an invalid argument exception if a mandatory parameter is missing.
      */
     abstract public function serializeRequest(): array;
