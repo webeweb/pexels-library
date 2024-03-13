@@ -56,6 +56,7 @@ class ApiProvider extends AbstractProvider {
 
         $rawResponse = $this->callApiWithResponse($response);
 
+        /** @var PhotosResponse|VideosResponse */
         return $this->populateResponse($response->deserializeResponse($rawResponse));
     }
 
@@ -72,6 +73,7 @@ class ApiProvider extends AbstractProvider {
 
         $rawResponse = $this->callApiWithResponse($response, false);
 
+        /** @var PhotosResponse|VideosResponse */
         return $this->populateResponse($response->deserializeResponse($rawResponse));
     }
 
