@@ -13,7 +13,6 @@ declare(strict_types = 1);
 
 namespace WBW\Library\Pexels\Provider;
 
-use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use WBW\Library\Pexels\Api\PaginateResponseInterface;
 use WBW\Library\Pexels\Request\AbstractRequest;
@@ -51,7 +50,6 @@ class ApiProvider extends AbstractProvider {
      * @param PaginateResponseInterface $response The response.
      * @return PhotosResponse|VideosResponse Returns the response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     public function requestNextPage(PaginateResponseInterface $response): AbstractResponse {
@@ -68,7 +66,6 @@ class ApiProvider extends AbstractProvider {
      * @param PaginateResponseInterface $response The response.
      * @return PhotosResponse|VideosResponse Returns the response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     public function requestPrevPage(PaginateResponseInterface $response): AbstractResponse {
@@ -85,7 +82,6 @@ class ApiProvider extends AbstractProvider {
      * @param AbstractRequest $request The request.
      * @return AbstractResponse Returns the response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     public function sendRequest(AbstractRequest $request): AbstractResponse {

@@ -14,7 +14,6 @@ declare(strict_types = 1);
 namespace WBW\Library\Pexels\Provider;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use Throwable;
@@ -86,7 +85,6 @@ abstract class AbstractProvider extends BaseProvider {
      * @param array<string,mixed> $queryData The query data.
      * @return string Returns the raw response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     private function callApi(string $uri, array $queryData): string {
@@ -124,7 +122,6 @@ abstract class AbstractProvider extends BaseProvider {
      * @param array<string,mixed> $queryData The query data.
      * @return string Returns the raw response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     protected function callApiWithRequest(AbstractRequest $request, array $queryData): string {
@@ -141,7 +138,6 @@ abstract class AbstractProvider extends BaseProvider {
      * @param bool $nextPage Next page ?
      * @return string Returns the raw response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     protected function callApiWithResponse(PaginateResponseInterface $response, bool $nextPage = true): string {
