@@ -3,11 +3,8 @@ pexels-library
 
 [![Github actions workflow status](https://img.shields.io/github/actions/workflow/status/webeweb/pexels-library/build.yml?style=for-the-badge&color2088FF&logo=github)](https://github.com/webeweb/pexels-library/actions)
 [![Coveralls](https://img.shields.io/coveralls/github/webeweb/pexels-library/master.svg?style=for-the-badge&color=3F5767&logo=coveralls)](https://coveralls.io/github/webeweb/pexels-library?branch=master)
-[![Scrutinizer quality](https://img.shields.io/scrutinizer/quality/g/webeweb/pexels-library/master.svg?style=for-the-badge&color=8A9296&logo=scrutinizer)](https://scrutinizer-ci.com/g/webeweb/pexels-library/?branch=master)
 [![Packagist version](https://img.shields.io/packagist/v/webeweb/pexels-library.svg?style=for-the-badge&color=F28D1A&logo=packagist)](https://packagist.org/packages/webeweb/pexels-library)
-
 [![Packagist license](https://img.shields.io/packagist/l/webeweb/pexels-library.svg?style=for-the-badge&colorF28D1A&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRiIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0ibTMgNiAzIDFtMCAwLTMgOWE1LjAwMiA1LjAwMiAwIDAgMCA2LjAwMSAwTTYgN2wzIDlNNiA3bDYtMm02IDIgMy0xbS0zIDEtMyA5YTUuMDAyIDUuMDAyIDAgMCAwIDYuMDAxIDBNMTggN2wzIDltLTMtOS02LTJtMC0ydjJtMCAxNlY1bTAgMTZIOW0zIDBoMyIvPjwvc3ZnPg==)](./LICENSE)
-[![composer.lock](https://img.shields.io/badge/.lock-uncommited-important.svg?style=for-the-badge&color=885630&logo=composer)](.)
 
 Integrate Pexels API with your projects.
 
