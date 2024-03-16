@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.5.1](https://github.com/webeweb/pexels-library/tree/v3.5.1) (2024-03-16)
+
+- Improve PHPDoc
+
 ### [3.5.0](https://github.com/webeweb/pexels-library/tree/v3.5.0) (2024-03-16)
 
 - Add declare(strict_types = 1)
