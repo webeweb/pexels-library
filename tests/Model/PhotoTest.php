@@ -84,8 +84,8 @@ class PhotoTest extends AbstractTestCase {
 
         $obj = new Photo();
 
-        $obj->setPhotographerId("photographerId");
-        $this->assertEquals("photographerId", $obj->getPhotographerId());
+        $obj->setPhotographerId(1);
+        $this->assertEquals(1, $obj->getPhotographerId());
     }
 
     /**
