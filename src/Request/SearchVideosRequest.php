@@ -43,7 +43,7 @@ class SearchVideosRequest extends AbstractRequest {
      *
      * @var string
      */
-    const SEARCH_VIDEOS_RESOURCE_PATH = "/videos/search";
+    public const SEARCH_VIDEOS_RESOURCE_PATH = "/videos/search";
 
     /**
      * Constructor.

@@ -39,7 +39,7 @@ abstract class AbstractProvider extends BaseProvider {
      *
      * @var string
      */
-    const ENDPOINT_PATH = "https://api.pexels.com";
+    public const ENDPOINT_PATH = "https://api.pexels.com";
 
     /**
      * Authorization.

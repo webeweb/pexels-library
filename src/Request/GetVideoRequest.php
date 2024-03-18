@@ -35,7 +35,7 @@ class GetVideoRequest extends AbstractRequest implements SubstituableRequestInte
      *
      * @var string
      */
-    const GET_VIDEO_RESOURCE_PATH = "/v1/videos/videos/:id";
+    public const GET_VIDEO_RESOURCE_PATH = "/v1/videos/videos/:id";
 
     /**
      * {@inheritDoc}

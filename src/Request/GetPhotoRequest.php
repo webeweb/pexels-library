@@ -35,7 +35,7 @@ class GetPhotoRequest extends AbstractRequest implements SubstituableRequestInte
      *
      * @var string
      */
-    const GET_PHOTO_RESOURCE_PATH = "/v1/photos/:id";
+    public const GET_PHOTO_RESOURCE_PATH = "/v1/photos/:id";
 
     /**
      * {@inheritDoc}

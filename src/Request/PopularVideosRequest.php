@@ -43,7 +43,7 @@ class PopularVideosRequest extends AbstractRequest {
      *
      * @var string
      */
-    const POPULAR_VIDEOS_RESOURCE_PATH = "/videos/popular";
+    public const POPULAR_VIDEOS_RESOURCE_PATH = "/videos/popular";
 
     /**
      * Constructor.

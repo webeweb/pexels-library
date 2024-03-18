@@ -35,7 +35,7 @@ class CollectionsRequest extends AbstractRequest {
      *
      * @var string
      */
-    const COLLECTIONS_RESOURCE_PATH = "/v1/collections";
+    public const COLLECTIONS_RESOURCE_PATH = "/v1/collections";
 
     /**
      * Constructor.

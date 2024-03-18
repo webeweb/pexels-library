@@ -35,7 +35,7 @@ class CuratedPhotosRequest extends AbstractRequest {
      *
      * @var string
      */
-    const CURATED_PHOTO_RESOURCE_PATH = "/v1/curated";
+    public const CURATED_PHOTO_RESOURCE_PATH = "/v1/curated";
 
     /**
      * Constructor.

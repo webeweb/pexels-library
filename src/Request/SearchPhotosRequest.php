@@ -43,7 +43,7 @@ class SearchPhotosRequest extends AbstractRequest {
      *
      * @var string
      */
-    const SEARCH_PHOTOS_RESOURCE_PATH = "/v1/search";
+    public const SEARCH_PHOTOS_RESOURCE_PATH = "/v1/search";
 
     /**
      * Color.
