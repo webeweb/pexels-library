@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.6.0](https://github.com/webeweb/pexels-library/tree/v3.6.0) (2024-03-18)
+
+- Improve constants visibility
+
 ### [3.5.1](https://github.com/webeweb/pexels-library/tree/v3.5.1) (2024-03-16)
 
 - Improve PHPDoc
