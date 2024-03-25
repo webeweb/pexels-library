@@ -26,8 +26,7 @@ jobs:
                       COMPOSER_MEMORY_LIMIT=-1 composer update
 
             -   name: "Application"
-                run:  |
-                      vendor/bin/phpstan --version
+                run:  vendor/bin/phpstan --version
 
             -   name: "Analyses"
                 run:  vendor/bin/phpstan analyse src/ --error-format=github
