@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.7.0](https://github.com/webeweb/pexels-library/tree/v3.7.0) (2024-04-29)
+
+- Update dependencies
+
 ### [3.6.0](https://github.com/webeweb/pexels-library/tree/v3.6.0) (2024-03-18)
 
 - Improve constants visibility
