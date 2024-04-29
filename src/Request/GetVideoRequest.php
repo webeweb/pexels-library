@@ -13,10 +13,10 @@ declare(strict_types = 1);
 
 namespace WBW\Library\Pexels\Request;
 
+use WBW\Library\Common\Provider\SubstituableRequestInterface;
+use WBW\Library\Common\Traits\Integers\IntegerIdTrait;
 use WBW\Library\Pexels\Response\AbstractResponse;
 use WBW\Library\Pexels\Serializer\ResponseDeserializer;
-use WBW\Library\Provider\Api\SubstituableRequestInterface;
-use WBW\Library\Traits\Integers\IntegerIdTrait;
 
 /**
  * Get video request.

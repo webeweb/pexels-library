@@ -13,8 +13,8 @@ declare(strict_types = 1);
 
 namespace WBW\Library\Pexels\Response;
 
-use WBW\Library\Provider\Response\AbstractResponse as BaseResponse;
-use WBW\Library\Traits\Compounds\CompoundRateLimitTrait;
+use WBW\Library\Common\Provider\AbstractResponse as BaseResponse;
+use WBW\Library\Common\Traits\Compounds\CompoundRateLimitTrait;
 
 /**
  * Abstract response.

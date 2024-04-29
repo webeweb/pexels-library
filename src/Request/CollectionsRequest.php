@@ -13,11 +13,11 @@ declare(strict_types = 1);
 
 namespace WBW\Library\Pexels\Request;
 
+use WBW\Library\Common\Traits\Integers\IntegerPageTrait;
+use WBW\Library\Common\Traits\Integers\IntegerPerPageTrait;
 use WBW\Library\Pexels\Response\AbstractResponse;
 use WBW\Library\Pexels\Serializer\RequestSerializer;
 use WBW\Library\Pexels\Serializer\ResponseDeserializer;
-use WBW\Library\Traits\Integers\IntegerPageTrait;
-use WBW\Library\Traits\Integers\IntegerPerPageTrait;
 
 /**
  * Collections request.

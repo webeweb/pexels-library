@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Library\Pexels\Model;
 
-use WBW\Library\Traits\Strings\StringRawDataTrait;
+use WBW\Library\Common\Traits\Strings\StringRawDataTrait;
 
 /**
  * Video.

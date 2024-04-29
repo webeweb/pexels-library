@@ -13,11 +13,11 @@ declare(strict_types = 1);
 
 namespace WBW\Library\Pexels\Request;
 
+use WBW\Library\Common\Traits\Strings\StringIdTrait;
+use WBW\Library\Common\Traits\Strings\StringTypeTrait;
 use WBW\Library\Pexels\Response\AbstractResponse;
 use WBW\Library\Pexels\Serializer\RequestSerializer;
 use WBW\Library\Pexels\Serializer\ResponseDeserializer;
-use WBW\Library\Traits\Strings\StringIdTrait;
-use WBW\Library\Traits\Strings\StringTypeTrait;
 
 /**
  * Collection request.

@@ -13,11 +13,11 @@ declare(strict_types = 1);
 
 namespace WBW\Library\Pexels\Model;
 
-use WBW\Library\Traits\Integers\IntegerHeightTrait;
-use WBW\Library\Traits\Integers\IntegerIdTrait;
-use WBW\Library\Traits\Integers\IntegerWidthTrait;
-use WBW\Library\Traits\Strings\StringLinkTrait;
-use WBW\Library\Traits\Strings\StringRawDataTrait;
+use WBW\Library\Common\Traits\Integers\IntegerHeightTrait;
+use WBW\Library\Common\Traits\Integers\IntegerIdTrait;
+use WBW\Library\Common\Traits\Integers\IntegerWidthTrait;
+use WBW\Library\Common\Traits\Strings\StringLinkTrait;
+use WBW\Library\Common\Traits\Strings\StringRawDataTrait;
 
 /**
  * Video file.

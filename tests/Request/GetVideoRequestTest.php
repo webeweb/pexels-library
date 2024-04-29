@@ -13,11 +13,11 @@ declare(strict_types = 1);
 
 namespace WBW\Library\Pexels\Tests\Request;
 
+use WBW\Library\Common\Provider\SubstituableRequestInterface;
 use WBW\Library\Pexels\Request\AbstractRequest;
 use WBW\Library\Pexels\Request\GetVideoRequest;
 use WBW\Library\Pexels\Response\VideoResponse;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
-use WBW\Library\Provider\Api\SubstituableRequestInterface;
 
 /**
  * Get video request test.

@@ -14,9 +14,9 @@ declare(strict_types = 1);
 namespace WBW\Library\Pexels\Request;
 
 use InvalidArgumentException;
+use WBW\Library\Common\Provider\AbstractRequest as BaseRequest;
 use WBW\Library\Pexels\Api\RequestInterface;
 use WBW\Library\Pexels\Response\AbstractResponse;
-use WBW\Library\Provider\Request\AbstractRequest as BaseRequest;
 
 /**
  * Abstract request.

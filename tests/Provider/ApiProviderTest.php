@@ -16,6 +16,7 @@ namespace WBW\Library\Pexels\Tests\Provider;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use Throwable;
+use WBW\Library\Common\Provider\ProviderException;
 use WBW\Library\Pexels\Api\PaginateResponseInterface;
 use WBW\Library\Pexels\Provider\ApiProvider;
 use WBW\Library\Pexels\Request\CollectionRequest;
@@ -35,7 +36,6 @@ use WBW\Library\Pexels\Response\VideosResponse;
 use WBW\Library\Pexels\Tests\AbstractTestCase;
 use WBW\Library\Pexels\Tests\Fixtures\Provider\TestApiProvider;
 use WBW\Library\Pexels\Tests\Fixtures\Response\TestResponse;
-use WBW\Library\Provider\Exception\ApiException;
 
 /**
  * API provider test.
@@ -85,7 +85,7 @@ class ApiProviderTest extends AbstractTestCase {
             $this->assertInstanceOf(CollectionResponse::class, $res);
         } catch (Throwable $ex) {
 
-            $this->assertInstanceOf(ApiException::class, $ex);
+            $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
 
@@ -111,7 +111,7 @@ class ApiProviderTest extends AbstractTestCase {
             $this->assertInstanceOf(CollectionsResponse::class, $res);
         } catch (Throwable $ex) {
 
-            $this->assertInstanceOf(ApiException::class, $ex);
+            $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
 
@@ -137,7 +137,7 @@ class ApiProviderTest extends AbstractTestCase {
             $this->assertInstanceOf(PhotosResponse::class, $res);
         } catch (Throwable $ex) {
 
-            $this->assertInstanceOf(ApiException::class, $ex);
+            $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
 
@@ -183,7 +183,7 @@ class ApiProviderTest extends AbstractTestCase {
             $this->assertInstanceOf(PhotoResponse::class, $res);
         } catch (Throwable $ex) {
 
-            $this->assertInstanceOf(ApiException::class, $ex);
+            $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
 
@@ -230,7 +230,7 @@ class ApiProviderTest extends AbstractTestCase {
             $this->assertInstanceOf(VideoResponse::class, $res);
         } catch (Throwable $ex) {
 
-            $this->assertInstanceOf(ApiException::class, $ex);
+            $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
 
@@ -253,7 +253,7 @@ class ApiProviderTest extends AbstractTestCase {
             $this->assertInstanceOf(VideosResponse::class, $res);
         } catch (Throwable $ex) {
 
-            $this->assertInstanceOf(ApiException::class, $ex);
+            $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
 
@@ -298,7 +298,7 @@ class ApiProviderTest extends AbstractTestCase {
             $this->assertInstanceOf(PhotosResponse::class, $res);
         } catch (Throwable $ex) {
 
-            $this->assertInstanceOf(ApiException::class, $ex);
+            $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
 
@@ -325,7 +325,7 @@ class ApiProviderTest extends AbstractTestCase {
             $this->assertInstanceOf(VideosResponse::class, $res);
         } catch (Throwable $ex) {
 
-            $this->assertInstanceOf(ApiException::class, $ex);
+            $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
 
@@ -353,7 +353,7 @@ class ApiProviderTest extends AbstractTestCase {
             $this->assertInstanceOf(PhotosResponse::class, $res);
         } catch (Throwable $ex) {
 
-            $this->assertInstanceOf(ApiException::class, $ex);
+            $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
 
@@ -381,7 +381,7 @@ class ApiProviderTest extends AbstractTestCase {
             $this->assertInstanceOf(VideosResponse::class, $res);
         } catch (Throwable $ex) {
 
-            $this->assertInstanceOf(ApiException::class, $ex);
+            $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
 
@@ -406,7 +406,7 @@ class ApiProviderTest extends AbstractTestCase {
             $this->assertInstanceOf(PhotosResponse::class, $res);
         } catch (Throwable $ex) {
 
-            $this->assertInstanceOf(ApiException::class, $ex);
+            $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
 
@@ -430,7 +430,7 @@ class ApiProviderTest extends AbstractTestCase {
             $this->assertInstanceOf(VideosResponse::class, $res);
         } catch (Throwable $ex) {
 
-            $this->assertInstanceOf(ApiException::class, $ex);
+            $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
 }

@@ -13,10 +13,10 @@ declare(strict_types = 1);
 
 namespace WBW\Library\Pexels\Model;
 
-use WBW\Library\Traits\Strings\StringDescriptionTrait;
-use WBW\Library\Traits\Strings\StringIdTrait;
-use WBW\Library\Traits\Strings\StringRawDataTrait;
-use WBW\Library\Traits\Strings\StringTitleTrait;
+use WBW\Library\Common\Traits\Strings\StringDescriptionTrait;
+use WBW\Library\Common\Traits\Strings\StringIdTrait;
+use WBW\Library\Common\Traits\Strings\StringRawDataTrait;
+use WBW\Library\Common\Traits\Strings\StringTitleTrait;
 
 /**
  * Collection.
