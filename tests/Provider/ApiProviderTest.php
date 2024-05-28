@@ -154,7 +154,6 @@ class ApiProviderTest extends AbstractTestCase {
         $obj = new ApiProvider();
 
         try {
-
             $obj->sendRequest($request);
         } catch (Throwable $ex) {
 
@@ -201,7 +200,6 @@ class ApiProviderTest extends AbstractTestCase {
         $obj = new ApiProvider($this->authorization);
 
         try {
-
             $obj->sendRequest($request);
         } catch (Throwable $ex) {
 

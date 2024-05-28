@@ -67,7 +67,6 @@ class SearchVideosRequestTest extends AbstractTestCase {
         $obj = new SearchVideosRequest();
 
         try {
-
             $obj->serializeRequest();
         } catch (Throwable $ex) {
 

@@ -158,7 +158,6 @@ class RequestSerializerTest extends AbstractTestCase {
         $arg = new SearchPhotosRequest();
 
         try {
-
             RequestSerializer::serializeSearchPhotosRequest($arg);
         } catch (Throwable $ex) {
 
@@ -205,7 +204,6 @@ class RequestSerializerTest extends AbstractTestCase {
         $arg = new SearchVideosRequest();
 
         try {
-
             RequestSerializer::serializeSearchVideosRequest($arg);
         } catch (Throwable $ex) {
 
