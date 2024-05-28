@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.7.1](https://github.com/webeweb/pexels-library/tree/v3.7.1) (2024-05-28)
+
+- Update dependencies
+
 ### [3.7.0](https://github.com/webeweb/pexels-library/tree/v3.7.0) (2024-04-29)
 
 - Update dependencies
