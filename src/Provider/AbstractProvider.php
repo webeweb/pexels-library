@@ -110,7 +110,6 @@ abstract class AbstractProvider extends BaseProvider {
 
             return $response->getBody()->getContents();
         } catch (Throwable $ex) {
-
             throw new ProviderException("Call Pexels API failed", 500, $ex);
         }
     }

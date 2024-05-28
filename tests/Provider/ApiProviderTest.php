@@ -81,10 +81,8 @@ class ApiProviderTest extends AbstractTestCase {
         try {
 
             $res = $obj->sendRequest($request);
-
             $this->assertInstanceOf(CollectionResponse::class, $res);
         } catch (Throwable $ex) {
-
             $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
@@ -107,10 +105,8 @@ class ApiProviderTest extends AbstractTestCase {
         try {
 
             $res = $obj->sendRequest($request);
-
             $this->assertInstanceOf(CollectionsResponse::class, $res);
         } catch (Throwable $ex) {
-
             $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
@@ -133,10 +129,8 @@ class ApiProviderTest extends AbstractTestCase {
         try {
 
             $res = $obj->sendRequest($request);
-
             $this->assertInstanceOf(PhotosResponse::class, $res);
         } catch (Throwable $ex) {
-
             $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
@@ -178,10 +172,8 @@ class ApiProviderTest extends AbstractTestCase {
         try {
 
             $res = $obj->sendRequest($request);
-
             $this->assertInstanceOf(PhotoResponse::class, $res);
         } catch (Throwable $ex) {
-
             $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
@@ -224,10 +216,8 @@ class ApiProviderTest extends AbstractTestCase {
         try {
 
             $res = $obj->sendRequest($request);
-
             $this->assertInstanceOf(VideoResponse::class, $res);
         } catch (Throwable $ex) {
-
             $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
@@ -247,10 +237,8 @@ class ApiProviderTest extends AbstractTestCase {
         try {
 
             $res = $obj->sendRequest($request);
-
             $this->assertInstanceOf(VideosResponse::class, $res);
         } catch (Throwable $ex) {
-
             $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
@@ -292,10 +280,8 @@ class ApiProviderTest extends AbstractTestCase {
             $arg = $obj->sendRequest($request);
 
             $res = $obj->requestNextPage($arg);
-
             $this->assertInstanceOf(PhotosResponse::class, $res);
         } catch (Throwable $ex) {
-
             $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
@@ -319,10 +305,8 @@ class ApiProviderTest extends AbstractTestCase {
             $arg = $obj->sendRequest($request);
 
             $res = $obj->requestNextPage($arg);
-
             $this->assertInstanceOf(VideosResponse::class, $res);
         } catch (Throwable $ex) {
-
             $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
@@ -347,10 +331,8 @@ class ApiProviderTest extends AbstractTestCase {
             $arg = $obj->sendRequest($request);
 
             $res = $obj->requestPrevPage($arg);
-
             $this->assertInstanceOf(PhotosResponse::class, $res);
         } catch (Throwable $ex) {
-
             $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
@@ -375,10 +357,8 @@ class ApiProviderTest extends AbstractTestCase {
             $arg = $obj->sendRequest($request);
 
             $res = $obj->requestPrevPage($arg);
-
             $this->assertInstanceOf(VideosResponse::class, $res);
         } catch (Throwable $ex) {
-
             $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
@@ -400,10 +380,8 @@ class ApiProviderTest extends AbstractTestCase {
         try {
 
             $res = $obj->sendRequest($request);
-
             $this->assertInstanceOf(PhotosResponse::class, $res);
         } catch (Throwable $ex) {
-
             $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
@@ -424,10 +402,8 @@ class ApiProviderTest extends AbstractTestCase {
         try {
 
             $res = $obj->sendRequest($request);
-
             $this->assertInstanceOf(VideosResponse::class, $res);
         } catch (Throwable $ex) {
-
             $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
