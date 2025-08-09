@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.8.0](https://github.com/webeweb/pexels-library/tree/v3.8.0) (2025-08-09)
+
+- Add PHP 8.3 support
+
 ### [3.7.1](https://github.com/webeweb/pexels-library/tree/v3.7.1) (2024-05-28)
 
 - Update dependencies
