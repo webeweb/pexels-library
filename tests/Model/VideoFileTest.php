@@ -38,6 +38,19 @@ class VideoFileTest extends AbstractTestCase {
     }
 
     /**
+     * Test setFps()
+     *
+     * @return void
+     */
+    public function testSetFps(): void {
+
+        $obj = new VideoFile();
+
+        $obj->setFps(0.1234);
+        $this->assertEquals(0.1234, $obj->getFps());
+    }
+
+    /**
      * Test setQuality()
      *
      * @return void
