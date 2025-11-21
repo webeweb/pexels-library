@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.10.0](https://github.com/webeweb/pexels-library/tree/v3.10.0) (2025-11-21)
+
+- Add FPS into Video file model
+
 ### [3.9.0](https://github.com/webeweb/pexels-library/tree/v3.9.0) (2025-09-26)
 
 - Improve code quality
