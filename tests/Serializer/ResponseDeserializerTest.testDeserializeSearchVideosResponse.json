@@ -24,6 +24,7 @@
                     "file_type": "video/mp4",
                     "width": 1280,
                     "height": 720,
+                    "fps": 23.976,
                     "link": "https://player.vimeo.com/external/320621378.hd.mp4?s=3311792d05f51c075d5b7f7c0fb10fd01df68aad&profile_id=174&oauth2_token_id=57447761"
                 },
                 {
@@ -32,6 +33,7 @@
                     "file_type": "video/mp4",
                     "width": 640,
                     "height": 360,
+                    "fps": 23.976,
                     "link": "https://player.vimeo.com/external/320621378.sd.mp4?s=9f704fce983c9c862e4c26e33ed38510e448bdfb&profile_id=164&oauth2_token_id=57447761"
                 },
                 {
@@ -40,6 +42,7 @@
                     "file_type": "video/mp4",
                     "width": null,
                     "height": null,
+                    "fps": 23.976,
                     "link": "https://player.vimeo.com/external/320621378.m3u8?s=b3fb6feeccb2a7eac76f76dca4bc487f340b6db0&oauth2_token_id=57447761"
                 }
             ],
