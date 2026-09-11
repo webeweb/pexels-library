@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [3.11.0](https://github.com/webeweb/pexels-library/tree/v3.11.0) (2026-09-11)
+
+- Update dependencies
+- Update Github actions configuration
+
 ### [3.10.0](https://github.com/webeweb/pexels-library/tree/v3.10.0) (2025-11-21)
 
 - Add FPS into Video file model
